@@ -1,24 +1,24 @@
 {
-  "cash_eur": 150.0,
+  "cash_eur": 150.0744267734183,
   "initial_eur": 160.0,
   "positions": {
     "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
       "token": "AGT",
       "qty": 88.52275631999333,
       "entry_usd": 0.06303136879098502,
-      "peak_usd": 0.064017762558633,
-      "last_usd": 0.064017762558633,
+      "peak_usd": 0.0653796079114159,
+      "last_usd": 0.0653796079114159,
       "cost_eur": 5.0,
       "opened": "2026-10-26T12:04:59+00:00"
     },
-    "0x477c2c0459004e3354ba427fa285d7c053203c0e": {
-      "token": "LIGHT",
-      "qty": 20.046489426429325,
-      "entry_usd": 0.2783385350575997,
-      "peak_usd": 0.290655586939813,
-      "last_usd": 0.290655586939813,
+    "0xa991f61940095aea0724ef54077223b048c5cf7b": {
+      "token": "DNA",
+      "qty": 27.925490115847023,
+      "entry_usd": 0.19971781970032704,
+      "peak_usd": 0.19971781970032704,
+      "last_usd": 0.199120458325351,
       "cost_eur": 5.0,
-      "opened": "2026-10-26T14:53:21+00:00"
+      "opened": "2026-10-26T17:46:28+00:00"
     }
   },
   "trades": [
@@ -35,6 +35,23 @@
       "side": "BUY",
       "token": "LIGHT",
       "address": "0x477c2c0459004e3354ba427fa285d7c053203c0e",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-26T17:46:28+00:00",
+      "side": "SELL",
+      "token": "LIGHT",
+      "address": "0x477c2c0459004e3354ba427fa285d7c053203c0e",
+      "eur": 5.0744,
+      "pnl_eur": 0.0744,
+      "reason": "trailing stop"
+    },
+    {
+      "time": "2026-10-26T17:46:28+00:00",
+      "side": "BUY",
+      "token": "DNA",
+      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
     }
@@ -99,13 +116,25 @@
       "token": "CAP",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-26T17:46:28+00:00",
+      "token": "DNA",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-26T17:46:29+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
     }
   ],
-  "last_success": "2026-10-26T16:53:21+00:00",
-  "last_attempt": "2026-10-26T16:53:19+00:00",
+  "last_success": "2026-10-26T17:46:29+00:00",
+  "last_attempt": "2026-10-26T17:46:26+00:00",
   "screened_count": 45,
-  "eligible_count": 9,
-  "estimated_eur": 160.27,
+  "eligible_count": 10,
+  "estimated_eur": 160.22,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
