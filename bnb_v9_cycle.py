@@ -64,8 +64,17 @@ def run():
             address=meta.get("address")
             if not isinstance(address,str) or not address.startswith("0x") or len(address)!=42:continue
             attr=pool.get("attributes") or {}
+            age_min=None
+            created=attr.get("pool_created_at")
+            if created:
+                try:
+                    timestamp=datetime.fromisoformat(str(created).replace("Z","+00:00"))
+                    if timestamp.tzinfo is not None:
+                        elapsed=(datetime.now(timezone.utc)-timestamp).total_seconds()/60
+                        if elapsed>=0: age_min=round(elapsed,2)
+                except (ValueError, TypeError, OverflowError):pass
             fields={"symbol":meta.get("symbol"),"address":address,"price_usd":attr.get("base_token_price_usd"),
-                    "liquidity_usd":attr.get("reserve_in_usd"),
+                    "liquidity_usd":attr.get("reserve_in_usd"),"age_min":age_min,
                     "volume_24h_usd":(attr.get("volume_usd") or {}).get("h24"),
                     "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1")}
             try: risk=metrics(state)
