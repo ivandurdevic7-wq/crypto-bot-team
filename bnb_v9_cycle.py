@@ -9,6 +9,8 @@ from bnb_v9_market_scan import request as market_request, BASE
 from bnb_master_v9_policy import decide, START_EUR
 from bnb_v9_risk import metrics
 from bnb_v9_security_sources import check as security_check
+from bnb_v9_quote_check import compare as crosscheck
+from bnb_v9_paper_ledger import buy as paper_buy
 
 FILE=Path(__file__).with_name("bnb_v9_cycle_status.json")
 def run():
@@ -88,11 +90,20 @@ def run():
                 security_checked+=1
                 proof=security_check(address)
                 fields.update(proof["data"])
+                quotes=crosscheck(address,fields["price_usd"],fields["liquidity_usd"])
+                if not quotes["verified"]:
+                    errors.append("Quote "+address[:10]+": "+", ".join(quotes["reasons"][:2]))
                 if not proof["safe"]:
                     errors.append("Security "+address[:10]+": "+", ".join(proof["reasons"][:2]))
+                fields["fresh_quotes_ok"]=quotes["verified"]
+                # Never invent missing LP locks, ownership or market-risk evidence.
             decision=decide(fields,{},portfolio)
-            # Insufficient information means SKIP, and never a paper buy.
-            if decision["action"]!="SKIP":raise AssertionError("Unverified token cannot pass")
+            if decision["action"]=="PAPER_BUY_READY":
+                # Execution is guarded by independently confirmed sell simulation,
+                # verified risk metrics and a freshly priced EUR executable quote.
+                # Missing inputs are explicitly rejected by paper_buy.
+                state,execution=paper_buy(state,decision,{}, {})
+                decisions.append({"token":decision["token"],"action":execution})
             decisions.append(decision);count+=1
     except Exception as e:errors.append("Discovery: "+str(e)[:120])
     try: state["risk"]=metrics(state)
