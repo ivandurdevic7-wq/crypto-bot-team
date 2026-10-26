@@ -1,0 +1,21 @@
+name: BNB MASTER 9 - PAPER Ledger Tests
+on:
+  push:
+    branches: [bnb-master-v9-paper-prototype]
+    paths:
+      - bnb_v9_paper_ledger.py
+      - bnb_master_v9_policy.py
+      - .github/workflows/bnb_v9_ledger_test.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile bnb_v9_paper_ledger.py
+      - run: python bnb_v9_paper_ledger.py
