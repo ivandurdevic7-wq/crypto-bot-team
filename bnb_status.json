@@ -1,5 +1,5 @@
 {
-  "cash_eur": 150.0744267734183,
+  "cash_eur": 145.0744267734183,
   "initial_eur": 160.0,
   "positions": {
     "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
@@ -7,7 +7,7 @@
       "qty": 88.52275631999333,
       "entry_usd": 0.06303136879098502,
       "peak_usd": 0.0653796079114159,
-      "last_usd": 0.0653796079114159,
+      "last_usd": 0.0652221017921894,
       "cost_eur": 5.0,
       "opened": "2026-10-26T12:04:59+00:00"
     },
@@ -15,10 +15,19 @@
       "token": "DNA",
       "qty": 27.925490115847023,
       "entry_usd": 0.19971781970032704,
-      "peak_usd": 0.19971781970032704,
-      "last_usd": 0.199120458325351,
+      "peak_usd": 0.200129766197581,
+      "last_usd": 0.200129766197581,
       "cost_eur": 5.0,
       "opened": "2026-10-26T17:46:28+00:00"
+    },
+    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
+      "token": "ARIA",
+      "qty": 62.91708822260317,
+      "entry_usd": 0.08864393056887153,
+      "peak_usd": 0.08864393056887153,
+      "last_usd": 0.0883787941863126,
+      "cost_eur": 5.0,
+      "opened": "2026-10-26T18:56:03+00:00"
     }
   },
   "trades": [
@@ -52,6 +61,14 @@
       "side": "BUY",
       "token": "DNA",
       "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-26T18:56:03+00:00",
+      "side": "BUY",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
     }
@@ -128,13 +145,25 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-26T18:56:03+00:00",
+      "token": "ARIA",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-26T18:56:04+00:00",
+      "token": "TAG",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
     }
   ],
-  "last_success": "2026-10-26T17:46:29+00:00",
-  "last_attempt": "2026-10-26T17:46:26+00:00",
+  "last_success": "2026-10-26T18:56:04+00:00",
+  "last_attempt": "2026-10-26T18:56:01+00:00",
   "screened_count": 45,
-  "eligible_count": 10,
-  "estimated_eur": 160.22,
+  "eligible_count": 4,
+  "estimated_eur": 160.2,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
