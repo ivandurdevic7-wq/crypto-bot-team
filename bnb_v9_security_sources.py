@@ -9,12 +9,13 @@ def flag(d,k):
     return True if v in ("1",1,True) else False if v in ("0",0,False) else None
 def check(address,request=get):
     if not ADDRESS.fullmatch(address):return {"safe":False,"reasons":["Invalid address"],"data":{}}
-    reasons=[];out={}
+    reasons=[];out={};hp_verified=False;gp_verified=False
     try:
         hp=request("https://api.honeypot.is/v2/IsHoneypot?address="+address+"&chainID=56")
         hr=hp.get("honeypotResult") or {}
         sr=hp.get("simulationResult") or {}
         out["honeypot_sell_ok"]=hp.get("simulationSuccess") is True and hr.get("isHoneypot") is False and sr.get("sellTax") is not None and sr.get("buyTax") is not None
+        hp_verified=out["honeypot_sell_ok"]
         if not out["honeypot_sell_ok"]:reasons.append("Honeypot or sell simulation unavailable")
         for field,key in (("buy_tax_pct","buyTax"),("sell_tax_pct","sellTax")):
             try:out[field]=float(sr[key])
@@ -26,6 +27,7 @@ def check(address,request=get):
         gp=request("https://api.gopluslabs.io/api/v1/token_security/56?contract_addresses="+address.lower())
         data=(gp.get("result") or {}).get(address.lower()) or {}
         if str(gp.get("code"))!="1" or not data:raise ValueError("Missing GoPlus response")
+        gp_verified=True
         out["verified_code"]=flag(data,"is_open_source") is True
         if not out["verified_code"]:reasons.append("Contract verification missing")
         fields={"mintable":"is_mintable","hidden_owner":"hidden_owner","owner_reclaim":"can_take_back_ownership",
@@ -37,6 +39,7 @@ def check(address,request=get):
         out["holders"]=int(data["holder_count"]) if data.get("holder_count") else None
         if out["holders"] is None or out["holders"]<100:reasons.append("Holder count too low or unknown")
     except Exception as e:reasons.append("GoPlus unavailable: "+str(e)[:70])
+    out["security_sources_ok"]=hp_verified and gp_verified
     # Additional independent requirements are deliberately not inferred from these feeds.
     for name in ("lp_locked_pct","lp_lock_days","largest_holder_pct","creator_pct",
                  "top10_pct","bundled_snipers","wash_trading","price_impact_pct",
@@ -52,6 +55,7 @@ def test():
             "slippage_modifiable":"0","selfdestruct":"0","holder_count":"150"}}}
     result=check(addr,fake)
     assert result["data"]["honeypot_sell_ok"] is True
+    assert result["data"]["security_sources_ok"] is True
     assert result["safe"] is False and result["data"]["lp_locked_pct"] is None
     assert check(addr,lambda url: {})["safe"] is False
     print("V9 dual source fail-closed checks PASS")
