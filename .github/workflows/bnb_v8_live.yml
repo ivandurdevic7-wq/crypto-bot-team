@@ -1,0 +1,49 @@
+name: BNB MASTER 8 - Paper Trading
+
+on:
+  push:
+    branches:
+      - ivandurdevic7-wq-upload-1
+    paths:
+      - 'bnb_master_v8.py'
+      - '.github/workflows/bnb_v8_live.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '4,19,34,49 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-bot-team
+  cancel-in-progress: false
+
+jobs:
+  bnb-v8:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: BNB v8 market scan - virtual only
+        run: python bnb_master_v8.py
+      - name: Save test result artifact
+        if: ${{ always() && github.ref != 'refs/heads/main' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: bnb-v8-test-state
+          path: bnb_v8_status.json
+          if-no-files-found: warn
+      - name: Persist virtual state on main
+        if: ${{ success() && github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bnb_v8_status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update BNB v8 virtual status [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
