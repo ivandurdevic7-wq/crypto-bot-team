@@ -3,6 +3,9 @@ import json
 from datetime import datetime, timezone, timedelta
 
 START_EUR = 200.0
+# User-approved: autonomous PAPER decisions only; no LIVE trading.
+AUTONOMOUS_PAPER = True
+LIVE_ENABLED = False
 WEIGHTS = {"momentum":1.2,"order_flow":1.2,"volume":1.0,"liquidity":1.0,
            "holders_lp":1.0,"age":0.6,"social":1.0,"whales_trending":0.8,"market":0.8}
 REQUIRED = ("address","symbol","price_usd","liquidity_usd","age_min","verified_code",
@@ -92,11 +95,11 @@ def decide(token, agents, portfolio, now=None):
           "trailing_pct":12,"reasons":[],"risks":[],
           "data_gaps":missing,"confidence":"niska"}
     if not veto:
-        base.update(action="PENDING_APPROVAL",size_eur=size,
-                    reasons=["Svi tvrdi filteri prošli; čeka DA/NE"],
+        base.update(action="PAPER_BUY_READY" if AUTONOMOUS_PAPER else "PENDING_APPROVAL",size_eur=size,
+                    reasons=["Svi tvrdi filteri prošli; virtualna kupnja dopuštena tek nakon završne provjere izvršitelja"],
                     risks=["PAPER simulacija ne obuhvaća sve MEV i izvršne rizike"],
                     confidence="srednja")
-        base["approval_expires_at"]=(now+timedelta(minutes=5)).isoformat()
+        if not AUTONOMOUS_PAPER: base["approval_expires_at"]=(now+timedelta(minutes=5)).isoformat()
     else:base["reasons"]=["SKIP: "+", ".join(base["vetoes"][:5])]
     return base
 
