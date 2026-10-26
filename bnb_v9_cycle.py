@@ -22,7 +22,8 @@ def run():
         # Never silently reset an existing corrupted ledger.
         if FILE.exists():raise
         state=initial()
-    decisions=[];errors=[];count=0
+    decisions=[];errors=[];count=0;security_checked=0
+    rotation=datetime.now(timezone.utc).hour % 6
     for pos in state['positions'].values():pos['quote_verified']=False
     # Refresh existing positions with actual quotes where available; do not fake exits.
     for addr,pos in list(state["positions"].items()):
@@ -74,7 +75,8 @@ def run():
             portfolio={"equity_eur":risk["equity_eur"],"cash_eur":state["cash_eur"],
                        "open_positions":len(state["positions"]),"daily_loss_pct":risk["daily_loss_pct"],
                        "weekly_loss_pct":risk["weekly_loss_pct"],"loss_streak":state.get("loss_streak")}
-            if count < 3:
+            if count % 6 == rotation and security_checked < 3:
+                security_checked+=1
                 proof=security_check(address)
                 fields.update(proof["data"])
                 if not proof["safe"]:
@@ -88,7 +90,7 @@ def run():
     except ValueError as error:
         state["risk"]={"status":"BLOCKED","reason":str(error)}
         errors.append("Risk accounting: "+str(error))
-    state["scan"]={"at_utc":now,"screened":count,"decisions":decisions[-60:],
+    state["scan"]={"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
                    "errors":errors,"status":"RESEARCH_ONLY" if count else "NO_DATA"}
     state["estimated_eur"]=round(value(state),2)
     FILE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
