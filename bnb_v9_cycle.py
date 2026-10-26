@@ -65,8 +65,8 @@ def run():
                     "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1")}
             equity=value(state)
             portfolio={"equity_eur":equity,"cash_eur":state["cash_eur"],
-                       "open_positions":len(state["positions"]),"daily_loss_pct":0,
-                       "weekly_loss_pct":0,"loss_streak":0}
+                       "open_positions":len(state["positions"]),"daily_loss_pct":state.get("daily_loss_pct"),
+                       "weekly_loss_pct":state.get("weekly_loss_pct"),"loss_streak":state.get("loss_streak")}
             decision=decide(fields,{},portfolio)
             # Insufficient information means SKIP, and never a paper buy.
             if decision["action"]!="SKIP":raise AssertionError("Unverified token cannot pass")
