@@ -13,12 +13,29 @@ REQUIRED = ("address","symbol","price_usd","liquidity_usd","age_min","verified_c
             "community_scam_warnings","price_impact_pct","slippage_pct",
             "change_1h_pct","bnb_change_24h_pct","security_sources_ok",
             "security_rechecked","fresh_quotes_ok","token_value_explained")
+def safe_number(value):
+    """Convert API numeric strings; invalid values remain missing (fail closed)."""
+    try:
+        if isinstance(value, bool): return None
+        number=float(value)
+        return number if __import__("math").isfinite(number) else None
+    except (TypeError, ValueError, OverflowError):
+        return None
+
+NUMERIC_FIELDS = ("price_usd","liquidity_usd","age_min","buy_tax_pct",
+    "sell_tax_pct","lp_locked_pct","lp_lock_days","largest_holder_pct",
+    "creator_pct","top10_pct","holders","volume_24h_usd",
+    "price_impact_pct","slippage_pct","change_1h_pct","bnb_change_24h_pct")
+
 SECURITY_BAD = ("mintable","hidden_owner","owner_reclaim","transfer_pause",
                 "blacklist","mutable_tax","selfdestruct","wash_trading",
                 "bundled_snipers","community_scam_warnings")
 
 def decide(token, agents, portfolio, now=None):
     now = now or datetime.now(timezone.utc)
+    token=dict(token)
+    for field in NUMERIC_FIELDS:
+        if field in token: token[field]=safe_number(token[field])
     missing = [k for k in REQUIRED if token.get(k) is None]
     missing += [f"agent:{k}" for k in WEIGHTS if agents.get(k) is None]
     veto = []
@@ -46,7 +63,7 @@ def decide(token, agents, portfolio, now=None):
         veto.append("Neprirodan promet")
     if token.get("bnb_change_24h_pct") is not None and token["bnb_change_24h_pct"]<=-6:
         veto.append("BNB tržišni režim: pad")
-    if portfolio.get("halted") or portfolio.get("daily_loss_pct",100)>5 or portfolio.get("weekly_loss_pct",100)>10:
+    if portfolio.get("halted") or safe_number(portfolio.get("daily_loss_pct")) is None or safe_number(portfolio.get("weekly_loss_pct")) is None or portfolio.get("daily_loss_pct",100)>5 or portfolio.get("weekly_loss_pct",100)>10:
         veto.append("Prekidač gubitaka")
     if portfolio.get("loss_streak",3)>=3: veto.append("Tri uzastopna gubitka")
     positions=portfolio.get("open_positions",3)
