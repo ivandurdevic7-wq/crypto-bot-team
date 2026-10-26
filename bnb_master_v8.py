@@ -1,5 +1,5 @@
 """BNB Master 8.0: research & PAPER trading ONLY. No wallets, keys or orders."""
-import json, os, urllib.request, urllib.parse, time
+import json, os, urllib.request, urllib.parse, urllib.error, time, socket
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -19,9 +19,29 @@ def num(x,default=0):
     try:return float(x)
     except (TypeError,ValueError):return default
 
-def request(url):
-    req=urllib.request.Request(url,headers={'User-Agent':'BNB-Master-V8-Paper/1.0','Accept':'application/json'})
-    with urllib.request.urlopen(req,timeout=18) as r:return json.load(r)
+def request(url, retries=1):
+    """Bounded retries; respect rate limits. Do not invent quotes."""
+    last_error=None
+    for attempt in range(retries+1):
+        try:
+            req=urllib.request.Request(url,headers={'User-Agent':'BNB-Master-V8-Paper/1.2','Accept':'application/json'})
+            with urllib.request.urlopen(req,timeout=7) as r:return json.load(r)
+        except urllib.error.HTTPError as e:
+            last_error=e
+            if e.code==429:
+                if attempt<retries:
+                    try:delay=min(max(float(e.headers.get('Retry-After','2')),1),4)
+                    except (ValueError,TypeError):delay=2
+                    time.sleep(delay)
+                    continue
+                raise RuntimeError('HTTP 429 rate limited by provider') from e
+            if e.code<500 or attempt>=retries:raise RuntimeError('Market API HTTP '+str(e.code)) from e
+        except (TimeoutError,socket.timeout,urllib.error.URLError,ConnectionError,OSError) as e:
+            last_error=e
+            if attempt>=retries:break
+        if attempt<retries:time.sleep(1.2*(attempt+1))
+    raise RuntimeError('Market API unavailable: '+str(last_error)[:100])
+
 
 def initial():return {'cash_eur':START,'initial_eur':START,'positions':{},'trades':[], 'decisions':[],'daily':{},'status':'NEW'}
 def load():
@@ -38,29 +58,36 @@ def note(s,symbol,result,reason):
     s['decisions']=s['decisions'][-180:]
 
 def fetch_pools():
-    out={}
+    """Use available verified pools; stop provider requests when rate limited."""
+    out={};errors=[];successful_pages=0
     for route in ('networks/bsc/pools','networks/bsc/trending_pools','networks/bsc/new_pools'):
-        for page in (1,2):
-            data=request(f'{GECKO}/{route}?page={page}&include=base_token,dex')
-            incl={v['id']:v for v in data.get('included',[])}
-            for p in data.get('data',[]):
-                a=p.get('attributes') or {};rel=p.get('relationships') or {}
-                dex=(rel.get('dex') or {}).get('data') or {}
-                if 'pancake' not in str(dex.get('id','')).lower():continue
-                token=(rel.get('base_token') or {}).get('data') or {}
-                att=(incl.get(token.get('id')) or {}).get('attributes') or {}
-                addr=str(att.get('address') or '').lower()
-                if not(addr.startswith('0x') and len(addr)==42):continue
-                price=num(a.get('base_token_price_usd'));liq=num(a.get('reserve_in_usd'))
-                if price<=0:continue
-                item={'address':addr,'symbol':att.get('symbol') or addr[:8],'price_usd':price,
-                      'liquidity_usd':liq,'volume_h24':num((a.get('volume_usd') or {}).get('h24')),
-                      'change_h1':num((a.get('price_change_percentage') or {}).get('h1')),
-                      'change_h24':num((a.get('price_change_percentage') or {}).get('h24')),
-                      'pool':p.get('id',''), 'dex':str(dex.get('id','')),'source':route}
-                if addr not in out or liq>out[addr]['liquidity_usd']:out[addr]=item
-            time.sleep(.25)
-    return list(out.values())
+        try:
+            data=request(f'{GECKO}/{route}?page=1&include=base_token,dex')
+            successful_pages+=1
+        except Exception as e:
+            errors.append(f'{route}: {str(e)[:75]}')
+            if '429' in str(e):break
+            continue
+        incl={v['id']:v for v in data.get('included',[])}
+        for p in data.get('data',[]):
+            a=p.get('attributes') or {};rel=p.get('relationships') or {}
+            dex=(rel.get('dex') or {}).get('data') or {}
+            if 'pancake' not in str(dex.get('id','')).lower():continue
+            token=(rel.get('base_token') or {}).get('data') or {}
+            att=(incl.get(token.get('id')) or {}).get('attributes') or {}
+            addr=str(att.get('address') or '').lower()
+            if not(addr.startswith('0x') and len(addr)==42):continue
+            price=num(a.get('base_token_price_usd'));liq=num(a.get('reserve_in_usd'))
+            if price<=0:continue
+            item={'address':addr,'symbol':att.get('symbol') or addr[:8],'price_usd':price,
+                  'liquidity_usd':liq,'volume_h24':num((a.get('volume_usd') or {}).get('h24')),
+                  'change_h1':num((a.get('price_change_percentage') or {}).get('h1')),
+                  'change_h24':num((a.get('price_change_percentage') or {}).get('h24')),
+                  'pool':p.get('id',''),'dex':str(dex.get('id','')),'source':route}
+            if addr not in out or liq>out[addr]['liquidity_usd']:out[addr]=item
+        time.sleep(1.2)
+    return list(out.values()),successful_pages,errors
+
 
 def dex_data(address):
     pairs=request(f'{DEX}/token-pairs/v1/bsc/{address}')
@@ -115,9 +142,20 @@ def price_for_position(address, by_addr):
 def run():
     s=load();s['last_attempt']=now();today=datetime.now(timezone.utc).date().isoformat()
     try:
-        market=fetch_pools()
-        usd_per_eur=num((request(FX).get('rates') or {}).get('USD'))
-        if usd_per_eur<=0:raise ValueError('EUR/USD exchange rate unavailable')
+        market,successful_pages,api_errors=fetch_pools()
+        s['market_pages_ok']=successful_pages;s['market_api_errors']=api_errors[-8:]
+        if not market:
+            s['screened_count']=0;s['candidate_count']=0;s['reviewed']=[]
+            s['status']='DEGRADED: No verifiable market quotes; no new trades'
+            note(s,'SYSTEM','WAIT','Market source unavailable; positions unchanged')
+            save(s);print(s['status']);return
+        try:usd_per_eur=num((request(FX).get('rates') or {}).get('USD'))
+        except Exception:usd_per_eur=0
+        if usd_per_eur<=0:
+            s['screened_count']=len(market);s['candidate_count']=0;s['reviewed']=[]
+            s['status']='DEGRADED: EUR/USD unavailable; no trades'
+            note(s,'SYSTEM','WAIT','Missing FX rate; trades skipped, positions preserved')
+            save(s);print(s['status']);return
         by_addr={p['address']:p for p in market}
         for addr,pos in list(s['positions'].items()):
             price,source=price_for_position(addr,by_addr)
@@ -137,7 +175,7 @@ def run():
         invested=sum(num(p['cost_eur']) for p in s['positions'].values())
         candidates=sorted((p for p in market if p['liquidity_usd']>=MIN_LIQ and p['volume_h24']>=MIN_VOL and 1<=p['change_h1']<=8),key=lambda p:p['volume_h24'],reverse=True)
         reviewed=[]
-        for p in candidates[:8]:
+        for p in candidates[:3]:
             if p['address'] in s['positions']:continue
             try:
                 d=dex_data(p['address'])
@@ -156,10 +194,14 @@ def run():
                 s['cash_eur']-=BUY;s['positions'][p['address']]={'token':p['symbol'],'qty':qty,'entry_usd':entry,'peak_usd':entry,'last_usd':d['price_usd'],'cost_eur':BUY,'opened':now()}
                 s['trades'].append({'time':now(),'side':'BUY','token':p['symbol'],'address':p['address'],'eur':BUY,'reason':'MASTER: Gecko + DEX + GoPlus verified','votes':v})
                 note(s,p['symbol'],'BUY','Virtual trade; verification passed');invested+=BUY
-            except Exception as e:note(s,p['symbol'],'SKIP','API error: '+str(e)[:65])
+            except Exception as e:
+                note(s,p['symbol'],'SKIP','API error: '+str(e)[:65])
+                if '429' in str(e):
+                    api_errors.append('DEX/GoPlus rate limited')
+                    break
         s['reviewed']=reviewed;s['screened_count']=len(market);s['candidate_count']=len(candidates)
         s['estimated_eur']=round(s['cash_eur']+sum(num(p['qty'])*num(p.get('last_usd',p['entry_usd']))/usd_per_eur for p in s['positions'].values()),2)
-        s['roles']=ROLES;s['daily_halt']=halt;s['last_success']=now();s['status']='OK | BSC PancakeSwap | real quotes, PAPER ONLY'
+        s['roles']=ROLES;s['daily_halt']=halt;s['last_success']=now();s['status']=('OK (partial API coverage)' if api_errors else 'OK')+' | BSC PancakeSwap | real quotes, PAPER ONLY'
     except Exception as e:
         s['status']='ERROR: '+str(e)[:160];note(s,'SYSTEM','ERROR',str(e)[:130])
     s['trades']=s['trades'][-400:];save(s)
