@@ -29,5 +29,10 @@ jobs:
           d = m.decide({}, {}, p)
           assert d['action'] == 'SKIP'
           assert d['data_gaps']
-          print('V9 autonomy policy PASS; missing data => SKIP; LIVE blocked')
+          q = dict(p, daily_loss_pct=None, weekly_loss_pct=None, loss_streak=None)
+          r = m.decide({}, {}, q)
+          assert r['action'] == 'SKIP'
+          assert 'Prekidač gubitaka' in r['vetoes']
+          assert 'Tri uzastopna gubitka ili nepoznat niz' in r['vetoes']
+          print('V9 autonomy policy PASS; missing data and loss metrics => SKIP; LIVE blocked')
           PY
