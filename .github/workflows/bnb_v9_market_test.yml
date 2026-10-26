@@ -1,0 +1,28 @@
+name: BNB MASTER 9 - Read-only Market Test
+on:
+  push:
+    branches: [bnb-master-v9-paper-prototype]
+    paths:
+      - 'bnb_v9_market_scan.py'
+      - 'bnb_master_v9_policy.py'
+      - '.github/workflows/bnb_v9_market_test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m py_compile bnb_master_v9_policy.py bnb_v9_market_scan.py
+      - run: python bnb_v9_market_scan.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bnb-v9-market-research
+          path: bnb_v9_scan.json
+          if-no-files-found: warn
