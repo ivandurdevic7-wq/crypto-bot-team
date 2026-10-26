@@ -8,6 +8,7 @@ from bnb_v9_paper_ledger import initial, value
 from bnb_v9_market_scan import request as market_request, BASE
 from bnb_master_v9_policy import decide, START_EUR
 from bnb_v9_risk import metrics
+from bnb_v9_security_sources import check as security_check
 
 FILE=Path(__file__).with_name("bnb_v9_cycle_status.json")
 def run():
@@ -73,6 +74,11 @@ def run():
             portfolio={"equity_eur":risk["equity_eur"],"cash_eur":state["cash_eur"],
                        "open_positions":len(state["positions"]),"daily_loss_pct":risk["daily_loss_pct"],
                        "weekly_loss_pct":risk["weekly_loss_pct"],"loss_streak":state.get("loss_streak")}
+            if count < 3:
+                proof=security_check(address)
+                fields.update(proof["data"])
+                if not proof["safe"]:
+                    errors.append("Security "+address[:10]+": "+", ".join(proof["reasons"][:2]))
             decision=decide(fields,{},portfolio)
             # Insufficient information means SKIP, and never a paper buy.
             if decision["action"]!="SKIP":raise AssertionError("Unverified token cannot pass")
