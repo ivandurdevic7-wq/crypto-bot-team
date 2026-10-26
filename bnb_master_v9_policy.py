@@ -66,9 +66,12 @@ def decide(token, agents, portfolio, now=None):
         veto.append("Neprirodan promet")
     if token.get("bnb_change_24h_pct") is not None and token["bnb_change_24h_pct"]<=-6:
         veto.append("BNB tržišni režim: pad")
-    if portfolio.get("halted") or safe_number(portfolio.get("daily_loss_pct")) is None or safe_number(portfolio.get("weekly_loss_pct")) is None or portfolio.get("daily_loss_pct",100)>5 or portfolio.get("weekly_loss_pct",100)>10:
+    daily_loss=safe_number(portfolio.get("daily_loss_pct"))
+    weekly_loss=safe_number(portfolio.get("weekly_loss_pct"))
+    if portfolio.get("halted") or daily_loss is None or weekly_loss is None or daily_loss>=5 or weekly_loss>=10:
         veto.append("Prekidač gubitaka")
-    if portfolio.get("loss_streak",3)>=3: veto.append("Tri uzastopna gubitka")
+    loss_streak=safe_number(portfolio.get("loss_streak"))
+    if loss_streak is None or loss_streak>=3: veto.append("Tri uzastopna gubitka ili nepoznat niz")
     positions=portfolio.get("open_positions",3)
     if positions>=3:veto.append("Najviše tri pozicije")
     for k,v in agents.items():
@@ -81,8 +84,8 @@ def decide(token, agents, portfolio, now=None):
         score=round(sum(weighted[k]*w for k,w in WEIGHTS.items())/sum(WEIGHTS.values()),4)
         if score<0.35:veto.append("Ocjena ispod 0.35")
         if sum(agents[k]<-0.2 for k in WEIGHTS)>2:veto.append("Više od dva negativna agenta")
-    equity=portfolio.get("equity_eur",0)
-    cash=portfolio.get("cash_eur",0)
+    equity=safe_number(portfolio.get("equity_eur")) or 0
+    cash=safe_number(portfolio.get("cash_eur")) or 0
     risk_budget=max(0,equity*0.02/0.15)
     size=round(max(0,min(equity*0.20,risk_budget,cash-equity*0.4)),2)
     if size<=0:veto.append("Nema slobodnog kapitala uz rezervu od 40%")
