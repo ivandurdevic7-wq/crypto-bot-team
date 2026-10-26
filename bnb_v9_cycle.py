@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from bnb_v9_paper_ledger import initial, value
 from bnb_v9_market_scan import request as market_request, BASE
 from bnb_master_v9_policy import decide, START_EUR
+from bnb_v9_risk import metrics
 
 FILE=Path(__file__).with_name("bnb_v9_cycle_status.json")
 def run():
@@ -21,6 +22,7 @@ def run():
         if FILE.exists():raise
         state=initial()
     decisions=[];errors=[];count=0
+    for pos in state['positions'].values():pos['quote_verified']=False
     # Refresh existing positions with actual quotes where available; do not fake exits.
     for addr,pos in list(state["positions"].items()):
         try:
@@ -39,6 +41,7 @@ def run():
             if rate<=0:raise ValueError("Missing FX")
             price=max(observed)[1]/rate
             pos["last_eur"]=price
+            pos["quote_verified"]=True
             pos["peak_eur"]=max(float(pos.get("peak_eur",price)),price)
             # No sale: honeypot simulation and fresh executable route not yet connected.
             from bnb_v9_exits import exit_signal
@@ -63,15 +66,22 @@ def run():
                     "liquidity_usd":attr.get("reserve_in_usd"),
                     "volume_24h_usd":(attr.get("volume_usd") or {}).get("h24"),
                     "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1")}
-            equity=value(state)
-            portfolio={"equity_eur":equity,"cash_eur":state["cash_eur"],
-                       "open_positions":len(state["positions"]),"daily_loss_pct":state.get("daily_loss_pct"),
-                       "weekly_loss_pct":state.get("weekly_loss_pct"),"loss_streak":state.get("loss_streak")}
+            try: risk=metrics(state)
+            except ValueError as error:
+                risk={"equity_eur":value(state),"daily_loss_pct":None,"weekly_loss_pct":None}
+                errors.append("Risk accounting: "+str(error))
+            portfolio={"equity_eur":risk["equity_eur"],"cash_eur":state["cash_eur"],
+                       "open_positions":len(state["positions"]),"daily_loss_pct":risk["daily_loss_pct"],
+                       "weekly_loss_pct":risk["weekly_loss_pct"],"loss_streak":state.get("loss_streak")}
             decision=decide(fields,{},portfolio)
             # Insufficient information means SKIP, and never a paper buy.
             if decision["action"]!="SKIP":raise AssertionError("Unverified token cannot pass")
             decisions.append(decision);count+=1
     except Exception as e:errors.append("Discovery: "+str(e)[:120])
+    try: state["risk"]=metrics(state)
+    except ValueError as error:
+        state["risk"]={"status":"BLOCKED","reason":str(error)}
+        errors.append("Risk accounting: "+str(error))
     state["scan"]={"at_utc":now,"screened":count,"decisions":decisions[-60:],
                    "errors":errors,"status":"RESEARCH_ONLY" if count else "NO_DATA"}
     state["estimated_eur"]=round(value(state),2)
