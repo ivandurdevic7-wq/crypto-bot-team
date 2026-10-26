@@ -18,3 +18,16 @@ jobs:
           python-version: '3.11'
       - run: python -m py_compile bnb_master_v9_policy.py
       - run: python bnb_master_v9_policy.py
+      - name: Assert PAPER autonomy and LIVE disabled
+        run: |
+          python - <<'PY'
+          import bnb_master_v9_policy as m
+          assert m.START_EUR == 200
+          assert m.AUTONOMOUS_PAPER is True
+          assert m.LIVE_ENABLED is False
+          p = {'equity_eur':200,'cash_eur':200,'open_positions':0,'daily_loss_pct':0,'weekly_loss_pct':0,'loss_streak':0}
+          d = m.decide({}, {}, p)
+          assert d['action'] == 'SKIP'
+          assert d['data_gaps']
+          print('V9 autonomy policy PASS; missing data => SKIP; LIVE blocked')
+          PY
