@@ -162,6 +162,9 @@ def run():
                 if not proof["safe"]:
                     errors.append("Security "+address[:10]+": "+", ".join(proof["reasons"][:2]))
                 fields["fresh_quotes_ok"]=quotes["verified"]
+                if quotes["verified"]:
+                    fields["buys_h1"]=quotes.get("buys_h1")
+                    fields["sells_h1"]=quotes.get("sells_h1")
                 # Never invent missing LP locks, ownership or market-risk evidence.
             decision=decide(fields,agent_signals(fields),portfolio)
             if decision["action"]=="PAPER_BUY_READY":
