@@ -1,4 +1,4 @@
-"""Read-only 180d Binance USDT study. NEVER mix EUR and USDT, no trades."""
+"""Read-only 180d Binance USDT study. NEVER mix EUR and USDT, no trades. Branch experiment."""
 import datetime as dt,json
 from alternative_history_audit import archive
 from compare_strategies import simulate
