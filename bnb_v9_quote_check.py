@@ -45,7 +45,14 @@ def compare(address,gecko_price,gecko_liquidity,request=fetch,pool_address=None)
         result.update(dex_price_usd=price,dex_liquidity_usd=liq)
         # Transaction counts are observational evidence, not proof of organic flow.
         tx=(pair.get("txns") or {}).get("h1") or {}
-        buys=number(tx.get("buys"));sells=number(tx.get("sells"))
+        # Trade counts may legitimately be zero; negative or missing values are unknown.
+        def trade_count(v):
+            try:
+                if isinstance(v,bool):return None
+                x=float(v)
+                return int(x) if math.isfinite(x) and x>=0 and x.is_integer() else None
+            except (TypeError,ValueError,OverflowError):return None
+        buys=trade_count(tx.get("buys"));sells=trade_count(tx.get("sells"))
         if buys is not None and sells is not None:
             result["buys_h1"]=int(buys)
             result["sells_h1"]=int(sells)
