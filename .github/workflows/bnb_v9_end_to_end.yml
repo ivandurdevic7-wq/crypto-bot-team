@@ -1,0 +1,23 @@
+name: BNB V9 - Full PAPER Lifecycle Test
+on:
+  push:
+    branches: [bnb-master-v9-paper-prototype]
+    paths:
+      - bnb_v9_end_to_end_test.py
+      - .github/workflows/bnb_v9_end_to_end.yml
+      - bnb_master_v9_policy.py
+      - bnb_v9_paper_ledger.py
+      - bnb_v9_exits.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python bnb_v9_end_to_end_test.py
