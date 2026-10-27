@@ -1,5 +1,7 @@
 """PAPER ONLY. Public GET requests; no keys or order execution code."""
 import json, math, time, urllib.request, urllib.parse
+import copy
+from dex import scan
 from pathlib import Path
 from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parent
@@ -8,7 +10,7 @@ PAIRS = ('XBTEUR', 'ETHEUR', 'SOLEUR')
 
 def api(endpoint, **params):
     url = 'https://api.kraken.com/0/public/' + endpoint + '?' + urllib.parse.urlencode(params)
-    with urllib.request.urlopen(url, timeout=20) as r:
+    with urllib.request.urlopen(url, timeout=8) as r:
         data = json.load(r)
     if data['error']: raise ValueError(str(data['error']))
     return data['result']
@@ -40,7 +42,7 @@ def initial():
     return dict(mode='PAPER', initial_eur=500, cash=500., positions={}, trades=[], peak=500., halted=False, seen={}, cooldown={})
 
 def equity(s, quotes):
-    return s['cash'] + sum(p['qty']*quotes[k]['bid']*(1-SLIP)*(1-FEE) for k,p in s['positions'].items())
+    return s['cash'] + sum(max(0,p['qty']*quotes[k]['bid']*(1-quotes[k].get('slip',SLIP))*(1-quotes[k].get('fee',FEE))-quotes[k].get('gas',0)) for k,p in s['positions'].items())
 
 def cycle(s, quotes, now):
     eq = equity(s,quotes)
@@ -51,27 +53,28 @@ def cycle(s, quotes, now):
     if eq <= s['day_start']*.97: s['day_paused']=True
     decisions=[]
     for pair,q in quotes.items():
+        fee,slip,gas=q.get('fee',FEE),q.get('slip',SLIP),q.get('gas',0)
         p=s['positions'].get(pair)
         if p:
             p['high']=max(p['high'],q['bid'])
-            reason = 'risk halt' if s['halted'] or s['day_paused'] else 'stop/trailing' if q['bid']<=max(p['entry']*.96,p['high']*.95) else 'trend exit' if q['exit'] else None
+            reason = 'risk halt' if s['halted'] or s['day_paused'] else 'stop/trailing' if q['bid']<=max(p['entry']*(1-p.get('stop',.04)),p['high']*(1-p.get('trail',.05))) else 'trend exit' if q['exit'] else None
             if reason:
-                price=q['bid']*(1-SLIP); gross=p['qty']*price; net=gross*(1-FEE)
+                price=q['bid']*(1-slip); gross=p['qty']*price; net=max(0,gross*(1-fee)-gas)
                 s['cash']+=net
-                s['trades'].append(dict(time=now,pair=pair,side='SELL',price=price,qty=p['qty'],fee=gross*FEE,pnl=net-p['cost'],reason=reason))
+                s['trades'].append(dict(time=now,pair=pair,side='SELL',price=price,qty=p['qty'],fee=gross*fee,gas=gas,pnl=net-p['cost'],reason=reason))
                 del s['positions'][pair]; s['cooldown'][pair]=now+21600
                 decisions.append(pair+': SELL '+reason)
                 continue
         fresh=q['candle']>s['seen'].get(pair,0)
         s['seen'][pair]=max(q['candle'],s['seen'].get(pair,0))
-        if pair not in s['positions'] and fresh and q['entry'] and q['liquid'] and q['volume_eur']>=1e6 and not s['halted'] and not s['day_paused'] and now>=s['cooldown'].get(pair,0) and len(s['positions'])<2:
+        if pair not in s['positions'] and fresh and q['entry'] and q['liquid'] and q['volume_eur']>=q.get('min_volume',1e6) and not s['halted'] and not s['day_paused'] and now>=s['cooldown'].get(pair,0) and len(s['positions'])<2:
             # 0.75% equity risk budget including modelled round-trip costs.
-            budget=min(eq*.0075/(.04+2*(FEE+SLIP)),eq*.20,max(0,s['cash']-eq*.40))
+            budget=min(max(0,eq*q.get('risk',.0075)-2*gas)/(q.get('stop',.04)+2*(fee+slip)),eq*.20,q.get('cap',eq*.20),max(0,s['cash']-eq*.40))
             if budget>=10:
-                price=q['ask']*(1+SLIP); gross=budget/(1+FEE); qty=gross/price
+                price=q['ask']*(1+slip); gross=(budget-gas)/(1+fee); qty=gross/price
                 s['cash']-=budget
-                s['positions'][pair]=dict(qty=qty,entry=price,cost=budget,high=q['bid'])
-                s['trades'].append(dict(time=now,pair=pair,side='BUY',price=price,qty=qty,fee=gross*FEE,reason='hourly breakout + trend'))
+                s['positions'][pair]=dict(qty=qty,entry=price,cost=budget,high=q['bid'],stop=q.get('stop',.04),trail=q.get('trail',.05),pair_address=q.get('pair_address'))
+                s['trades'].append(dict(time=now,pair=pair,side='BUY',price=price,qty=qty,fee=gross*fee,gas=gas,reason=q.get('reason','hourly breakout + trend')))
                 decisions.append(pair+': BUY'); continue
         decisions.append(pair+(': HOLD' if pair in s['positions'] else ': WAIT'))
     s.update(equity_eur=equity(s,quotes),updated_at=datetime.fromtimestamp(now,timezone.utc).isoformat(),status='OK',decisions=decisions,quotes=quotes)
@@ -82,6 +85,13 @@ def save(s):
     target=ROOT/'state.json'; temp=ROOT/'state.tmp'
     temp.write_text(json.dumps(s,indent=2,allow_nan=False)+'\n'); temp.replace(target)
     report = '# Čuvar 500 — PAPER\n\n' + '\n'.join(f'- {k}: {s.get(k)}' for k in ['updated_at','status','cash','equity_eur','pnl_eur','halted','decisions'])
+    scan_data=s.get('dex_scan',{})
+    report+='\n\n## BNB Chain i Solana\n\n'+str(scan_data.get('by_chain',{}))+'\n\n'
+    report+='| Token / adresa | Mreža | Odluka | Razlog |\n|---|---|---|---|\n'
+    for r in scan_data.get('records',[]):
+        clean=lambda v: str(v).replace('|','/').replace('\n',' ')
+        report+='| '+' | '.join(clean(v) for v in [r.get('symbol',r['address']),r['chain'],r['status'],r.get('reason','čekanje potvrde signala')])+' |\n'
+    report+='\nDEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.\n'
     report+='\n\nVirtualni rezultat; nije stvarna zarada. Naknada modela 0,4% po strani + 0,1% slippage i bid/ask spread. Stop se provjerava samo pri pokretanju, pa gubitak može prijeći limit.\n'
     (ROOT/'STATUS.md').write_text(report)
 
@@ -89,16 +99,36 @@ def main():
     path=ROOT/'state.json'
     s=json.loads(path.read_text()) if path.exists() else initial()
     if s.get('mode')!='PAPER' or s.get('initial_eur')!=500: raise ValueError('Wrong ledger')
+    now=time.time()
+    quotes={}; errors=[]
+    # Discovery runs independently of the exchange feeds.
+    fx=None
     try:
-        now=time.time(); server=api('Time')['unixtime']
-        if abs(now-server)>120: raise ValueError('server clock mismatch')
-        if api('SystemStatus')['status']!='online': raise ValueError('exchange offline')
-        quotes={p:market(p,now) for p in PAIRS}
-        if time.time()-now>120: raise ValueError('snapshot too slow')
-        cycle(s,quotes,now)
+        fxq=market('EURUSD',now)
+        fx=(fxq['bid']+fxq['ask'])/2
+    except Exception as e:
+        errors.append('FX: '+str(e))
+    try:
+        quotes.update(scan(s,now,fx))
+    except Exception as e:
+        errors.append('DEX: '+str(e))
+        s['dex_scan']=dict(checked_at=now,errors=[str(e)],records=[],by_chain={})
+    for pair in PAIRS:
+        try: quotes[pair]=market(pair,time.time())
+        except Exception as e: errors.append(pair+': '+str(e))
+    try:
+        if time.time()-now>240: raise ValueError('snapshot too slow')
+        missing=set(s['positions'])-set(quotes)
+        if missing: raise ValueError('held asset data unavailable; no fills: '+','.join(sorted(missing)))
+        if not quotes: raise ValueError('no valid quotes')
+        # Transactional ledger: a failed cycle must not leave partially executed fills.
+        work=copy.deepcopy(s)
+        cycle(work,quotes,now)
+        s=work
+        s['source_errors']=errors
+        if errors: s['status']='PARTIAL_DATA'
     except Exception as exc:
-        s.update(status='SKIP_DATA_ERROR',error=str(exc),last_attempt=datetime.now(timezone.utc).isoformat())
-        # Last valuation stays explicitly timestamped; never invent fills or prices.
+        s.update(status='SKIP_DATA_ERROR',error=str(exc),last_attempt=datetime.now(timezone.utc).isoformat(),source_errors=errors)
         save(s); print(json.dumps({'status':s['status'],'error':s['error']})); return
     s.pop('error',None); save(s)
     print(json.dumps({k:s[k] for k in ['status','equity_eur','pnl_eur','decisions']}))
