@@ -52,6 +52,16 @@ def check(address,request=get):
                     if creator and creators:out["creator_pct"]=sum(creators)
             except (ValueError,TypeError,KeyError,OverflowError):
                 pass
+        # GoPlus returns creator_percent as a fraction of total supply, not 0-100.
+        raw_creator=data.get("creator_percent")
+        if raw_creator not in (None,""):
+            try:
+                creator_value=float(raw_creator)
+                if __import__("math").isfinite(creator_value) and 0<=creator_value<=1:
+                    out["creator_pct"]=creator_value*100
+                else:
+                    out["creator_pct"]=None
+            except (TypeError,ValueError,OverflowError):out["creator_pct"]=None
         for key,limit in (("largest_holder_pct",10),("creator_pct",5),("top10_pct",40)):
             if out.get(key) is None:reasons.append("Unverified "+key)
             elif out[key]>limit:reasons.append("Unsafe "+key)
@@ -72,6 +82,7 @@ def test():
     result=check(addr,fake)
     assert result["data"]["honeypot_sell_ok"] is True
     assert result["data"]["security_sources_ok"] is True
+    assert result["data"]["creator_pct"] is None
     assert result["safe"] is False and result["data"]["lp_locked_pct"] is None
     assert check(addr,lambda url: {})["safe"] is False
     print("V9 dual source fail-closed checks PASS")
