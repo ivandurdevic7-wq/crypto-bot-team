@@ -1,4 +1,4 @@
-"""Analyze entry characteristics of losing PAPER trades, without optimizing a filter."""
+"""Analyze entry characteristics of losing PAPER trades, without optimizing a filter. Research execution only."""
 import json,statistics
 from trade_edge_audit import evaluate
 def summary(rows):
