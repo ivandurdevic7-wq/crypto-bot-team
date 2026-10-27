@@ -67,8 +67,22 @@ def basic(p,now):
     if int(tx['buys'])<2 or int(tx['sells'])<2: raise ValueError('insufficient recent buys/sells')
     return price,liq
 
+def discovery_score(pair, now):
+    """Rank search candidates only; never authorizes a purchase."""
+    try:
+        liquidity=number(pair['liquidity']['usd'])
+        volume=number(pair['volume']['h24'])
+        age=now-number(pair['pairCreatedAt'])/1000
+        tx=pair['txns']['m5']
+        activity=min(int(tx['buys']),int(tx['sells']))
+        if min(liquidity,volume,age,activity)<0: return 0
+        # Prioritize pairs near eligibility. Full basic/security checks still mandatory.
+        return int(liquidity>=100000)+int(volume>=100000)+int(age>=86400)+int(activity>=2)
+    except (KeyError,TypeError,ValueError,OverflowError):
+        return 0
+
 def scan(s,now,fx):
-    errors=[]; candidates={}; held={k:v for k,v in s['positions'].items() if ':' in k}
+    errors=[]; candidates={}; scores={}; held={k:v for k,v in s['positions'].items() if ':' in k}
     # Search plus latest profiles are samples, not an exhaustive chain index.
     urls=[DS+'/token-profiles/latest/v1']+[DS+'/latest/dex/search?q='+q for q in ('WBNB','SOL','USDC')]
     with ThreadPoolExecutor(max_workers=4) as pool:
@@ -77,7 +91,12 @@ def scan(s,now,fx):
                 d=f.result()
                 for p in (d if isinstance(d,list) else d.get('pairs',[])):
                     c=p.get('chainId'); a=p.get('tokenAddress') or p.get('baseToken',{}).get('address')
-                    if c in ('bsc','solana') and a: candidates[c+':'+(a.lower() if c=='bsc' else a)]=(c,a)
+                    if c in ('bsc','solana') and a:
+                        key=c+':'+(a.lower() if c=='bsc' else a)
+                        candidates[key]=(c,a)
+                        # Profiles have no pool metrics: leave score unknown (zero).
+                        if p.get('pairAddress'):
+                            scores[key]=max(scores.get(key,0),discovery_score(p,now))
             except Exception as e: errors.append(str(e))
     watch=s.setdefault('dex_watch',{})
     for k in list(watch):
@@ -88,6 +107,7 @@ def scan(s,now,fx):
         keys=[k for k,v in candidates.items() if v[0]==c]
         # Rotate the bounded sample so a static list does not starve later candidates.
         keys.sort(); offset=(int(now//900)*8)%max(1,len(keys)); keys=keys[offset:]+keys[:offset]
+        keys.sort(key=lambda k:scores.get(k,0),reverse=True)
         priority=sorted(k for k in watch if k.startswith(c+':') and now-watch[k]['last_seen']<=3600)[:4]
         chosen=priority+[k for k in keys if k not in priority][:8-len(priority)]
         for k in chosen: selected[k]=candidates[k]
