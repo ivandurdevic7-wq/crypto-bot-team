@@ -3,7 +3,7 @@ import json
 from binance_180d_compare import bars
 from market_regime_research import SYMBOLS
 
-def evaluate(fee=.001,slip=.001):
+def evaluate(fee=.001,slip=.001,details=False):
  data={s:bars(s) for s in SYMBOLS};cash=500.;hold={};pending={};trades=[]
  for i in range(205,4320-1):
   for name in list(hold):
@@ -14,7 +14,7 @@ def evaluate(fee=.001,slip=.001):
    if b["close"]<=entry*.95 or b["close"]>=entry*1.10 or b["close"]<ma200:
     revenue=pos["qty"]*n["open"]*(1-slip)*(1-fee)
     cash+=revenue
-    trades.append({"symbol":name,"net_pnl":revenue-pos["paid"],"gross_pnl":pos["qty"]*n["open"]-pos["paid"],"cost":pos["paid"]+pos["qty"]*n["open"]-revenue})
+    trades.append({"symbol":name,"net_pnl":revenue-pos["paid"],"entry_time":pos["entry_time"],"exit_time":n["time"],"entry_volume_ratio":pos["vol_ratio"],"entry_btc_distance_pct":pos["btc_distance"],"entry_trend_distance_pct":pos["trend_distance"],"duration_hours":(n["time"]-pos["entry_time"])//3600,"gross_pnl":pos["qty"]*n["open"]-pos["paid"],"cost":pos["paid"]+pos["qty"]*n["open"]-revenue})
     del hold[name]
   for name in SYMBOLS:
    if name in hold or len(hold)>=2:continue
@@ -37,7 +37,7 @@ def evaluate(fee=.001,slip=.001):
    if buy and bv[i]["close"]>bma and bma>bprior:
     paid=min(125.,cash)
     if paid>=5:
-     hold[name]={"price":n["open"]*(1+slip),"qty":paid*(1-fee)/(n["open"]*(1+slip)),"paid":paid}
+     hold[name]={"price":n["open"]*(1+slip),"qty":paid*(1-fee)/(n["open"]*(1+slip)),"paid":paid,"entry_time":n["time"],"vol_ratio":round(b["volume"]/vol,3),"btc_distance":round(100*(bv[i]["close"]/bma-1),3),"trend_distance":round(100*(b["close"]/ma200-1),3)}
      cash-=paid
  # Unclosed positions marked at final close with all hypothetical costs.
  for name,pos in hold.items():
@@ -47,6 +47,7 @@ def evaluate(fee=.001,slip=.001):
   trades.append({"symbol":name,"net_pnl":revenue-pos["paid"],"gross_pnl":pos["qty"]*close-pos["paid"],"cost":pos["paid"]+pos["qty"]*close-revenue})
  wins=[t for t in trades if t["net_pnl"]>0]
  losses=[t for t in trades if t["net_pnl"]<=0]
+ if details:return trades
  return {"completed_trades":len(trades),"win_rate_pct":round(100*len(wins)/len(trades),2) if trades else 0,
  "average_net_trade_usdt":round(sum(t["net_pnl"] for t in trades)/len(trades),4) if trades else 0,
  "average_win_usdt":round(sum(t["net_pnl"] for t in wins)/len(wins),4) if wins else 0,
