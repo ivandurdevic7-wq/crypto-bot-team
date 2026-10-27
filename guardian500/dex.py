@@ -67,9 +67,45 @@ def basic(p,now):
     if int(tx['buys'])<2 or int(tx['sells'])<2: raise ValueError('insufficient recent buys/sells')
     return price,liq
 
+def candidate_quality(p, now):
+    """Soft ranking of search candidates; never overrides safety gates."""
+    if not isinstance(p,dict) or not p.get('pairAddress'):
+        return 0
+    try:
+        liq=number(p['liquidity']['usd'])
+        vol=number(p['volume']['h24'])
+        age=now-number(p['pairCreatedAt'])/1000
+        tx=p['txns']['m5']
+        return (int(liq>=50000)+int(vol>=30000)
+                +int(age>=43200)+int(int(tx['buys'])>=2 and int(tx['sells'])>=2))
+    except (KeyError,TypeError,ValueError,OverflowError):
+        return 0
+
+
+def choose_candidates(candidates, scores, watch, held, now, per_chain=20):
+    selected={}
+    for c in ('bsc','solana'):
+        keys=sorted(k for k,v in candidates.items() if v[0]==c)
+        if not keys:
+            continue
+        # Rotate ties to avoid starving candidates from repeat searches.
+        offset=(int(now//900)*per_chain)%len(keys)
+        keys=keys[offset:]+keys[:offset]
+        keys.sort(key=lambda k:scores.get(k,0),reverse=True)
+        priority=sorted(k for k in watch
+                        if k.startswith(c+':') and k in candidates
+                        and now-watch[k].get('last_seen',0)<=3600)[:4]
+        chosen=priority+[k for k in keys if k not in priority][:max(0,per_chain-len(priority))]
+        for k in chosen:
+            selected[k]=candidates[k]
+    # Held positions are always inspected regardless of the sampling cap.
+    selected.update({k:tuple(k.split(':',1)) for k in held})
+    return selected
+
+
 def scan(s,now,fx):
-    errors=[]; candidates={}; held={k:v for k,v in s['positions'].items() if ':' in k}
-    # Search plus latest profiles are samples, not an exhaustive chain index.
+    errors=[]; candidates={}; scores={}; held={k:v for k,v in s['positions'].items() if ':' in k}
+    # Search and latest profiles are samples, not an exhaustive chain index.
     urls=[DS+'/token-profiles/latest/v1']+[DS+'/latest/dex/search?q='+q for q in ('WBNB','SOL','USDC')]
     with ThreadPoolExecutor(max_workers=4) as pool:
         for f in as_completed([pool.submit(get,u) for u in urls]):
@@ -77,21 +113,19 @@ def scan(s,now,fx):
                 d=f.result()
                 for p in (d if isinstance(d,list) else d.get('pairs',[])):
                     c=p.get('chainId'); a=p.get('tokenAddress') or p.get('baseToken',{}).get('address')
-                    if c in ('bsc','solana') and a: candidates[c+':'+(a.lower() if c=='bsc' else a)]=(c,a)
-            except Exception as e: errors.append(str(e))
+                    if c in ('bsc','solana') and a:
+                        k=c+':'+(a.lower() if c=='bsc' else a)
+                        candidates[k]=(c,a)
+                        scores[k]=max(scores.get(k,0),candidate_quality(p,now))
+            except Exception as e:
+                errors.append(str(e))
     watch=s.setdefault('dex_watch',{})
     for k in list(watch):
-        if now-watch[k]['last_seen']>86400 and k not in held: del watch[k]
-    for k in watch: candidates.setdefault(k,tuple(k.split(':',1)))
-    selected={}
-    for c in ('bsc','solana'):
-        keys=[k for k,v in candidates.items() if v[0]==c]
-        # Rotate the bounded sample so a static list does not starve later candidates.
-        keys.sort(); offset=(int(now//900)*8)%max(1,len(keys)); keys=keys[offset:]+keys[:offset]
-        priority=sorted(k for k in watch if k.startswith(c+':') and now-watch[k]['last_seen']<=3600)[:4]
-        chosen=priority+[k for k in keys if k not in priority][:8-len(priority)]
-        for k in chosen: selected[k]=candidates[k]
-    selected.update({k:tuple(k.split(':',1)) for k in held})
+        if now-watch[k]['last_seen']>86400 and k not in held:
+            del watch[k]
+    for k in watch:
+        candidates.setdefault(k,tuple(k.split(':',1)))
+    selected=choose_candidates(candidates,scores,watch,held,now,per_chain=20)
     quotes={}; records=[]
     def inspect(item):
         k,(c,a)=item; record=dict(key=k,chain=c,address=a,checked_at=now,sell_simulation={'status':'NOT_CHECKED'},lp_protection={'status':'NOT_CHECKED'})
