@@ -1,10 +1,10 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T19:36:10.448437+00:00
+- updated_at: 2026-10-27T19:36:56.878642+00:00
 - status: OK
 - cash: 437.5
-- equity_eur: 499.30106230007505
-- pnl_eur: -0.6989376999249544
+- equity_eur: 499.2969620981502
+- pnl_eur: -0.7030379018498252
 - halted: False
 - decisions: ['XBTEUR: HOLD', 'ETHEUR: WAIT', 'SOLEUR: WAIT']
 
