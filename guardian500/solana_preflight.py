@@ -8,7 +8,7 @@ import urllib.parse
 import urllib.request
 
 USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
-BASE = "https://api.jup.ag/swap/v1/quote"
+BASE = "https://api.jup.ag/swap/v2/order"
 
 
 def validate_quote(data, input_mint, output_mint, in_amount, max_impact=0.01):
@@ -23,15 +23,12 @@ def validate_quote(data, input_mint, output_mint, in_amount, max_impact=0.01):
     if positive_int(data.get("inAmount")) != in_amount:
         raise ValueError("Jupiter input amount mismatch")
     out_amount = positive_int(data.get("outAmount"))
-    threshold = positive_int(data.get("otherAmountThreshold"))
-    if threshold > out_amount:
-        raise ValueError("Jupiter output threshold invalid")
-    routes = data.get("routePlan")
-    if not isinstance(routes, list) or not routes:
-        raise ValueError("Jupiter has no route")
-    impact = float(data.get("priceImpactPct"))
-    if not math.isfinite(impact) or not 0 <= impact <= max_impact:
-        raise ValueError("Jupiter price impact too high or unavailable")
+    if data.get("transaction", "MISSING") is not None:
+        raise ValueError("Expected quote-only response without transaction")
+    if data.get("errorCode") is not None:
+        raise ValueError("Jupiter returned route error")
+    if data.get("router") not in ("metis", "jupiterz", "dflow", "okx"):
+        raise ValueError("Jupiter route unknown")
     return out_amount
 
 
@@ -40,7 +37,7 @@ def quote(mint_in, mint_out, amount, api_key):
         raise ValueError("JUPITER_API_KEY absent; fail closed")
     params = urllib.parse.urlencode({
         "inputMint": mint_in, "outputMint": mint_out, "amount": str(amount),
-        "slippageBps": "100", "swapMode": "ExactIn",
+        # No taker: V2 returns a quote only, no transaction.
     })
     req = urllib.request.Request(BASE + "?" + params, headers={
         "x-api-key": api_key, "User-Agent": "Cuvar500-PAPER-Preflight/1"
