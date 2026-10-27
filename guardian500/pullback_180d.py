@@ -1,4 +1,4 @@
-"""180-day isolated PAPER study; public Coinbase candles, no real trading."""
+"""180-day isolated PAPER study; public Coinbase candles, no real trading. Research branch only."""
 import json,datetime as dt
 from extended_history_research import history,PAIRS
 from compare_strategies import simulate
