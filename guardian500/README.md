@@ -25,3 +25,12 @@ Pozicija do 25 EUR, ciljani rizik 0,5% portfelja uključujući model troška, st
 HTTP vrijeme/cache i aktivnost u zadnjih 5 minuta služe za odbacivanje zastarjelih odgovora; DEX Screener ne daje izričit timestamp same kotacije. To nije tick-feed ni potpuna potvrda svježine svake cijene. Nedostajući izvori prikazuju se u source_errors/dex_scan.errors.
 
 Dokumentacija: https://docs.dexscreener.com/api/reference ; https://docs.gopluslabs.io/reference/response-details ; https://docs.gopluslabs.io/reference/response-detail-1
+
+## V3: strože provjere i nadzor
+BNB ulazi zahtijevaju uspješnu Honeypot.is simulaciju kupnje/prodaje za točan token, chain 56 i bazen, nulte prijavljene poreze, riskLevel <20 i dovoljan prijavljeni limit veličine ako postoji. To je simulacija pružatelja, ne simulacija konkretnog korisničkog novčanika. https://docs.honeypot.is/ishoneypot
+
+Solana simulacija nije integrirana: mreža se i dalje skenira, ali novi DEX ulazi ostaju blokirani. Nepodržane provjere nisu PASS.
+
+LP: najmanje 90% ukupne ponude LP-a mora biti spaljeno na prepoznatoj BNB burn adresi ili zaključano najmanje 7 dana, prema količini i vremenu zaključavanja. Podržani su samo standardni/UniV2 bazeni s nedvosmislenim pripisivanjem LP podataka jednom bazenu. Ako GoPlus vrati više bazena, agregirani LP podaci nisu dokaz za odabrani bazen: SKIP. V3/concentrated liquidity i nedostajući podaci su nepotvrđeni. Nadolazeće otključavanje prikazuje se u next_unlock kada je dostupno. Konzervativni kriteriji mogu blokirati većinu tokena.
+
+Pad opažene USD likvidnosti >25% kroz najviše 2 sata blokira ulaz i bilježi upozorenje; takav pad nije dokaz povlačenja LP-a jer na USD vrijednost utječe cijena. Bot ne šalje vanjske obavijesti. HTML označava starost posljednje uspješne procjene, pokušaja i DEX provjere, s upozorenjem nakon 30 min i kritičnim nakon 60 min. Učitavanje GitHub datoteke nije dokaz da je bot upravo radio.

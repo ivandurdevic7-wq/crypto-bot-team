@@ -100,6 +100,8 @@ def main():
     s=json.loads(path.read_text()) if path.exists() else initial()
     if s.get('mode')!='PAPER' or s.get('initial_eur')!=500: raise ValueError('Wrong ledger')
     now=time.time()
+    s['last_attempt']=datetime.fromtimestamp(now,timezone.utc).isoformat()
+    s['safety_version']=3
     quotes={}; errors=[]
     # Discovery runs independently of the exchange feeds.
     fx=None
@@ -130,6 +132,7 @@ def main():
     except Exception as exc:
         s.update(status='SKIP_DATA_ERROR',error=str(exc),last_attempt=datetime.now(timezone.utc).isoformat(),source_errors=errors)
         save(s); print(json.dumps({'status':s['status'],'error':s['error']})); return
+    s['last_cycle_completed_at']=datetime.now(timezone.utc).isoformat()
     s.pop('error',None); save(s)
     print(json.dumps({k:s[k] for k in ['status','equity_eur','pnl_eur','decisions']}))
 if __name__=='__main__': main()

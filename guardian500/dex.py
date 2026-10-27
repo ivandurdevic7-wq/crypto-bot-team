@@ -2,6 +2,7 @@
 import json, math, time, urllib.request, urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from email.utils import parsedate_to_datetime
+from safety import simulation_check, lp_check, liquidity_drop
 DS='https://api.dexscreener.com'
 ZERO_BSC=('is_proxy','is_mintable','can_take_back_ownership','owner_change_balance','hidden_owner','selfdestruct','external_call','cannot_buy','cannot_sell_all','slippage_modifiable','is_honeypot','transfer_pausable','is_blacklisted','is_whitelisted','trading_cooldown','personal_slippage_modifiable')
 ZERO_SOL=('mintable','freezable','closable','transfer_fee_upgradable','default_account_state_upgradable','balance_mutable_authority','transfer_hook_upgradable')
@@ -20,14 +21,15 @@ def get(url):
         if number(r.headers.get('Age','0'))>120: raise ValueError('cached response too old')
         return json.load(r)
 
-def security(chain,address,pair):
+def security(chain,address,pair,details=False):
     path='token_security/56' if chain=='bsc' else 'solana/token_security'
     data=get('https://api.gopluslabs.io/api/v1/'+path+'?contract_addresses='+urllib.parse.quote(address))
     if data.get('code')!=1: raise ValueError('GoPlus unavailable')
     result=data.get('result',{})
     d=result.get(address) or result.get(address.lower())
     if not d: raise ValueError('GoPlus token missing')
-    return check_security(chain,d,pair)
+    fee=check_security(chain,d,pair)
+    return (fee,d) if details else fee
 
 def check_security(chain,d,pair):
     if chain=='bsc':
@@ -92,15 +94,34 @@ def scan(s,now,fx):
     selected.update({k:tuple(k.split(':',1)) for k in held})
     quotes={}; records=[]
     def inspect(item):
-        k,(c,a)=item; record=dict(key=k,chain=c,address=a,checked_at=now)
+        k,(c,a)=item; record=dict(key=k,chain=c,address=a,checked_at=now,sell_simulation={'status':'NOT_CHECKED'},lp_protection={'status':'NOT_CHECKED'})
         try:
             pools=get(DS+'/token-pairs/v1/'+c+'/'+urllib.parse.quote(a))
             pools=[p for p in pools if p.get('chainId')==c and p.get('baseToken',{}).get('address','').lower()==a.lower() and (c!='bsc' or p.get('dexId')=='pancakeswap')]
             if k in held: pools=[p for p in pools if p['pairAddress']==held[k]['pair_address']]
+            if not pools: raise ValueError('no matching DEX pool')
             p=max(pools,key=lambda p:number((p.get('liquidity') or {}).get('usd',0)))
             price,liq=basic(p,now)
             record.update(symbol=p['baseToken'].get('symbol','?'),pool=p['pairAddress'],liquidity_usd=liq,price_usd=price)
-            fee=security(c,a,p['pairAddress'])
+            previous=s.get('liquidity_history',{}).get(k)
+            observation={'pool':p['pairAddress'],'usd':liq,'at':now}
+            record['liquidity_observation']=observation
+            record['liquidity_drop_alert']=liquidity_drop(previous,observation,now)
+            fee,security_data=security(c,a,p['pairAddress'],details=True)
+            failures=[]
+            try: record['lp_protection']=lp_check(security_data,c,p['pairAddress'],now)
+            except Exception as e:
+                record['lp_protection']={'status':'UNCONFIRMED','reason':str(e)}; failures.append(str(e))
+            try:
+                if c!='bsc': raise ValueError('Solana buy/sell simulation not integrated; entries blocked')
+                if fx is None: raise ValueError('FX missing for simulation size')
+                size=held[k]['qty'] if k in held else 25*fx/price
+                data=get('https://api.honeypot.is/v2/IsHoneypot?'+urllib.parse.urlencode({'address':a,'chainID':56,'pair':p['pairAddress']}))
+                record['sell_simulation']=simulation_check(data,a,p['pairAddress'],size)
+            except Exception as e:
+                record['sell_simulation']={'status':'UNCONFIRMED','reason':str(e)};failures.append(str(e))
+            if record['liquidity_drop_alert']: failures.append('liquidity dropped over 25% within 2 hours')
+            if failures: raise ValueError('; '.join(failures))
             if fx is None: raise ValueError('EUR/USD unavailable; no EUR trade')
             old=watch.get(k); momentum=number(p['priceChange']['h1']); h24=number(p['priceChange']['h24'])
             entry=bool(old and 600<=now-old['last_seen']<=3600 and old['pool']==p['pairAddress'] and 1.005<=price/old['price']<=1.08 and 1<=momentum<=15 and -5<=h24<=50)
@@ -112,6 +133,7 @@ def scan(s,now,fx):
     with ThreadPoolExecutor(max_workers=2) as pool:
         for k,q,r,w in pool.map(inspect,selected.items()):
             records.append(r)
+            if 'liquidity_observation' in r: s.setdefault('liquidity_history',{})[k]=r['liquidity_observation']
             if q: quotes[k]=q; watch[k]=w
-    s['dex_scan']=dict(checked_at=now,discovered=len(candidates),checked=len(records),by_chain={c:sum(r['chain']==c for r in records) for c in ('bsc','solana')},errors=errors,records=records,coverage='bounded sample; not all tokens',sell_check='risk screening and recent sells; no wallet-specific swap simulation')
+    s['dex_scan']=dict(checked_at=now,discovered=len(candidates),checked=len(records),by_chain={c:sum(r['chain']==c for r in records) for c in ('bsc','solana')},errors=errors,records=records,coverage='bounded sample; not all tokens',sell_check='BNB provider simulation required; Solana unintegrated => no new DEX entry')
     return quotes
