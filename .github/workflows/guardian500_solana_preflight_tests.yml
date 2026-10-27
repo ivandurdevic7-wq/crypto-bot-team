@@ -1,0 +1,19 @@
+name: Cuvar 500 Solana preflight tests
+on:
+  push:
+    branches:
+      - cuvar500-solana-preflight-20261027
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test read-only Solana preflight
+        run: python -m unittest discover -s guardian500 -p 'test_solana_preflight.py' -v
