@@ -1,4 +1,4 @@
-"""Strict unseen October 2026 backtest; prior 2% threshold fixed before October fetch.
+"""Strict unseen October 2026 backtest (branch-only execution); prior 2% threshold fixed before October fetch.
 Binance spot USDT archives; no orders, writes to production, or synthetic candles.
 """
 import datetime as dt,io,csv,urllib.request,zipfile,json,time
