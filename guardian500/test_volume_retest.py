@@ -8,7 +8,7 @@ class TestVolumeRetest(unittest.TestCase):
             if i==80:v=110.
             elif 81<=i<=83:v=110.5
             elif i>83:v=112.
-            low=109. if i==82 else v-.5
+            low=100.5 if i==82 else v-.5
             rows.append(dict(time=1735689600+i*3600,open=v,high=v+.5,low=low,close=v,volume=500. if i==80 else 100.))
         return rows
     def test_read_only(self):
