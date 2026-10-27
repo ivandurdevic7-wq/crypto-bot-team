@@ -16,7 +16,7 @@
   "day_start": 500.0,
   "day_paused": false,
   "equity_eur": 500.0,
-  "updated_at": "2026-10-27T10:16:19.493483+00:00",
+  "updated_at": "2026-10-27T10:37:13.406667+00:00",
   "status": "OK",
   "decisions": [
     "XBTEUR: WAIT",
@@ -25,37 +25,37 @@
   ],
   "quotes": {
     "XBTEUR": {
-      "bid": 71287.9,
-      "ask": 71288.6,
+      "bid": 71420.0,
+      "ask": 71426.8,
       "candle": 1793091600,
       "entry": false,
       "exit": true,
       "liquid": true,
-      "volume_eur": 17584281.682623513
+      "volume_eur": 17935768.06287091
     },
     "ETHEUR": {
-      "bid": 2061.54,
-      "ask": 2062.21,
+      "bid": 2066.19,
+      "ask": 2067.11,
       "candle": 1793091600,
       "entry": false,
       "exit": false,
       "liquid": true,
-      "volume_eur": 7401227.191488887
+      "volume_eur": 7332170.717135475
     },
     "SOLEUR": {
-      "bid": 88.98,
-      "ask": 89.02,
+      "bid": 89.38,
+      "ask": 89.41,
       "candle": 1793091600,
       "entry": false,
       "exit": true,
       "liquid": true,
-      "volume_eur": 3107909.187090946
+      "volume_eur": 3119380.205777676
     }
   },
   "pnl_eur": 0.0,
   "dex_watch": {},
   "dex_scan": {
-    "checked_at": 1793096179.4934826,
+    "checked_at": 1793097433.406667,
     "discovered": 49,
     "checked": 12,
     "by_chain": {
@@ -68,7 +68,13 @@
         "key": "bsc:0x0efb5fd2402a0967b92551d6af54de148504a115",
         "chain": "bsc",
         "address": "0x0efb5FD2402A0967B92551d6AF54De148504A115",
-        "checked_at": 1793096179.4934826,
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "liquidity below $100k"
       },
@@ -76,15 +82,27 @@
         "key": "bsc:0xda7d4aaccbc139342cee50968955075d64847777",
         "chain": "bsc",
         "address": "0xDA7D4AaCcbC139342CEe50968955075D64847777",
-        "checked_at": 1793096179.4934826,
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
-        "reason": "max() arg is an empty sequence"
+        "reason": "no matching DEX pool"
       },
       {
         "key": "bsc:0xdc1392cff00376e48f02c13125c289ede23e6daf",
         "chain": "bsc",
         "address": "0xdc1392cfF00376e48F02c13125C289EDE23E6Daf",
-        "checked_at": 1793096179.4934826,
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "pool younger than 24h"
       },
@@ -92,77 +110,134 @@
         "key": "bsc:0xfee1e3eb419bd56b04efbf14f809a3972660579b",
         "chain": "bsc",
         "address": "0xFEE1e3eb419bD56b04Efbf14f809a3972660579B",
-        "checked_at": 1793096179.4934826,
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "liquidity below $100k"
       },
       {
-        "key": "solana:FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6",
+        "key": "solana:2Ew1GAyFdLyapNMWRi8pLXt4G1QMNSCfBtuXCQy7pump",
         "chain": "solana",
-        "address": "FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6",
-        "checked_at": 1793096179.4934826,
-        "status": "SKIP",
-        "reason": "volume below $100k/day"
-      },
-      {
-        "key": "solana:G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR",
-        "chain": "solana",
-        "address": "G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR",
-        "checked_at": 1793096179.4934826,
-        "status": "SKIP",
-        "reason": "volume below $100k/day"
-      },
-      {
-        "key": "solana:GVEQKeEm2MeSVYQP3FM39xMnqqTdPaxLQaQrwbodpump",
-        "chain": "solana",
-        "address": "GVEQKeEm2MeSVYQP3FM39xMnqqTdPaxLQaQrwbodpump",
-        "checked_at": 1793096179.4934826,
-        "status": "SKIP",
-        "reason": "liquidity below $100k"
-      },
-      {
-        "key": "solana:GqzjCgpxZF1NEyk7wgWkGkgVYy6DXyobgy2TRT6vpump",
-        "chain": "solana",
-        "address": "GqzjCgpxZF1NEyk7wgWkGkgVYy6DXyobgy2TRT6vpump",
-        "checked_at": 1793096179.4934826,
+        "address": "2Ew1GAyFdLyapNMWRi8pLXt4G1QMNSCfBtuXCQy7pump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "'liquidity'"
       },
       {
-        "key": "solana:GrtE7xGn3iBk93hhf1zz6i3Wbfv1uDd9unStGVhGpump",
+        "key": "solana:2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C",
         "chain": "solana",
-        "address": "GrtE7xGn3iBk93hhf1zz6i3Wbfv1uDd9unStGVhGpump",
-        "checked_at": 1793096179.4934826,
+        "address": "2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
+        "status": "SKIP",
+        "reason": "volume below $100k/day"
+      },
+      {
+        "key": "solana:2gRA2bmWpcs5VkYm2r3d4MXZWksgz3gxqNYZRFoZpump",
+        "chain": "solana",
+        "address": "2gRA2bmWpcs5VkYm2r3d4MXZWksgz3gxqNYZRFoZpump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "liquidity below $100k"
       },
       {
-        "key": "solana:HMTwjQPHbf82woGKMwDyPHAxgpwVj4boFQPMwk5Bpump",
+        "key": "solana:3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump",
         "chain": "solana",
-        "address": "HMTwjQPHbf82woGKMwDyPHAxgpwVj4boFQPMwk5Bpump",
-        "checked_at": 1793096179.4934826,
+        "address": "3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "liquidity below $100k"
       },
       {
-        "key": "solana:J8kvdj2CMbbxL13jmTH3Ym4dYLfJEeiU1YfD9ynSpump",
+        "key": "solana:43wfrR1AA9xw4hDb1JdKLSawK6beutKMiGgVHDmmpump",
         "chain": "solana",
-        "address": "J8kvdj2CMbbxL13jmTH3Ym4dYLfJEeiU1YfD9ynSpump",
-        "checked_at": 1793096179.4934826,
+        "address": "43wfrR1AA9xw4hDb1JdKLSawK6beutKMiGgVHDmmpump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
         "reason": "'liquidity'"
       },
       {
-        "key": "solana:soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ",
+        "key": "solana:47vRjmHm6jrcxb7YWk1NSyx3qAPyXeA6miS1oFPHpump",
         "chain": "solana",
-        "address": "soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ",
-        "checked_at": 1793096179.4934826,
+        "address": "47vRjmHm6jrcxb7YWk1NSyx3qAPyXeA6miS1oFPHpump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
         "status": "SKIP",
-        "reason": "volume below $100k/day"
+        "reason": "'liquidity'"
+      },
+      {
+        "key": "solana:4X2biT7cCLrC8RRytngrTr9HbrqNLQghZ5iZ3xNBpump",
+        "chain": "solana",
+        "address": "4X2biT7cCLrC8RRytngrTr9HbrqNLQghZ5iZ3xNBpump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
+        "status": "SKIP",
+        "reason": "liquidity below $100k"
+      },
+      {
+        "key": "solana:5G3pzMiNQxiFctE1aZRTctYJLz5zGdfA1S65QMT5pump",
+        "chain": "solana",
+        "address": "5G3pzMiNQxiFctE1aZRTctYJLz5zGdfA1S65QMT5pump",
+        "checked_at": 1793097433.406667,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
+        "status": "SKIP",
+        "reason": "'liquidity'"
       }
     ],
     "coverage": "bounded sample; not all tokens",
-    "sell_check": "risk screening and recent sells; no wallet-specific swap simulation"
+    "sell_check": "BNB provider simulation required; Solana unintegrated => no new DEX entry"
   },
-  "source_errors": []
+  "source_errors": [],
+  "last_attempt": "2026-10-27T10:37:13.406667+00:00",
+  "safety_version": 3,
+  "last_cycle_completed_at": "2026-10-27T10:37:15.934541+00:00"
 }
