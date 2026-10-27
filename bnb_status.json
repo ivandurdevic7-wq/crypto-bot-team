@@ -1,13 +1,13 @@
 {
-  "cash_eur": 134.50213611538592,
+  "cash_eur": 139.199453999471,
   "initial_eur": 160.0,
   "positions": {
     "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
       "token": "AGT",
       "qty": 88.52275631999333,
       "entry_usd": 0.06303136879098502,
-      "peak_usd": 0.0680361738325479,
-      "last_usd": 0.0672375498036817,
+      "peak_usd": 0.0682167186126246,
+      "last_usd": 0.0682167186126246,
       "cost_eur": 5.0,
       "opened": "2026-10-26T12:04:59+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "DNA",
       "qty": 27.925490115847023,
       "entry_usd": 0.19971781970032704,
-      "peak_usd": 0.209121234949848,
-      "last_usd": 0.209121234949848,
+      "peak_usd": 0.219199915921044,
+      "last_usd": 0.219199915921044,
       "cost_eur": 5.0,
       "opened": "2026-10-26T17:46:28+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 62.91708822260317,
       "entry_usd": 0.08864393056887153,
       "peak_usd": 0.0899626077163996,
-      "last_usd": 0.0867351735786185,
+      "last_usd": 0.087038547602856,
       "cost_eur": 5.0,
       "opened": "2026-10-26T18:56:03+00:00"
     },
@@ -34,18 +34,9 @@
       "qty": 132.3002998281825,
       "entry_usd": 0.04215574724504099,
       "peak_usd": 0.0424409415145017,
-      "last_usd": 0.0422729100114486,
+      "last_usd": 0.0411279037101602,
       "cost_eur": 5.0,
       "opened": "2026-10-26T20:44:24+00:00"
-    },
-    "0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf": {
-      "token": "quq",
-      "qty": 3162.060577534382,
-      "entry_usd": 0.0017637922687581268,
-      "peak_usd": 0.00176505464741189,
-      "last_usd": 0.00175574676431269,
-      "cost_eur": 5.0,
-      "opened": "2026-10-26T22:43:17+00:00"
     }
   },
   "trades": [
@@ -121,6 +112,15 @@
       "address": "0x92516e0ddf1ddbf7fab1b79cac26689fdc5ba8e6",
       "eur": 4.4277,
       "pnl_eur": -0.5723,
+      "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-27T01:50:23+00:00",
+      "side": "SELL",
+      "token": "quq",
+      "address": "0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf",
+      "eur": 4.6973,
+      "pnl_eur": -0.3027,
       "reason": "stop loss"
     }
   ],
@@ -280,13 +280,25 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-27T01:50:24+00:00",
+      "token": "BANK",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
+    },
+    {
+      "time": "2026-10-27T01:50:24+00:00",
+      "token": "TAG",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
     }
   ],
-  "last_success": "2026-10-27T00:56:25+00:00",
-  "last_attempt": "2026-10-27T00:56:22+00:00",
-  "screened_count": 46,
-  "eligible_count": 13,
-  "estimated_eur": 159.88,
+  "last_success": "2026-10-27T01:50:24+00:00",
+  "last_attempt": "2026-10-27T01:50:10+00:00",
+  "screened_count": 45,
+  "eligible_count": 5,
+  "estimated_eur": 159.83,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
