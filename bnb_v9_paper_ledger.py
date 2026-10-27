@@ -27,7 +27,7 @@ def buy(state,decision,quote,checks):
     if size>min(20,total*.2,total*.015/.15) or size+gas>s["cash_eur"]-total*.4:return s,"SKIP: capital"
     qty=size*(1-.0025)*(1-tax/100)/(price*(1+(impact+slip)/100))
     s["cash_eur"]-=size+gas
-    s["positions"][addr]={"qty":qty,"entry_eur":price,"last_eur":price,"peak_eur":price,"cost_eur":size+gas,"token":decision.get("token"),"opened_at":datetime.now(timezone.utc).isoformat(),"tp1":False,"tp2":False,"quote_verified":True}
+    s["positions"][addr]={"qty":qty,"entry_eur":price,"last_eur":price,"peak_eur":price,"cost_eur":size+gas,"token":decision.get("token"),"opened_at":datetime.now(timezone.utc).isoformat(),"tp1":False,"tp2":False,"quote_verified":True,"realized_pnl_eur":0.0}
     s["trades"].append({"side":"BUY","address":addr,"eur":size+gas,"mode":"PAPER"})
     return s,"PAPER_BUY"
 def sell(state,address,quote,reason,fraction=1):
@@ -43,11 +43,12 @@ def sell(state,address,quote,reason,fraction=1):
     if proceeds<0:return s,"SKIP: proceeds"
     s["cash_eur"]+=proceeds;p["qty"]-=qty;p["cost_eur"]*=1-fraction
     realized_pnl=round(proceeds-allocated_cost,8)
+    p["realized_pnl_eur"]=round(p.get("realized_pnl_eur",0.0)+realized_pnl,8)
     # Streak counts completed losing positions, not partial TP fills.
     fully_closed=p["qty"]<1e-9
     if fully_closed:
         previous=s.get("loss_streak",0)
-        s["loss_streak"]=(previous+1 if realized_pnl<0 else 0) if isinstance(previous,int) and previous>=0 else None
+        s["loss_streak"]=(previous+1 if p["realized_pnl_eur"]<0 else 0) if isinstance(previous,int) and previous>=0 else None
     if p["qty"]<1e-9:del s["positions"][address]
     s["trades"].append({"side":"SELL","address":address,"qty":qty,"eur":proceeds,
                         "realized_pnl_eur":realized_pnl,"fully_closed":fully_closed,
@@ -64,5 +65,10 @@ def tests():
     assert result=="PAPER_SELL" and len(s["trades"])==2
     assert s["trades"][-1]["realized_pnl_eur"]>0 and s["loss_streak"]==0
     assert buy(initial(),{"action":"SKIP"},q,checks)[1].startswith("SKIP")
+    # Profitable partial exit followed by a losing final exit: whole-position PnL decides streak.
+    s2,_=buy(initial(),d,q,checks)
+    s2,_=sell(s2,d["address"],{"price_eur":2,"sell_tax_pct":0,"impact_pct":0,"slippage_pct":0,"gas_eur":0},"TP",.5)
+    s2,_=sell(s2,d["address"],{"price_eur":.6,"sell_tax_pct":0,"impact_pct":0,"slippage_pct":0,"gas_eur":0},"EXIT",1)
+    assert s2["loss_streak"]==0
     print("PAPER ledger tests PASS; LIVE blocked")
 if __name__=="__main__":tests()
