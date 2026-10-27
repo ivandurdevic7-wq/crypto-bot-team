@@ -1,26 +1,7 @@
 {
-  "cash_eur": 148.5106009652557,
+  "cash_eur": 158.40698848040782,
   "initial_eur": 160.0,
-  "positions": {
-    "0x477c2c0459004e3354ba427fa285d7c053203c0e": {
-      "token": "LIGHT",
-      "qty": 20.3757288047912,
-      "entry_usd": 0.2737186999999999,
-      "peak_usd": 0.2737186999999999,
-      "last_usd": 0.266886639509208,
-      "cost_eur": 5.0,
-      "opened": "2026-10-27T05:12:20+00:00"
-    },
-    "0x0c6302401aa5325c2e36f170f52c00b1d220b405": {
-      "token": "GANG",
-      "qty": 776.8282188918018,
-      "entry_usd": 0.007179474,
-      "peak_usd": 0.00821070397161867,
-      "last_usd": 0.00821070397161867,
-      "cost_eur": 5.0,
-      "opened": "2026-10-27T09:18:25+00:00"
-    }
-  },
+  "positions": {},
   "trades": [
     {
       "time": "2026-10-26T19:22:56+00:00",
@@ -241,6 +222,26 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-27T12:13:39+00:00",
+      "side": "SELL",
+      "token": "LIGHT",
+      "address": "0x477c2c0459004e3354ba427fa285d7c053203c0e",
+      "eur": 4.7081,
+      "pnl_eur": -0.2919,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-27T12:13:39+00:00",
+      "side": "SELL",
+      "token": "GANG",
+      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
+      "eur": 5.1883,
+      "pnl_eur": 0.1883,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
@@ -489,6 +490,24 @@
       "token": "Beat",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-27T12:13:40+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-10-27T12:13:40+00:00",
+      "token": "TAG",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-27T12:13:41+00:00",
+      "token": "BANK",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -500,68 +519,68 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-27T11:15:46+00:00",
+  "last_attempt": "2026-10-27T12:13:34+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "ct",
-      "address": "0x0a092e544da31150b439a1aaa1a3a2214a867f46",
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
-        "DEX cross-check": false,
-        "Risk guard": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0xf061adb72fad5d425648e21b0e659dfe03fca4ed"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
     },
     {
-      "token": "COLLECT",
-      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
+      "token": "TAG",
+      "address": "0x208bf3e7da9639f1eaefa2de78c23396b0682025",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x690fca316c1e782ce5e7ef1138fd1a03ce5955ef"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xf0750c373ebbb3baeef7e03d8300caad1983d67c"
     },
     {
-      "token": "Beat",
-      "address": "0xcf3232b85b43bca90e51d38cc06cc8bb8c8a3e36",
+      "token": "BANK",
+      "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xe832882d514729790a17189c291542a703e819d6"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xee6ff918a1f68b5d2fdecb14b367fa2eb5c6951c"
     }
   ],
-  "screened_count": 30,
-  "candidate_count": 3,
-  "estimated_eur": 159.07,
+  "screened_count": 28,
+  "candidate_count": 4,
+  "estimated_eur": 158.41,
   "roles": [
     "Trend",
     "Momentum",
@@ -575,5 +594,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-27T11:15:51+00:00"
+  "last_success": "2026-10-27T12:13:41+00:00"
 }
