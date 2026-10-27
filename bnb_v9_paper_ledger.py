@@ -8,7 +8,7 @@ def num(x):
         v=float(x)
         return v if math.isfinite(v) else None
     except (TypeError,ValueError,OverflowError):return None
-def initial():return {"mode":"PAPER","cash_eur":200.0,"positions":{},"trades":[]}
+def initial():return {"mode":"PAPER","cash_eur":200.0,"positions":{},"trades":[],"loss_streak":0}
 def value(s):return s["cash_eur"]+sum(p["qty"]*p["last_eur"] for p in s["positions"].values())
 def buy(state,decision,quote,checks):
     s=copy.deepcopy(state)
@@ -38,11 +38,20 @@ def sell(state,address,quote,reason,fraction=1):
     if any(v is None for v in (price,tax,impact,slip,gas)):return s,"SKIP: missing sale simulation"
     if not(price>0 and 0<=tax<=15 and 0<=impact<=10 and 0<=slip<=10 and gas>=0 and 0<fraction<=1):return s,"SKIP: sale limits"
     p=s["positions"][address]; qty=p["qty"]*fraction
+    allocated_cost=p["cost_eur"]*fraction
     proceeds=qty*price*(1-(tax+impact+slip)/100)*(1-.0025)-gas
     if proceeds<0:return s,"SKIP: proceeds"
     s["cash_eur"]+=proceeds;p["qty"]-=qty;p["cost_eur"]*=1-fraction
+    realized_pnl=round(proceeds-allocated_cost,8)
+    # Streak counts completed losing positions, not partial TP fills.
+    fully_closed=p["qty"]<1e-9
+    if fully_closed:
+        previous=s.get("loss_streak",0)
+        s["loss_streak"]=(previous+1 if realized_pnl<0 else 0) if isinstance(previous,int) and previous>=0 else None
     if p["qty"]<1e-9:del s["positions"][address]
-    s["trades"].append({"side":"SELL","address":address,"qty":qty,"eur":proceeds,"reason":reason,"mode":"PAPER"})
+    s["trades"].append({"side":"SELL","address":address,"qty":qty,"eur":proceeds,
+                        "realized_pnl_eur":realized_pnl,"fully_closed":fully_closed,
+                        "reason":reason,"mode":"PAPER"})
     return s,"PAPER_SELL"
 def tests():
     base=initial();d={"action":"PAPER_BUY_READY","token":"TEST","address":"0x"+"a"*40,"vetoes":[],"data_gaps":[],"size_eur":20}
@@ -53,6 +62,7 @@ def tests():
     assert result=="PAPER_BUY" and base["cash_eur"]==200 and len(s["positions"])==1 and s["cash_eur"]>=80
     s,result=sell(s,d["address"],{"price_eur":1.25,"sell_tax_pct":0,"impact_pct":.2,"slippage_pct":.3,"gas_eur":.05},"TARGET",.3)
     assert result=="PAPER_SELL" and len(s["trades"])==2
+    assert s["trades"][-1]["realized_pnl_eur"]>0 and s["loss_streak"]==0
     assert buy(initial(),{"action":"SKIP"},q,checks)[1].startswith("SKIP")
     print("PAPER ledger tests PASS; LIVE blocked")
 if __name__=="__main__":tests()
