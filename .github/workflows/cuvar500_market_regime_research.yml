@@ -1,0 +1,18 @@
+name: Cuvar500 market regime PAPER research
+on:
+  push:
+    branches: [cuvar500-market-regime-filter-20261027]
+    paths: ['guardian500/market_regime_research.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/market_regime_research.py
