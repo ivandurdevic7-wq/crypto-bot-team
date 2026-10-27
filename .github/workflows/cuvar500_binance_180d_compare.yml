@@ -1,0 +1,19 @@
+name: Cuvar500 Binance 180d three strategy research
+on:
+  push:
+    branches: [cuvar500-binance-180d-comparison-20261027]
+    paths: ['guardian500/binance_180d_compare.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only audited 180d USDT strategy study
+        run: python guardian500/binance_180d_compare.py
