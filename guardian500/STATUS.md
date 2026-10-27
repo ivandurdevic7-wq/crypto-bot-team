@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T13:40:17.541570+00:00
+- updated_at: 2026-10-27T14:31:19.539542+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
@@ -10,22 +10,20 @@
 
 ## BNB Chain i Solana
 
-{'bsc': 4, 'solana': 8}
+{'bsc': 2, 'solana': 8}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
-| 0x074065D2f8DC05b59f5d83C28dFfF6e4E0675555 | bsc | SKIP | liquidity below $100k |
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $100k |
-| 0x43abc54aA0e2fAb430203AE1e53391E630bC7777 | bsc | SKIP | no matching DEX pool |
 | 0xc69176FE3f729C6d6Ffe0Ab695779aE243091cF6 | bsc | SKIP | liquidity below $100k |
-| 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $100k/day |
-| 7F968EUuLBzUcCzhD6FZpXaTWAybKZDkWFmwoVArcAc | solana | SKIP | liquidity below $100k |
-| 81MXrQUZVKVhwBcP8pgZ543WK1eRSbnsFgnhzh6spump | solana | SKIP | 'priceUsd' |
-| 89ngGGtJmmC73yQmpSAzMXSnCW1WB2QEEC1TeJMzkz11 | solana | SKIP | 'liquidity' |
-| 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $100k/day |
-| 98RE9r2vHo6mWvoR2kJP6oS29bFBzXHWxYACCZPGGfhs | solana | SKIP | 'liquidity' |
-| 9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa | solana | SKIP | volume below $100k/day |
-| 9k6FKCFyEwu6gWzuP5qW9yeXY2hDcgLWM1iUnCV2ugqE | solana | SKIP | 'liquidity' |
+| soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $100k/day |
+| t9bnCGiZVUYsRKvx4d5dPcoDCSyuBM9C33ZNGNULARP | solana | SKIP | liquidity below $100k |
+| 26cfppyAgj7e1XHkgPwaYv4L8QuDTwrVyD1mAquhpump | solana | SKIP | liquidity below $100k |
+| 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | volume below $100k/day |
+| 2e7dAog34t9UsvBCXCuzk2sbnWLdh5kei6rTj1v9pump | solana | SKIP | 'liquidity' |
+| 2h4HsUxUqMZzUEWnULiMfPBH6FbVruMWSFH6JX42pump | solana | SKIP | 'liquidity' |
+| 3WeweJJU76B2jykJGRvYkpZsAwMny1TCMbaP31fARdR3 | solana | SKIP | 'liquidity' |
+| 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | liquidity below $100k |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
