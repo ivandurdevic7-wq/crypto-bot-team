@@ -1,4 +1,4 @@
-"""Independent cost sensitivity diagnosis, read-only historical data. Not profit proof."""
+"""Independent cost sensitivity diagnosis, read-only historical data. Not profit proof. Execute branch-only analysis."""
 import json
 from market_regime_research import simulate,SYMBOLS
 from binance_180d_compare import bars
