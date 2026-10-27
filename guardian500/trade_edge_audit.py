@@ -1,4 +1,4 @@
-"""Research-only exact per-trade P&L audit for shared 500 USDT simulated portfolio."""
+"""Research-only per-trade P&L audit for shared 500 USDT simulated portfolio."""
 import json
 from binance_180d_compare import bars
 from market_regime_research import SYMBOLS
