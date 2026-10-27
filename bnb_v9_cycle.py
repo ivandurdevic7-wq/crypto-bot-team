@@ -140,6 +140,7 @@ def run():
                     "liquidity_usd":attr.get("reserve_in_usd"),"age_min":age_min,
                     "volume_24h_usd":(attr.get("volume_usd") or {}).get("h24"),
                     "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1"),
+                    "change_24h_pct":(attr.get("price_change_percentage") or {}).get("h24"),
                     "bnb_change_24h_pct":bnb_change_24h_pct}
             try: risk=metrics(state)
             except ValueError as error:
