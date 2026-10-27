@@ -1,0 +1,17 @@
+name: Cuvar500 out of sample guard audit
+on:
+  push:
+    branches: [cuvar500-btc-filter-oos-20261027]
+    paths: ['guardian500/btc_filter_oos_guard.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/btc_filter_oos_guard.py
