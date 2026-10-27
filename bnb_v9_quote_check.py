@@ -28,6 +28,17 @@ def compare(address,gecko_price,gecko_liquidity,request=fetch,pool_address=None)
                   number((p.get("liquidity") or {}).get("usd")) is not None]
         if pool_address:
             eligible=[p for p in eligible if str(p.get("pairAddress","")).lower()==pool_address.lower()]
+        if not eligible and pool_address:
+            # Ask DEX Screener for the exact pair, rather than relying on
+            # its token-wide listing, which may omit an otherwise valid pool.
+            exact=request("https://api.dexscreener.com/latest/dex/pairs/bsc/"+pool_address)
+            exact_pairs=(exact.get("pairs") or []) if isinstance(exact,dict) else []
+            eligible=[p for p in exact_pairs if p.get("chainId")=="bsc"
+                      and "pancake" in str(p.get("dexId","")).lower()
+                      and str(p.get("pairAddress","")).lower()==pool_address.lower()
+                      and str((p.get("baseToken") or {}).get("address","")).lower()==address.lower()
+                      and number(p.get("priceUsd")) is not None
+                      and number((p.get("liquidity") or {}).get("usd")) is not None]
         if not eligible:raise ValueError("No matching PancakeSwap token pair")
         pair=max(eligible,key=lambda p:number((p.get("liquidity") or {}).get("usd")))
         price=number(pair["priceUsd"]);liq=number(pair["liquidity"]["usd"])
@@ -46,5 +57,14 @@ def test():
     assert compare(a,None,100000,match)["verified"] is False
     assert compare(a,1,100000,match,pool_address="0x"+"b"*40)["verified"] is False
     assert compare(a,1,100000,match,pool_address="")["verified"] is False
+    pair="0x"+"b"*40
+    def exact_pair(url):
+        entry=dict(match(url)[0],pairAddress=pair)
+        return {"pairs":[entry]} if "/latest/dex/pairs/" in url else []
+    assert compare(a,1,100000,exact_pair,pool_address=pair)["verified"] is True
+    def wrong_exact(url):
+        entry=dict(match(url)[0],pairAddress="0x"+"c"*40)
+        return {"pairs":[entry]} if "/latest/dex/pairs/" in url else []
+    assert compare(a,1,100000,wrong_exact,pool_address=pair)["verified"] is False
     print("PASS: independent BSC price/liquidity consistency checks, fail-closed")
 if __name__=="__main__":test()
