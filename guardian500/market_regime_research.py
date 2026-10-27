@@ -1,5 +1,5 @@
 """Shared-capital, read-only PAPER comparison: BTC/ETH/SOL USDT spot.
-Experimental simplified backtest, NOT the deployed Čuvar 500 strategy. Branch test trigger.
+Experimental simplified backtest, NOT the deployed Čuvar 500 strategy. Regime research run. Branch test trigger.
 Signals on closed 1h candles, fills at next hour open; no exchange orders.
 """
 import json
