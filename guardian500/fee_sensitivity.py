@@ -1,5 +1,5 @@
 """Read-only cost sensitivity for shared 500 USDT PAPER research.
-Illustrative tariffs; no exchange account validation, no live trades.
+Illustrative tariffs; no exchange account validation, no live trades. Branch-only execution.
 """
 import json
 from market_regime_research import simulate,SYMBOLS
