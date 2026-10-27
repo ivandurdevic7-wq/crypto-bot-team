@@ -93,9 +93,23 @@ def run():
     except (ValueError,TypeError,OverflowError,KeyError,AttributeError,urllib.error.URLError) as ex:
         errors.append("BNB market regime unavailable: "+str(ex)[:90])
     try:
-        data=market_request(BASE+"/networks/bsc/trending_pools?page=1&include=base_token,dex")
-        includes={x.get("id"):x.get("attributes",{}) for x in data.get("included",[])}
-        for pool in (data.get("data") or [])[:20]:
+        # Reuse V8's broader three-source discovery, but keep V9's strict vetoes.
+        pools_by_id={}
+        includes={}
+        successful_sources=0
+        for route in ("pools","trending_pools","new_pools"):
+            try:
+                page=market_request(BASE+"/networks/bsc/"+route+"?page=1&include=base_token,dex")
+                successful_sources+=1
+                includes.update({x.get("id"):x.get("attributes",{}) for x in page.get("included",[])})
+                for item in (page.get("data") or [])[:20]:
+                    if isinstance(item,dict) and item.get("id"):
+                        pools_by_id[item["id"]]=item
+            except Exception as source_error:
+                errors.append("BNB "+route+" discovery unavailable: "+str(source_error)[:85])
+        if not successful_sources:
+            raise ValueError("All BNB discovery feeds unavailable")
+        for pool in pools_by_id.values():
             rel=pool.get("relationships") or {}
             dex=((rel.get("dex") or {}).get("data") or {}).get("id","")
             if "pancake" not in str(dex).lower():continue
