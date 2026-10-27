@@ -11,7 +11,7 @@ USDC_MINT = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 BASE = "https://api.jup.ag/swap/v2/order"
 
 
-def validate_quote(data, input_mint, output_mint, in_amount, max_impact=0.01):
+def validate_quote(data, input_mint, output_mint, in_amount):
     if not isinstance(data, dict):
         raise ValueError("Jupiter response is not an object")
     if data.get("inputMint") != input_mint or data.get("outputMint") != output_mint:
@@ -25,8 +25,11 @@ def validate_quote(data, input_mint, output_mint, in_amount, max_impact=0.01):
     out_amount = positive_int(data.get("outAmount"))
     if data.get("transaction", "MISSING") is not None:
         raise ValueError("Expected quote-only response without transaction")
-    if data.get("errorCode") is not None:
+    if data.get("errorCode") is not None or data.get("errorMessage"):
         raise ValueError("Jupiter returned route error")
+    fee_bps = data.get("feeBps")
+    if not isinstance(fee_bps, int) or isinstance(fee_bps, bool) or not 0 <= fee_bps <= 100:
+        raise ValueError("Jupiter fee missing or too high")
     if data.get("router") not in ("metis", "jupiterz", "dflow", "okx"):
         raise ValueError("Jupiter route unknown")
     return out_amount
