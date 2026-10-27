@@ -66,6 +66,20 @@ def run():
                                   "reason":"No verified executable sell costs/route" if execution.startswith("SELL_BLOCKED") else execution})
         except Exception as e:
             errors.append("Position "+addr[:10]+": "+str(e)[:100])
+    # BNB market veto from actual WBNB pool data; missing market quote remains a veto.
+    bnb_change_24h_pct=None
+    try:
+        wbnb=market_request(BASE+"/networks/bsc/tokens/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c/pools?page=1")
+        choices=[]
+        for bp in wbnb.get("data") or []:
+            ba=bp.get("attributes") or {}
+            liquidity=float(ba.get("reserve_in_usd") or 0)
+            change=float((ba.get("price_change_percentage") or {}).get("h24"))
+            if liquidity>=30000 and __import__("math").isfinite(change):
+                choices.append((liquidity,change))
+        if choices:bnb_change_24h_pct=max(choices)[1]
+    except (ValueError,TypeError,OverflowError,KeyError,AttributeError,urllib.error.URLError) as ex:
+        errors.append("BNB market regime unavailable: "+str(ex)[:90])
     try:
         data=market_request(BASE+"/networks/bsc/trending_pools?page=1&include=base_token,dex")
         includes={x.get("id"):x.get("attributes",{}) for x in data.get("included",[])}
@@ -90,7 +104,8 @@ def run():
             fields={"symbol":meta.get("symbol"),"address":address,"price_usd":attr.get("base_token_price_usd"),
                     "liquidity_usd":attr.get("reserve_in_usd"),"age_min":age_min,
                     "volume_24h_usd":(attr.get("volume_usd") or {}).get("h24"),
-                    "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1")}
+                    "change_1h_pct":(attr.get("price_change_percentage") or {}).get("h1"),
+                    "bnb_change_24h_pct":bnb_change_24h_pct}
             try: risk=metrics(state)
             except ValueError as error:
                 risk={"equity_eur":value(state),"daily_loss_pct":None,"weekly_loss_pct":None}
@@ -163,7 +178,7 @@ def run():
     # Bound the retained journal so GitHub cycle commits stay manageable.
     state["decision_journal"]=audit[-1000:]
     buys_this_cycle=sum(d.get("action")=="PAPER_BUY" for d in decisions)
-    state["scan"]={"execution_ready":False,"execution_blockers":execution_blockers,"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
+    state["scan"]={"bnb_change_24h_pct":bnb_change_24h_pct,"execution_ready":False,"execution_blockers":execution_blockers,"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
                    "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count or solana_screened else "NO_DATA"),
                    "new_buys":buys_this_cycle}
     # Never publish a stale portfolio value as a verified current balance.
