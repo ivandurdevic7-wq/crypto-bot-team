@@ -46,7 +46,18 @@ def run():
             if rate<=0:raise ValueError("Missing FX")
             price=max(observed)[1]/rate
             pos["last_eur"]=price
-            pos["quote_verified"]=True
+            # A single market feed is not independent quote verification.
+            # The pool's exact contract address must match the second feed.
+            chosen=max(pools,key=lambda pool: float((pool.get("attributes") or {}).get("reserve_in_usd") or 0))
+            import re
+            pool_id=str(chosen.get("id") or "")
+            match=re.search(r"0x[a-fA-F0-9]{40}(?![a-fA-F0-9])",pool_id)
+            verified_pool=match.group(0) if match else None
+            validated=crosscheck(addr,max(observed)[1],max(observed)[0],
+                                 pool_address=verified_pool)
+            pos["quote_verified"]=validated["verified"]
+            if not validated["verified"]:
+                errors.append("Position quote unverified "+addr[:10]+": "+", ".join(validated["reasons"][:2]))
             pos["peak_eur"]=max(float(pos.get("peak_eur",price)),price)
             # Always assess TP/SL. A sell requires independent verified route,
             # sellability and actual fee/impact/gas inputs; missing evidence blocks fill.
