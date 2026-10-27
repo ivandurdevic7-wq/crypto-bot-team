@@ -1,0 +1,23 @@
+name: Cuvar500 discovery priority tests
+on:
+  push:
+    branches:
+      - cuvar500-quality-solana-discovery-20261027
+  pull_request:
+    paths:
+      - 'guardian500/dex.py'
+      - 'guardian500/test_discovery_priority.py'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test discovery scoring
+        run: python -m unittest discover -s guardian500 -p 'test_discovery_priority.py' -v
+      - name: Compile Python files
+        run: python -m py_compile guardian500/dex.py guardian500/test_discovery_priority.py
