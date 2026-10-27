@@ -38,11 +38,27 @@ def check(address,request=get):
             if out[name] is not False:reasons.append("Unsafe or unknown "+name)
         out["holders"]=int(data["holder_count"]) if data.get("holder_count") else None
         if out["holders"] is None or out["holders"]<100:reasons.append("Holder count too low or unknown")
+        # GoPlus holder shares are fractional; only use complete verifiable records.
+        raw_holders=data.get("holders")
+        if isinstance(raw_holders,list) and len(raw_holders)>=10:
+            try:
+                shares=[float(h["percent"])*100 for h in raw_holders if isinstance(h,dict)]
+                if len(shares)==len(raw_holders) and all(0<=p<=100 for p in shares):
+                    out["largest_holder_pct"]=max(shares)
+                    out["top10_pct"]=sum(sorted(shares,reverse=True)[:10])
+                    creator=str(data.get("creator_address") or "").lower()
+                    creators=[float(h["percent"])*100 for h in raw_holders
+                              if str(h.get("address") or "").lower()==creator]
+                    if creator and creators:out["creator_pct"]=sum(creators)
+            except (ValueError,TypeError,KeyError,OverflowError):
+                pass
+        for key,limit in (("largest_holder_pct",10),("creator_pct",5),("top10_pct",40)):
+            if out.get(key) is None:reasons.append("Unverified "+key)
+            elif out[key]>limit:reasons.append("Unsafe "+key)
     except Exception as e:reasons.append("GoPlus unavailable: "+str(e)[:70])
     out["security_sources_ok"]=hp_verified and gp_verified
     # Additional independent requirements are deliberately not inferred from these feeds.
-    for name in ("lp_locked_pct","lp_lock_days","largest_holder_pct","creator_pct",
-                 "top10_pct","bundled_snipers","wash_trading","price_impact_pct",
+    for name in ("lp_locked_pct","lp_lock_days","bundled_snipers","wash_trading","price_impact_pct",
                  "slippage_pct","token_value_explained","fresh_quotes_ok"):
         out[name]=None
     return {"safe":not reasons and all(v is not None for v in out.values()),"reasons":reasons or ["Other required safety evidence unavailable"],"data":out}
