@@ -8,7 +8,7 @@ class SolanaPreflightTests(unittest.TestCase):
     def data(self):
         return {"inputMint": USDC_MINT, "outputMint": TOKEN,
                 "inAmount": "5000000", "outAmount": "25000000",
-                "router": "metis", "transaction": None}
+                "router": "metis", "transaction": None, "feeBps": 10}
 
     def test_valid_quote(self):
         self.assertEqual(validate_quote(self.data(), USDC_MINT, TOKEN, 5000000), 25000000)
@@ -23,6 +23,18 @@ class SolanaPreflightTests(unittest.TestCase):
 
     def test_transaction_is_refused(self):
         d=self.data(); d["transaction"]="base64"
+        with self.assertRaises(ValueError): validate_quote(d, USDC_MINT, TOKEN, 5000000)
+
+    def test_excessive_fee(self):
+        d=self.data(); d["feeBps"]=250
+        with self.assertRaises(ValueError): validate_quote(d, USDC_MINT, TOKEN, 5000000)
+
+    def test_missing_transaction_field(self):
+        d=self.data(); del d["transaction"]
+        with self.assertRaises(ValueError): validate_quote(d, USDC_MINT, TOKEN, 5000000)
+
+    def test_error_response(self):
+        d=self.data(); d["errorCode"]=6001
         with self.assertRaises(ValueError): validate_quote(d, USDC_MINT, TOKEN, 5000000)
 
     def test_wrong_amount(self):
