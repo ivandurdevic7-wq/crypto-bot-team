@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T10:37:13.406667+00:00
+- updated_at: 2026-10-27T10:45:49.737600+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
