@@ -1,31 +1,13 @@
 {
-  "cash_eur": 143.74453606473548,
+  "cash_eur": 153.3783935294379,
   "initial_eur": 160.0,
   "positions": {
-    "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
-      "token": "ZIG",
-      "qty": 132.3002998281825,
-      "entry_usd": 0.04215574724504099,
-      "peak_usd": 0.0424409415145017,
-      "last_usd": 0.0412100627580403,
-      "cost_eur": 5.0,
-      "opened": "2026-10-26T20:44:24+00:00"
-    },
     "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
       "token": "ARIA",
       "qty": 63.13095774160048,
       "entry_usd": 0.0883436304392522,
       "peak_usd": 0.0883436304392522,
-      "last_usd": 0.0880793922624648,
-      "cost_eur": 5.0,
-      "opened": "2026-10-27T03:44:15+00:00"
-    },
-    "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37": {
-      "token": "DOS",
-      "qty": 23.23466561582142,
-      "entry_usd": 0.2400386600012977,
-      "peak_usd": 0.2400386600012977,
-      "last_usd": 0.239320697907575,
+      "last_usd": 0.0867176063364947,
       "cost_eur": 5.0,
       "opened": "2026-10-27T03:44:15+00:00"
     }
@@ -156,6 +138,24 @@
       "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-27T04:42:20+00:00",
+      "side": "SELL",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
+      "eur": 4.8196,
+      "pnl_eur": -0.1804,
+      "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-27T04:42:20+00:00",
+      "side": "SELL",
+      "token": "DOS",
+      "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
+      "eur": 4.8142,
+      "pnl_eur": -0.1858,
+      "reason": "stop loss"
     }
   ],
   "decisions": [
@@ -362,13 +362,31 @@
       "token": "DOS",
       "decision": "BUY",
       "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-27T04:42:20+00:00",
+      "token": "AIN",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
+    },
+    {
+      "time": "2026-10-27T04:42:21+00:00",
+      "token": "HUMA",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-27T04:42:21+00:00",
+      "token": "Beat",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
     }
   ],
-  "last_success": "2026-10-27T03:44:15+00:00",
-  "last_attempt": "2026-10-27T03:44:12+00:00",
+  "last_success": "2026-10-27T04:42:21+00:00",
+  "last_attempt": "2026-10-27T04:42:18+00:00",
   "screened_count": 44,
-  "eligible_count": 12,
-  "estimated_eur": 158.56,
+  "eligible_count": 4,
+  "estimated_eur": 158.27,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
