@@ -121,16 +121,36 @@ def run():
                                   "reason":"Executable quote and verified costs unavailable; no simulated fill" if execution!="PAPER_BUY" else "Verified PAPER fill"})
             decisions.append(decision);count+=1
     except Exception as e:errors.append("Discovery: "+str(e)[:120])
+    solana_screened=0
+    try:
+        sol=market_request(BASE+"/networks/solana/trending_pools?page=1&include=base_token,dex")
+        sol_includes={x.get("id"):x.get("attributes",{}) for x in sol.get("included",[])}
+        for pool in (sol.get("data") or [])[:20]:
+            token_ref=((pool.get("relationships") or {}).get("base_token") or {}).get("data") or {}
+            meta=sol_includes.get(token_ref.get("id"),{})
+            addr=meta.get("address")
+            if not isinstance(addr,str) or not (32<=len(addr)<=44):continue
+            a=pool.get("attributes") or {}
+            decisions.append({"action":"SKIP","chain":"solana",
+                "token":meta.get("symbol") or "?","address":addr,
+                "price_usd":a.get("base_token_price_usd"),
+                "liquidity_usd":a.get("reserve_in_usd"),
+                "reason":"Solana token risk, mint/freeze, holders and executable route not independently verified",
+                "vetoes":["Solana security/execution verification unavailable"],
+                "data_gaps":["solana_security","solana_execution"]})
+            solana_screened+=1
+    except Exception as e:
+        errors.append("Solana discovery: "+str(e)[:120])
     try: state["risk"]=metrics(state)
     except ValueError as error:
         state["risk"]={"status":"BLOCKED","reason":str(error)}
         errors.append("Risk accounting: "+str(error))
     buys_this_cycle=sum(d.get("action")=="PAPER_BUY" for d in decisions)
-    state["scan"]={"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
-                   "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count else "NO_DATA"),
+    state["scan"]={"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
+                   "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count or solana_screened else "NO_DATA"),
                    "new_buys":buys_this_cycle}
     state["estimated_eur"]=round(value(state),2)
     FILE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"mode":"PAPER","screened":count,"positions":len(state["positions"]),
+    print(json.dumps({"mode":"PAPER","screened":count,"solana_screened":solana_screened,"positions":len(state["positions"]),
                       "new_buys":buys_this_cycle,"status":state["scan"]["status"],"errors":errors},ensure_ascii=False))
 if __name__=="__main__":run()
