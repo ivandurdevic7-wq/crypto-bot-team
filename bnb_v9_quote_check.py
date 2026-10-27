@@ -9,7 +9,7 @@ def number(v):
 def fetch(url):
     r=urllib.request.Request(url,headers={"Accept":"application/json","User-Agent":"BNB-V9-Paper/1.0"})
     with urllib.request.urlopen(r,timeout=8) as x:return json.load(x)
-def compare(address,gecko_price,gecko_liquidity,request=fetch):
+def compare(address,gecko_price,gecko_liquidity,request=fetch,pool_address=None):
     result={"verified":False,"reasons":[],"dex_price_usd":None,"dex_liquidity_usd":None}
     if not isinstance(address,str) or len(address)!=42 or not address.startswith("0x"):
         result["reasons"].append("Invalid token address");return result
@@ -24,6 +24,8 @@ def compare(address,gecko_price,gecko_liquidity,request=fetch):
                   str((p.get("baseToken") or {}).get("address","")).lower()==address.lower() and
                   number(p.get("priceUsd")) is not None and
                   number((p.get("liquidity") or {}).get("usd")) is not None]
+        if pool_address:
+            eligible=[p for p in eligible if str(p.get("pairAddress","")).lower()==pool_address.lower()]
         if not eligible:raise ValueError("No matching PancakeSwap token pair")
         pair=max(eligible,key=lambda p:number((p.get("liquidity") or {}).get("usd")))
         price=number(pair["priceUsd"]);liq=number(pair["liquidity"]["usd"])
@@ -40,5 +42,6 @@ def test():
     assert compare(a,1,100000,lambda u: [])["verified"] is False
     assert compare(a,1,100000,lambda u:[dict(match(u)[0],priceUsd="2")])["verified"] is False
     assert compare(a,None,100000,match)["verified"] is False
+    assert compare(a,1,100000,match,pool_address="0x"+"b"*40)["verified"] is False
     print("PASS: independent BSC price/liquidity consistency checks, fail-closed")
 if __name__=="__main__":test()
