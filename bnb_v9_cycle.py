@@ -142,7 +142,27 @@ def run():
                 # Execution is guarded by independently confirmed sell simulation,
                 # verified risk metrics and a freshly priced EUR executable quote.
                 # Missing inputs are explicitly rejected by paper_buy.
-                state,execution=paper_buy(state,decision,{}, {})
+                # Use only observed market and safety evidence; never fabricate fill costs.
+                execution_quote={}
+                execution_checks={
+                    "fresh_quote":fields.get("fresh_quotes_ok") is True,
+                    "security_rechecked":fields.get("security_rechecked") is True,
+                    "sell_simulation_ok":fields.get("honeypot_sell_ok") is True,
+                    "liquidity_ok":float(fields.get("liquidity_usd") or 0)>=30000,
+                    "bnb_market_ok":bnb_change_24h_pct is not None and bnb_change_24h_pct>-6
+                }
+                try:
+                    fx=market_request("https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD")
+                    rate=float(fx["rates"]["USD"])
+                    usd=float(fields.get("price_usd") or 0)
+                    if rate>0 and usd>0:
+                        execution_quote={"price_eur":usd/rate,
+                                         "buy_tax_pct":fields.get("buy_tax_pct")}
+                except (ValueError,TypeError,KeyError,urllib.error.URLError) as exc:
+                    errors.append("EUR execution quote unavailable: "+str(exc)[:90])
+                # gas_eur, impact_pct and slippage_pct intentionally remain absent
+                # until independently verified. PAPER ledger rejects incomplete quotes.
+                state,execution=paper_buy(state,decision,execution_quote,execution_checks)
                 decisions.append({"token":decision["token"],"action":execution,
                                   "reason":"Executable quote and verified costs unavailable; no simulated fill" if execution!="PAPER_BUY" else "Verified PAPER fill"})
             decisions.append(decision);count+=1
