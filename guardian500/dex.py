@@ -59,7 +59,10 @@ def check_security(chain,d,pair):
     return max(.004,fee)
 
 def basic(p,now):
-    price=number(p['priceUsd']); liq=number(p['liquidity']['usd'])
+    price=number(p['priceUsd'])
+    if not isinstance(p.get('liquidity'),dict) or p['liquidity'].get('usd') is None:
+        raise ValueError('liquidity data missing from DEX Screener')
+    liq=number(p['liquidity']['usd'])
     if price<=0 or liq<100000: raise ValueError('liquidity below $100k')
     if not 86400<=now-number(p['pairCreatedAt'])/1000: raise ValueError('pool younger than 24h')
     if number(p['volume']['h24'])<100000: raise ValueError('volume below $100k/day')
@@ -87,9 +90,10 @@ def scan(s,now,fx):
     for c in ('bsc','solana'):
         keys=[k for k,v in candidates.items() if v[0]==c]
         # Rotate the bounded sample so a static list does not starve later candidates.
-        keys.sort(); offset=(int(now//900)*8)%max(1,len(keys)); keys=keys[offset:]+keys[:offset]
+        keys.sort(); offset=(int(now//900)*12)%max(1,len(keys)); keys=keys[offset:]+keys[:offset]
+        # Keep recent observations for momentum confirmation; bounded to protect API budget.
         priority=sorted(k for k in watch if k.startswith(c+':') and now-watch[k]['last_seen']<=3600)[:4]
-        chosen=priority+[k for k in keys if k not in priority][:8-len(priority)]
+        chosen=priority+[k for k in keys if k not in priority][:12-len(priority)]
         for k in chosen: selected[k]=candidates[k]
     selected.update({k:tuple(k.split(':',1)) for k in held})
     quotes={}; records=[]
@@ -131,7 +135,7 @@ def scan(s,now,fx):
             return k,q,record,dict(last_seen=now,price=price,pool=p['pairAddress'])
         except Exception as e:
             record.update(status='SKIP',reason=str(e)); return k,None,record,None
-    with ThreadPoolExecutor(max_workers=2) as pool:
+    with ThreadPoolExecutor(max_workers=4) as pool:
         for k,q,r,w in pool.map(inspect,selected.items()):
             records.append(r)
             if 'liquidity_observation' in r: s.setdefault('liquidity_history',{})[k]=r['liquidity_observation']
