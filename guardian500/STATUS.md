@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T11:25:46.477095+00:00
+- updated_at: 2026-10-27T12:04:44.398570+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
@@ -10,20 +10,22 @@
 
 ## BNB Chain i Solana
 
-{'bsc': 2, 'solana': 8}
+{'bsc': 4, 'solana': 8}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
+| 0x074065D2f8DC05b59f5d83C28dFfF6e4E0675555 | bsc | SKIP | liquidity below $100k |
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $100k |
+| 0x43abc54aA0e2fAb430203AE1e53391E630bC7777 | bsc | SKIP | no matching DEX pool |
 | 0xFEE1e3eb419bD56b04Efbf14f809a3972660579B | bsc | SKIP | liquidity below $100k |
+| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
+| CCCPaCpzbr6BFQigZx7XPLXN2jFQNcSBTBsUdwQqpump | solana | SKIP | liquidity below $100k |
+| CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $100k/day |
+| Cp1v5cVxuYUpCXA7B3pLtPP8BY6eVTVwCjRtEVz9pump | solana | SKIP | 'liquidity' |
+| Cqnm4mkL5tAfBmKqqSwvg4zT2SQWBUuT3DGxhgg21FmM | solana | SKIP | volume below $100k/day |
+| Dg1YyVnCJtBZN8Fy1mSbUrQmKCJ7SZPApdr3XtWMpump | solana | SKIP | 'liquidity' |
 | EHXFSere7d4Nk4K4GCLVHoBXFaWLGwZYLpiqReud4MMd | solana | SKIP | liquidity below $100k |
 | EPPiSnGoWRcAV8XhPEokxCw4y6CH2LV6nzSo1YsGSEnj | solana | SKIP | volume below $100k/day |
-| Ec7QYcw4RtXBvGkAsTZnq11uMbKhoyoLkCHbkLJV8V2E | solana | SKIP | volume below $100k/day |
-| FbLaAw9wKLVcvGpfE7eDL1DHmANyNUdn59dfkD4u31zC | solana | SKIP | volume below $100k/day |
-| Feixoq3AaHYjd8eBMJgLyVS3hKiq2a4k71myFQiGpump | solana | SKIP | 'liquidity' |
-| Fek7BGWxw9MabKejxFdhEftygFkJXcQjezk99fkTmKaX | solana | SKIP | liquidity below $100k |
-| FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6 | solana | SKIP | volume below $100k/day |
-| G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR | solana | SKIP | volume below $100k/day |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
