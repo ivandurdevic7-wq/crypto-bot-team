@@ -17,6 +17,9 @@ def evaluate(f):
     for k,(field,predicate) in checks.items():
         x=num(f.get(field))
         if x is not None:a[k]=1.0 if predicate(x) else -1.0
+    buys=num(f.get("buys_h1"));sells=num(f.get("sells_h1"))
+    if buys is not None and sells is not None and buys>=0 and sells>=0 and buys+sells>=20:
+        a["order_flow"]=1.0 if buys>sells else -1.0
     holders=num(f.get("holders"));lock=num(f.get("lp_locked_pct"))
     if holders is not None and lock is not None:
         a["holders_lp"]=1.0 if holders>=100 and lock>=80 else -1.0
@@ -26,5 +29,7 @@ def test():
     assert r["momentum"]==r["volume"]==r["liquidity"]==1
     assert r["order_flow"] is None and r["social"] is None
     assert all(v is None for v in evaluate({}).values())
+    assert evaluate({"buys_h1":30,"sells_h1":10})["order_flow"]==1
+    assert evaluate({"buys_h1":5,"sells_h1":2})["order_flow"] is None
     print("PASS: real-data V8 rules; unknown V9 agents remain unknown")
 if __name__=="__main__":test()
