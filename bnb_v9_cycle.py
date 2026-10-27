@@ -118,7 +118,18 @@ def run():
                 security_checked+=1
                 proof=security_check(address)
                 fields.update(proof["data"])
-                pool_address=attr.get("address") or ((pool.get("relationships") or {}).get("pool") or {}).get("data",{}).get("id") or str(pool.get("id","")).removeprefix("bsc_")
+                # GeckoTerminal pool ID commonly contains the network plus pool contract.
+                # Extract only a full 20-byte EVM address, never trust an arbitrary ID.
+                import re
+                identifiers=[attr.get("address"),pool.get("id")]
+                identifiers += [((pool.get("relationships") or {}).get("pool") or {}).get("data",{}).get("id")]
+                pool_address=None
+                for identifier in identifiers:
+                    if isinstance(identifier,str):
+                        match=re.search(r"0x[a-fA-F0-9]{40}(?![a-fA-F0-9])",identifier)
+                        if match:
+                            pool_address=match.group(0)
+                            break
                 quotes=crosscheck(address,fields["price_usd"],fields["liquidity_usd"],pool_address=pool_address)
                 if not quotes["verified"]:
                     errors.append("Quote "+address[:10]+": "+", ".join(quotes["reasons"][:2]))
