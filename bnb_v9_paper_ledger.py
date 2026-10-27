@@ -1,5 +1,6 @@
 """PAPER ledger: simulated fills only; NEVER sends orders or accesses wallets."""
 import copy, math
+from datetime import datetime, timezone
 from bnb_master_v9_policy import AUTONOMOUS_PAPER, LIVE_ENABLED
 def num(x):
     try:
@@ -16,17 +17,17 @@ def buy(state,decision,quote,checks):
     required=("fresh_quote","security_rechecked","sell_simulation_ok","liquidity_ok","bnb_market_ok")
     if any(checks.get(k) is not True for k in required):return s,"SKIP: final checks"
     addr=decision.get("address")
-    if not isinstance(addr,str) or len(addr)!=42 or addr in s["positions"] or len(s["positions"])>=3:return s,"SKIP: positions"
+    if not isinstance(addr,str) or len(addr)!=42 or addr in s["positions"] or len(s["positions"])>=4:return s,"SKIP: positions"
     size=num(decision.get("size_eur"))
     price=num(quote.get("price_eur")); impact=num(quote.get("impact_pct"))
     slip=num(quote.get("slippage_pct")); tax=num(quote.get("buy_tax_pct"));gas=num(quote.get("gas_eur"))
     if any(v is None for v in (size,price,impact,slip,tax,gas)):return s,"SKIP: quote gaps"
     if not(size>0 and price>0 and gas>=0 and 0<=impact<=1.5 and 0<=slip<=3 and 0<=tax<=8):return s,"SKIP: quote limits"
     total=value(s)
-    if size>min(20,total*.2,total*.02/.15) or size+gas>s["cash_eur"]-total*.4:return s,"SKIP: capital"
+    if size>min(20,total*.2,total*.015/.15) or size+gas>s["cash_eur"]-total*.4:return s,"SKIP: capital"
     qty=size*(1-.0025)*(1-tax/100)/(price*(1+(impact+slip)/100))
     s["cash_eur"]-=size+gas
-    s["positions"][addr]={"qty":qty,"entry_eur":price,"last_eur":price,"peak_eur":price,"cost_eur":size+gas,"token":decision.get("token")}
+    s["positions"][addr]={"qty":qty,"entry_eur":price,"last_eur":price,"peak_eur":price,"cost_eur":size+gas,"token":decision.get("token"),"opened_at":datetime.now(timezone.utc).isoformat(),"tp1":False,"tp2":False,"quote_verified":True}
     s["trades"].append({"side":"BUY","address":addr,"eur":size+gas,"mode":"PAPER"})
     return s,"PAPER_BUY"
 def sell(state,address,quote,reason,fraction=1):
