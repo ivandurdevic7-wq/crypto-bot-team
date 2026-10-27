@@ -1,0 +1,21 @@
+name: Cuvar500 volume retest PAPER research
+on:
+  push:
+    branches: [cuvar500-volume-retest-research-20261027]
+    paths: ['guardian500/breakout_volume_retest.py', 'guardian500/test_volume_retest.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest discover -s guardian500 -p 'test_volume_retest.py' -v
+      - name: Kraken BTC ETH SOL read-only research
+        run: python guardian500/breakout_volume_retest.py
