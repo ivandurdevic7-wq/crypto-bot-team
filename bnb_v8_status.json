@@ -6,8 +6,8 @@
       "token": "ZIG",
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
-      "peak_usd": 0.0423182316293933,
-      "last_usd": 0.0420847497448979,
+      "peak_usd": 0.04238728460182,
+      "last_usd": 0.04238728460182,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     }
@@ -754,6 +754,24 @@
       "token": "COLLECT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-27T23:10:07+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-27T23:10:07+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-27T23:10:08+00:00",
+      "token": "GANG",
+      "decision": "SKIP",
+      "reason": "GoPlus unavailable: IncompleteRead(12410 bytes read)"
     }
   ],
   "daily": {
@@ -765,15 +783,33 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-27T22:12:44+00:00",
+  "last_attempt": "2026-10-27T23:10:02+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "Q",
-      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
-        "Trend": false,
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "GANG",
+      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
+      "votes": {
+        "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -784,49 +820,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
-    },
-    {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
-    },
-    {
-      "token": "COLLECT",
-      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x690fca316c1e782ce5e7ef1138fd1a03ce5955ef"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x0bd5ded695d61c2db15c703c345d57e039fd0b6d"
     }
   ],
-  "screened_count": 34,
-  "candidate_count": 6,
-  "estimated_eur": 158.06,
+  "screened_count": 33,
+  "candidate_count": 5,
+  "estimated_eur": 158.1,
   "roles": [
     "Trend",
     "Momentum",
@@ -840,5 +840,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-27T22:12:49+00:00"
+  "last_success": "2026-10-27T23:10:08+00:00"
 }
