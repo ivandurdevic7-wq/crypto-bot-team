@@ -72,8 +72,8 @@ def decide(token, agents, portfolio, now=None):
         veto.append("Prekidač gubitaka")
     loss_streak=safe_number(portfolio.get("loss_streak"))
     if loss_streak is None or loss_streak>=3: veto.append("Tri uzastopna gubitka ili nepoznat niz")
-    positions=portfolio.get("open_positions",3)
-    if positions>=3:veto.append("Najviše tri pozicije")
+    positions=portfolio.get("open_positions",4)
+    if positions>=4:veto.append("Najviše četiri pozicije")
     for k,v in agents.items():
         if k in WEIGHTS and v is not None and not(-1<=v<=1):veto.append(f"Agent {k}: nevaljana ocjena")
     score=None
@@ -86,7 +86,7 @@ def decide(token, agents, portfolio, now=None):
         if sum(agents[k]<-0.2 for k in WEIGHTS)>2:veto.append("Više od dva negativna agenta")
     equity=safe_number(portfolio.get("equity_eur")) or 0
     cash=safe_number(portfolio.get("cash_eur")) or 0
-    risk_budget=max(0,equity*0.02/0.15)
+    risk_budget=max(0,equity*0.015/0.15)
     size=round(max(0,min(equity*0.20,risk_budget,cash-equity*0.4)),2)
     if size<=0:veto.append("Nema slobodnog kapitala uz rezervu od 40%")
     base={"action":"SKIP","token":token.get("symbol","?"),"address":token.get("address"),
