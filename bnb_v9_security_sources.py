@@ -39,6 +39,8 @@ def check(address,request=get):
         out["holders"]=int(data["holder_count"]) if data.get("holder_count") else None
         if out["holders"] is None or out["holders"]<100:reasons.append("Holder count too low or unknown")
         # GoPlus holder shares are fractional; only use complete verifiable records.
+        for key in ("largest_holder_pct","top10_pct","creator_pct"):
+            out[key]=None
         raw_holders=data.get("holders")
         if isinstance(raw_holders,list) and len(raw_holders)>=10:
             try:
