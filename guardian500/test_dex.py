@@ -1,5 +1,5 @@
 import unittest
-from dex import check_security, ZERO_BSC, ZERO_SOL, number
+from dex import check_security, ZERO_BSC, ZERO_SOL, number, basic
 from bot import initial,cycle
 class DexTests(unittest.TestCase):
     def bsc(self):
@@ -33,5 +33,8 @@ class DexTests(unittest.TestCase):
         cycle(s,{'bsc:abc':q,'solana:def':q},11000)
         self.assertFalse(s['positions']); self.assertLess(s['cash'],500)
         self.assertAlmostEqual(s['cash']-500,sum(t.get('pnl',0) for t in s['trades']))
+    def test_missing_liquidity_is_explained(self):
+        with self.assertRaisesRegex(ValueError, 'liquidity data missing'):
+            basic({'priceUsd': '1'}, 100000)
     def test_nan(self):
         with self.assertRaises(ValueError): number('nan')
