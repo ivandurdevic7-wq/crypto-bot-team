@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T16:18:04.350057+00:00
+- updated_at: 2026-10-27T16:26:53.027796+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
@@ -14,17 +14,17 @@
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
-| 0x51651ffcEe5a33a7a5E9CD8397D03c7F30E17777 | bsc | SKIP | pool younger than 12h |
+| 0x4c7f5dad523c8ff25c3608469b36e10ef1667777 | bsc | SKIP | no matching DEX pool |
 | 0xc2af5a38362716fcd01503498bde858eb49790f8 | bsc | SKIP | no matching DEX pool |
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $50k |
-| 23wm1BzzW9pE3SyzBrD1z4v7Fq69cqoNjbCgaV4Cpump | solana | SKIP | 'liquidity' |
-| 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
-| 38QPEZ8YYcF9wFpsg3FUJEP6PCS8dUDPkMfE1Hat4fit | solana | SKIP | 'liquidity' |
-| 39jQot9cVECLm9zJVxyBZKmxitkzm6D4z2zmBiTyderp | solana | SKIP | 'liquidity' |
-| 3SGJPK6m1shAU23hXdZrYXtiTfGviBeZLDNPqKH4kSPE | solana | SKIP | liquidity below $50k |
-| 3cN6fwokMAYP1pyAn4MjjLL8mL9axyxhvjS9c6bzpump | solana | SKIP | 'liquidity' |
-| 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $30k/day |
-| 4ARnwMQZiJEzDuZ8r9As5kbs8QmaHi9rVWLx1ijNfair | solana | SKIP | 'liquidity' |
+| 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $30k/day |
+| 7C7Kcje8ysT6TcFGxHcsgh344NKrjoNNTsaMYQhkpump | solana | SKIP | liquidity below $50k |
+| 7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump | solana | SKIP | liquidity below $50k |
+| 81Y1jv7kDNQotwTXT4CkpZ2gNE2TedVTLFYnEW1ppump | solana | SKIP | 'liquidity' |
+| 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $30k/day |
+| 985ZsufAhdeew9R1DsCDHJb6PzjfSvEwHoe1w1nepump | solana | SKIP | liquidity below $50k |
+| 9FgHxRNSocoEAgWpFS99GnZmDdpFuV25Chtj3zKgVq37 | solana | SKIP | no matching DEX pool |
+| 9ek2VnVWxBF8c8bVYabsqj65sffPKSj3nAPVvgCNpump | solana | SKIP | liquidity below $50k |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
