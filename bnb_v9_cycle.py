@@ -169,7 +169,8 @@ def run():
                         if match:
                             pool_address=match.group(0)
                             break
-                quotes=crosscheck(address,fields["price_usd"],fields["liquidity_usd"],pool_address=pool_address)
+                quotes=(crosscheck(address,fields["price_usd"],fields["liquidity_usd"],pool_address=pool_address)
+                        if pool_address else {"verified":False,"reasons":["Missing exact PancakeSwap pool address"]})
                 if not quotes["verified"]:
                     errors.append("Quote "+address[:10]+": "+", ".join(quotes["reasons"][:2]))
                 if not proof["safe"]:
