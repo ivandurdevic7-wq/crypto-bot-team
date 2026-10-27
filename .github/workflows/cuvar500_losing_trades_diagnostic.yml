@@ -1,0 +1,18 @@
+name: Cuvar500 losing PAPER trades diagnostic
+on:
+  push:
+    branches: [cuvar500-losing-trades-diagnostic-20261027]
+    paths: ['guardian500/losing_trades_diagnostic.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/losing_trades_diagnostic.py
