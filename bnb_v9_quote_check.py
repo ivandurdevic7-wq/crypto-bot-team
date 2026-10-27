@@ -13,6 +13,8 @@ def compare(address,gecko_price,gecko_liquidity,request=fetch,pool_address=None)
     result={"verified":False,"reasons":[],"dex_price_usd":None,"dex_liquidity_usd":None}
     if not isinstance(address,str) or len(address)!=42 or not address.startswith("0x"):
         result["reasons"].append("Invalid token address");return result
+    if pool_address is not None and (not isinstance(pool_address,str) or len(pool_address)!=42 or not pool_address.startswith("0x")):
+        result["reasons"].append("Missing verified pool address");return result
     gp=number(gecko_price);gl=number(gecko_liquidity)
     if gp is None or gl is None:
         result["reasons"].append("Gecko price or liquidity unavailable");return result
@@ -43,5 +45,6 @@ def test():
     assert compare(a,1,100000,lambda u:[dict(match(u)[0],priceUsd="2")])["verified"] is False
     assert compare(a,None,100000,match)["verified"] is False
     assert compare(a,1,100000,match,pool_address="0x"+"b"*40)["verified"] is False
+    assert compare(a,1,100000,match,pool_address="")["verified"] is False
     print("PASS: independent BSC price/liquidity consistency checks, fail-closed")
 if __name__=="__main__":test()
