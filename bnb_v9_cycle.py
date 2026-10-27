@@ -4,7 +4,7 @@ No transactions, no wallets. Missing sell simulation blocks sale, missing buy se
 import json, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
-from bnb_v9_paper_ledger import initial, value
+from bnb_v9_paper_ledger import initial, value, num
 from bnb_v9_market_scan import request as market_request, BASE
 from bnb_master_v9_policy import decide, START_EUR
 from bnb_v9_risk import metrics
@@ -109,7 +109,12 @@ def run():
                 errors.append("BNB "+route+" discovery unavailable: "+str(source_error)[:85])
         if not successful_sources:
             raise ValueError("All BNB discovery feeds unavailable")
-        for pool in pools_by_id.values():
+        # V8 selected one strongest pool per token. Avoid duplicate decisions
+        # and repeated security calls for tokens with multiple PancakeSwap pools.
+        seen_tokens=set()
+        for pool in sorted(pools_by_id.values(),
+                           key=lambda p: num((p.get("attributes") or {}).get("reserve_in_usd")) or 0,
+                           reverse=True):
             rel=pool.get("relationships") or {}
             dex=((rel.get("dex") or {}).get("data") or {}).get("id","")
             if "pancake" not in str(dex).lower():continue
@@ -117,6 +122,8 @@ def run():
             meta=includes.get(t,{})
             address=meta.get("address")
             if not isinstance(address,str) or not address.startswith("0x") or len(address)!=42:continue
+            if address.lower() in seen_tokens:continue
+            seen_tokens.add(address.lower())
             attr=pool.get("attributes") or {}
             age_min=None
             created=attr.get("pool_created_at")
