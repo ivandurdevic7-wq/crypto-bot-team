@@ -16,7 +16,7 @@
   "day_start": 500.0,
   "day_paused": false,
   "equity_eur": 500.0,
-  "updated_at": "2026-10-27T15:26:50.469524+00:00",
+  "updated_at": "2026-10-27T15:44:31.330583+00:00",
   "status": "OK",
   "decisions": [
     "XBTEUR: WAIT",
@@ -25,38 +25,38 @@
   ],
   "quotes": {
     "XBTEUR": {
-      "bid": 72158.9,
-      "ask": 72159.0,
+      "bid": 72197.7,
+      "ask": 72197.8,
       "candle": 1793109600,
       "entry": false,
       "exit": false,
       "liquid": true,
-      "volume_eur": 20031044.51172464
+      "volume_eur": 19635585.365745906
     },
     "ETHEUR": {
-      "bid": 2102.74,
-      "ask": 2102.75,
+      "bid": 2104.36,
+      "ask": 2104.51,
       "candle": 1793109600,
       "entry": false,
       "exit": false,
       "liquid": true,
-      "volume_eur": 7520658.475143883
+      "volume_eur": 7186030.797977381
     },
     "SOLEUR": {
-      "bid": 90.6,
-      "ask": 90.61,
+      "bid": 90.51,
+      "ask": 90.52,
       "candle": 1793109600,
       "entry": false,
       "exit": false,
       "liquid": true,
-      "volume_eur": 3303758.636606979
+      "volume_eur": 2998052.190127778
     }
   },
   "pnl_eur": 0.0,
   "dex_watch": {},
   "dex_scan": {
-    "checked_at": 1793114810.469524,
-    "discovered": 48,
+    "checked_at": 1793115871.330583,
+    "discovered": 46,
     "checked": 12,
     "by_chain": {
       "bsc": 4,
@@ -68,7 +68,7 @@
         "key": "bsc:0x0efb5fd2402a0967b92551d6af54de148504a115",
         "chain": "bsc",
         "address": "0x0efb5FD2402A0967B92551d6AF54De148504A115",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -76,13 +76,13 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "liquidity below $100k"
+        "reason": "liquidity below $50k"
       },
       {
         "key": "bsc:0x51651ffcee5a33a7a5e9cd8397d03c7f30e17777",
         "chain": "bsc",
         "address": "0x51651ffcEe5a33a7a5E9CD8397D03c7F30E17777",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -90,13 +90,13 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "pool younger than 24h"
+        "reason": "pool younger than 12h"
       },
       {
         "key": "bsc:0xa5999cb9871fb8bd9fef9a3dec7d48fcd8a10fed",
         "chain": "bsc",
         "address": "0xa5999cb9871fb8bd9fef9a3dec7d48fcd8a10fed",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -110,7 +110,7 @@
         "key": "bsc:0xdb1160d96885993a69bd9cb149ebff4d4a437777",
         "chain": "bsc",
         "address": "0xDb1160d96885993a69BD9cb149EbfF4D4A437777",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -121,10 +121,10 @@
         "reason": "no matching DEX pool"
       },
       {
-        "key": "solana:6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q",
+        "key": "solana:61uUYv7jRhZkpNuG6DCFppsSaFBea5TP7fLuRzQ4pump",
         "chain": "solana",
-        "address": "6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q",
-        "checked_at": 1793114810.469524,
+        "address": "61uUYv7jRhZkpNuG6DCFppsSaFBea5TP7fLuRzQ4pump",
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -132,13 +132,27 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "volume below $100k/day"
+        "reason": "liquidity below $50k"
+      },
+      {
+        "key": "solana:6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q",
+        "chain": "solana",
+        "address": "6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q",
+        "checked_at": 1793115871.330583,
+        "sell_simulation": {
+          "status": "NOT_CHECKED"
+        },
+        "lp_protection": {
+          "status": "NOT_CHECKED"
+        },
+        "status": "SKIP",
+        "reason": "volume below $30k/day"
       },
       {
         "key": "solana:6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9",
         "chain": "solana",
         "address": "6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -146,27 +160,13 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "volume below $100k/day"
-      },
-      {
-        "key": "solana:7cwYx2P7FDTSmoAEhq28Pik7fLsANUSxbKNgWWuCpump",
-        "chain": "solana",
-        "address": "7cwYx2P7FDTSmoAEhq28Pik7fLsANUSxbKNgWWuCpump",
-        "checked_at": 1793114810.469524,
-        "sell_simulation": {
-          "status": "NOT_CHECKED"
-        },
-        "lp_protection": {
-          "status": "NOT_CHECKED"
-        },
-        "status": "SKIP",
-        "reason": "'liquidity'"
+        "reason": "volume below $30k/day"
       },
       {
         "key": "solana:7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump",
         "chain": "solana",
         "address": "7wKNhej9P1trJwuXKbFooD7snv6h6meLr14qoEg8pump",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -174,13 +174,13 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "liquidity below $100k"
+        "reason": "liquidity below $50k"
       },
       {
-        "key": "solana:8PUCcDF2u2ssTA7Rbr9b2vb4fU81skSdByfVJm5uePBN",
+        "key": "solana:81Y1jv7kDNQotwTXT4CkpZ2gNE2TedVTLFYnEW1ppump",
         "chain": "solana",
-        "address": "8PUCcDF2u2ssTA7Rbr9b2vb4fU81skSdByfVJm5uePBN",
-        "checked_at": 1793114810.469524,
+        "address": "81Y1jv7kDNQotwTXT4CkpZ2gNE2TedVTLFYnEW1ppump",
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -194,7 +194,7 @@
         "key": "solana:8ULZXvZMXcrpnwQo87aQVMNKf7HzgMQSEwr3ZUQKpump",
         "chain": "solana",
         "address": "8ULZXvZMXcrpnwQo87aQVMNKf7HzgMQSEwr3ZUQKpump",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -202,13 +202,13 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "liquidity below $100k"
+        "reason": "liquidity below $50k"
       },
       {
         "key": "solana:8qJ7GkF9PzEf1tNWS9evtWqKDXv8DVDcX3m9Sjajpump",
         "chain": "solana",
         "address": "8qJ7GkF9PzEf1tNWS9evtWqKDXv8DVDcX3m9Sjajpump",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -222,7 +222,7 @@
         "key": "solana:97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN",
         "chain": "solana",
         "address": "97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN",
-        "checked_at": 1793114810.469524,
+        "checked_at": 1793115871.330583,
         "sell_simulation": {
           "status": "NOT_CHECKED"
         },
@@ -230,16 +230,16 @@
           "status": "NOT_CHECKED"
         },
         "status": "SKIP",
-        "reason": "volume below $100k/day"
+        "reason": "volume below $30k/day"
       }
     ],
     "coverage": "bounded sample; not all tokens",
     "sell_check": "BNB provider simulation required; Solana unintegrated => no new DEX entry"
   },
   "source_errors": [],
-  "last_attempt": "2026-10-27T15:26:50.469524+00:00",
+  "last_attempt": "2026-10-27T15:44:31.330583+00:00",
   "safety_version": 3,
-  "last_cycle_completed_at": "2026-10-27T15:26:53.415245+00:00",
+  "last_cycle_completed_at": "2026-10-27T15:44:35.354885+00:00",
   "pending_exit_checks": [],
   "exit_rules": {
     "take_profit_pct": 10,
