@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T13:29:37.646887+00:00
+- updated_at: 2026-10-27T13:40:17.541570+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
@@ -18,14 +18,14 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $100k |
 | 0x43abc54aA0e2fAb430203AE1e53391E630bC7777 | bsc | SKIP | no matching DEX pool |
 | 0xc69176FE3f729C6d6Ffe0Ab695779aE243091cF6 | bsc | SKIP | liquidity below $100k |
-| 9uXMeyJ4LWBm3PRUJ2fY3nyRBw55cpsKwUVAKYzHpump | solana | SKIP | liquidity below $100k |
-| AJBtdXpRsf5oV9dTFygb3WAb7L2TCRhE3HqJPKCWpump | solana | SKIP | liquidity below $100k |
-| AiCCRXNvfpgNHC828Km5vT1ykNvoUK7N9GxokgbLpump | solana | SKIP | 'liquidity' |
-| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $100k/day |
-| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
-| BFAYYr7Fs7P3vcZiFn6g2yowzpB4cFahoj8JpgzdqVi7 | solana | SKIP | volume below $100k/day |
-| CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $100k/day |
-| Cqnm4mkL5tAfBmKqqSwvg4zT2SQWBUuT3DGxhgg21FmM | solana | SKIP | volume below $100k/day |
+| 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $100k/day |
+| 7F968EUuLBzUcCzhD6FZpXaTWAybKZDkWFmwoVArcAc | solana | SKIP | liquidity below $100k |
+| 81MXrQUZVKVhwBcP8pgZ543WK1eRSbnsFgnhzh6spump | solana | SKIP | 'priceUsd' |
+| 89ngGGtJmmC73yQmpSAzMXSnCW1WB2QEEC1TeJMzkz11 | solana | SKIP | 'liquidity' |
+| 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $100k/day |
+| 98RE9r2vHo6mWvoR2kJP6oS29bFBzXHWxYACCZPGGfhs | solana | SKIP | 'liquidity' |
+| 9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa | solana | SKIP | volume below $100k/day |
+| 9k6FKCFyEwu6gWzuP5qW9yeXY2hDcgLWM1iUnCV2ugqE | solana | SKIP | 'liquidity' |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
