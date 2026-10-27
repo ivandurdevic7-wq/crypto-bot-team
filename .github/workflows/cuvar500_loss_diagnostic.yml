@@ -1,0 +1,18 @@
+name: Cuvar500 PAPER loss diagnostics
+on:
+  push:
+    branches: [cuvar500-loss-attribution-20261027]
+    paths: ['guardian500/loss_diagnostic.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/loss_diagnostic.py
