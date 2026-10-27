@@ -1,0 +1,23 @@
+name: Cuvar500 relaxed PAPER thresholds tests
+on:
+  push:
+    branches:
+      - cuvar500-paper-relaxed-market-20261027
+  pull_request:
+    paths:
+      - 'guardian500/dex.py'
+      - 'guardian500/test_relaxed_paper_thresholds.py'
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full Guardian 500 unit suite
+        run: python -m unittest discover -s guardian500 -p 'test_*.py' -v
+      - name: Python syntax
+        run: python -m py_compile guardian500/dex.py guardian500/bot.py
