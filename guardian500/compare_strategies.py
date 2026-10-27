@@ -1,4 +1,5 @@
 """Fair same-candle PAPER comparison of two research signal strategies.
+Branch-only comparison trigger; no changes to production.
 Both are long only, 30% position size, same 0.4% per-side fee, 0.1% slippage.
 No orders, production ledger, API keys or live trading.
 """
