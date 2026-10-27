@@ -1,5 +1,5 @@
 """Independent longer-history PAPER research, public Coinbase Exchange hourly candles.
-Research only. No orders, keys, production state, or HTML modifications.
+Research only. No orders, keys, production state, or HTML modifications.\nBranch-only execution of the 90-day research comparison.
 Two strategies are assessed identically using compare_strategies.simulate.
 """
 import datetime as dt,json,time,urllib.parse,urllib.request
