@@ -1,4 +1,5 @@
 """Read-only historical research using Kraken public hourly OHLC.
+Triggered for branch-only research verification.
 The public endpoint gives limited recent history; this is NOT full strategy validation.
 Never accesses keys, wallets, orders, or production ledger.
 """
