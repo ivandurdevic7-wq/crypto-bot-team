@@ -153,6 +153,9 @@ def run():
                 security_checked+=1
                 proof=security_check(address)
                 fields.update(proof["data"])
+                # Both independent security providers were queried in this cycle.
+                # Confirm recency only when both actually returned valid evidence.
+                fields["security_rechecked"]=proof["data"].get("security_sources_ok") is True
                 # GeckoTerminal pool ID commonly contains the network plus pool contract.
                 # Extract only a full 20-byte EVM address, never trust an arbitrary ID.
                 import re
