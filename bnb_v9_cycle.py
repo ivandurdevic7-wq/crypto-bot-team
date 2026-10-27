@@ -103,7 +103,7 @@ def run():
                 security_checked+=1
                 proof=security_check(address)
                 fields.update(proof["data"])
-                pool_address=attr.get("address") or str(pool.get("id","")).removeprefix("bsc_")
+                pool_address=attr.get("address") or ((pool.get("relationships") or {}).get("pool") or {}).get("data",{}).get("id") or str(pool.get("id","")).removeprefix("bsc_")
                 quotes=crosscheck(address,fields["price_usd"],fields["liquidity_usd"],pool_address=pool_address)
                 if not quotes["verified"]:
                     errors.append("Quote "+address[:10]+": "+", ".join(quotes["reasons"][:2]))
