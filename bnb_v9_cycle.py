@@ -145,8 +145,25 @@ def run():
     except ValueError as error:
         state["risk"]={"status":"BLOCKED","reason":str(error)}
         errors.append("Risk accounting: "+str(error))
+    # Distinguish unimplemented execution evidence from unsafe market candidates.
+    execution_blockers=[
+        "Fresh executable buy/sell route with EUR quote, price impact, slippage and gas",
+        "Verified LP lock and creator/holder concentration for candidates",
+        "Independent manipulation, sniper and market-risk evidence",
+        "Solana-specific token security and executable route",
+        "Real agent scores derived from verified observations"
+    ]
+    audit=state.setdefault("decision_journal",[])
+    if not isinstance(audit,list):raise ValueError("Corrupt decision journal")
+    for item in decisions:
+        audit.append({"at_utc":now,"chain":item.get("chain","bsc"),
+                      "action":item.get("action"),"token":item.get("token"),
+                      "address":item.get("address"),
+                      "reasons":item.get("vetoes") or [item.get("reason")] if item.get("reason") else item.get("vetoes",[])})
+    # Bound the retained journal so GitHub cycle commits stay manageable.
+    state["decision_journal"]=audit[-1000:]
     buys_this_cycle=sum(d.get("action")=="PAPER_BUY" for d in decisions)
-    state["scan"]={"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
+    state["scan"]={"execution_ready":False,"execution_blockers":execution_blockers,"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
                    "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count or solana_screened else "NO_DATA"),
                    "new_buys":buys_this_cycle}
     # Never publish a stale portfolio value as a verified current balance.
