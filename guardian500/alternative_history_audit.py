@@ -1,5 +1,5 @@
 """Independent source AUDIT only, Binance public hourly spot archives.
-Not a substitute for Coinbase EUR prices. No orders or synthetic candles.
+Not a substitute for Coinbase EUR prices. No orders or synthetic candles. Audit trigger.
 """
 import csv,datetime as dt,io,json,urllib.request,zipfile
 from collections import Counter
