@@ -1,5 +1,5 @@
 {
-  "cash_eur": 153.74453606473548,
+  "cash_eur": 143.74453606473548,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,9 +7,27 @@
       "qty": 132.3002998281825,
       "entry_usd": 0.04215574724504099,
       "peak_usd": 0.0424409415145017,
-      "last_usd": 0.0411846905646031,
+      "last_usd": 0.0412100627580403,
       "cost_eur": 5.0,
       "opened": "2026-10-26T20:44:24+00:00"
+    },
+    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
+      "token": "ARIA",
+      "qty": 63.13095774160048,
+      "entry_usd": 0.0883436304392522,
+      "peak_usd": 0.0883436304392522,
+      "last_usd": 0.0880793922624648,
+      "cost_eur": 5.0,
+      "opened": "2026-10-27T03:44:15+00:00"
+    },
+    "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37": {
+      "token": "DOS",
+      "qty": 23.23466561582142,
+      "entry_usd": 0.2400386600012977,
+      "peak_usd": 0.2400386600012977,
+      "last_usd": 0.239320697907575,
+      "cost_eur": 5.0,
+      "opened": "2026-10-27T03:44:15+00:00"
     }
   },
   "trades": [
@@ -122,6 +140,22 @@
       "eur": 4.7862,
       "pnl_eur": -0.2138,
       "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-27T03:44:15+00:00",
+      "side": "BUY",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-27T03:44:15+00:00",
+      "side": "BUY",
+      "token": "DOS",
+      "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
     }
   ],
   "decisions": [
@@ -310,13 +344,31 @@
       "token": "CAP",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-27T03:44:14+00:00",
+      "token": "CNPY",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
+    },
+    {
+      "time": "2026-10-27T03:44:15+00:00",
+      "token": "ARIA",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-27T03:44:15+00:00",
+      "token": "DOS",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
     }
   ],
-  "last_success": "2026-10-27T02:41:46+00:00",
-  "last_attempt": "2026-10-27T02:41:42+00:00",
-  "screened_count": 45,
-  "eligible_count": 7,
-  "estimated_eur": 158.61,
+  "last_success": "2026-10-27T03:44:15+00:00",
+  "last_attempt": "2026-10-27T03:44:12+00:00",
+  "screened_count": 44,
+  "eligible_count": 12,
+  "estimated_eur": 158.56,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
