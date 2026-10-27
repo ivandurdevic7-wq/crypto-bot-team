@@ -149,7 +149,13 @@ def run():
     state["scan"]={"solana_screened":solana_screened,"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
                    "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count or solana_screened else "NO_DATA"),
                    "new_buys":buys_this_cycle}
-    state["estimated_eur"]=round(value(state),2)
+    # Never publish a stale portfolio value as a verified current balance.
+    if state["risk"].get("status")=="BLOCKED":
+        state["estimated_eur"]=None
+        state["valuation_status"]="UNVERIFIED"
+    else:
+        state["estimated_eur"]=round(state["risk"]["equity_eur"],2)
+        state["valuation_status"]="VERIFIED"
     FILE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"mode":"PAPER","screened":count,"solana_screened":solana_screened,"positions":len(state["positions"]),
                       "new_buys":buys_this_cycle,"status":state["scan"]["status"],"errors":errors},ensure_ascii=False))
