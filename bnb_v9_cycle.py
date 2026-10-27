@@ -10,6 +10,7 @@ from bnb_master_v9_policy import decide, START_EUR
 from bnb_v9_risk import metrics
 from bnb_v9_security_sources import check as security_check
 from bnb_v9_quote_check import compare as crosscheck
+from bnb_v9_agent_signals import evaluate as agent_signals
 from bnb_v9_paper_ledger import buy as paper_buy
 from bnb_v9_exits import paper_exit
 
@@ -148,7 +149,7 @@ def run():
                     errors.append("Security "+address[:10]+": "+", ".join(proof["reasons"][:2]))
                 fields["fresh_quotes_ok"]=quotes["verified"]
                 # Never invent missing LP locks, ownership or market-risk evidence.
-            decision=decide(fields,{},portfolio)
+            decision=decide(fields,agent_signals(fields),portfolio)
             if decision["action"]=="PAPER_BUY_READY":
                 # Execution is guarded by independently confirmed sell simulation,
                 # verified risk metrics and a freshly priced EUR executable quote.
