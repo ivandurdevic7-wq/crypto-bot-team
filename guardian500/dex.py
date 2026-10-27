@@ -121,12 +121,13 @@ def scan(s,now,fx):
             except Exception as e:
                 record['sell_simulation']={'status':'UNCONFIRMED','reason':str(e)};failures.append(str(e))
             if record['liquidity_drop_alert']: failures.append('liquidity dropped over 25% within 2 hours')
-            if failures: raise ValueError('; '.join(failures))
+            emergency=bool(failures and k in held and record['sell_simulation']['status']=='PASS')
+            if failures and not emergency: raise ValueError('; '.join(failures))
             if fx is None: raise ValueError('EUR/USD unavailable; no EUR trade')
             old=watch.get(k); momentum=number(p['priceChange']['h1']); h24=number(p['priceChange']['h24'])
             entry=bool(old and 600<=now-old['last_seen']<=3600 and old['pool']==p['pairAddress'] and 1.005<=price/old['price']<=1.08 and 1<=momentum<=15 and -5<=h24<=50)
-            q=dict(bid=price/fx,ask=price/fx,candle=int(now//900),entry=entry,exit=momentum<-3,liquid=True,volume_eur=number(p['volume']['h24'])/fx,min_volume=0,fee=fee,slip=.01,gas=.25,cap=25.,stop=.08,trail=.10,risk=.005,pair_address=p['pairAddress'],chain=c,symbol=record['symbol'],reason='DEX momentum confirmed across observations')
-            record.update(status='SIGNAL' if entry else 'WAIT_CONFIRMATION',fee=fee)
+            q=dict(bid=price/fx,ask=price/fx,candle=int(now//900),entry=entry and not emergency,emergency_exit=emergency,exit=momentum<-3,liquid=True,volume_eur=number(p['volume']['h24'])/fx,min_volume=0,fee=fee,slip=.01,gas=.25,cap=25.,stop=.08,trail=.10,risk=.005,pair_address=p['pairAddress'],chain=c,symbol=record['symbol'],reason='DEX momentum confirmed across observations')
+            record.update(status='EXIT_SIGNAL' if emergency else 'SIGNAL' if entry else 'WAIT_CONFIRMATION',fee=fee)
             return k,q,record,dict(last_seen=now,price=price,pool=p['pairAddress'])
         except Exception as e:
             record.update(status='SKIP',reason=str(e)); return k,None,record,None

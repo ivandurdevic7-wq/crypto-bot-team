@@ -34,3 +34,10 @@ Solana simulacija nije integrirana: mreža se i dalje skenira, ali novi DEX ulaz
 LP: najmanje 90% ukupne ponude LP-a mora biti spaljeno na prepoznatoj BNB burn adresi ili zaključano najmanje 7 dana, prema količini i vremenu zaključavanja. Podržani su samo standardni/UniV2 bazeni s nedvosmislenim pripisivanjem LP podataka jednom bazenu. Ako GoPlus vrati više bazena, agregirani LP podaci nisu dokaz za odabrani bazen: SKIP. V3/concentrated liquidity i nedostajući podaci su nepotvrđeni. Nadolazeće otključavanje prikazuje se u next_unlock kada je dostupno. Konzervativni kriteriji mogu blokirati većinu tokena.
 
 Pad opažene USD likvidnosti >25% kroz najviše 2 sata blokira ulaz i bilježi upozorenje; takav pad nije dokaz povlačenja LP-a jer na USD vrijednost utječe cijena. Bot ne šalje vanjske obavijesti. HTML označava starost posljednje uspješne procjene, pokušaja i DEX provjere, s upozorenjem nakon 30 min i kritičnim nakon 60 min. Učitavanje GitHub datoteke nije dokaz da je bot upravo radio.
+
+## Aktivna izlazna pravila V4 (zamjenjuju ranije stop/trailing postotke)
+Za postojeće i nove virtualne pozicije: zaštitni izlaz na -5% od modelirane ulazne cijene. Na najmanje +10% prodaje se jednom 50% preostale početne količine, samo ako neto prihod nakon prodajnih troškova prelazi pripadajuću polovicu ulaznog troška. Nakon te prodaje ostatak izlazi na pad od 3% od najviše opažene cijene. Prije prvog uzimanja profita ovaj trailing nije aktivan. Postojeći trend izlaz i globalni limiti rizika imaju prednost i mogu zatvoriti poziciju ranije.
+
+LP upozorenje ili nagli pad likvidnosti kod otvorene BNB pozicije pokreće potpuni izlaz samo ako su cijena, osnovne provjere tokena i simulacija prodaje potvrđene. Nedostajući podaci ili neuspješna simulacija ne stvaraju izmišljeni prihod: pozicija ostaje otvorena, uz pending_exit_checks i SKIP_DATA_ERROR. To ne jamči izlazak kod honeypota ili nestanka likvidnosti.
+
+Ciklus ostaje približno 15 minuta, ne sekunde. Pragovi nisu zajamčena izvršna cijena ni dokazano optimalna strategija. Djelomične prodaje imaju vlastite naknade i mrežni trošak; cost_basis i partial su zapisani u dnevniku.

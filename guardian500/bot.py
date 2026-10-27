@@ -45,6 +45,7 @@ def equity(s, quotes):
     return s['cash'] + sum(max(0,p['qty']*quotes[k]['bid']*(1-quotes[k].get('slip',SLIP))*(1-quotes[k].get('fee',FEE))-quotes[k].get('gas',0)) for k,p in s['positions'].items())
 
 def cycle(s, quotes, now):
+    s['exit_rules']={'take_profit_pct':10,'sell_fraction':.5,'trailing_after_tp_pct':3,'stop_loss_pct':5,'check_interval_minutes':15,'execution':'next validated observation; not guaranteed stop price'}
     eq = equity(s,quotes)
     s['peak'] = max(s['peak'],eq)
     day = datetime.fromtimestamp(now,timezone.utc).date().isoformat()
@@ -56,24 +57,40 @@ def cycle(s, quotes, now):
         fee,slip,gas=q.get('fee',FEE),q.get('slip',SLIP),q.get('gas',0)
         p=s['positions'].get(pair)
         if p:
+            # Applies to existing positions as well; preserve cost basis and quantities.
+            p['stop']=.05; p['trail']=.03
             p['high']=max(p['high'],q['bid'])
-            reason = 'risk halt' if s['halted'] or s['day_paused'] else 'stop/trailing' if q['bid']<=max(p['entry']*(1-p.get('stop',.04)),p['high']*(1-p.get('trail',.05))) else 'trend exit' if q['exit'] else None
+            reason = ('risk halt' if s['halted'] or s['day_paused'] else
+                      'security/liquidity exit' if q.get('emergency_exit') else
+                      'stop loss 5%' if q['bid']<=p['entry']*.95 else
+                      'trailing 3% after profit taking' if p.get('tp_done') and q['bid']<=p['high']*.97 else
+                      'trend exit' if q['exit'] else None)
+            fraction=1.
+            if not reason and not p.get('tp_done') and q['bid']>=p['entry']*1.10:
+                half=p['qty']*.5*q['bid']*(1-slip)*(1-fee)-gas
+                # Profit must exceed the proportional cost basis, including entry costs.
+                if half>p['cost']*.5:
+                    reason='take profit 10%: sell half'; fraction=.5
             if reason:
-                price=q['bid']*(1-slip); gross=p['qty']*price; net=max(0,gross*(1-fee)-gas)
+                qty=p['qty']*fraction; basis=p['cost']*fraction
+                price=q['bid']*(1-slip); gross=qty*price; net=max(0,gross*(1-fee)-gas)
                 s['cash']+=net
-                s['trades'].append(dict(time=now,pair=pair,side='SELL',price=price,qty=p['qty'],fee=gross*fee,gas=gas,pnl=net-p['cost'],reason=reason))
-                del s['positions'][pair]; s['cooldown'][pair]=now+21600
+                s['trades'].append(dict(time=now,pair=pair,side='SELL',price=price,qty=qty,fee=gross*fee,gas=gas,pnl=net-basis,cost_basis=basis,partial=fraction<1,reason=reason))
+                if fraction<1:
+                    p['qty']-=qty; p['cost']-=basis; p['tp_done']=True
+                else:
+                    del s['positions'][pair]; s['cooldown'][pair]=now+21600
                 decisions.append(pair+': SELL '+reason)
                 continue
         fresh=q['candle']>s['seen'].get(pair,0)
         s['seen'][pair]=max(q['candle'],s['seen'].get(pair,0))
         if pair not in s['positions'] and fresh and q['entry'] and q['liquid'] and q['volume_eur']>=q.get('min_volume',1e6) and not s['halted'] and not s['day_paused'] and now>=s['cooldown'].get(pair,0) and len(s['positions'])<2:
             # 0.75% equity risk budget including modelled round-trip costs.
-            budget=min(max(0,eq*q.get('risk',.0075)-2*gas)/(q.get('stop',.04)+2*(fee+slip)),eq*.20,q.get('cap',eq*.20),max(0,s['cash']-eq*.40))
+            budget=min(max(0,eq*q.get('risk',.0075)-2*gas)/(.05+2*(fee+slip)),eq*.20,q.get('cap',eq*.20),max(0,s['cash']-eq*.40))
             if budget>=10:
                 price=q['ask']*(1+slip); gross=(budget-gas)/(1+fee); qty=gross/price
                 s['cash']-=budget
-                s['positions'][pair]=dict(qty=qty,entry=price,cost=budget,high=q['bid'],stop=q.get('stop',.04),trail=q.get('trail',.05),pair_address=q.get('pair_address'))
+                s['positions'][pair]=dict(qty=qty,entry=price,cost=budget,high=q['bid'],stop=.05,trail=.03,tp_done=False,pair_address=q.get('pair_address'))
                 s['trades'].append(dict(time=now,pair=pair,side='BUY',price=price,qty=qty,fee=gross*fee,gas=gas,reason=q.get('reason','hourly breakout + trend')))
                 decisions.append(pair+': BUY'); continue
         decisions.append(pair+(': HOLD' if pair in s['positions'] else ': WAIT'))
@@ -121,6 +138,7 @@ def main():
     try:
         if time.time()-now>240: raise ValueError('snapshot too slow')
         missing=set(s['positions'])-set(quotes)
+        s['pending_exit_checks']=sorted(missing)
         if missing: raise ValueError('held asset data unavailable; no fills: '+','.join(sorted(missing)))
         if not quotes: raise ValueError('no valid quotes')
         # Transactional ledger: a failed cycle must not leave partially executed fills.
