@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-27T16:17:51.311318+00:00
+- updated_at: 2026-10-27T16:18:04.350057+00:00
 - status: OK
 - cash: 500.0
 - equity_eur: 500.0
@@ -23,8 +23,8 @@
 | 39jQot9cVECLm9zJVxyBZKmxitkzm6D4z2zmBiTyderp | solana | SKIP | 'liquidity' |
 | 3SGJPK6m1shAU23hXdZrYXtiTfGviBeZLDNPqKH4kSPE | solana | SKIP | liquidity below $50k |
 | 3cN6fwokMAYP1pyAn4MjjLL8mL9axyxhvjS9c6bzpump | solana | SKIP | 'liquidity' |
+| 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $30k/day |
 | 4ARnwMQZiJEzDuZ8r9As5kbs8QmaHi9rVWLx1ijNfair | solana | SKIP | 'liquidity' |
-| 5MLP8C9gWiLt1q46VJ5PSEUiQM1ovdcqmnk7hzM5pump | solana | SKIP | 'liquidity' |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
