@@ -97,7 +97,8 @@ def run():
                 errors.append("Risk accounting: "+str(error))
             portfolio={"equity_eur":risk["equity_eur"],"cash_eur":state["cash_eur"],
                        "open_positions":len(state["positions"]),"daily_loss_pct":risk["daily_loss_pct"],
-                       "weekly_loss_pct":risk["weekly_loss_pct"],"loss_streak":state.get("loss_streak")}
+                       "weekly_loss_pct":risk["weekly_loss_pct"],"loss_streak":state.get("loss_streak",0 if not state["trades"] else None),
+                       "halted":risk.get("daily_halt",True) or risk.get("weekly_halt",True)}
             if count % 6 == rotation and security_checked < 3:
                 security_checked+=1
                 proof=security_check(address)
@@ -115,17 +116,20 @@ def run():
                 # verified risk metrics and a freshly priced EUR executable quote.
                 # Missing inputs are explicitly rejected by paper_buy.
                 state,execution=paper_buy(state,decision,{}, {})
-                decisions.append({"token":decision["token"],"action":execution})
+                decisions.append({"token":decision["token"],"action":execution,
+                                  "reason":"Executable quote and verified costs unavailable; no simulated fill" if execution!="PAPER_BUY" else "Verified PAPER fill"})
             decisions.append(decision);count+=1
     except Exception as e:errors.append("Discovery: "+str(e)[:120])
     try: state["risk"]=metrics(state)
     except ValueError as error:
         state["risk"]={"status":"BLOCKED","reason":str(error)}
         errors.append("Risk accounting: "+str(error))
+    buys_this_cycle=sum(d.get("action")=="PAPER_BUY" for d in decisions)
     state["scan"]={"security_checked":security_checked,"at_utc":now,"screened":count,"decisions":decisions[-60:],
-                   "errors":errors,"status":"RESEARCH_ONLY" if count else "NO_DATA"}
+                   "errors":errors,"status":"PAPER_ACTIVE" if buys_this_cycle else ("RESEARCH_ONLY" if count else "NO_DATA"),
+                   "new_buys":buys_this_cycle}
     state["estimated_eur"]=round(value(state),2)
     FILE.write_text(json.dumps(state,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps({"mode":"PAPER","screened":count,"positions":len(state["positions"]),
-                      "new_buys":0,"status":state["scan"]["status"],"errors":errors},ensure_ascii=False))
+                      "new_buys":buys_this_cycle,"status":state["scan"]["status"],"errors":errors},ensure_ascii=False))
 if __name__=="__main__":run()
