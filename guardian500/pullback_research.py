@@ -21,10 +21,8 @@ def pullback(bars,initial=500.,fee=.004,slip=.001):
                 cash+=qty*n["open"]*(1-slip)*(1-fee);qty=0.
         else:
             trend=b["close"]>ma200 and ma200>ma200_old
-            # Prior bar touched the 20h average: approximately a shallow pullback.
-            if trend and b["low"]<=ma20*1.005 and b["close"]>=ma20*.995:
-                pending=i
-            elif pending>=0:
+            # Evaluate an existing pending signal before considering a fresh touch.
+            if pending>=0:
                 # Confirm recovery within 1-4 bars, with >20-bar mean volume.
                 if i-pending>4 or not trend: pending=-1
                 elif i>pending and b["close"]>bars[i-1]["high"] and avgvol>0 and b["volume"]>avgvol:
@@ -33,6 +31,8 @@ def pullback(bars,initial=500.,fee=.004,slip=.001):
                         qty=budget*(1-fee)/(n["open"]*(1+slip))
                         cash-=budget;entry=n["open"]*(1+slip);paid=budget;entries+=1
                     pending=-1
+            elif trend and b["low"]<=ma20*1.005 and b["close"]>=ma20*.995:
+                pending=i
         mark=cash+qty*n["close"]*(1-slip)*(1-fee)
         peak=max(peak,mark);dd=max(dd,(peak-mark)/peak)
     if qty:cash+=qty*bars[-1]["close"]*(1-slip)*(1-fee)
