@@ -43,6 +43,12 @@ def compare(address,gecko_price,gecko_liquidity,request=fetch,pool_address=None)
         pair=max(eligible,key=lambda p:number((p.get("liquidity") or {}).get("usd")))
         price=number(pair["priceUsd"]);liq=number(pair["liquidity"]["usd"])
         result.update(dex_price_usd=price,dex_liquidity_usd=liq)
+        # Transaction counts are observational evidence, not proof of organic flow.
+        tx=(pair.get("txns") or {}).get("h1") or {}
+        buys=number(tx.get("buys"));sells=number(tx.get("sells"))
+        if buys is not None and sells is not None:
+            result["buys_h1"]=int(buys)
+            result["sells_h1"]=int(sells)
         if abs(price-gp)/gp>0.03:result["reasons"].append("Price differs >3% between feeds")
         if abs(liq-gl)/gl>0.35:result["reasons"].append("Liquidity differs >35% between feeds")
         result["verified"]=not result["reasons"]
