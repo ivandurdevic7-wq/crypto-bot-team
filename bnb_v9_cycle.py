@@ -54,8 +54,10 @@ def run():
             pool_id=str(chosen.get("id") or "")
             match=re.search(r"0x[a-fA-F0-9]{40}(?![a-fA-F0-9])",pool_id)
             verified_pool=match.group(0) if match else None
-            validated=crosscheck(addr,max(observed)[1],max(observed)[0],
-                                 pool_address=verified_pool)
+            validated=(crosscheck(addr,max(observed)[1],max(observed)[0],
+                                  pool_address=verified_pool)
+                       if verified_pool else {"verified":False,
+                                              "reasons":["Missing verified position pool address"]})
             pos["quote_verified"]=validated["verified"]
             if not validated["verified"]:
                 errors.append("Position quote unverified "+addr[:10]+": "+", ".join(validated["reasons"][:2]))
@@ -67,7 +69,7 @@ def run():
             signal,_=exit_signal(pos,market)
             if signal not in ("HOLD","NO_DATA"):
                 proof=security_check(addr)
-                quote_check=crosscheck(addr, max(observed)[1], max(observed)[0])
+                quote_check=validated
                 quote={"price_eur":price,"sell_tax_pct":proof["data"].get("sell_tax_pct"),
                        "impact_pct":None,"slippage_pct":None,"gas_eur":None,
                        "sell_simulation_ok":proof["data"].get("honeypot_sell_ok") is True,
