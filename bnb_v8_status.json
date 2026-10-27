@@ -1,7 +1,17 @@
 {
-  "cash_eur": 158.40698848040782,
+  "cash_eur": 153.40698848040782,
   "initial_eur": 160.0,
-  "positions": {},
+  "positions": {
+    "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
+      "token": "ZIG",
+      "qty": 134.8005363622099,
+      "entry_usd": 0.04123333,
+      "peak_usd": 0.04123333,
+      "last_usd": 0.04111,
+      "cost_eur": 5.0,
+      "opened": "2026-10-27T16:25:26+00:00"
+    }
+  },
   "trades": [
     {
       "time": "2026-10-26T19:22:56+00:00",
@@ -242,6 +252,26 @@
       "pnl_eur": 0.1883,
       "reason": "TRAIL",
       "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-27T16:25:26+00:00",
+      "side": "BUY",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
@@ -544,6 +574,24 @@
       "token": "IRYS",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-10-27T16:25:26+00:00",
+      "token": "ZIG",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-27T16:25:26+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-27T16:25:27+00:00",
+      "token": "BANK",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -555,51 +603,15 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-27T15:25:17+00:00",
+  "last_attempt": "2026-10-27T16:25:21+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "TAG",
-      "address": "0x208bf3e7da9639f1eaefa2de78c23396b0682025",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
       "votes": {
         "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": false,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xf0750c373ebbb3baeef7e03d8300caad1983d67c"
-    },
-    {
-      "token": "HUMA",
-      "address": "0x92516e0ddf1ddbf7fab1b79cac26689fdc5ba8e6",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": false,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x7874f0ecd450a5f06acb85543fe1d0d48e1c525f"
-    },
-    {
-      "token": "IRYS",
-      "address": "0x91152b4ef635403efbae860edd0f8c321d7c035d",
-      "votes": {
-        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -610,13 +622,31 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x73de8b8d37fac1afe156f6533788a0eff197d636"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x9fac151b7f1dbbb9d14ccd1ca5b990bc4da5cd1f"
+    },
+    {
+      "token": "BANK",
+      "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xee6ff918a1f68b5d2fdecb14b367fa2eb5c6951c"
     }
   ],
-  "screened_count": 27,
-  "candidate_count": 4,
-  "estimated_eur": 158.41,
+  "screened_count": 26,
+  "candidate_count": 6,
+  "estimated_eur": 158.38,
   "roles": [
     "Trend",
     "Momentum",
@@ -630,5 +660,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-27T15:25:26+00:00"
+  "last_success": "2026-10-27T16:25:27+00:00"
 }
