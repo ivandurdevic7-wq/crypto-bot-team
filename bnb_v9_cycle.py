@@ -11,6 +11,7 @@ from bnb_v9_risk import metrics
 from bnb_v9_security_sources import check as security_check
 from bnb_v9_quote_check import compare as crosscheck
 from bnb_v9_paper_ledger import buy as paper_buy
+from bnb_v9_exits import paper_exit
 
 FILE=Path(__file__).with_name("bnb_v9_cycle_status.json")
 def run():
@@ -47,11 +48,22 @@ def run():
             pos["last_eur"]=price
             pos["quote_verified"]=True
             pos["peak_eur"]=max(float(pos.get("peak_eur",price)),price)
-            # No sale: honeypot simulation and fresh executable route not yet connected.
+            # Always assess TP/SL. A sell requires independent verified route,
+            # sellability and actual fee/impact/gas inputs; missing evidence blocks fill.
             from bnb_v9_exits import exit_signal
-            signal,_=exit_signal(pos,{"price_eur":price})
+            market={"price_eur":price}
+            signal,_=exit_signal(pos,market)
             if signal not in ("HOLD","NO_DATA"):
-                decisions.append({"token":pos.get("token"),"action":"SELL_PENDING_VERIFICATION","reason":signal})
+                proof=security_check(addr)
+                quote_check=crosscheck(addr, max(observed)[1], max(observed)[0])
+                quote={"price_eur":price,"sell_tax_pct":proof["data"].get("sell_tax_pct"),
+                       "impact_pct":None,"slippage_pct":None,"gas_eur":None,
+                       "sell_simulation_ok":proof["data"].get("honeypot_sell_ok") is True,
+                       "fresh_quote":quote_check["verified"]}
+                state,execution=paper_exit(state,addr,market,quote)
+                decisions.append({"token":pos.get("token"),"action":execution,
+                                  "requested_exit":signal,
+                                  "reason":"No verified executable sell costs/route" if execution.startswith("SELL_BLOCKED") else execution})
         except Exception as e:
             errors.append("Position "+addr[:10]+": "+str(e)[:100])
     try:
