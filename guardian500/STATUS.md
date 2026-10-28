@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-28T20:51:01.202384+00:00
+- updated_at: 2026-10-28T20:51:19.009283+00:00
 - status: OK
 - cash: 498.4193168083648
 - equity_eur: 498.4193168083648
@@ -23,8 +23,8 @@
 | WBNB | solana | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
 | soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $20k/day |
+| 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $20k/day |
 | 5Sqq3NWD98JkcirdDBKRxZFsoZ8f1qqpFp6DSZkoTsHd | solana | SKIP | volume below $20k/day |
-| 5XXn2PCJDCGUViEUcwKA6gLcTS5zG5ESnmTsfvEvDU4P | solana | SKIP | volume below $20k/day |
 | 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
 | 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
 | 7yiDWXi7hXrnxZoAPn1LmPzMpb9tic1zjUF5zo2bWiwg | solana | SKIP | volume below $20k/day |
