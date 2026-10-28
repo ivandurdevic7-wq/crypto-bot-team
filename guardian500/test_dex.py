@@ -1,5 +1,5 @@
 import unittest
-from dex import check_security, ZERO_BSC, ZERO_SOL, number
+from dex import check_security, ZERO_BSC, ZERO_SOL, number, choose_candidates
 from bot import initial,cycle
 class DexTests(unittest.TestCase):
     def bsc(self):
@@ -33,5 +33,21 @@ class DexTests(unittest.TestCase):
         cycle(s,{'bsc:abc':q,'solana:def':q},11000)
         self.assertFalse(s['positions']); self.assertLess(s['cash'],500)
         self.assertAlmostEqual(s['cash']-500,sum(t.get('pnl',0) for t in s['trades']))
+    def test_second_chance_reserved(self):
+        now=10000
+        candidates={'bsc:retry':('bsc','retry')}
+        candidates.update({'bsc:new'+str(i):('bsc','new'+str(i)) for i in range(30)})
+        scores={k:4 for k in candidates}
+        picked=choose_candidates(candidates,scores,{}, {},now,per_chain=5,
+            retry_ready={'bsc:retry':{'last_checked':now-650}})
+        self.assertIn('bsc:retry',picked)
+        self.assertLessEqual(len(picked),5)
+    def test_no_retry_without_eligibility(self):
+        now=10000
+        candidates={'bsc:retry':('bsc','retry')}
+        candidates.update({'bsc:new'+str(i):('bsc','new'+str(i)) for i in range(30)})
+        scores={k:(0 if k=='bsc:retry' else 4) for k in candidates}
+        picked=choose_candidates(candidates,scores,{}, {},now,per_chain=5,retry_ready={})
+        self.assertNotIn('bsc:retry',picked)
     def test_nan(self):
         with self.assertRaises(ValueError): number('nan')
