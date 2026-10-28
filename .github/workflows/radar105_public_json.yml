@@ -1,0 +1,58 @@
+name: Radar 105 public research publisher
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 5,17 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: radar105-public
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: radar105-research-20261028
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python radar105/collector.py
+      - name: Validate research JSON
+        run: |
+          python - <<'PY'
+          import json,datetime
+          with open('radar105_public.json',encoding='utf-8') as f: d=json.load(f)
+          assert d['mode']=='RESEARCH_ONLY'
+          assert d['source']=='Wikimedia Pageviews API'
+          assert isinstance(d['signals'],list) and len(d['signals'])==6
+          assert sum(s.get('status') not in ('UNAVAILABLE','INSUFFICIENT_DATA') for s in d['signals'])>=1
+          stamp=datetime.datetime.fromisoformat(d['generated_at_utc'])
+          assert stamp.tzinfo and abs((datetime.datetime.now(datetime.timezone.utc)-stamp).total_seconds())<300
+          PY
+      - name: Publish isolated data-only branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cp radar105_public.json /tmp/radar105_public.json
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads origin radar105-public-data >/dev/null 2>&1; then
+            git fetch --depth=1 origin radar105-public-data
+            git checkout -B radar105-public-data FETCH_HEAD
+          else
+            git checkout --orphan radar105-public-data
+          fi
+          git rm -rf --ignore-unmatch . >/dev/null || true
+          git clean -fdx >/dev/null
+          cp /tmp/radar105_public.json radar105_public.json
+          git add radar105_public.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish Radar 105 read-only research snapshot"
+            git push origin HEAD:refs/heads/radar105-public-data
+          fi
