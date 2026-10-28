@@ -27,10 +27,10 @@ def classify_wbnb_swap(wbnb_raw, usd_low, usd_high, threshold=THRESHOLD_USD):
 if __name__=="__main__":
     import json
     # Confirmed PancakeSwap receipt 2026-05-15: 0.868252655142649991 WBNB.
-    # Historical daily BNB/USD OHLC from CoinMarketCap. Not transaction-time price.
+    # TEST-ONLY illustrative USD price range; no verified historical quote.
     output=classify_wbnb_swap("868252655142649991","670.20","689.12")
-    output.update({"reference_date":"2026-05-15",
-      "price_source":"https://coinmarketcap.com/currencies/bnb/historical-data/?start=20251231",
+    output.update({"reference_date":"2026-05-15","reference_price_status":"ILLUSTRATIVE_UNVERIFIED",
+      "price_source":"NONE_VERIFIED; example bounds only",
       "historical_tx":"0xabdef90a25f08bb5ae51c2803ed576c3c1162bc359aed15350aaffab4ae34772",
       "mode":"RESEARCH_ONLY","orders_enabled":False})
     print("WHALE_USD_RANGE_CHECK="+json.dumps(output,sort_keys=True))
