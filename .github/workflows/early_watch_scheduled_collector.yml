@@ -1,0 +1,38 @@
+name: Early Watch research scheduled collector
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: early-watch-readonly-collector
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cuvar500-early-watch-20261028
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: guardian500/early_watch_observations.json
+          key: early-watch-scheduled-${{ github.run_id }}
+          restore-keys: |
+            early-watch-scheduled-
+            early-watch-cuvar500-early-watch-20261028-
+      - run: python guardian500/test_early_watch.py
+      - run: python guardian500/early_watch.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: early-watch-snapshot
+          path: guardian500/early_watch_observations.json
+          retention-days: 14
+          if-no-files-found: ignore
