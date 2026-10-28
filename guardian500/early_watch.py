@@ -1,5 +1,5 @@
 """Independent, read-only early token discovery, NOT a buy signal.
-Bounded public DexScreener sample. Never authenticates, trades, or touches main PAPER ledger.
+Bounded public DexScreener sample; no polling guarantee. Never authenticates, trades, or touches main PAPER ledger.
 """
 import datetime as dt,json,os,time,urllib.request
 from pathlib import Path
