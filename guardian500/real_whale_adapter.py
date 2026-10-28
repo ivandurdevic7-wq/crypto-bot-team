@@ -1,4 +1,4 @@
-"""Read-only real RPC adapter for Whale Watch alerts. Conservative, bounded and fail-closed."""
+"""Read-only real RPC adapter for Whale Watch alerts. Conservative, bounded and fail-closed; isolated test."""
 import datetime,json,urllib.request
 from dex_swap_research import request,SWAP_TOPIC
 from dex_swap_validation import call,address,WBNB
