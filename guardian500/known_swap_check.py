@@ -1,4 +1,4 @@
-"""Historical known-transaction receipt regression check; read-only and fail-closed."""
+"""Historical known-transaction receipt regression check; read-only and fail-closed; triggered verification."""
 import json
 from dex_swap_research import request,parse,SWAP_TOPIC
 TX="0xabdef90a25f08bb5ae51c2803ed576c3c1162bc359aed15350aaffab4ae34772"
