@@ -4,7 +4,7 @@ Swap events show pool activity, NOT identified whale wallets or directional buys
 """
 import json,urllib.request,datetime
 RPC="https://bsc-dataseed.binance.org/"
-SWAP_TOPIC="0xd78ad95fa46c994b6551d0da85fc275fe613ce37657a1e88d2b7a3c2a3a6e6"
+SWAP_TOPIC="0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822"
 # ERC20 pair Swap(address,uint256,uint256,uint256,uint256,address)
 def request(method,params):
  req=urllib.request.Request(RPC,data=json.dumps({"jsonrpc":"2.0","id":1,"method":method,"params":params}).encode(),headers={"Content-Type":"application/json"})
