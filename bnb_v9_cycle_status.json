@@ -32,7 +32,7 @@
     "weekly_halt": false
   },
   "scan": {
-    "bnb_change_24h_pct": -0.48,
+    "bnb_change_24h_pct": -0.18,
     "execution_ready": false,
     "execution_blockers": [
       "Fresh executable buy/sell route with EUR quote, price impact, slippage and gas",
@@ -44,8 +44,20 @@
     "solana_screened": 20,
     "security_checked": 3,
     "missing_evidence_counts": {
-      "verified_code": 27,
-      "honeypot_sell_ok": 28,
+      "lp_locked_pct": 31,
+      "lp_lock_days": 31,
+      "wash_trading": 31,
+      "bundled_snipers": 31,
+      "community_scam_warnings": 31,
+      "price_impact_pct": 31,
+      "slippage_pct": 31,
+      "token_value_explained": 31,
+      "agent:order_flow": 29,
+      "agent:holders_lp": 31,
+      "agent:social": 31,
+      "agent:whales_trending": 31,
+      "verified_code": 28,
+      "honeypot_sell_ok": 29,
       "buy_tax_pct": 29,
       "sell_tax_pct": 29,
       "mintable": 28,
@@ -55,133 +67,42 @@
       "blacklist": 28,
       "mutable_tax": 28,
       "selfdestruct": 28,
-      "lp_locked_pct": 30,
-      "lp_lock_days": 30,
-      "largest_holder_pct": 27,
-      "creator_pct": 27,
-      "top10_pct": 27,
-      "holders": 27,
-      "wash_trading": 30,
-      "bundled_snipers": 30,
-      "community_scam_warnings": 30,
-      "price_impact_pct": 30,
-      "slippage_pct": 30,
-      "security_sources_ok": 27,
-      "security_rechecked": 27,
-      "fresh_quotes_ok": 27,
-      "token_value_explained": 30,
-      "agent:order_flow": 29,
-      "agent:holders_lp": 30,
-      "agent:social": 30,
-      "agent:whales_trending": 30,
-      "liquidity_usd": 1,
-      "agent:liquidity": 1
+      "largest_holder_pct": 28,
+      "creator_pct": 28,
+      "top10_pct": 28,
+      "holders": 28,
+      "security_sources_ok": 28,
+      "security_rechecked": 28,
+      "fresh_quotes_ok": 28
     },
     "veto_counts": {
-      "Nedostaju sigurnosni podaci ili signali": 30,
-      "Prodaja nije potvrđena": 30,
-      "Kod nije verificiran": 27,
-      "Vrijednost tokena nije objašnjena": 30,
-      "Neovisni sigurnosni izvori nisu dostupni": 30,
-      "Završna provjera nije potvrđena": 30,
+      "Nedostaju sigurnosni podaci ili signali": 31,
+      "Vrijednost tokena nije objašnjena": 31,
+      "Završna provjera nije potvrđena": 31,
       "mintable": 29,
+      "wash_trading": 31,
+      "bundled_snipers": 31,
+      "community_scam_warnings": 31,
+      "holders < 100": 1,
+      "Prodaja nije potvrđena": 30,
+      "Kod nije verificiran": 28,
+      "Neovisni sigurnosni izvori nisu dostupni": 30,
       "hidden_owner": 28,
       "owner_reclaim": 28,
       "transfer_pause": 28,
       "blacklist": 28,
       "mutable_tax": 28,
       "selfdestruct": 28,
-      "wash_trading": 30,
-      "bundled_snipers": 30,
-      "community_scam_warnings": 30,
-      "largest_holder_pct > 10": 3,
-      "top10_pct > 40": 3,
+      "largest_holder_pct > 10": 2,
+      "top10_pct > 40": 2,
       "Neprirodan promet": 2,
-      "change_1h_pct > 100": 1,
-      "age_min < 30": 4,
-      "liquidity_usd < 30000": 2
+      "age_min < 30": 6,
+      "liquidity_usd < 30000": 3,
+      "change_1h_pct > 100": 1
     },
-    "at_utc": "2026-10-28T17:31:52+00:00",
-    "screened": 30,
+    "at_utc": "2026-10-28T18:25:35+00:00",
+    "screened": 31,
     "decisions": [
-      {
-        "action": "SKIP",
-        "token": "ARK",
-        "address": "0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
-        "score": null,
-        "vetoes": [
-          "Nedostaju sigurnosni podaci ili signali",
-          "Prodaja nije potvrđena",
-          "Kod nije verificiran",
-          "Vrijednost tokena nije objašnjena",
-          "Neovisni sigurnosni izvori nisu dostupni",
-          "Završna provjera nije potvrđena",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings"
-        ],
-        "price_usd": 6.37458869397909,
-        "liquidity_usd": 57617254.2896,
-        "age_min": 616695.61,
-        "size_eur": 0,
-        "max_slippage_pct": 3,
-        "stop_loss_pct": -15,
-        "take_profit": [
-          {
-            "at_pct": 25,
-            "sell_pct": 30
-          },
-          {
-            "at_pct": 50,
-            "sell_pct": 30
-          }
-        ],
-        "trailing_pct": 12,
-        "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
-        ],
-        "risks": [],
-        "data_gaps": [
-          "verified_code",
-          "honeypot_sell_ok",
-          "buy_tax_pct",
-          "sell_tax_pct",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
-          "lp_locked_pct",
-          "lp_lock_days",
-          "largest_holder_pct",
-          "creator_pct",
-          "top10_pct",
-          "holders",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings",
-          "price_impact_pct",
-          "slippage_pct",
-          "security_sources_ok",
-          "security_rechecked",
-          "fresh_quotes_ok",
-          "token_value_explained",
-          "agent:order_flow",
-          "agent:holders_lp",
-          "agent:social",
-          "agent:whales_trending"
-        ],
-        "confidence": "niska"
-      },
       {
         "action": "SKIP",
         "token": "USDT",
@@ -189,25 +110,17 @@
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
-          "Prodaja nije potvrđena",
-          "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
-          "Neovisni sigurnosni izvori nisu dostupni",
           "Završna provjera nije potvrđena",
           "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
           "wash_trading",
           "bundled_snipers",
-          "community_scam_warnings"
+          "community_scam_warnings",
+          "holders < 100"
         ],
-        "price_usd": 0.99952619434376,
-        "liquidity_usd": 40200412.5543,
-        "age_min": 2781251.62,
+        "price_usd": 1.00015454378404,
+        "liquidity_usd": 40247550.1319,
+        "age_min": 2781305.41,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -223,35 +136,17 @@
         ],
         "trailing_pct": 12,
         "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Vrijednost tokena nije objašnjena, Završna provjera nije potvrđena, mintable, wash_trading"
         ],
         "risks": [],
         "data_gaps": [
-          "verified_code",
-          "honeypot_sell_ok",
-          "buy_tax_pct",
-          "sell_tax_pct",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
           "lp_locked_pct",
           "lp_lock_days",
-          "largest_holder_pct",
-          "creator_pct",
-          "top10_pct",
-          "holders",
           "wash_trading",
           "bundled_snipers",
           "community_scam_warnings",
           "price_impact_pct",
           "slippage_pct",
-          "security_sources_ok",
-          "security_rechecked",
-          "fresh_quotes_ok",
           "token_value_explained",
           "agent:order_flow",
           "agent:holders_lp",
@@ -262,8 +157,8 @@
       },
       {
         "action": "SKIP",
-        "token": "$BANANA",
-        "address": "0x3d4f0513e8a29669b960f9dbca61861548a9a760",
+        "token": "B13B",
+        "address": "0x4902c5ebc598265ed2212b559b042de8a5eeec3f",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -283,9 +178,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.00624496278789598,
-        "liquidity_usd": 3782328.7238,
-        "age_min": 1021471.87,
+        "price_usd": 5.50445761125744,
+        "liquidity_usd": 5776440.3228,
+        "age_min": 63728.84,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -361,9 +256,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.766250511522345,
-        "liquidity_usd": 2790668.2829,
-        "age_min": 94172.31,
+        "price_usd": 0.763206715033019,
+        "liquidity_usd": 2799866.7759,
+        "age_min": 94226.12,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -439,9 +334,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0224648527066524,
-        "liquidity_usd": 2418421.5758,
-        "age_min": 625551.74,
+        "price_usd": 0.021487225336268,
+        "liquidity_usd": 2390837.1061,
+        "age_min": 625605.56,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -502,18 +397,24 @@
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
           "Prodaja nije potvrđena",
+          "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
           "Neovisni sigurnosni izvori nisu dostupni",
           "Završna provjera nije potvrđena",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
           "wash_trading",
           "bundled_snipers",
-          "community_scam_warnings",
-          "largest_holder_pct > 10",
-          "top10_pct > 40"
+          "community_scam_warnings"
         ],
-        "price_usd": 0.0242035199830853,
-        "liquidity_usd": 2377773.141,
-        "age_min": 441073.92,
+        "price_usd": 0.0242948259383116,
+        "liquidity_usd": 2387478.571,
+        "age_min": 441127.74,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -529,19 +430,35 @@
         ],
         "trailing_pct": 12,
         "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni, Završna provjera nije potvrđena"
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
         ],
         "risks": [],
         "data_gaps": [
+          "verified_code",
+          "honeypot_sell_ok",
           "buy_tax_pct",
           "sell_tax_pct",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
           "lp_locked_pct",
           "lp_lock_days",
+          "largest_holder_pct",
+          "creator_pct",
+          "top10_pct",
+          "holders",
           "wash_trading",
           "bundled_snipers",
           "community_scam_warnings",
           "price_impact_pct",
           "slippage_pct",
+          "security_sources_ok",
+          "security_rechecked",
+          "fresh_quotes_ok",
           "token_value_explained",
           "agent:order_flow",
           "agent:holders_lp",
@@ -573,9 +490,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0463067753129812,
-        "liquidity_usd": 2294951.5989,
-        "age_min": 764921.68,
+        "price_usd": 0.0458333041766473,
+        "liquidity_usd": 2287247.5144,
+        "age_min": 764975.49,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -636,24 +553,18 @@
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
           "Prodaja nije potvrđena",
-          "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
           "Neovisni sigurnosni izvori nisu dostupni",
           "Završna provjera nije potvrđena",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
           "wash_trading",
           "bundled_snipers",
-          "community_scam_warnings"
+          "community_scam_warnings",
+          "largest_holder_pct > 10",
+          "top10_pct > 40"
         ],
-        "price_usd": 0.000745880491593449,
-        "liquidity_usd": 2265937.7571,
-        "age_min": 966097.8,
+        "price_usd": 0.000744442331286079,
+        "liquidity_usd": 2266900.989,
+        "age_min": 966151.61,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -669,37 +580,18 @@
         ],
         "trailing_pct": 12,
         "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni, Završna provjera nije potvrđena"
         ],
         "risks": [],
         "data_gaps": [
-          "verified_code",
-          "honeypot_sell_ok",
-          "buy_tax_pct",
-          "sell_tax_pct",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
           "lp_locked_pct",
           "lp_lock_days",
-          "largest_holder_pct",
-          "creator_pct",
-          "top10_pct",
-          "holders",
           "wash_trading",
           "bundled_snipers",
           "community_scam_warnings",
           "price_impact_pct",
           "slippage_pct",
-          "security_sources_ok",
-          "security_rechecked",
-          "fresh_quotes_ok",
           "token_value_explained",
-          "agent:order_flow",
           "agent:holders_lp",
           "agent:social",
           "agent:whales_trending"
@@ -729,9 +621,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.999625432610462,
-        "liquidity_usd": 1981654.4641,
-        "age_min": 507222.02,
+        "price_usd": 0.99963399578563,
+        "liquidity_usd": 1982587.6285,
+        "age_min": 507275.84,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -807,9 +699,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0664434266228952,
-        "liquidity_usd": 1363192.8662,
-        "age_min": 609684.45,
+        "price_usd": 0.0684398628891921,
+        "liquidity_usd": 1379538.7031,
+        "age_min": 609738.27,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -886,9 +778,9 @@
           "community_scam_warnings",
           "Neprirodan promet"
         ],
-        "price_usd": 0.0421217617615879,
-        "liquidity_usd": 1215621.8846,
-        "age_min": 12895.02,
+        "price_usd": 0.0421442869058035,
+        "liquidity_usd": 1223088.1662,
+        "age_min": 12948.84,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -949,6 +841,7 @@
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
           "Prodaja nije potvrđena",
+          "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
           "Neovisni sigurnosni izvori nisu dostupni",
           "Završna provjera nije potvrđena",
@@ -961,13 +854,11 @@
           "selfdestruct",
           "wash_trading",
           "bundled_snipers",
-          "community_scam_warnings",
-          "largest_holder_pct > 10",
-          "top10_pct > 40"
+          "community_scam_warnings"
         ],
-        "price_usd": 0.0730020292500682,
-        "liquidity_usd": 1203591.0171,
-        "age_min": 180127.1,
+        "price_usd": 0.0734464824221064,
+        "liquidity_usd": 1208011.4886,
+        "age_min": 180180.92,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -983,10 +874,11 @@
         ],
         "trailing_pct": 12,
         "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni, Završna provjera nije potvrđena"
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
         ],
         "risks": [],
         "data_gaps": [
+          "verified_code",
           "honeypot_sell_ok",
           "buy_tax_pct",
           "sell_tax_pct",
@@ -999,11 +891,18 @@
           "selfdestruct",
           "lp_locked_pct",
           "lp_lock_days",
+          "largest_holder_pct",
+          "creator_pct",
+          "top10_pct",
+          "holders",
           "wash_trading",
           "bundled_snipers",
           "community_scam_warnings",
           "price_impact_pct",
           "slippage_pct",
+          "security_sources_ok",
+          "security_rechecked",
+          "fresh_quotes_ok",
           "token_value_explained",
           "agent:order_flow",
           "agent:holders_lp",
@@ -1035,9 +934,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.00792265559616229,
-        "liquidity_usd": 1048652.1208,
-        "age_min": 211814.63,
+        "price_usd": 0.00778552335080446,
+        "liquidity_usd": 1041068.8959,
+        "age_min": 211868.44,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1098,6 +997,62 @@
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
           "Prodaja nije potvrđena",
+          "Vrijednost tokena nije objašnjena",
+          "Neovisni sigurnosni izvori nisu dostupni",
+          "Završna provjera nije potvrđena",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "largest_holder_pct > 10",
+          "top10_pct > 40"
+        ],
+        "price_usd": 0.329620439621685,
+        "liquidity_usd": 1009686.4617,
+        "age_min": 114119.3,
+        "size_eur": 0,
+        "max_slippage_pct": 3,
+        "stop_loss_pct": -15,
+        "take_profit": [
+          {
+            "at_pct": 25,
+            "sell_pct": 30
+          },
+          {
+            "at_pct": 50,
+            "sell_pct": 30
+          }
+        ],
+        "trailing_pct": 12,
+        "reasons": [
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni, Završna provjera nije potvrđena"
+        ],
+        "risks": [],
+        "data_gaps": [
+          "honeypot_sell_ok",
+          "buy_tax_pct",
+          "sell_tax_pct",
+          "lp_locked_pct",
+          "lp_lock_days",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "price_impact_pct",
+          "slippage_pct",
+          "token_value_explained",
+          "agent:holders_lp",
+          "agent:social",
+          "agent:whales_trending"
+        ],
+        "confidence": "niska"
+      },
+      {
+        "action": "SKIP",
+        "token": "TART",
+        "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
+        "score": null,
+        "vetoes": [
+          "Nedostaju sigurnosni podaci ili signali",
+          "Prodaja nije potvrđena",
           "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
           "Neovisni sigurnosni izvori nisu dostupni",
@@ -1113,9 +1068,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.333670866462547,
-        "liquidity_usd": 1012158.74,
-        "age_min": 114065.49,
+        "price_usd": 0.00178894533382805,
+        "liquidity_usd": 874192.5073,
+        "age_min": 94829.5,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1170,8 +1125,8 @@
       },
       {
         "action": "SKIP",
-        "token": "TART",
-        "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
+        "token": "GENIUS",
+        "address": "0x1f12b85aac097e43aa1555b2881e98a51090e9a6",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -1191,9 +1146,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.00172707185057832,
-        "liquidity_usd": 858569.8484,
-        "age_min": 94775.68,
+        "price_usd": 0.317363215350881,
+        "liquidity_usd": 838510.3165,
+        "age_min": 286660.42,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1269,9 +1224,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0456255848626057,
-        "liquidity_usd": 797329.4571,
-        "age_min": 547691.08,
+        "price_usd": 0.0466023896698972,
+        "liquidity_usd": 808176.364,
+        "age_min": 547744.9,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1347,9 +1302,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.169007403014342,
-        "liquidity_usd": 758952.721,
-        "age_min": 534425.58,
+        "price_usd": 0.166533021264627,
+        "liquidity_usd": 754635.1371,
+        "age_min": 534479.4,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1410,60 +1365,6 @@
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
           "Prodaja nije potvrđena",
-          "Vrijednost tokena nije objašnjena",
-          "Neovisni sigurnosni izvori nisu dostupni",
-          "Završna provjera nije potvrđena",
-          "mintable",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings",
-          "largest_holder_pct > 10",
-          "top10_pct > 40"
-        ],
-        "price_usd": 0.146253379086535,
-        "liquidity_usd": 702745.6172,
-        "age_min": 692925.84,
-        "size_eur": 0,
-        "max_slippage_pct": 3,
-        "stop_loss_pct": -15,
-        "take_profit": [
-          {
-            "at_pct": 25,
-            "sell_pct": 30
-          },
-          {
-            "at_pct": 50,
-            "sell_pct": 30
-          }
-        ],
-        "trailing_pct": 12,
-        "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni, Završna provjera nije potvrđena"
-        ],
-        "risks": [],
-        "data_gaps": [
-          "lp_locked_pct",
-          "lp_lock_days",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings",
-          "price_impact_pct",
-          "slippage_pct",
-          "token_value_explained",
-          "agent:holders_lp",
-          "agent:social",
-          "agent:whales_trending"
-        ],
-        "confidence": "niska"
-      },
-      {
-        "action": "SKIP",
-        "token": "BANK",
-        "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
-        "score": null,
-        "vetoes": [
-          "Nedostaju sigurnosni podaci ili signali",
-          "Prodaja nije potvrđena",
           "Kod nije verificiran",
           "Vrijednost tokena nije objašnjena",
           "Neovisni sigurnosni izvori nisu dostupni",
@@ -1479,9 +1380,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0272391505912222,
-        "liquidity_usd": 538879.8784,
-        "age_min": 786863.99,
+        "price_usd": 0.143435398548375,
+        "liquidity_usd": 690418.3397,
+        "age_min": 692979.67,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1536,8 +1437,8 @@
       },
       {
         "action": "SKIP",
-        "token": "Beat",
-        "address": "0xcf3232b85b43bca90e51d38cc06cc8bb8c8a3e36",
+        "token": "BANK",
+        "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -1557,9 +1458,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0832268000401634,
-        "liquidity_usd": 536892.104,
-        "age_min": 494621.72,
+        "price_usd": 0.0273268462462431,
+        "liquidity_usd": 540335.425,
+        "age_min": 786917.8,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1635,9 +1536,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0109830414650691,
-        "liquidity_usd": 448815.6036,
-        "age_min": 577675.65,
+        "price_usd": 0.0111047443586426,
+        "liquidity_usd": 452641.9712,
+        "age_min": 577729.47,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1713,9 +1614,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.00642891349655174,
-        "liquidity_usd": 334807.8472,
-        "age_min": 9094.47,
+        "price_usd": 0.00673564441236299,
+        "liquidity_usd": 343342.7531,
+        "age_min": 9148.28,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1791,9 +1692,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.049764886001011,
-        "liquidity_usd": 285348.6535,
-        "age_min": 534421.84,
+        "price_usd": 0.0481516181418343,
+        "liquidity_usd": 279080.4551,
+        "age_min": 534475.65,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1869,9 +1770,9 @@
           "bundled_snipers",
           "community_scam_warnings"
         ],
-        "price_usd": 0.0113095553232984,
-        "liquidity_usd": 269687.6733,
-        "age_min": 577989.2,
+        "price_usd": 0.0108617822800661,
+        "liquidity_usd": 264610.1007,
+        "age_min": 578043.02,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -1948,9 +1849,9 @@
           "community_scam_warnings",
           "Neprirodan promet"
         ],
-        "price_usd": 1.39524865718614,
-        "liquidity_usd": 180686.5374,
-        "age_min": 563548.1,
+        "price_usd": 1.42354698474355,
+        "liquidity_usd": 183023.255,
+        "age_min": 563601.92,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -2006,7 +1907,7 @@
       {
         "action": "SKIP",
         "token": "DOG",
-        "address": "0xfd1bfff4ae0fe83eea98f4bdab7458a3e1367777",
+        "address": "0x0bef4f1f408e7afdb01d18b6628c239054b9e569",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -2025,12 +1926,11 @@
           "wash_trading",
           "bundled_snipers",
           "community_scam_warnings",
-          "change_1h_pct > 100",
           "age_min < 30"
         ],
-        "price_usd": 0.00138461837103194,
-        "liquidity_usd": 128694.2791,
-        "age_min": 5.05,
+        "price_usd": 6.10204861427383e-06,
+        "liquidity_usd": 88181.2947,
+        "age_min": 4.65,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -2085,8 +1985,8 @@
       },
       {
         "action": "SKIP",
-        "token": "黑马",
-        "address": "0xb7732243461b4e98378b66bf4d3db8b32e8b5e6e",
+        "token": "SUP",
+        "address": "0x7a92439ef32b5edff52c7b55d17fa1cee4053adc",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -2107,9 +2007,167 @@
           "community_scam_warnings",
           "age_min < 30"
         ],
-        "price_usd": 0.000103035353148643,
-        "liquidity_usd": 40480.5027,
-        "age_min": 3.29,
+        "price_usd": 0.000212083088203234,
+        "liquidity_usd": 70121.1715,
+        "age_min": 3.13,
+        "size_eur": 0,
+        "max_slippage_pct": 3,
+        "stop_loss_pct": -15,
+        "take_profit": [
+          {
+            "at_pct": 25,
+            "sell_pct": 30
+          },
+          {
+            "at_pct": 50,
+            "sell_pct": 30
+          }
+        ],
+        "trailing_pct": 12,
+        "reasons": [
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
+        ],
+        "risks": [],
+        "data_gaps": [
+          "verified_code",
+          "honeypot_sell_ok",
+          "buy_tax_pct",
+          "sell_tax_pct",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "lp_locked_pct",
+          "lp_lock_days",
+          "largest_holder_pct",
+          "creator_pct",
+          "top10_pct",
+          "holders",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "price_impact_pct",
+          "slippage_pct",
+          "security_sources_ok",
+          "security_rechecked",
+          "fresh_quotes_ok",
+          "token_value_explained",
+          "agent:order_flow",
+          "agent:holders_lp",
+          "agent:social",
+          "agent:whales_trending"
+        ],
+        "confidence": "niska"
+      },
+      {
+        "action": "SKIP",
+        "token": "FLAP",
+        "address": "0x83af48670bac63fea1239c41d5d6929e31aca127",
+        "score": null,
+        "vetoes": [
+          "Nedostaju sigurnosni podaci ili signali",
+          "Prodaja nije potvrđena",
+          "Kod nije verificiran",
+          "Vrijednost tokena nije objašnjena",
+          "Neovisni sigurnosni izvori nisu dostupni",
+          "Završna provjera nije potvrđena",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "age_min < 30"
+        ],
+        "price_usd": 1.9777424745708e-06,
+        "liquidity_usd": 37767.829,
+        "age_min": 3.08,
+        "size_eur": 0,
+        "max_slippage_pct": 3,
+        "stop_loss_pct": -15,
+        "take_profit": [
+          {
+            "at_pct": 25,
+            "sell_pct": 30
+          },
+          {
+            "at_pct": 50,
+            "sell_pct": 30
+          }
+        ],
+        "trailing_pct": 12,
+        "reasons": [
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
+        ],
+        "risks": [],
+        "data_gaps": [
+          "verified_code",
+          "honeypot_sell_ok",
+          "buy_tax_pct",
+          "sell_tax_pct",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "lp_locked_pct",
+          "lp_lock_days",
+          "largest_holder_pct",
+          "creator_pct",
+          "top10_pct",
+          "holders",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "price_impact_pct",
+          "slippage_pct",
+          "security_sources_ok",
+          "security_rechecked",
+          "fresh_quotes_ok",
+          "token_value_explained",
+          "agent:order_flow",
+          "agent:holders_lp",
+          "agent:social",
+          "agent:whales_trending"
+        ],
+        "confidence": "niska"
+      },
+      {
+        "action": "SKIP",
+        "token": "DOG",
+        "address": "0x684d4b51cb5d476b53a2c790bf0ea7037deb585c",
+        "score": null,
+        "vetoes": [
+          "Nedostaju sigurnosni podaci ili signali",
+          "Prodaja nije potvrđena",
+          "Kod nije verificiran",
+          "Vrijednost tokena nije objašnjena",
+          "Neovisni sigurnosni izvori nisu dostupni",
+          "Završna provjera nije potvrđena",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "age_min < 30"
+        ],
+        "price_usd": 9.57734117106373e-05,
+        "liquidity_usd": 31863.3615,
+        "age_min": 2.75,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -2186,9 +2244,9 @@
           "community_scam_warnings",
           "liquidity_usd < 30000"
         ],
-        "price_usd": 4.97897526238762e-05,
-        "liquidity_usd": 22296.089,
-        "age_min": 8090.89,
+        "price_usd": 2.95471900323315e-05,
+        "liquidity_usd": 17280.7731,
+        "age_min": 8144.7,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -2244,7 +2302,88 @@
       {
         "action": "SKIP",
         "token": "DOG",
-        "address": "0xc8e6039ab7ef8c57993d471b18b75da40d647777",
+        "address": "0x2a0e16f15c712c3e04388857c2dd7939a1357777",
+        "score": null,
+        "vetoes": [
+          "Nedostaju sigurnosni podaci ili signali",
+          "Prodaja nije potvrđena",
+          "Kod nije verificiran",
+          "Vrijednost tokena nije objašnjena",
+          "Neovisni sigurnosni izvori nisu dostupni",
+          "Završna provjera nije potvrđena",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "change_1h_pct > 100",
+          "liquidity_usd < 30000",
+          "age_min < 30"
+        ],
+        "price_usd": 5.24929743586952e-05,
+        "liquidity_usd": 13881.2231,
+        "age_min": 6.63,
+        "size_eur": 0,
+        "max_slippage_pct": 3,
+        "stop_loss_pct": -15,
+        "take_profit": [
+          {
+            "at_pct": 25,
+            "sell_pct": 30
+          },
+          {
+            "at_pct": 50,
+            "sell_pct": 30
+          }
+        ],
+        "trailing_pct": 12,
+        "reasons": [
+          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
+        ],
+        "risks": [],
+        "data_gaps": [
+          "verified_code",
+          "honeypot_sell_ok",
+          "buy_tax_pct",
+          "sell_tax_pct",
+          "mintable",
+          "hidden_owner",
+          "owner_reclaim",
+          "transfer_pause",
+          "blacklist",
+          "mutable_tax",
+          "selfdestruct",
+          "lp_locked_pct",
+          "lp_lock_days",
+          "largest_holder_pct",
+          "creator_pct",
+          "top10_pct",
+          "holders",
+          "wash_trading",
+          "bundled_snipers",
+          "community_scam_warnings",
+          "price_impact_pct",
+          "slippage_pct",
+          "security_sources_ok",
+          "security_rechecked",
+          "fresh_quotes_ok",
+          "token_value_explained",
+          "agent:order_flow",
+          "agent:holders_lp",
+          "agent:social",
+          "agent:whales_trending"
+        ],
+        "confidence": "niska"
+      },
+      {
+        "action": "SKIP",
+        "token": "1000PEPE",
+        "address": "0x2bd3d2f4f65df723e0c21c31036f5ea1ca1d1076",
         "score": null,
         "vetoes": [
           "Nedostaju sigurnosni podaci ili signali",
@@ -2266,9 +2405,9 @@
           "liquidity_usd < 30000",
           "age_min < 30"
         ],
-        "price_usd": 4.26786059637389e-05,
-        "liquidity_usd": 12571.7734,
-        "age_min": 3.34,
+        "price_usd": 5.93762147509995e-06,
+        "liquidity_usd": 10316.4277,
+        "age_min": 7.15,
         "size_eur": 0,
         "max_slippage_pct": 3,
         "stop_loss_pct": -15,
@@ -2315,87 +2454,6 @@
           "fresh_quotes_ok",
           "token_value_explained",
           "agent:order_flow",
-          "agent:holders_lp",
-          "agent:social",
-          "agent:whales_trending"
-        ],
-        "confidence": "niska"
-      },
-      {
-        "action": "SKIP",
-        "token": "DEGENIUS",
-        "address": "0x912e681698aabbed0212705d41c271b752edad06",
-        "score": null,
-        "vetoes": [
-          "Nedostaju sigurnosni podaci ili signali",
-          "Prodaja nije potvrđena",
-          "Kod nije verificiran",
-          "Vrijednost tokena nije objašnjena",
-          "Neovisni sigurnosni izvori nisu dostupni",
-          "Završna provjera nije potvrđena",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings",
-          "age_min < 30"
-        ],
-        "price_usd": 0.000145336102430689,
-        "liquidity_usd": null,
-        "age_min": 4.99,
-        "size_eur": 0,
-        "max_slippage_pct": 3,
-        "stop_loss_pct": -15,
-        "take_profit": [
-          {
-            "at_pct": 25,
-            "sell_pct": 30
-          },
-          {
-            "at_pct": 50,
-            "sell_pct": 30
-          }
-        ],
-        "trailing_pct": 12,
-        "reasons": [
-          "SKIP: Nedostaju sigurnosni podaci ili signali, Prodaja nije potvrđena, Kod nije verificiran, Vrijednost tokena nije objašnjena, Neovisni sigurnosni izvori nisu dostupni"
-        ],
-        "risks": [],
-        "data_gaps": [
-          "liquidity_usd",
-          "verified_code",
-          "honeypot_sell_ok",
-          "buy_tax_pct",
-          "sell_tax_pct",
-          "mintable",
-          "hidden_owner",
-          "owner_reclaim",
-          "transfer_pause",
-          "blacklist",
-          "mutable_tax",
-          "selfdestruct",
-          "lp_locked_pct",
-          "lp_lock_days",
-          "largest_holder_pct",
-          "creator_pct",
-          "top10_pct",
-          "holders",
-          "wash_trading",
-          "bundled_snipers",
-          "community_scam_warnings",
-          "price_impact_pct",
-          "slippage_pct",
-          "security_sources_ok",
-          "security_rechecked",
-          "fresh_quotes_ok",
-          "token_value_explained",
-          "agent:order_flow",
-          "agent:liquidity",
           "agent:holders_lp",
           "agent:social",
           "agent:whales_trending"
@@ -2407,8 +2465,8 @@
         "chain": "solana",
         "token": "Something",
         "address": "AZdhikmyj6ibsejv7EjML9SfNmuiMvwDrKXTEU2zpump",
-        "price_usd": "0.00023491639084966219552138579064974782767418152047516005112644",
-        "liquidity_usd": "45625.049",
+        "price_usd": "0.000169829698491707116423313260776798806254968932246180825077400152",
+        "liquidity_usd": "39417.6135",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2423,24 +2481,8 @@
         "chain": "solana",
         "token": "Frongus",
         "address": "2BJDwUdMbnJhRRfhacFDjrDNhxUWdzE9H6LEND89pump",
-        "price_usd": "0.000112390283201642813289485673788563735390147453746139449433119078",
-        "liquidity_usd": "33178.0896",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "MOONX",
-        "address": "28vWTtEwxoWp5MpHutAMSK5DeVf8xXk8jEEtbrtppump",
-        "price_usd": "0.00012928977966587698217380244705931362658249916788234741827735863",
-        "liquidity_usd": "29131.2818",
+        "price_usd": "0.00010556683019374471009231495336822241389046322634727367494204812",
+        "liquidity_usd": "32573.5658",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2455,8 +2497,24 @@
         "chain": "solana",
         "token": "JOB",
         "address": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
-        "price_usd": "0.00271096845892964499581713792210605466252489504055083474106306185",
-        "liquidity_usd": "140143.4059",
+        "price_usd": "0.00264635705673492008407737481135337015551848726693400822494631704",
+        "liquidity_usd": "140334.0924",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "MOONX",
+        "address": "28vWTtEwxoWp5MpHutAMSK5DeVf8xXk8jEEtbrtppump",
+        "price_usd": "0.000109624607552423705439110846269569660226266810720495450753588812",
+        "liquidity_usd": "27167.2011",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2471,8 +2529,8 @@
         "chain": "solana",
         "token": "STONK",
         "address": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-        "price_usd": "0.148297777295907556404219120419237086259953299758332015705395135",
-        "liquidity_usd": "2760165.0625",
+        "price_usd": "0.15098272176573445419792149315763069557357879437996262906086701",
+        "liquidity_usd": "2758255.5797",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2487,24 +2545,8 @@
         "chain": "solana",
         "token": "Nothing",
         "address": "51SfaAyrYaR8FpibXT4TXtxEpnZSNoDwYVRojtKupump",
-        "price_usd": "0.000244344774306241616811670361245523625358583630374445015378812014",
-        "liquidity_usd": "52833.5042",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "REMUS",
-        "address": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
-        "price_usd": "0.0014517383623963091656683992372893733112760424161156850693393583",
-        "liquidity_usd": "122468.0644",
+        "price_usd": "0.000280666482482265857247865610454343592391782192846462060731976418",
+        "liquidity_usd": "55304.4541",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2519,8 +2561,24 @@
         "chain": "solana",
         "token": "Robotaxi",
         "address": "6xc3RU6UMZinBJJgeMaNBqRbanTdG1QTq47tCXXwpump",
-        "price_usd": "0.0001399803714312364523044279086285844125058341003185996361298395",
-        "liquidity_usd": "36609.0862",
+        "price_usd": "0.000157764445042140239034609526826840632454991924240135694556259982",
+        "liquidity_usd": "39793.7254",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "REMUS",
+        "address": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
+        "price_usd": "0.00143408150779866393086052656531159427720399509145718225945884392",
+        "liquidity_usd": "122316.6178",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2535,8 +2593,8 @@
         "chain": "solana",
         "token": "PENGU",
         "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-        "price_usd": "0.00768915944236194212872052835053304231123833370675444316924208879",
-        "liquidity_usd": "85269.4303",
+        "price_usd": "0.0076810742392685314896151304591555874736706627714960991683078525",
+        "liquidity_usd": "85172.6701",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2551,72 +2609,8 @@
         "chain": "solana",
         "token": "PENGU",
         "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-        "price_usd": "0.00767589852147669",
-        "liquidity_usd": "32173.6697",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "MOGZ",
-        "address": "Pmfm2RprxQRKZH1XWVsBUc2KgCTyzeDTSFbT1vJmogz",
-        "price_usd": "0.0004888401765851067766934408830431017530307116141388204326842405",
-        "liquidity_usd": "59035.9577",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "LAUNCH",
-        "address": "AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C",
-        "price_usd": "0.00010244001604254799549925081968917391017552617571832379227744425",
-        "liquidity_usd": "5362.8262",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "CATE",
-        "address": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-        "price_usd": "0.048572976839998998049186226541480343935876770728209012062931446",
-        "liquidity_usd": "2494927.9455",
-        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
-        "vetoes": [
-          "Solana security/execution verification unavailable"
-        ],
-        "data_gaps": [
-          "solana_security",
-          "solana_execution"
-        ]
-      },
-      {
-        "action": "SKIP",
-        "chain": "solana",
-        "token": "███",
-        "address": "EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump",
-        "price_usd": "0.000662767967042718249563390996232518964994953530404432386329746083",
-        "liquidity_usd": "85644.8453",
+        "price_usd": "0.00768126759724708",
+        "liquidity_usd": "32194.316",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2631,8 +2625,8 @@
         "chain": "solana",
         "token": "Rapport",
         "address": "69Y6D9xQKkDYPvESDiKaQpU9Z5FXzY8LB7PthQkmpump",
-        "price_usd": "0.000144350777994616762326344438610982410350176109839842496928501685",
-        "liquidity_usd": "35137.3939",
+        "price_usd": "0.0002111944374287210053711291694258492212392854054412579116374815",
+        "liquidity_usd": "42296.3653",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2647,8 +2641,24 @@
         "chain": "solana",
         "token": "USELESS",
         "address": "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk",
-        "price_usd": "0.159254967147622483873441724576242549709229331829995023270586035",
-        "liquidity_usd": "4061849.2278",
+        "price_usd": "0.159402800137369437153197898802052631474433884226789645864030246",
+        "liquidity_usd": "4078765.6351",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "LAUNCH",
+        "address": "AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C",
+        "price_usd": "0.0000931338182060533078088419019813326666456206660564500291360086272",
+        "liquidity_usd": "4854.5984",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2663,8 +2673,56 @@
         "chain": "solana",
         "token": "INVERSE",
         "address": "2gLhk8p2KvUFeUXur2hiF4hxjdRM1vBcbgo9Q7DMZfiw",
-        "price_usd": "0.00130515246704947307684605635660842518582530264830876676465018225",
-        "liquidity_usd": "107758.0877",
+        "price_usd": "0.00145891387736434136701097366839386611164320363822983558369165304",
+        "liquidity_usd": "119034.9564",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "███",
+        "address": "EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump",
+        "price_usd": "0.000738641779466465468579580098886079502546824846907546920801165788",
+        "liquidity_usd": "89354.5828",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "MOGZ",
+        "address": "Pmfm2RprxQRKZH1XWVsBUc2KgCTyzeDTSFbT1vJmogz",
+        "price_usd": "0.000591829564137055226145070110261133159183165256216018978961714456",
+        "liquidity_usd": "65147.4249",
+        "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
+        "vetoes": [
+          "Solana security/execution verification unavailable"
+        ],
+        "data_gaps": [
+          "solana_security",
+          "solana_execution"
+        ]
+      },
+      {
+        "action": "SKIP",
+        "chain": "solana",
+        "token": "CATE",
+        "address": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
+        "price_usd": "0.048744346784947877959165811666321708608541225366935595886778672",
+        "liquidity_usd": "2498492.918",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2679,8 +2737,8 @@
         "chain": "solana",
         "token": "PUMP",
         "address": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-        "price_usd": "0.0042051695400099017334173636044279150730756162268743695973047428",
-        "liquidity_usd": "22883416.6478",
+        "price_usd": "0.0042419134596040467890958397089930239941129581382528485498130855",
+        "liquidity_usd": "23055099.8277",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2695,8 +2753,8 @@
         "chain": "solana",
         "token": "OTC",
         "address": "MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump",
-        "price_usd": "0.00939466871297748356899735602219224423487982694533489855152081015",
-        "liquidity_usd": "597993.0335",
+        "price_usd": "0.0094836817184016703767957611823386936603917936302442515574394016",
+        "liquidity_usd": "602587.3731",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2711,8 +2769,8 @@
         "chain": "solana",
         "token": "SIB",
         "address": "3HKKrXhDvGFWPdkALw3KofESZexsEx9opGtq37n9pump",
-        "price_usd": "0.00041570253174579950078070029494283467876807139387387982004533055",
-        "liquidity_usd": "74745.0167",
+        "price_usd": "0.00041712824908125495710557583455930835013330748252737273036261115",
+        "liquidity_usd": "74161.2773",
         "reason": "Solana token risk, mint/freeze, holders and executable route not independently verified",
         "vetoes": [
           "Solana security/execution verification unavailable"
@@ -2724,11 +2782,10 @@
       }
     ],
     "errors": [
-      "Quote 0x4b3d3099: Missing exact PancakeSwap pool address",
-      "Security 0x4b3d3099: Honeypot or sell simulation unavailable, Buy tax unsafe or missing",
-      "Quote 0x99991c6a: Missing exact PancakeSwap pool address",
-      "Security 0x99991c6a: Honeypot.is unavailable: HTTP Error 404: Not Found, Unsafe or unknown mintable",
-      "Security 0x9558a925: Honeypot or sell simulation unavailable, Unsafe or unknown mintable"
+      "Quote 0x55d39832: DEX feed unavailable: No matching PancakeSwap token pair",
+      "Security 0x55d39832: Unsafe or unknown mintable, Holder count too low or unknown",
+      "Security 0x208bf3e7: Honeypot or sell simulation unavailable, Unsafe largest_holder_pct",
+      "Security 0xb0f09ea9: Honeypot.is unavailable: HTTP Error 404: Not Found, Unsafe largest_holder_pct"
     ],
     "status": "RESEARCH_ONLY",
     "new_buys": 0
@@ -2736,992 +2793,6 @@
   "estimated_eur": 200.0,
   "valuation_status": "VERIFIED",
   "decision_journal": [
-    {
-      "at_utc": "2026-10-27T22:22:47+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "GINNAN",
-      "address": "GinNabffZL4fUj9Vactxha74GDAW8kDPGaHqMtMzps2f",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "ARK",
-      "address": "0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "USDT",
-      "address": "0x55d398326f99059ff775485246999027b3197955",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "HUMA",
-      "address": "0x92516e0ddf1ddbf7fab1b79cac26689fdc5ba8e6",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "COLLECT",
-      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "TAG",
-      "address": "0x208bf3e7da9639f1eaefa2de78c23396b0682025",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "largest_holder_pct > 10",
-        "top10_pct > 40"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "USDC",
-      "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "DNA",
-      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "Q",
-      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "CAP",
-      "address": "0x99991c6aabba5a096f24f250b73580f5179b9999",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "ZIG",
-      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "Neprirodan promet"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "largest_holder_pct > 10",
-        "top10_pct > 40"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "ct",
-      "address": "0x0a092e544da31150b439a1aaa1a3a2214a867f46",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "TART",
-      "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "GENIUS",
-      "address": "0x1f12b85aac097e43aa1555b2881e98a51090e9a6",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "AIN",
-      "address": "0x9558a9254890b2a8b057a789f413631b9084f4a3",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "BANK",
-      "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "Beat",
-      "address": "0xcf3232b85b43bca90e51d38cc06cc8bb8c8a3e36",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "holders < 100",
-        "largest_holder_pct > 10",
-        "top10_pct > 40"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "IRYS",
-      "address": "0x91152b4ef635403efbae860edd0f8c321d7c035d",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "GANG",
-      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "APR",
-      "address": "0x299ad4299da5b2b93fba4c96967b040c7f611099",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "EVAA",
-      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "BNCI",
-      "address": "0x0f8e15f4e6795b46d056446f9698a0f3703c7777",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "PYRO",
-      "address": "0x40f8402afdd3e1da3626849c4dee43f8054b7777",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "ZEN",
-      "address": "0xe546f6deba06363d28df3e413a2038abd68196e5",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "BNCI",
-      "address": "0xc7494ee8721f733ccf50a6907c178347b0637777",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "change_1h_pct > 100",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "MEERKAT",
-      "address": "0x5d1b274d731b87330e6fb51632cc5c386e8147be",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "Frongus",
-      "address": "0x268b8bbe499c4d4d2b8a7bf7f3ca8d4975e17777",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "SSP",
-      "address": "0xd071ad9b883b80a557200c592349309f3764b32e",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "Stonkz",
-      "address": "0xb9aec8798ac88b69dd59d1c83df1748151db275b",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "change_1h_pct > 100",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "bsc",
-      "action": "SKIP",
-      "token": "BTW",
-      "address": "0xf49f5374aa882e8948a63b749cedd24c6d6b1df3",
-      "reasons": [
-        "Nedostaju sigurnosni podaci ili signali",
-        "Prodaja nije potvrđena",
-        "Kod nije verificiran",
-        "Vrijednost tokena nije objašnjena",
-        "Neovisni sigurnosni izvori nisu dostupni",
-        "Završna provjera nije potvrđena",
-        "mintable",
-        "hidden_owner",
-        "owner_reclaim",
-        "transfer_pause",
-        "blacklist",
-        "mutable_tax",
-        "selfdestruct",
-        "wash_trading",
-        "bundled_snipers",
-        "community_scam_warnings",
-        "liquidity_usd < 30000",
-        "age_min < 30"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "Nothing",
-      "address": "51SfaAyrYaR8FpibXT4TXtxEpnZSNoDwYVRojtKupump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "LAUNCH",
-      "address": "AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "REMUS",
-      "address": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "Frongus",
-      "address": "2BJDwUdMbnJhRRfhacFDjrDNhxUWdzE9H6LEND89pump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "XD",
-      "address": "3B7SHozUFoiGnFC7i6WHZ8zNMbDrhtz9WpXqWt51pump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "STONK",
-      "address": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "PENGU",
-      "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "CHICO",
-      "address": "9v4airX4Vt45ADFg3QQG9pXX68LkX9Big4GiYEuJpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "PENGU",
-      "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "PUMP",
-      "address": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "LMAO!",
-      "address": "H74CYmXgMkYHYuSRsZt6RJb4NYp2u72Vw8BS5huApump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "OTC",
-      "address": "MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "███",
-      "address": "EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "DICTATOR",
-      "address": "7dVpVqUEbJ9csNWWrDavsA8iAEwvb6BqWu1yVsQgpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "CATE",
-      "address": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "wiener",
-      "address": "EKZGtEsT2VbXH6car15x2zMHyeiYkB28DvMnBZqRpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "MOGZ",
-      "address": "Pmfm2RprxQRKZH1XWVsBUc2KgCTyzeDTSFbT1vJmogz",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "HACHI",
-      "address": "DMnMwUvo1a9HbSnixbdNaTsoHczJ8cdamUWVRM1Qpump",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
-    {
-      "at_utc": "2026-10-27T23:18:00+00:00",
-      "chain": "solana",
-      "action": "SKIP",
-      "token": "ELON2028",
-      "address": "8BnNS15Q6h6D5Vcq1sNPaUxhpRVdK8FGRbLvCrLxibSx",
-      "reasons": [
-        "Solana security/execution verification unavailable"
-      ]
-    },
     {
       "at_utc": "2026-10-27T23:18:00+00:00",
       "chain": "solana",
@@ -22093,6 +21164,973 @@
     },
     {
       "at_utc": "2026-10-28T17:31:52+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "SIB",
+      "address": "3HKKrXhDvGFWPdkALw3KofESZexsEx9opGtq37n9pump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "USDT",
+      "address": "0x55d398326f99059ff775485246999027b3197955",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Vrijednost tokena nije objašnjena",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "holders < 100"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "B13B",
+      "address": "0x4902c5ebc598265ed2212b559b042de8a5eeec3f",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "COLLECT",
+      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "TAG",
+      "address": "0x208bf3e7da9639f1eaefa2de78c23396b0682025",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "largest_holder_pct > 10",
+        "top10_pct > 40"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "USDC",
+      "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "Neprirodan promet"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "CAP",
+      "address": "0x99991c6aabba5a096f24f250b73580f5179b9999",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "DOS",
+      "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "largest_holder_pct > 10",
+        "top10_pct > 40"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "TART",
+      "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "GENIUS",
+      "address": "0x1f12b85aac097e43aa1555b2881e98a51090e9a6",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "LAB",
+      "address": "0x7ec43cf65f1663f820427c62a5780b8f2e25593a",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "AIN",
+      "address": "0x9558a9254890b2a8b057a789f413631b9084f4a3",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "BANK",
+      "address": "0x3aee7602b612de36088f3ffed8c8f10e86ebf2bf",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "XAN",
+      "address": "0x7427bd9542e64d1ac207a540cfce194b7390a07f",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "GANG",
+      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "APR",
+      "address": "0x299ad4299da5b2b93fba4c96967b040c7f611099",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "BLESS",
+      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "Neprirodan promet"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "DOG",
+      "address": "0x0bef4f1f408e7afdb01d18b6628c239054b9e569",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "SUP",
+      "address": "0x7a92439ef32b5edff52c7b55d17fa1cee4053adc",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "FLAP",
+      "address": "0x83af48670bac63fea1239c41d5d6929e31aca127",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "DOG",
+      "address": "0x684d4b51cb5d476b53a2c790bf0ea7037deb585c",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "PYRO",
+      "address": "0x40f8402afdd3e1da3626849c4dee43f8054b7777",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "liquidity_usd < 30000"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "DOG",
+      "address": "0x2a0e16f15c712c3e04388857c2dd7939a1357777",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "change_1h_pct > 100",
+        "liquidity_usd < 30000",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "bsc",
+      "action": "SKIP",
+      "token": "1000PEPE",
+      "address": "0x2bd3d2f4f65df723e0c21c31036f5ea1ca1d1076",
+      "reasons": [
+        "Nedostaju sigurnosni podaci ili signali",
+        "Prodaja nije potvrđena",
+        "Kod nije verificiran",
+        "Vrijednost tokena nije objašnjena",
+        "Neovisni sigurnosni izvori nisu dostupni",
+        "Završna provjera nije potvrđena",
+        "mintable",
+        "hidden_owner",
+        "owner_reclaim",
+        "transfer_pause",
+        "blacklist",
+        "mutable_tax",
+        "selfdestruct",
+        "wash_trading",
+        "bundled_snipers",
+        "community_scam_warnings",
+        "liquidity_usd < 30000",
+        "age_min < 30"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "Something",
+      "address": "AZdhikmyj6ibsejv7EjML9SfNmuiMvwDrKXTEU2zpump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "Frongus",
+      "address": "2BJDwUdMbnJhRRfhacFDjrDNhxUWdzE9H6LEND89pump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "JOB",
+      "address": "9Pq7aLAbhDG2tTnS22cm6kuysZVcZpLFE368HWuypump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "MOONX",
+      "address": "28vWTtEwxoWp5MpHutAMSK5DeVf8xXk8jEEtbrtppump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "STONK",
+      "address": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "Nothing",
+      "address": "51SfaAyrYaR8FpibXT4TXtxEpnZSNoDwYVRojtKupump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "Robotaxi",
+      "address": "6xc3RU6UMZinBJJgeMaNBqRbanTdG1QTq47tCXXwpump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "REMUS",
+      "address": "CA8q2mkYWZnUNqYmf6pxyxAPZsmSe2EG9P7hHMW5pump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "PENGU",
+      "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "PENGU",
+      "address": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "Rapport",
+      "address": "69Y6D9xQKkDYPvESDiKaQpU9Z5FXzY8LB7PthQkmpump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "USELESS",
+      "address": "Dz9mQ9NzkBcCsuGPFJ3r1bS4wgqKMHBPiVuniW8Mbonk",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "LAUNCH",
+      "address": "AhBidGAgv6QbKSWfrSCegGrzFLcBx4E5FNYTKHNQQj6C",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "INVERSE",
+      "address": "2gLhk8p2KvUFeUXur2hiF4hxjdRM1vBcbgo9Q7DMZfiw",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "███",
+      "address": "EwX2T1p2PmgTsSq2Bi6XtQYxPC5krR4P2fxPfN4Qpump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "MOGZ",
+      "address": "Pmfm2RprxQRKZH1XWVsBUc2KgCTyzeDTSFbT1vJmogz",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "CATE",
+      "address": "Ai66LHZG9MCzg1WKdawwqduVAXpNDUuV8M3uyq5ppump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "PUMP",
+      "address": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
+      "chain": "solana",
+      "action": "SKIP",
+      "token": "OTC",
+      "address": "MukLDtJ8Cx9DxLbeyLRSWPSposTMWuwHANbuaudpump",
+      "reasons": [
+        "Solana security/execution verification unavailable"
+      ]
+    },
+    {
+      "at_utc": "2026-10-28T18:25:35+00:00",
       "chain": "solana",
       "action": "SKIP",
       "token": "SIB",
