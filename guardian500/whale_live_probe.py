@@ -1,4 +1,4 @@
-"""Bounded live research probe, never trades or runs periodically.
+"""Bounded live research probe, never trades or runs periodically; one-shot test.
 Observes first 25 tx in one recent BSC block; no exhaustive coverage.
 """
 import json,datetime
