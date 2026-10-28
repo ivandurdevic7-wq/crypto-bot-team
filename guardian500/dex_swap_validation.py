@@ -1,5 +1,5 @@
 """Read-only PancakeSwap V2 swap sampler, strict pool and quote verification.
-No orders, no production state, no guaranteed coverage. Only WBNB quote pairs
+No orders, no production state, no guaranteed coverage; branch-only research. Only WBNB quote pairs
 can be priced; BNB/USD reference from public market feed is informational.
 """
 import json,urllib.request,time,math
