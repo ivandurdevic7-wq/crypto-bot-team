@@ -1,0 +1,65 @@
+name: Whale Watch public JSON publisher
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '11,26,41,56 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: whale-watch-json-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: cuvar500-dex-swap-validation-20261028
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate monitor
+        run: python guardian500/test_whale_watch_monitor.py
+      - name: Collect read-only snapshot
+        run: python guardian500/whale_watch_monitor.py
+      - name: Validate JSON safety and freshness
+        run: |
+          python - <<'PY'
+          import json,datetime
+          p='guardian500/whale_watch_snapshot.json'
+          with open(p,encoding='utf-8') as f: x=json.load(f)
+          assert x.get('mode')=='RESEARCH_ONLY'
+          assert x.get('orders_enabled') is False
+          assert x.get('status')=='SAMPLE_COMPLETE'
+          assert x.get('failures')==0
+          assert x.get('blocks_checked')==3
+          assert isinstance(x.get('observations'),list)
+          d=datetime.datetime.fromisoformat(x['generated_at_utc'])
+          assert d.tzinfo is not None
+          assert abs((datetime.datetime.now(datetime.timezone.utc)-d).total_seconds())<300
+          PY
+      - name: Publish only JSON to isolated public branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cp guardian500/whale_watch_snapshot.json /tmp/whale_watch_snapshot.json
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads origin whale-watch-public-data >/dev/null 2>&1; then
+            git fetch --depth=1 origin whale-watch-public-data
+            git checkout -B whale-watch-public-data FETCH_HEAD
+          else
+            git checkout --orphan whale-watch-public-data
+          fi
+          git rm -rf --ignore-unmatch . >/dev/null || true
+          git clean -fdx >/dev/null
+          cp /tmp/whale_watch_snapshot.json whale_watch_snapshot.json
+          git add whale_watch_snapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish bounded read-only Whale Watch snapshot"
+            git push origin HEAD:refs/heads/whale-watch-public-data
+          fi
