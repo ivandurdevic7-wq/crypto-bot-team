@@ -1,5 +1,5 @@
 {
-  "cash_eur": 121.70283311386727,
+  "cash_eur": 131.2955633569384,
   "initial_eur": 160.0,
   "positions": {
     "0xa991f61940095aea0724ef54077223b048c5cf7b": {
@@ -7,7 +7,7 @@
       "qty": 27.690193341534513,
       "entry_usd": 0.2014149172311603,
       "peak_usd": 0.206281879830238,
-      "last_usd": 0.198672222672149,
+      "last_usd": 0.198482928937398,
       "cost_eur": 5.0,
       "opened": "2026-10-27T11:45:26+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 130.64510141089173,
       "entry_usd": 0.042544840487502684,
       "peak_usd": 0.042544840487502684,
-      "last_usd": 0.0421696434665925,
+      "last_usd": 0.0422724197760924,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:55:01+00:00"
     },
@@ -25,25 +25,16 @@
       "qty": 3125.541404752433,
       "entry_usd": 0.0017783399034639433,
       "peak_usd": 0.0017783399034639433,
-      "last_usd": 0.00176790215201634,
+      "last_usd": 0.00176362070709936,
       "cost_eur": 5.0,
       "opened": "2026-10-27T17:52:56+00:00"
-    },
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 37.00493378898212,
-      "entry_usd": 0.15020361964962967,
-      "peak_usd": 0.154297854258279,
-      "last_usd": 0.146458355784977,
-      "cost_eur": 5.0,
-      "opened": "2026-10-27T18:52:46+00:00"
     },
     "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37": {
       "token": "DOS",
       "qty": 20.71207982900705,
       "entry_usd": 0.26835909507338296,
       "peak_usd": 0.276243012574256,
-      "last_usd": 0.271312457674633,
+      "last_usd": 0.273813141377964,
       "cost_eur": 5.0,
       "opened": "2026-10-27T20:44:04+00:00"
     },
@@ -51,19 +42,10 @@
       "token": "HUMA",
       "qty": 207.21968409767425,
       "entry_usd": 0.026823103336940102,
-      "peak_usd": 0.0269893459506382,
-      "last_usd": 0.0269893459506382,
+      "peak_usd": 0.0276122772224811,
+      "last_usd": 0.0276122772224811,
       "cost_eur": 5.0,
       "opened": "2026-10-28T05:51:00+00:00"
-    },
-    "0x0c6302401aa5325c2e36f170f52c00b1d220b405": {
-      "token": "GANG",
-      "qty": 666.34483499088,
-      "entry_usd": 0.008341439309086974,
-      "peak_usd": 0.008341439309086974,
-      "last_usd": 0.00831648983956827,
-      "cost_eur": 5.0,
-      "opened": "2026-10-28T07:03:19+00:00"
     }
   },
   "trades": [
@@ -445,6 +427,24 @@
       "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-28T08:05:40+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 4.8202,
+      "pnl_eur": -0.1798,
+      "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-28T08:05:40+00:00",
+      "side": "SELL",
+      "token": "GANG",
+      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
+      "eur": 4.7726,
+      "pnl_eur": -0.2274,
+      "reason": "stop loss"
     }
   ],
   "decisions": [
@@ -1047,13 +1047,31 @@
       "token": "GANG",
       "decision": "BUY",
       "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-28T08:05:41+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
+    },
+    {
+      "time": "2026-10-28T08:05:41+00:00",
+      "token": "COLLECT",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-28T08:05:42+00:00",
+      "token": "TAG",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
     }
   ],
-  "last_success": "2026-10-28T07:03:19+00:00",
-  "last_attempt": "2026-10-28T07:03:16+00:00",
-  "screened_count": 44,
-  "eligible_count": 2,
-  "estimated_eur": 156.42,
+  "last_success": "2026-10-28T08:05:42+00:00",
+  "last_attempt": "2026-10-28T08:05:39+00:00",
+  "screened_count": 45,
+  "eligible_count": 13,
+  "estimated_eur": 156.34,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
