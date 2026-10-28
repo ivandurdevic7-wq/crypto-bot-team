@@ -1,4 +1,4 @@
-"""Radar 105: read-only Wikipedia pageview research; not demand or profit proof."""
+"""Radar 105: read-only Wikipedia pageview research; not demand or profit proof; isolated prototype."""
 import json,urllib.request,datetime,statistics
 PAGES={"AI i tehnologija":"3D_printing","Proizvodnja":"Additive_manufacturing","Energija":"Solar_power","Trgovina":"Electronic_commerce","Usluge":"Right_to_repair","Financije":"Exchange-traded_fund"}
 def fetch(page):
