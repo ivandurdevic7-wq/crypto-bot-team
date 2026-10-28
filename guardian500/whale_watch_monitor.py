@@ -1,4 +1,4 @@
-"""Bounded Whale Watch observer (research only; no trading).
+"""Bounded Whale Watch observer (research only; no trading; bounded validation).
 Samples up to three confirmed BSC blocks with max 35 tx each, writes JSON.
 Do not interpret incomplete samples as full chain coverage.
 """
