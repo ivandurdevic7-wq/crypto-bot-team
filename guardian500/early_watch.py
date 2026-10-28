@@ -1,4 +1,4 @@
-"""Independent, read-only early token discovery, NOT a buy signal; research snapshots only; previous observations restored via branch-specific cache; validate second-snapshot coverage.
+"""Independent, read-only early token discovery, NOT a buy signal or safety clearance; research snapshots only; previous observations restored via branch-specific cache; validate second-snapshot coverage.
 Bounded public DexScreener sample; no polling guarantee. Never authenticates, trades, or touches main PAPER ledger.
 """
 import datetime as dt,json,math,time,urllib.request
