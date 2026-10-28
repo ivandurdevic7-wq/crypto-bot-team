@@ -1,5 +1,5 @@
 """Current WBNB quote research, no historical backfill or trading.
-Quote checks fail closed. Research alerts are indicative, never trade signals.
+Quote checks fail closed; isolated validation. Research alerts are indicative, never trade signals.
 """
 import json,urllib.request,datetime
 from decimal import Decimal,InvalidOperation
