@@ -1,5 +1,5 @@
 """Research-only join of verified PancakeSwap V2 WBNB events and current quote.
-Fail closed: a quote is valid only for recent observed swaps; no historical repricing.
+Fail closed: a quote is valid only for recent observed swaps; no historical repricing; isolated test.
 """
 import json,datetime
 from decimal import Decimal
