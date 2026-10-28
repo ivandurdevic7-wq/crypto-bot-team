@@ -1,4 +1,4 @@
-"""Whale Watch: public BNB block native BNB transfers, research-only.
+"""Whale Watch: public BNB block native BNB transfers, research-only; run once on isolated branch.
 No keys, subscriptions, wallets, token trades, or production-state writes.
 A single latest block snapshot is NOT full whale surveillance.
 """
