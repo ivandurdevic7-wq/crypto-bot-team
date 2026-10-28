@@ -1,5 +1,5 @@
 import unittest
-from dex import check_security, ZERO_BSC, ZERO_SOL, number, choose_candidates
+from dex import check_security, ZERO_BSC, ZERO_SOL, number, choose_candidates, early_watch_volume, basic
 from bot import initial,cycle
 class DexTests(unittest.TestCase):
     def bsc(self):
@@ -49,5 +49,26 @@ class DexTests(unittest.TestCase):
         scores={k:(0 if k=='bsc:retry' else 4) for k in candidates}
         picked=choose_candidates(candidates,scores,{}, {},now,per_chain=5,retry_ready={})
         self.assertNotIn('bsc:retry',picked)
+    def test_early_watch_volume_boundaries(self):
+        for volume, expected in [(9999,'BELOW_WATCH'),(10000,'EARLY_WATCH'),
+                                 (29999,'EARLY_WATCH'),(30000,'PAPER_VOLUME_ELIGIBLE')]:
+            self.assertEqual(early_watch_volume({'volume':{'h24':volume}}),expected)
+    def test_early_watch_never_passes_paper_volume_gate(self):
+        now=50000
+        p={'priceUsd':'1','liquidity':{'usd':60000},'pairCreatedAt':0,
+           'volume':{'h24':15000},'txns':{'m5':{'buys':5,'sells':5}}}
+        self.assertEqual(early_watch_volume(p),'EARLY_WATCH')
+        with self.assertRaisesRegex(ValueError,'volume below'):
+            basic(p,now)
+        p['volume']['h24']=30000
+        self.assertEqual(basic(p,now),(1.0,60000.0))
+    def test_invalid_watch_volume_fails_closed(self):
+        for v in ['nan',-1,None]:
+            p={'volume':{'h24':v}}
+            if v==-1:
+                self.assertEqual(early_watch_volume(p),'BELOW_WATCH')
+            else:
+                with self.assertRaises((ValueError,TypeError)):
+                    early_watch_volume(p)
     def test_nan(self):
         with self.assertRaises(ValueError): number('nan')
