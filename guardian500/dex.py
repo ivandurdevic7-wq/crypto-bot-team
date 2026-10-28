@@ -82,8 +82,9 @@ def candidate_quality(p, now):
         return 0
 
 
-def choose_candidates(candidates, scores, watch, held, now, per_chain=20):
+def choose_candidates(candidates, scores, watch, held, now, per_chain=20, retry_ready=None):
     selected={}
+    retry_ready=retry_ready or {}
     for c in ('bsc','solana'):
         keys=sorted(k for k,v in candidates.items() if v[0]==c)
         if not keys:
@@ -95,7 +96,11 @@ def choose_candidates(candidates, scores, watch, held, now, per_chain=20):
         priority=sorted(k for k in watch
                         if k.startswith(c+':') and k in candidates
                         and now-watch[k].get('last_seen',0)<=3600)[:4]
-        chosen=priority+[k for k in keys if k not in priority][:max(0,per_chain-len(priority))]
+        # Guaranteed bounded second-chance capacity, without changing trade gates.
+        due=sorted((k for k in retry_ready if k.startswith(c+':') and k in candidates),
+                   key=lambda k:(retry_ready[k]['last_checked'],k))[:4]
+        reserved=list(dict.fromkeys(priority+due))[:per_chain]
+        chosen=reserved+[k for k in keys if k not in reserved][:max(0,per_chain-len(reserved))]
         for k in chosen:
             selected[k]=candidates[k]
     # Held positions are always inspected regardless of the sampling cap.
@@ -127,18 +132,18 @@ def scan(s,now,fx):
         if now-retry[k].get('last_checked',0)>7200 or k in held:
             del retry[k]
     for k,v in retry.items():
-        if now-v.get('last_checked',0)>=900:
+        if now-v.get('last_checked',0)>=600:
             candidates.setdefault(k,tuple(k.split(':',1)))
     for k in list(watch):
         if now-watch[k]['last_seen']>86400 and k not in held:
             del watch[k]
     for k in watch:
         candidates.setdefault(k,tuple(k.split(':',1)))
-    # Reserve up to four slots per chain for delayed second chances.
+    # Reserve up to four slots per chain for delayed second chances (10 minutes).
     eligible={k:v for k,v in retry.items() if k in candidates and now-v.get('last_checked',0)>=900}
     for k in eligible:
         scores[k]=max(scores.get(k,0),5)
-    selected=choose_candidates(candidates,scores,watch,held,now,per_chain=20)
+    selected=choose_candidates(candidates,scores,watch,held,now,per_chain=20,retry_ready=eligible)
     quotes={}; records=[]
     def inspect(item):
         k,(c,a)=item; record=dict(key=k,chain=c,address=a,checked_at=now,sell_simulation={'status':'NOT_CHECKED'},lp_protection={'status':'NOT_CHECKED'})
