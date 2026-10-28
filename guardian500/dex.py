@@ -59,7 +59,7 @@ def check_security(chain,d,pair):
     return max(.004,fee)
 
 EARLY_WATCH_VOLUME_USD = 10000
-PAPER_ENTRY_VOLUME_USD = 30000
+PAPER_ENTRY_VOLUME_USD = 20000
 
 def early_watch_volume(p):
     """Research-only classification. No quotes or BUY signals for low volume."""
@@ -74,7 +74,7 @@ def basic(p,now):
     price=number(p['priceUsd']); liq=number(p['liquidity']['usd'])
     if price<=0 or liq<30000: raise ValueError('liquidity below $30k')
     if not 43200<=now-number(p['pairCreatedAt'])/1000: raise ValueError('pool younger than 12h')
-    if number(p['volume']['h24'])<30000: raise ValueError('volume below $30k/day')
+    if number(p['volume']['h24'])<PAPER_ENTRY_VOLUME_USD: raise ValueError('volume below $20k/day')
     tx=p['txns']['m5']
     if int(tx['buys'])<2 or int(tx['sells'])<2: raise ValueError('insufficient recent buys/sells')
     return price,liq
@@ -88,7 +88,7 @@ def candidate_quality(p, now):
         vol=number(p['volume']['h24'])
         age=now-number(p['pairCreatedAt'])/1000
         tx=p['txns']['m5']
-        return (int(liq>=30000)+int(vol>=30000)
+        return (int(liq>=30000)+int(vol>=PAPER_ENTRY_VOLUME_USD)
                 +int(age>=43200)+int(int(tx['buys'])>=2 and int(tx['sells'])>=2))
     except (KeyError,TypeError,ValueError,OverflowError):
         return 0
@@ -169,7 +169,7 @@ def scan(s,now,fx):
             # Unknown/invalid volume remains fail-closed.
             volume_class=early_watch_volume(p)
             if volume_class=='EARLY_WATCH' and k not in held:
-                record.update(status='EARLY_WATCH',reason='research only: 24h volume below $30k PAPER gate',
+                record.update(status='EARLY_WATCH',reason='research only: 24h volume below $20k PAPER gate',
                               symbol=p.get('baseToken',{}).get('symbol','?'),
                               pool=p['pairAddress'],volume_usd_24h=number(p['volume']['h24']),
                               research_only=True,trade_eligible=False)
@@ -209,7 +209,7 @@ def scan(s,now,fx):
             records.append(r)
             if 'liquidity_observation' in r: s.setdefault('liquidity_history',{})[k]=r['liquidity_observation']
             if q: quotes[k]=q; watch[k]=w
-    retry_reasons=('insufficient recent buys/sells','volume below $30k/day',
+    retry_reasons=('insufficient recent buys/sells','volume below $20k/day',
                    'liquidity below $30k','pool younger than 12h','no matching DEX pool')
     counts={}
     for r in records:
