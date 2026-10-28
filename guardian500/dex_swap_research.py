@@ -28,6 +28,26 @@ def main():
  for log in logs[:250]:
   try:swaps.append(parse(log))
   except (KeyError,ValueError,TypeError):errors+=1
+ result={"mode":"RESEARCH_ONLY","chain":"bsc","block":height,"swaps_sampled":len(swaps),"transactions_sampled":len(selected),"parse_errors":errors,
+         "swaps":swaps[:10],"source":"public BNB RPC eth_getTransactionReceipt",
+         "limitation":"First 12 transactions of one block, nonexhaustive; pool-specific token decimals, token prices, pool identity and wallet attribution NOT verified. No USD size or buy/sell labels."}
+ print("WHALE_DEX_AUDIT="+json.dumps(result,sort_keys=True))
+if __name__=="__main__":main()    block=request("eth_getBlockByNumber",[hex(height),False])
+    if not block or not isinstance(block.get("transactions"),list):raise ValueError("block unavailable")
+    # Bounded transaction-receipt sampling; public RPC may rate limit.
+    selected=block["transactions"][:12]
+    swaps=[]
+    errors=0
+    for h in selected:
+        try:
+            receipt=request("eth_getTransactionReceipt",[h])
+            if not receipt or receipt.get("status")!="0x1":continue
+            for log in receipt.get("logs",[]):
+                if log.get("topics") and log["topics"][0].lower()==SWAP_TOPIC:
+                    swaps.append(parse(log))
+        except (KeyError,ValueError,TypeError):
+            errors+=1
+    if errors:raise ValueError("incomplete receipts: fail closed")
  result={"mode":"RESEARCH_ONLY","chain":"bsc","block":height,"swaps_sampled":len(swaps),"parse_errors":errors,
          "swaps":swaps[:10],"source":"public BNB RPC eth_getLogs",
          "limitation":"Single block; pool-specific token decimals, token prices, pool identity and wallet attribution NOT verified. No USD size or buy/sell labels."}
