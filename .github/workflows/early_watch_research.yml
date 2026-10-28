@@ -15,6 +15,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: guardian500/early_watch_observations.json
+          key: early-watch-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            early-watch-${{ github.ref_name }}-
       - run: python guardian500/test_early_watch.py
       - run: python guardian500/early_watch.py
       - uses: actions/upload-artifact@v4
