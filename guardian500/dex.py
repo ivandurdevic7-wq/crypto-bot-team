@@ -72,7 +72,7 @@ def early_watch_volume(p):
 
 def basic(p,now):
     price=number(p['priceUsd']); liq=number(p['liquidity']['usd'])
-    if price<=0 or liq<50000: raise ValueError('liquidity below $50k')
+    if price<=0 or liq<30000: raise ValueError('liquidity below $30k')
     if not 43200<=now-number(p['pairCreatedAt'])/1000: raise ValueError('pool younger than 12h')
     if number(p['volume']['h24'])<30000: raise ValueError('volume below $30k/day')
     tx=p['txns']['m5']
@@ -88,7 +88,7 @@ def candidate_quality(p, now):
         vol=number(p['volume']['h24'])
         age=now-number(p['pairCreatedAt'])/1000
         tx=p['txns']['m5']
-        return (int(liq>=50000)+int(vol>=30000)
+        return (int(liq>=30000)+int(vol>=30000)
                 +int(age>=43200)+int(int(tx['buys'])>=2 and int(tx['sells'])>=2))
     except (KeyError,TypeError,ValueError,OverflowError):
         return 0
@@ -210,7 +210,7 @@ def scan(s,now,fx):
             if 'liquidity_observation' in r: s.setdefault('liquidity_history',{})[k]=r['liquidity_observation']
             if q: quotes[k]=q; watch[k]=w
     retry_reasons=('insufficient recent buys/sells','volume below $30k/day',
-                   'liquidity below $50k','pool younger than 12h','no matching DEX pool')
+                   'liquidity below $30k','pool younger than 12h','no matching DEX pool')
     counts={}
     for r in records:
         label=r.get('reason',r.get('status','UNKNOWN'))

@@ -6,8 +6,10 @@ def pair(liq=60000,vol=40000,age=50000,buys=2,sells=2):
 class RelaxedPaperThresholdTests(unittest.TestCase):
     def test_relaxed_pass(self):
         self.assertEqual(basic(pair(),NOW),(1.0,60000.0))
-    def test_liquidity_below_50k_blocked(self):
-        with self.assertRaisesRegex(ValueError,"liquidity"): basic(pair(liq=49999),NOW)
+    def test_liquidity_below_30k_blocked(self):
+        with self.assertRaisesRegex(ValueError,"liquidity"): basic(pair(liq=29999),NOW)
+    def test_liquidity_at_30k_allowed(self):
+        self.assertEqual(basic(pair(liq=30000),NOW),(1.0,30000.0))
     def test_volume_below_30k_blocked(self):
         with self.assertRaisesRegex(ValueError,"volume"): basic(pair(vol=29999),NOW)
     def test_age_below_12h_blocked(self):
