@@ -120,11 +120,24 @@ def scan(s,now,fx):
             except Exception as e:
                 errors.append(str(e))
     watch=s.setdefault('dex_watch',{})
+    # Retry only temporary market-data/market-activity rejections.
+    # This affects discovery priority, never entry or safety requirements.
+    retry=s.setdefault('dex_retry',{})
+    for k in list(retry):
+        if now-retry[k].get('last_checked',0)>7200 or k in held:
+            del retry[k]
+    for k,v in retry.items():
+        if now-v.get('last_checked',0)>=900:
+            candidates.setdefault(k,tuple(k.split(':',1)))
     for k in list(watch):
         if now-watch[k]['last_seen']>86400 and k not in held:
             del watch[k]
     for k in watch:
         candidates.setdefault(k,tuple(k.split(':',1)))
+    # Reserve up to four slots per chain for delayed second chances.
+    eligible={k:v for k,v in retry.items() if k in candidates and now-v.get('last_checked',0)>=900}
+    for k in eligible:
+        scores[k]=max(scores.get(k,0),5)
     selected=choose_candidates(candidates,scores,watch,held,now,per_chain=20)
     quotes={}; records=[]
     def inspect(item):
@@ -170,5 +183,22 @@ def scan(s,now,fx):
             records.append(r)
             if 'liquidity_observation' in r: s.setdefault('liquidity_history',{})[k]=r['liquidity_observation']
             if q: quotes[k]=q; watch[k]=w
-    s['dex_scan']=dict(checked_at=now,discovered=len(candidates),checked=len(records),by_chain={c:sum(r['chain']==c for r in records) for c in ('bsc','solana')},errors=errors,records=records,coverage='bounded sample; not all tokens',sell_check='BNB provider simulation required; Solana unintegrated => no new DEX entry')
+    retry_reasons=('insufficient recent buys/sells','volume below $30k/day',
+                   'liquidity below $50k','pool younger than 12h','no matching DEX pool')
+    counts={}
+    for r in records:
+        label=r.get('reason',r.get('status','UNKNOWN'))
+        counts[label]=counts.get(label,0)+1
+        k=r['key']
+        if r['status']=='SKIP' and any(x in r.get('reason','') for x in retry_reasons):
+            retry[k]={'last_checked':now,'reason':r['reason']}
+        else:
+            retry.pop(k,None)
+    # Bound retained state; keep only the most recently inspected candidates.
+    if len(retry)>80:
+        keep=dict(sorted(retry.items(),key=lambda item:item[1]['last_checked'],reverse=True)[:80])
+        retry.clear(); retry.update(keep)
+    s['dex_scan']=dict(checked_at=now,discovered=len(candidates),checked=len(records),by_chain={c:sum(r['chain']==c for r in records) for c in ('bsc','solana')},errors=errors,records=records,
+        skip_reasons=counts,retry_queued=len(retry),retry_inspected=sum(k in eligible for k in selected),
+        coverage='bounded sample; not all tokens',sell_check='BNB provider simulation required; Solana unintegrated => no new DEX entry')
     return quotes
