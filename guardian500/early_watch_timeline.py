@@ -1,4 +1,4 @@
-"""Bounded multi-snapshot research batch, not continuous monitoring or trading."""
+"""Bounded multi-snapshot research batch, not continuous monitoring or trading; four bounded real-world snapshots."""
 import json,subprocess,sys,time
 from pathlib import Path
 def main():
