@@ -1,0 +1,19 @@
+name: Read-only DEX swap activity audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [cuvar500-whale-dex-activity-20261028]
+    paths: ['guardian500/dex_swap_research.py']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/test_dex_swap_research.py
+      - run: python guardian500/dex_swap_research.py
