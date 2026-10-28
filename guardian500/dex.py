@@ -58,6 +58,18 @@ def check_security(chain,d,pair):
     if not 0<=fee<=.01: raise ValueError('pool fee unknown/high')
     return max(.004,fee)
 
+EARLY_WATCH_VOLUME_USD = 10000
+PAPER_ENTRY_VOLUME_USD = 30000
+
+def early_watch_volume(p):
+    """Research-only classification. No quotes or BUY signals for low volume."""
+    vol=number(p['volume']['h24'])
+    if vol < EARLY_WATCH_VOLUME_USD:
+        return 'BELOW_WATCH'
+    if vol < PAPER_ENTRY_VOLUME_USD:
+        return 'EARLY_WATCH'
+    return 'PAPER_VOLUME_ELIGIBLE'
+
 def basic(p,now):
     price=number(p['priceUsd']); liq=number(p['liquidity']['usd'])
     if price<=0 or liq<50000: raise ValueError('liquidity below $50k')
@@ -153,6 +165,15 @@ def scan(s,now,fx):
             if k in held: pools=[p for p in pools if p['pairAddress']==held[k]['pair_address']]
             if not pools: raise ValueError('no matching DEX pool')
             p=max(pools,key=lambda p:number((p.get('liquidity') or {}).get('usd',0)))
+            # Research a lower-volume token, but NEVER pass it to trade screening.
+            # Unknown/invalid volume remains fail-closed.
+            volume_class=early_watch_volume(p)
+            if volume_class=='EARLY_WATCH' and k not in held:
+                record.update(status='EARLY_WATCH',reason='research only: 24h volume below $30k PAPER gate',
+                              symbol=p.get('baseToken',{}).get('symbol','?'),
+                              pool=p['pairAddress'],volume_usd_24h=number(p['volume']['h24']),
+                              research_only=True,trade_eligible=False)
+                return k,None,record,None
             price,liq=basic(p,now)
             record.update(symbol=p['baseToken'].get('symbol','?'),pool=p['pairAddress'],liquidity_usd=liq,price_usd=price)
             previous=s.get('liquidity_history',{}).get(k)
@@ -204,6 +225,6 @@ def scan(s,now,fx):
         keep=dict(sorted(retry.items(),key=lambda item:item[1]['last_checked'],reverse=True)[:80])
         retry.clear(); retry.update(keep)
     s['dex_scan']=dict(checked_at=now,discovered=len(candidates),checked=len(records),by_chain={c:sum(r['chain']==c for r in records) for c in ('bsc','solana')},errors=errors,records=records,
-        skip_reasons=counts,retry_queued=len(retry),retry_inspected=sum(k in eligible for k in selected),
+        skip_reasons=counts,early_watch_count=sum(r['status']=='EARLY_WATCH' for r in records),early_watch_volume_usd=EARLY_WATCH_VOLUME_USD,paper_volume_usd=PAPER_ENTRY_VOLUME_USD,retry_queued=len(retry),retry_inspected=sum(k in eligible for k in selected),
         coverage='bounded sample; not all tokens',sell_check='BNB provider simulation required; Solana unintegrated => no new DEX entry')
     return quotes
