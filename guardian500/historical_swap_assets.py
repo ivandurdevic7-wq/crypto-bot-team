@@ -1,5 +1,5 @@
 """Historical known PancakeSwap swap: verify pool assets and decimals.
-Read-only research. Token metadata is queried at latest state, not historic USD.
+Read-only research; validation run. Token metadata is queried at latest state, not historic USD.
 """
 import json
 from dex_swap_research import request, parse, SWAP_TOPIC
