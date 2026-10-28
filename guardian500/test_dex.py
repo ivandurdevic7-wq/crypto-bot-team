@@ -51,7 +51,7 @@ class DexTests(unittest.TestCase):
         self.assertNotIn('bsc:retry',picked)
     def test_early_watch_volume_boundaries(self):
         for volume, expected in [(9999,'BELOW_WATCH'),(10000,'EARLY_WATCH'),
-                                 (29999,'EARLY_WATCH'),(30000,'PAPER_VOLUME_ELIGIBLE')]:
+                                 (19999,'EARLY_WATCH'),(20000,'PAPER_VOLUME_ELIGIBLE')]:
             self.assertEqual(early_watch_volume({'volume':{'h24':volume}}),expected)
     def test_early_watch_never_passes_paper_volume_gate(self):
         now=50000
@@ -60,7 +60,7 @@ class DexTests(unittest.TestCase):
         self.assertEqual(early_watch_volume(p),'EARLY_WATCH')
         with self.assertRaisesRegex(ValueError,'volume below'):
             basic(p,now)
-        p['volume']['h24']=30000
+        p['volume']['h24']=20000
         self.assertEqual(basic(p,now),(1.0,60000.0))
     def test_invalid_watch_volume_fails_closed(self):
         for v in ['nan',-1,None]:
