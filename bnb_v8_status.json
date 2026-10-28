@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424633257531462,
-      "last_usd": 0.0423159562256752,
+      "last_usd": 0.0423662664712839,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "AGT",
       "qty": 138.26472180265594,
       "entry_usd": 0.04020023999999999,
-      "peak_usd": 0.0411977316686898,
-      "last_usd": 0.0411977316686898,
+      "peak_usd": 0.0422754035294874,
+      "last_usd": 0.0422754035294874,
       "cost_eur": 5.0,
       "opened": "2026-10-28T10:23:29+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 2866.8650025092857,
       "entry_usd": 0.0019387989999999997,
       "peak_usd": 0.0019387989999999997,
-      "last_usd": 0.001933,
+      "last_usd": 0.0019223738801465,
       "cost_eur": 5.0,
       "opened": "2026-10-28T11:20:03+00:00"
     }
@@ -1184,6 +1184,18 @@
       "token": "TART",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-28T12:16:46+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-28T12:16:46+00:00",
+      "token": "APR",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -1198,13 +1210,31 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-28T11:19:58+00:00",
+  "last_attempt": "2026-10-28T12:16:41+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "COLLECT",
-      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "APR",
+      "address": "0x299ad4299da5b2b93fba4c96967b040c7f611099",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -1218,30 +1248,12 @@
         "Portfolio": true
       },
       "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x690fca316c1e782ce5e7ef1138fd1a03ce5955ef"
-    },
-    {
-      "token": "TART",
-      "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x30000a407fabebe29439f8e437050512ff6661be"
+      "dex_url": "https://dexscreener.com/bsc/0x6521914db7a1778615711469626e910d4b7db1c9"
     }
   ],
-  "screened_count": 32,
+  "screened_count": 28,
   "candidate_count": 3,
-  "estimated_eur": 157.27,
+  "estimated_eur": 157.38,
   "roles": [
     "Trend",
     "Momentum",
@@ -1255,5 +1267,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-28T11:20:03+00:00"
+  "last_success": "2026-10-28T12:16:46+00:00"
 }
