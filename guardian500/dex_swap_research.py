@@ -1,5 +1,5 @@
 """Read-only DEX swap activity scanner: BNB Chain PancakeSwap V2.
-One latest confirmed block only; no API keys and no token trades.
+One recent block only; no API keys and no token trades.
 Swap events show pool activity, NOT identified whale wallets or directional buys.
 """
 import json,urllib.request,datetime
