@@ -1,0 +1,33 @@
+name: Early Watch bounded multi-observation research
+on:
+  workflow_dispatch:
+  push:
+    branches: [cuvar500-early-watch-20261028]
+    paths: ['guardian500/early_watch_timeline.py']
+permissions:
+  contents: read
+jobs:
+  observations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: guardian500/early_watch_observations.json
+          key: early-watch-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            early-watch-${{ github.ref_name }}-
+      - run: python guardian500/test_early_watch.py
+      - run: python guardian500/early_watch_timeline.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: early-watch-timeline
+          path: |
+            guardian500/early_watch_timeline.jsonl
+            guardian500/early_watch_observations.json
+          if-no-files-found: ignore
