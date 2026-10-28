@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Čuvar 500 · Early Watch</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;background:#0b1220;color:#edf3ff}
+*{box-sizing:border-box}body{max-width:760px;margin:auto;padding:18px}h1{font-size:25px;margin:9px 0}p{color:#b8c6db;line-height:1.5}
+header{display:flex;justify-content:space-between;align-items:center} .pill{padding:6px 11px;border-radius:24px;background:#283a54;font-size:12px}
+.panel{background:#152236;border:1px solid #30415a;border-radius:15px;padding:17px;margin:13px 0}
+input{width:100%;padding:12px;border:1px solid #5a7193;background:#0d192b;color:#fff;border-radius:9px}
+button{background:#274872;border:0;border-radius:8px;color:white;padding:8px 11px;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#1b2b42;padding:13px;border-radius:10px}
+.stat b{font-size:23px;display:block}.muted{font-size:13px;color:#aebfd4}
+.item{border-top:1px solid #364660;padding:13px 0;overflow-wrap:anywhere}.item h3{margin:0 0 6px;font-size:16px}
+.warn{color:#ffd392}.bad{color:#ff9f9f}.ok{color:#abdbc3}
+</style></head><body>
+<header><strong>🛡 ČUVAR 500</strong><span class="pill">PAPER • BEZ NALOGA</span></header>
+<h1>🚀 Early Watch · Novi tokeni</h1>
+<p>Odvojeni pregled istraživačkih opažanja BNB Chaina i Solane. Nije trgovinski signal, sigurnosno odobrenje ni prijenos podataka uživo.</p>
+<section class="panel"><label for="file"><strong>Učitaj spremljeni Early Watch izvještaj (JSON)</strong></label>
+<input id="file" type="file" accept=".json,application/json"><p id="state" role="status">Nema učitanih podataka. Iz GitHub Actions artefakta odaberi <code>early_watch_observations.json</code>.</p></section>
+<div class="stats"><div class="stat"><b id="count">—</b><span class="muted">Ukupno opaženih</span></div><div class="stat"><b id="comp">—</b><span class="muted">Usporedivih opažanja</span></div></div>
+<section class="panel"><h2 style="font-size:18px">Tokeni</h2><div id="tokens">Učitaj izvještaj za prikaz.</div></section>
+<p class="muted">Upozorenja se računaju iz povremenih uzoraka. Nepoznati podaci nisu dokaz sigurnosti. Kupnja i prodaja nisu omogućene.</p>
+<script>
+const el=id=>document.getElementById(id);
+function line(parent,label,val){const p=document.createElement('p');p.className='muted';p.textContent=label+': '+(val===null||val===undefined?'nepoznato':String(val));parent.append(p)}
+function render(data){
+ if(!data||data.mode!=='DISCOVERY_ONLY'||!data.tokens||typeof data.tokens!=='object'||Array.isArray(data.tokens))throw Error('Neispravan Early Watch izvještaj.');
+ const rows=Object.values(data.tokens),generated=Date.parse(data.generated_at_utc);
+ if(!Number.isFinite(generated))throw Error('Nedostaje valjano vrijeme izvještaja.');
+ const minutes=Math.max(0,Math.floor((Date.now()-generated)/60000));
+ el('state').textContent='Izvještaj: '+new Date(generated).toLocaleString('hr-HR')+' · starost '+minutes+' min · podaci nisu uživo';
+ el('count').textContent=rows.length;
+ el('comp').textContent=rows.filter(r=>r.snapshot_comparison?.status==='COMPARABLE').length;
+ const target=el('tokens');target.replaceChildren();
+ for(const row of rows.slice(0,100)){
+  const item=document.createElement('article');item.className='item';
+  const title=document.createElement('h3');title.textContent=(row.chain==='bsc'?'BNB':row.chain==='solana'?'SOL':'?')+' · '+String(row.token||'?');item.append(title);
+  line(item,'Par',row.pair);line(item,'Starost para (sati)',row.pair_age_hours);line(item,'Likvidnost USD',row.liquidity_usd);
+  line(item,'Kupnje / prodaje (5 min)',String(row.txns_m5_buys??'?')+' / '+String(row.txns_m5_sells??'?'));
+  line(item,'Promjena likvidnosti (%)',row.snapshot_comparison?.liquidity_change_pct);
+  line(item,'Zadnje opažanje',row.last_seen_utc);
+  const alert=document.createElement('p');const warnings=Array.isArray(row.risk_alerts)?row.risk_alerts.map(a=>a.kind):[];
+  alert.className=warnings.length?'warn':'muted';alert.textContent='Upozorenja: '+(warnings.join(', ')||'nema u zabilježenom uzorku; sigurnost nije potvrđena');item.append(alert);target.append(item);
+ }
+ if(!rows.length)target.textContent='Nema opaženih tokena u ovom izvještaju.';
+}
+el('file').addEventListener('change',async e=>{
+ try{const file=e.target.files?.[0];if(!file)return;if(file.size>5_000_000)throw Error('Datoteka je prevelika.');
+ render(JSON.parse(await file.text()));
+ }catch(error){el('state').textContent='Učitavanje nije uspjelo: '+error.message;el('tokens').textContent='Provjeri JSON izvještaj.';el('count').textContent='—';el('comp').textContent='—';}
+});
+</script></body></html>
