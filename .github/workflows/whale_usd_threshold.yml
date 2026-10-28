@@ -1,0 +1,19 @@
+name: Whale USD threshold historical research
+on:
+  push:
+    branches: [cuvar500-dex-swap-validation-20261028]
+    paths: ['guardian500/whale_usd_threshold.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python guardian500/test_whale_usd_threshold.py
+      - run: python guardian500/whale_usd_threshold.py
