@@ -1,5 +1,5 @@
 {
-  "cash_eur": 128.9912199986253,
+  "cash_eur": 123.9912199986253,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.041785560377486,
+      "last_usd": 0.041365965516582,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "AKE",
       "qty": 268.7324379459969,
       "entry_usd": 0.02065177,
-      "peak_usd": 0.0211123593285876,
-      "last_usd": 0.0210358665908221,
+      "peak_usd": 0.0211291549698015,
+      "last_usd": 0.0211291549698015,
       "cost_eur": 5.0,
       "opened": "2026-10-29T12:17:16+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 30.41071946338006,
       "entry_usd": 0.1824457,
       "peak_usd": 0.1824457,
-      "last_usd": 0.181820337296154,
+      "last_usd": 0.180035427578818,
       "cost_eur": 5.0,
       "opened": "2026-10-29T18:20:40+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 28.751090802436767,
       "entry_usd": 0.19297719999999996,
       "peak_usd": 0.19297719999999996,
-      "last_usd": 0.190738432418269,
+      "last_usd": 0.190321055642458,
       "cost_eur": 5.0,
       "opened": "2026-10-29T19:29:18+00:00"
     },
@@ -43,9 +43,18 @@
       "qty": 410.97398739887325,
       "entry_usd": 0.013500379999999998,
       "peak_usd": 0.0143437645294479,
-      "last_usd": 0.0142023646163587,
+      "last_usd": 0.0142244132600512,
       "cost_eur": 5.0,
       "opened": "2026-10-29T20:20:42+00:00"
+    },
+    "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
+      "token": "AGT",
+      "qty": 151.76158766498855,
+      "entry_usd": 0.03655935,
+      "peak_usd": 0.03655935,
+      "last_usd": 0.03645,
+      "cost_eur": 5.0,
+      "opened": "2026-10-29T23:14:54+00:00"
     }
   },
   "trades": [
@@ -1198,27 +1207,29 @@
       "pnl_eur": -0.2112,
       "reason": "STOP",
       "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-29T23:14:54+00:00",
+      "side": "BUY",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-26T21:10:08+00:00",
-      "token": "ZIG",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-26T22:09:45+00:00",
-      "token": "IRYS",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_honeypot"
-    },
-    {
-      "time": "2026-10-26T22:09:45+00:00",
-      "token": "APR",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-10-26T22:09:45+00:00",
       "token": "COLLECT",
@@ -2280,6 +2291,24 @@
       "token": "APR",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-29T23:14:54+00:00",
+      "token": "AGT",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-29T23:14:55+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-29T23:14:55+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -2297,32 +2326,32 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-29T22:16:42+00:00",
+  "last_attempt": "2026-10-29T23:14:49+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "APR",
-      "address": "0x299ad4299da5b2b93fba4c96967b040c7f611099",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x6521914db7a1778615711469626e910d4b7db1c9"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
     }
   ],
-  "screened_count": 47,
-  "candidate_count": 7,
-  "estimated_eur": 154.27,
+  "screened_count": 41,
+  "candidate_count": 6,
+  "estimated_eur": 154.16,
   "roles": [
     "Trend",
     "Momentum",
@@ -2336,5 +2365,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-29T22:16:46+00:00"
+  "last_success": "2026-10-29T23:14:55+00:00"
 }
