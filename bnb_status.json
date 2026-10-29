@@ -1,5 +1,5 @@
 {
-  "cash_eur": 140.78558114684463,
+  "cash_eur": 140.5548602203381,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,27 +7,27 @@
       "qty": 130.64510141089173,
       "entry_usd": 0.042544840487502684,
       "peak_usd": 0.042544840487502684,
-      "last_usd": 0.0424088940272974,
+      "last_usd": 0.0421610319486897,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:55:01+00:00"
-    },
-    "0xa991f61940095aea0724ef54077223b048c5cf7b": {
-      "token": "DNA",
-      "qty": 31.764336322580323,
-      "entry_usd": 0.17471797438609826,
-      "peak_usd": 0.17471797438609826,
-      "last_usd": 0.170844519835845,
-      "cost_eur": 5.0,
-      "opened": "2026-10-29T10:55:17+00:00"
     },
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 267.6822084721193,
       "entry_usd": 0.02073279554766541,
       "peak_usd": 0.0211679865176018,
-      "last_usd": 0.0205663264260171,
+      "last_usd": 0.0203324206551179,
       "cost_eur": 5.0,
       "opened": "2026-10-29T13:05:31+00:00"
+    },
+    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
+      "token": "ON",
+      "qty": 30.5614287243933,
+      "entry_usd": 0.18154599544528144,
+      "peak_usd": 0.18154599544528144,
+      "last_usd": 0.181002986485824,
+      "cost_eur": 5.0,
+      "opened": "2026-10-29T17:56:06+00:00"
     }
   },
   "trades": [
@@ -717,27 +717,26 @@
       "eur": 4.7348,
       "pnl_eur": -0.2652,
       "reason": "trailing stop"
+    },
+    {
+      "time": "2026-10-29T17:56:06+00:00",
+      "side": "SELL",
+      "token": "DNA",
+      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
+      "eur": 4.7693,
+      "pnl_eur": -0.2307,
+      "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-29T17:56:06+00:00",
+      "side": "BUY",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-27T02:41:45+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-10-27T02:41:46+00:00",
-      "token": "CAP",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-10-27T03:44:14+00:00",
-      "token": "CNPY",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: is_mintable"
-    },
     {
       "time": "2026-10-27T03:44:15+00:00",
       "token": "ARIA",
@@ -1619,13 +1618,31 @@
       "token": "UP",
       "decision": "SKIP",
       "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-29T17:56:06+00:00",
+      "token": "ON",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-29T17:56:07+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
+    },
+    {
+      "time": "2026-10-29T17:56:07+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
     }
   ],
-  "last_success": "2026-10-29T17:00:14+00:00",
-  "last_attempt": "2026-10-29T17:00:03+00:00",
-  "screened_count": 49,
-  "eligible_count": 6,
-  "estimated_eur": 155.59,
+  "last_success": "2026-10-29T17:56:07+00:00",
+  "last_attempt": "2026-10-29T17:56:04+00:00",
+  "screened_count": 50,
+  "eligible_count": 4,
+  "estimated_eur": 155.36,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
