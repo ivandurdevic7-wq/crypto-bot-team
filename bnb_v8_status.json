@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0408587260083399,
+      "last_usd": 0.0411623676048253,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 28.751090802436767,
       "entry_usd": 0.19297719999999996,
       "peak_usd": 0.194510016846507,
-      "last_usd": 0.192449630183798,
+      "last_usd": 0.192870780077894,
       "cost_eur": 5.0,
       "opened": "2026-10-29T19:29:18+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "IDOL",
       "qty": 390.1064788708627,
       "entry_usd": 0.014222539999999999,
-      "peak_usd": 0.0155982758725967,
-      "last_usd": 0.0155982758725967,
+      "peak_usd": 0.0159010154798948,
+      "last_usd": 0.0159010154798948,
       "cost_eur": 5.0,
       "opened": "2026-10-30T01:39:07+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 146.88555152386704,
       "entry_usd": 0.03777298,
       "peak_usd": 0.038309603051684,
-      "last_usd": 0.038309603051684,
+      "last_usd": 0.0382679445209677,
       "cost_eur": 5.0,
       "opened": "2026-10-30T05:20:50+00:00"
     }
@@ -1293,18 +1293,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-10-27T03:12:18+00:00",
-      "token": "BANK",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-10-27T04:13:38+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
       "time": "2026-10-27T04:13:39+00:00",
       "token": "CAP",
       "decision": "SKIP",
@@ -2371,6 +2359,18 @@
       "token": "DNA",
       "decision": "SKIP",
       "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-30T07:40:08+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-10-30T07:40:08+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -2391,10 +2391,28 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T06:17:51+00:00",
+  "last_attempt": "2026-10-30T07:40:01+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
+    {
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 8,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
+    },
     {
       "token": "JCT",
       "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
@@ -2414,9 +2432,9 @@
       "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
-  "screened_count": 47,
-  "candidate_count": 6,
-  "estimated_eur": 153.91,
+  "screened_count": 46,
+  "candidate_count": 7,
+  "estimated_eur": 154.05,
   "roles": [
     "Trend",
     "Momentum",
@@ -2430,5 +2448,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T06:17:56+00:00"
+  "last_success": "2026-10-30T07:40:08+00:00"
 }
