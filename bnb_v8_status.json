@@ -1,5 +1,5 @@
 {
-  "cash_eur": 135.43494155674634,
+  "cash_eur": 140.6075438178043,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,25 +7,16 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.041906235725474,
+      "last_usd": 0.0416180713602376,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
-    },
-    "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37": {
-      "token": "DOS",
-      "qty": 28.751090802436767,
-      "entry_usd": 0.19297719999999996,
-      "peak_usd": 0.207,
-      "last_usd": 0.2056,
-      "cost_eur": 5.0,
-      "opened": "2026-10-29T19:29:18+00:00"
     },
     "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
       "token": "ON",
       "qty": 26.58010649716719,
       "entry_usd": 0.20952669999999998,
       "peak_usd": 0.211036299024675,
-      "last_usd": 0.211036299024675,
+      "last_usd": 0.205020197987138,
       "cost_eur": 5.0,
       "opened": "2026-10-30T18:17:00+00:00"
     },
@@ -33,8 +24,8 @@
       "token": "SAFU",
       "qty": 6431.068157584233,
       "entry_usd": 0.0008659901999999998,
-      "peak_usd": 0.0008659901999999998,
-      "last_usd": 0.0008634,
+      "peak_usd": 0.000937046697695212,
+      "last_usd": 0.000937046697695212,
       "cost_eur": 5.0,
       "opened": "2026-10-30T19:25:39+00:00"
     }
@@ -1409,21 +1400,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-30T20:15:20+00:00",
+      "side": "SELL",
+      "token": "DOS",
+      "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
+      "eur": 5.1726,
+      "pnl_eur": 0.1726,
+      "reason": "TRAIL",
+      "price_source": "DEX Screener"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-27T14:26:56+00:00",
-      "token": "COLLECT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-27T14:26:56+00:00",
-      "token": "TART",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-10-27T15:25:26+00:00",
       "token": "TAG",
@@ -2491,6 +2480,18 @@
       "token": "SAFU",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-30T20:15:20+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-30T20:15:20+00:00",
+      "token": "COLLECT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -2511,32 +2512,32 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T19:25:34+00:00",
+  "last_attempt": "2026-10-30T20:15:15+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "SAFU",
-      "address": "0xdd806e436dda5588bf54061c11590c77ddc87777",
+      "token": "COLLECT",
+      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
         "Volume": true,
-        "Liquidity": true,
+        "Liquidity": false,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": true,
+        "Risk guard": false,
         "Portfolio": true
       },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0x13b86fcf85c9c8f5c36593822d216b8893c25450"
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0xf135d75d1360c76dddc01394c82da76a172a00d8"
     }
   ],
-  "screened_count": 35,
-  "candidate_count": 3,
-  "estimated_eur": 155.77,
+  "screened_count": 42,
+  "candidate_count": 7,
+  "estimated_eur": 155.9,
   "roles": [
     "Trend",
     "Momentum",
@@ -2550,5 +2551,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T19:25:39+00:00"
+  "last_success": "2026-10-30T20:15:20+00:00"
 }
