@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-10-30T17:29:57.580174+00:00
+- updated_at: 2026-10-30T18:17:29.134655+00:00
 - status: OK
 - cash: 498.4193168083648
 - equity_eur: 498.4193168083648
@@ -18,6 +18,9 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $30k |
 | 0x1d9b64a09c52ad1e75e052223bef52d2adac8426 | bsc | SKIP | no matching DEX pool |
 | 0x21a8dd1ae3fc614ce5abffad196d1470ed287777 | bsc | SKIP | no matching DEX pool |
+| 0x2adaabf0d4d4a0960efed60b9b6ab64b47347777 | bsc | SKIP | liquidity below $30k |
+| 0x35eac35731e48d69d7f86f5ecdf95499cc8e0579 | bsc | SKIP | no matching DEX pool |
+| 0x3e29f1894f6200d5d9996187cff3f0235e277777 | bsc | SKIP | liquidity below $30k |
 | 0x66cd9c206ea2f46d2a1a2bd322850322ca4a6666 | bsc | SKIP | liquidity below $30k |
 | 0x6c0b008499239ccedd48595763225db54ac9585c | bsc | SKIP | liquidity below $30k |
 | 0x7097fc0a1528dc8b22890c8899b9521080d47777 | bsc | SKIP | no matching DEX pool |
@@ -30,15 +33,11 @@
 | 0xb89df2f57fc549407e76c859dbdcec76f5da014b | bsc | SKIP | no matching DEX pool |
 | 0xe07d4bd6b94cec4e412c8f9735bc8fc97d25ad1e | bsc | SKIP | pool younger than 12h |
 | 0xf5cb7cc90040aa717a16887c8b7d7c10a7c60984 | bsc | SKIP | no matching DEX pool |
-| 0x2adaabf0d4d4a0960efed60b9b6ab64b47347777 | bsc | SKIP | liquidity below $30k |
-| 0x35eac35731e48d69d7f86f5ecdf95499cc8e0579 | bsc | SKIP | no matching DEX pool |
-| 0x3e29f1894f6200d5d9996187cff3f0235e277777 | bsc | SKIP | liquidity below $30k |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
-| 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
-| 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
-| 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
-| 5Sqq3NWD98JkcirdDBKRxZFsoZ8f1qqpFp6DSZkoTsHd | solana | SKIP | volume below $20k/day |
-| 9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa | solana | SKIP | insufficient recent buys/sells |
+| 5XXn2PCJDCGUViEUcwKA6gLcTS5zG5ESnmTsfvEvDU4P | solana | SKIP | volume below $20k/day |
+| 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
+| 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
+| 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | volume below $20k/day |
 | AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
 | AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
 | BUajtJrDxA8bYzHiXuoJPGw1ZiU8XgYpwsUbcuX84E2S | solana | SKIP | volume below $20k/day |
@@ -53,6 +52,7 @@
 | S7NvEJxgM5ppV6HHKnS5HmCqUYw79ewoDHysojYnRaj | solana | SKIP | volume below $20k/day |
 | SVY1zmfRddD7w8cqSZTPdzKF4Vyd62kUjBjdiWH83Co | solana | SKIP | volume below $20k/day |
 | soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $20k/day |
+| 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $20k/day |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
