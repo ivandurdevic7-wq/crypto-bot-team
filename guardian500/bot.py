@@ -32,7 +32,8 @@ def market(pair, now):
     depth = next(iter(api('Depth', pair=pair, count=25).values()))
     buy_depth = sum(float(p)*float(q) for p,q,*_ in depth['asks'] if float(p)<=ask*1.002)
     sell_depth = sum(float(p)*float(q) for p,q,*_ in depth['bids'] if float(p)>=bid*.998)
-    breakout=closes[-1]>max(float(r[2]) for r in rows[-21:-1])
+    # PAPER experiment: shorter breakout window (10 completed hourly candles instead of 20).
+    breakout=closes[-1]>max(float(r[2]) for r in rows[-11:-1])
     trend=sum(closes[-20:])/20>sum(closes[-50:])/50
     return dict(bid=bid, ask=ask, candle=int(rows[-1][0]),
                 entry=breakout and trend, breakout=breakout, trend=trend,
@@ -105,6 +106,7 @@ def cycle(s, quotes, now):
             entry_diagnostics[pair]={
                 'checked_at':datetime.fromtimestamp(now,timezone.utc).isoformat(),
                 'candle':q['candle'],
+                'breakout_window_hours':10,
                 'checks':checks,
                 'blocked_by':[k for k,v in checks.items() if not v],
                 'note':'Diagnostic only; not a trading instruction',
