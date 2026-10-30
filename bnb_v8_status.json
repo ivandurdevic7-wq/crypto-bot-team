@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0411094038671462,
+      "last_usd": 0.0410865045885739,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 28.751090802436767,
       "entry_usd": 0.19297719999999996,
       "peak_usd": 0.1963,
-      "last_usd": 0.1954,
+      "last_usd": 0.1942,
       "cost_eur": 5.0,
       "opened": "2026-10-29T19:29:18+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "IDOL",
       "qty": 390.1064788708627,
       "entry_usd": 0.014222539999999999,
-      "peak_usd": 0.0168148675685015,
-      "last_usd": 0.0168148675685015,
+      "peak_usd": 0.0173195911276401,
+      "last_usd": 0.0173195911276401,
       "cost_eur": 5.0,
       "opened": "2026-10-30T01:39:07+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 105.34583641951691,
       "entry_usd": 0.05266753,
       "peak_usd": 0.0536903399306011,
-      "last_usd": 0.0523204506140782,
+      "last_usd": 0.0533500231945538,
       "cost_eur": 5.0,
       "opened": "2026-10-30T10:26:09+00:00"
     },
@@ -43,7 +43,7 @@
       "qty": 25.55062295791609,
       "entry_usd": 0.21714949999999997,
       "peak_usd": 0.218350330787727,
-      "last_usd": 0.218350330787727,
+      "last_usd": 0.211277505900176,
       "cost_eur": 5.0,
       "opened": "2026-10-30T11:16:53+00:00"
     }
@@ -1352,18 +1352,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-10-27T08:20:05+00:00",
-      "token": "COLLECT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-27T09:18:24+00:00",
-      "token": "CAP",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
       "time": "2026-10-27T09:18:25+00:00",
       "token": "GANG",
       "decision": "BUY",
@@ -2430,6 +2418,18 @@
       "token": "DNA",
       "decision": "SKIP",
       "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-30T13:38:56+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-10-30T13:38:56+00:00",
+      "token": "COLLECT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -2450,13 +2450,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T12:16:18+00:00",
+  "last_attempt": "2026-10-30T13:38:51+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "Q",
-      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "token": "BLESS",
+      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -2470,12 +2470,30 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
+      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+    },
+    {
+      "token": "COLLECT",
+      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0xf135d75d1360c76dddc01394c82da76a172a00d8"
     }
   ],
-  "screened_count": 36,
-  "candidate_count": 8,
-  "estimated_eur": 154.17,
+  "screened_count": 37,
+  "candidate_count": 5,
+  "estimated_eur": 154.24,
   "roles": [
     "Trend",
     "Momentum",
@@ -2489,5 +2507,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T12:16:24+00:00"
+  "last_success": "2026-10-30T13:38:56+00:00"
 }
