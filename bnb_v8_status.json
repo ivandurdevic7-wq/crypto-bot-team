@@ -1,5 +1,5 @@
 {
-  "cash_eur": 123.9912199986253,
+  "cash_eur": 128.9934467170931,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.041365965516582,
+      "last_usd": 0.0412186488063921,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 268.7324379459969,
       "entry_usd": 0.02065177,
       "peak_usd": 0.0211291549698015,
-      "last_usd": 0.0211291549698015,
+      "last_usd": 0.020941237438943,
       "cost_eur": 5.0,
       "opened": "2026-10-29T12:17:16+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 30.41071946338006,
       "entry_usd": 0.1824457,
       "peak_usd": 0.1824457,
-      "last_usd": 0.180035427578818,
+      "last_usd": 0.182045884122342,
       "cost_eur": 5.0,
       "opened": "2026-10-29T18:20:40+00:00"
     },
@@ -34,25 +34,16 @@
       "qty": 28.751090802436767,
       "entry_usd": 0.19297719999999996,
       "peak_usd": 0.19297719999999996,
-      "last_usd": 0.190321055642458,
+      "last_usd": 0.187926693823511,
       "cost_eur": 5.0,
       "opened": "2026-10-29T19:29:18+00:00"
-    },
-    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
-      "token": "IDOL",
-      "qty": 410.97398739887325,
-      "entry_usd": 0.013500379999999998,
-      "peak_usd": 0.0143437645294479,
-      "last_usd": 0.0142244132600512,
-      "cost_eur": 5.0,
-      "opened": "2026-10-29T20:20:42+00:00"
     },
     "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
       "token": "AGT",
       "qty": 151.76158766498855,
       "entry_usd": 0.03655935,
       "peak_usd": 0.03655935,
-      "last_usd": 0.03645,
+      "last_usd": 0.0360769885945357,
       "cost_eur": 5.0,
       "opened": "2026-10-29T23:14:54+00:00"
     }
@@ -1227,21 +1218,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-30T00:10:22+00:00",
+      "side": "SELL",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 5.0022,
+      "pnl_eur": 0.0022,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-26T22:09:45+00:00",
-      "token": "COLLECT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-26T23:08:55+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-10-26T23:08:56+00:00",
       "token": "AIN",
@@ -2309,6 +2298,18 @@
       "token": "CAP",
       "decision": "SKIP",
       "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-10-30T00:10:23+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-30T00:10:23+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -2323,21 +2324,42 @@
     },
     "2026-10-29": {
       "start_eur": 156.7477
+    },
+    "2026-10-30": {
+      "start_eur": 153.7897
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-29T23:14:49+00:00",
+  "last_attempt": "2026-10-30T00:10:17+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "AGT",
-      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "JAGENT",
+      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -2345,13 +2367,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
+      "score": 8,
+      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
-  "screened_count": 41,
-  "candidate_count": 6,
-  "estimated_eur": 154.16,
+  "screened_count": 48,
+  "candidate_count": 7,
+  "estimated_eur": 153.79,
   "roles": [
     "Trend",
     "Momentum",
@@ -2365,5 +2387,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-29T23:14:55+00:00"
+  "last_success": "2026-10-30T00:10:23+00:00"
 }
