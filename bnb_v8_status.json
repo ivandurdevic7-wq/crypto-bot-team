@@ -1,5 +1,5 @@
 {
-  "cash_eur": 145.61697412046388,
+  "cash_eur": 140.61697412046388,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0423117390952971,
+      "last_usd": 0.0423799825465443,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -15,10 +15,19 @@
       "token": "IDOL",
       "qty": 255.87945839899658,
       "entry_usd": 0.0217651,
-      "peak_usd": 0.0221082682318517,
-      "last_usd": 0.0221082682318517,
+      "peak_usd": 0.0240585479245026,
+      "last_usd": 0.0240585479245026,
       "cost_eur": 5.0,
       "opened": "2026-10-30T21:15:25+00:00"
+    },
+    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
+      "token": "AKE",
+      "qty": 407.97826945321276,
+      "entry_usd": 0.01365083,
+      "peak_usd": 0.01365083,
+      "last_usd": 0.01361,
+      "cost_eur": 5.0,
+      "opened": "2026-10-30T23:12:11+00:00"
     }
   },
   "trades": [
@@ -1441,27 +1450,29 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-30T23:12:11+00:00",
+      "side": "BUY",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-27T16:25:27+00:00",
-      "token": "BANK",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-10-27T17:24:10+00:00",
-      "token": "GANG",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-27T17:24:10+00:00",
-      "token": "DOOD",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_honeypot"
-    },
     {
       "time": "2026-10-27T18:17:43+00:00",
       "token": "AIN",
@@ -2523,6 +2534,24 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-30T23:12:11+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-10-30T23:12:11+00:00",
+      "token": "AKE",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-30T23:12:12+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -2543,7 +2572,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T22:13:24+00:00",
+  "last_attempt": "2026-10-30T23:12:05+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -2551,10 +2580,10 @@
       "token": "Q",
       "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -2562,31 +2591,49 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 8,
+      "score": 6,
       "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
     },
     {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x4d3bf29ba30f8bfe4624e7678709afa195689c5d"
+    },
+    {
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
     }
   ],
-  "screened_count": 35,
-  "candidate_count": 8,
-  "estimated_eur": 155.79,
+  "screened_count": 39,
+  "candidate_count": 9,
+  "estimated_eur": 156.21,
   "roles": [
     "Trend",
     "Momentum",
@@ -2600,5 +2647,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T22:13:29+00:00"
+  "last_success": "2026-10-30T23:12:12+00:00"
 }
