@@ -19,4 +19,16 @@ class Tests(unittest.TestCase):
     def test_illiquid(self):
         s=initial(); q=quote(); q['liquid']=False
         cycle(s,{'XBTEUR':q},10000); self.assertEqual(s['cash'],500)
+    def test_entry_diagnostics_wait(self):
+        s=initial()
+        cycle(s,{'XBTEUR':quote(entry=False)},10000)
+        self.assertEqual(s['decisions'],['XBTEUR: WAIT'])
+        self.assertFalse(s['entry_diagnostics']['XBTEUR']['checks']['entry_signal'])
+        self.assertIn('entry_signal',s['entry_diagnostics']['XBTEUR']['blocked_by'])
+        self.assertEqual(len(s['trades']),0)
+    def test_entry_diagnostics_do_not_block_buy(self):
+        s=initial()
+        cycle(s,{'XBTEUR':quote(entry=True)},10000)
+        self.assertEqual(s['decisions'],['XBTEUR: BUY'])
+        self.assertTrue(s['entry_diagnostics']['XBTEUR']['checks']['entry_signal'])
 if __name__=='__main__': unittest.main()
