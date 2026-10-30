@@ -1,5 +1,5 @@
 {
-  "cash_eur": 140.6075438178043,
+  "cash_eur": 145.61697412046388,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,27 +7,18 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0416180713602376,
+      "last_usd": 0.0418881110695538,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 26.58010649716719,
-      "entry_usd": 0.20952669999999998,
-      "peak_usd": 0.211036299024675,
-      "last_usd": 0.205020197987138,
+    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
+      "token": "IDOL",
+      "qty": 255.87945839899658,
+      "entry_usd": 0.0217651,
+      "peak_usd": 0.0217651,
+      "last_usd": 0.0217,
       "cost_eur": 5.0,
-      "opened": "2026-10-30T18:17:00+00:00"
-    },
-    "0xdd806e436dda5588bf54061c11590c77ddc87777": {
-      "token": "SAFU",
-      "qty": 6431.068157584233,
-      "entry_usd": 0.0008659901999999998,
-      "peak_usd": 0.000937046697695212,
-      "last_usd": 0.000937046697695212,
-      "cost_eur": 5.0,
-      "opened": "2026-10-30T19:25:39+00:00"
+      "opened": "2026-10-30T21:15:25+00:00"
     }
   },
   "trades": [
@@ -1410,27 +1401,49 @@
       "pnl_eur": 0.1726,
       "reason": "TRAIL",
       "price_source": "DEX Screener"
+    },
+    {
+      "time": "2026-10-30T21:15:24+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 4.7144,
+      "pnl_eur": -0.2856,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-30T21:15:24+00:00",
+      "side": "SELL",
+      "token": "SAFU",
+      "address": "0xdd806e436dda5588bf54061c11590c77ddc87777",
+      "eur": 5.295,
+      "pnl_eur": 0.295,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-30T21:15:25+00:00",
+      "side": "BUY",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-27T15:25:26+00:00",
-      "token": "TAG",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-27T15:25:26+00:00",
-      "token": "HUMA",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-27T15:25:26+00:00",
-      "token": "IRYS",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_honeypot"
-    },
     {
       "time": "2026-10-27T16:25:26+00:00",
       "token": "ZIG",
@@ -2492,6 +2505,24 @@
       "token": "COLLECT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-30T21:15:25+00:00",
+      "token": "IDOL",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-30T21:15:25+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-10-30T21:15:25+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
     }
   ],
   "daily": {
@@ -2512,32 +2543,68 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T20:15:15+00:00",
+  "last_attempt": "2026-10-30T21:15:19+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "COLLECT",
-      "address": "0x4b3d30992f003c8167699735f5ab2831b2a087d3",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
+    },
+    {
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
+    },
+    {
+      "token": "BLESS",
+      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
       "votes": {
         "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0xf135d75d1360c76dddc01394c82da76a172a00d8"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
     }
   ],
-  "screened_count": 42,
-  "candidate_count": 7,
-  "estimated_eur": 155.9,
+  "screened_count": 39,
+  "candidate_count": 3,
+  "estimated_eur": 155.64,
   "roles": [
     "Trend",
     "Momentum",
@@ -2551,5 +2618,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T20:15:20+00:00"
+  "last_success": "2026-10-30T21:15:25+00:00"
 }
