@@ -32,8 +32,10 @@ def market(pair, now):
     depth = next(iter(api('Depth', pair=pair, count=25).values()))
     buy_depth = sum(float(p)*float(q) for p,q,*_ in depth['asks'] if float(p)<=ask*1.002)
     sell_depth = sum(float(p)*float(q) for p,q,*_ in depth['bids'] if float(p)>=bid*.998)
+    breakout=closes[-1]>max(float(r[2]) for r in rows[-21:-1])
+    trend=sum(closes[-20:])/20>sum(closes[-50:])/50
     return dict(bid=bid, ask=ask, candle=int(rows[-1][0]),
-                entry=closes[-1]>max(float(r[2]) for r in rows[-21:-1]) and sum(closes[-20:])/20>sum(closes[-50:])/50,
+                entry=breakout and trend, breakout=breakout, trend=trend,
                 exit=closes[-1]<sum(closes[-20:])/20,
                 liquid=min(buy_depth,sell_depth)>=5000 and (ask-bid)/bid<=.002,
                 volume_eur=float(tick['v'][1])*float(tick['p'][1]))
@@ -53,6 +55,7 @@ def cycle(s, quotes, now):
     if eq <= s['peak']*.92: s['halted']=True
     if eq <= s['day_start']*.97: s['day_paused']=True
     decisions=[]
+    entry_diagnostics={}
     for pair,q in quotes.items():
         fee,slip,gas=q.get('fee',FEE),q.get('slip',SLIP),q.get('gas',0)
         p=s['positions'].get(pair)
@@ -84,6 +87,28 @@ def cycle(s, quotes, now):
                 continue
         fresh=q['candle']>s['seen'].get(pair,0)
         s['seen'][pair]=max(q['candle'],s['seen'].get(pair,0))
+        if pair in PAIRS:
+            # Diagnostic only: mirrors the existing entry gate; never authorizes orders.
+            checks={
+                'new_candle': bool(fresh),
+                'entry_signal': q['entry'] is True,
+                'liquidity': q['liquid'] is True,
+                'volume': q['volume_eur']>=q.get('min_volume',1e6),
+                'risk_not_halted': not s['halted'],
+                'day_not_paused': not s['day_paused'],
+                'cooldown_complete': now>=s['cooldown'].get(pair,0),
+                'position_limit': len(s['positions'])<2,
+                'not_already_held': pair not in s['positions'],
+            }
+            if 'breakout' in q: checks['breakout']=q['breakout'] is True
+            if 'trend' in q: checks['trend']=q['trend'] is True
+            entry_diagnostics[pair]={
+                'checked_at':datetime.fromtimestamp(now,timezone.utc).isoformat(),
+                'candle':q['candle'],
+                'checks':checks,
+                'blocked_by':[k for k,v in checks.items() if not v],
+                'note':'Diagnostic only; not a trading instruction',
+            }
         if pair not in s['positions'] and fresh and q['entry'] and q['liquid'] and q['volume_eur']>=q.get('min_volume',1e6) and not s['halted'] and not s['day_paused'] and now>=s['cooldown'].get(pair,0) and len(s['positions'])<2:
             # 0.75% equity risk budget including modelled round-trip costs.
             budget=min(max(0,eq*q.get('risk',.0075)-2*gas)/(.05+2*(fee+slip)),eq*.20,q.get('cap',eq*.20),max(0,s['cash']-eq*.40))
@@ -94,6 +119,7 @@ def cycle(s, quotes, now):
                 s['trades'].append(dict(time=now,pair=pair,side='BUY',price=price,qty=qty,fee=gross*fee,gas=gas,reason=q.get('reason','hourly breakout + trend')))
                 decisions.append(pair+': BUY'); continue
         decisions.append(pair+(': HOLD' if pair in s['positions'] else ': WAIT'))
+    s['entry_diagnostics']=entry_diagnostics
     s.update(equity_eur=equity(s,quotes),updated_at=datetime.fromtimestamp(now,timezone.utc).isoformat(),status='OK',decisions=decisions,quotes=quotes)
     s['pnl_eur']=s['equity_eur']-500
     return s
