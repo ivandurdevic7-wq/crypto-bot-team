@@ -7,7 +7,7 @@
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
       "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0418881110695538,
+      "last_usd": 0.0423117390952971,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "IDOL",
       "qty": 255.87945839899658,
       "entry_usd": 0.0217651,
-      "peak_usd": 0.0217651,
-      "last_usd": 0.0217,
+      "peak_usd": 0.0221082682318517,
+      "last_usd": 0.0221082682318517,
       "cost_eur": 5.0,
       "opened": "2026-10-30T21:15:25+00:00"
     }
@@ -1445,18 +1445,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-10-27T16:25:26+00:00",
-      "token": "ZIG",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-27T16:25:26+00:00",
-      "token": "DNA",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
       "time": "2026-10-27T16:25:27+00:00",
       "token": "BANK",
       "decision": "SKIP",
@@ -2523,6 +2511,18 @@
       "token": "BLESS",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-10-30T22:13:28+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-10-30T22:13:29+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -2543,68 +2543,50 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-30T21:15:19+00:00",
+  "last_attempt": "2026-10-30T22:13:24+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "IDOL",
-      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 8,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
+    },
+    {
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": true,
+        "Liquidity": false,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": true,
+        "Risk guard": false,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
-    },
-    {
-      "token": "Q",
-      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": true,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
-    },
-    {
-      "token": "BLESS",
-      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
-  "screened_count": 39,
-  "candidate_count": 3,
-  "estimated_eur": 155.64,
+  "screened_count": 35,
+  "candidate_count": 8,
+  "estimated_eur": 155.79,
   "roles": [
     "Trend",
     "Momentum",
@@ -2618,5 +2600,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-30T21:15:25+00:00"
+  "last_success": "2026-10-30T22:13:29+00:00"
 }
