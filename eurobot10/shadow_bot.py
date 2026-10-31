@@ -44,6 +44,14 @@ def cycle():
   except Exception as e:
    s["diagnostics"]["errors"]+=1
    note(s,"SKIP candidate "+type(e).__name__)
+ # Arena snapshots: mark-to-market with last known prices; not live tick data.
+ snapshots=s.setdefault("arena_history",[])
+ equities=[]
+ for i in range(3):
+  eq=float(s["cash"][i])+sum(price_value(p) for p in s["positions"] if p["bot"]==i)
+  equities.append(round(eq,6))
+ snapshots.append({"time":datetime.datetime.now(datetime.timezone.utc).isoformat(),"equity":equities})
+ s["arena_history"]=snapshots[-250:]
  s["last_scan"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
  PATH.write_text(json.dumps(s,ensure_ascii=False,indent=2)+"\n")
  print("SHADOW",len(s["positions"]),"positions; free",sum(s["cash"]))
