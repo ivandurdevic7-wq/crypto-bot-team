@@ -39,12 +39,14 @@ jobs:
           MODE: ${{ inputs.mode || 'scan' }}
           APPROVE_ID: ${{ inputs.approve_id || '' }}
           APPROVE_DA: ${{ inputs.potvrda || '' }}
-        run: python eurobot10/bot.py
+        run: |
+          python eurobot10/bot.py
+          if [ "${MODE}" != "approve" ]; then python eurobot10/shadow_bot.py; fi
       - name: Spremi virtualno stanje u repozitorij
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add eurobot10/state.json
+          git add eurobot10/state.json eurobot10/shadow_state.json
           if ! git diff --cached --quiet; then
             git commit -m "PAPER stanje: osvježi"
             git push
