@@ -78,7 +78,7 @@ def discover():
     seen.add(key);tokens.append((chain,address,name))
   except Exception as exc:
    sources[name]={"received":0,"error":str(exc)[:120]}
- return tokens[:24],sources
+ return tokens[:16],sources
 
 def security_reason(chain,addr):
  if chain=="bsc":
