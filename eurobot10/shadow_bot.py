@@ -2,6 +2,8 @@
 import json, time, uuid, datetime
 from pathlib import Path
 import bot
+import os
+import ai_analysts
 PATH=Path(__file__).with_name("shadow_state.json")
 def fresh(): return {"cash":[66.67,66.67,66.66],"positions":[],"history":[],"last_scan":None}
 def note(s,m): s["history"].insert(0,{"time":datetime.datetime.now(datetime.timezone.utc).isoformat(),"message":m});s["history"]=s["history"][:100]
@@ -21,6 +23,7 @@ def cycle():
     s["cash"][p["bot"]]+=value;s["positions"].remove(p)
     note(s,"SHADOW prodaja "+p["symbol"]+" PnL "+str(round(value-p["stake"],2))+" EUR")
   except Exception as e: note(s,"SKIP refresh "+type(e).__name__)
+ s["ai_decisions"]=[]
  tokens,sources=bot.discover()
  s["diagnostics"]={"sources":sources,"candidates":len(tokens),"security_pass":0,"market_pass":0,"errors":0}
  for chain,addr,source in tokens:
@@ -35,6 +38,12 @@ def cycle():
     chosen=next((p for p in pools if bot.market_reason(p,b) is None),None)
     if not chosen:continue
     s["diagnostics"]["market_pass"]+=1
+    if os.environ.get("EUROBOT_AI_ENABLED","false").lower()=="true":
+     judgement=ai_analysts.evaluate(chosen,b)
+     s["ai_decisions"].append({"time":datetime.datetime.now(datetime.timezone.utc).isoformat(),"chain":chain,"address":addr,"symbol":(chosen.get("baseToken") or {}).get("symbol","?"),**judgement})
+     if judgement["decision"]!="BUY":
+      note(s,"AI VETO "+ai_analysts.STRATEGIES[b]+": "+judgement["reason"])
+      continue
     price=float(chosen["priceUsd"])
     amount=min(10,s["cash"][b])
     if price<=0 or amount<1:continue
@@ -52,6 +61,7 @@ def cycle():
   equities.append(round(eq,6))
  snapshots.append({"time":datetime.datetime.now(datetime.timezone.utc).isoformat(),"equity":equities})
  s["arena_history"]=snapshots[-250:]
+ s["ai_decisions"]=s["ai_decisions"][-60:]
  s["last_scan"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
  PATH.write_text(json.dumps(s,ensure_ascii=False,indent=2)+"\n")
  print("SHADOW",len(s["positions"]),"positions; free",sum(s["cash"]))
