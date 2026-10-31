@@ -1,33 +1,33 @@
 {
-  "cash_eur": 140.40514823870157,
+  "cash_eur": 139.0788022128483,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
       "token": "ZIG",
       "qty": 134.8005363622099,
       "entry_usd": 0.04123333,
-      "peak_usd": 0.0424683041592109,
-      "last_usd": 0.0424063700103437,
+      "peak_usd": 0.0425759833940637,
+      "last_usd": 0.0425759833940637,
       "cost_eur": 5.0,
       "opened": "2026-10-27T16:25:26+00:00"
-    },
-    "0x7c907d1ce734b73e9236dcd06cefcb6346857777": {
-      "token": "SAFU",
-      "qty": 4361.810092111725,
-      "entry_usd": 0.001276819,
-      "peak_usd": 0.001276819,
-      "last_usd": 0.00127265676137793,
-      "cost_eur": 5.0,
-      "opened": "2026-10-31T00:10:36+00:00"
     },
     "0xdd806e436dda5588bf54061c11590c77ddc87777": {
       "token": "SAFU",
       "qty": 8455.282849487172,
       "entry_usd": 0.0006586700999999999,
-      "peak_usd": 0.0006586700999999999,
-      "last_usd": 0.0006567,
+      "peak_usd": 0.000674172327499706,
+      "last_usd": 0.000674172327499706,
       "cost_eur": 5.0,
       "opened": "2026-10-31T01:37:12+00:00"
+    },
+    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
+      "token": "IDOL",
+      "qty": 234.28625515857493,
+      "entry_usd": 0.023771099999999996,
+      "peak_usd": 0.023771099999999996,
+      "last_usd": 0.0237,
+      "cost_eur": 5.0,
+      "opened": "2026-10-31T02:28:00+00:00"
     }
   },
   "trades": [
@@ -1530,27 +1530,39 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-31T02:27:59+00:00",
+      "side": "SELL",
+      "token": "SAFU",
+      "address": "0x7c907d1ce734b73e9236dcd06cefcb6346857777",
+      "eur": 3.6737,
+      "pnl_eur": -1.3263,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-10-31T02:28:00+00:00",
+      "side": "BUY",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-27T19:25:34+00:00",
-      "token": "APR",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-27T20:15:38+00:00",
-      "token": "HUMA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-27T20:15:38+00:00",
-      "token": "COLLECT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-10-27T20:15:38+00:00",
       "token": "APR",
@@ -2612,6 +2624,24 @@
       "token": "SAFU",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-31T02:28:00+00:00",
+      "token": "IDOL",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-10-31T02:28:00+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-31T02:28:00+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -2635,13 +2665,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-31T01:37:07+00:00",
+  "last_attempt": "2026-10-31T02:27:55+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "DGAI",
-      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -2655,30 +2685,30 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
     },
     {
-      "token": "SAFU",
-      "address": "0xdd806e436dda5588bf54061c11590c77ddc87777",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": false,
         "Momentum": true,
-        "Dip recovery": false,
+        "Dip recovery": true,
         "Breakout": true,
         "Volume": true,
-        "Liquidity": true,
+        "Liquidity": false,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": true,
+        "Risk guard": false,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x13b86fcf85c9c8f5c36593822d216b8893c25450"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
-  "screened_count": 36,
-  "candidate_count": 3,
-  "estimated_eur": 155.46,
+  "screened_count": 34,
+  "candidate_count": 5,
+  "estimated_eur": 154.29,
   "roles": [
     "Trend",
     "Momentum",
@@ -2692,5 +2722,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-31T01:37:12+00:00"
+  "last_success": "2026-10-31T02:28:00+00:00"
 }
