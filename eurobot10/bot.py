@@ -63,24 +63,36 @@ def scan(s):
   if not isinstance(latest,list):raise ValueError("Popis nije dostupan")
  except Exception as e:
   log(s,"SKIP otkrivanje: "+str(e)[:80]);return
+ counters={"profiles_total":len(latest),"matching_chain":0,"valid_address":0,"pairs_found":0,"security_pass":0,"market_pass":0,"proposals":0,"errors":0}
  seen=set()
  for tok in latest:
   chain=tok.get("chainId");addr=tok.get("tokenAddress","")
-  if chain not in CHAINS or not valid(chain,addr) or (chain,addr) in seen:continue
+  if chain not in CHAINS:continue
+  counters["matching_chain"]+=1
+  if not valid(chain,addr) or (chain,addr) in seen:continue
+  counters["valid_address"]+=1
   seen.add((chain,addr))
   if len(seen)>12:break
   try:
    ps=pairs(chain,addr)
    if not ps:continue
+   counters["pairs_found"]+=1
    p=ps[0]
    if not risk(chain,addr):continue
+   counters["security_pass"]+=1
    for b in range(3):
     if not market(p,b) or s["cash"][b]<1:continue
+    counters["market_pass"]+=1
     if any(x["chain"]==chain and x["address"]==addr and x["bot"]==b for x in s["positions"]+s["pending"]):continue
     from uuid import uuid4
     s["pending"].append({"id":str(uuid4()),"chain":chain,"address":addr,"bot":b,"symbol":(p.get("baseToken") or {}).get("symbol","?"),"pair":p["pairAddress"],"dexId":p.get("dexId","unknown"),"price":float(p["priceUsd"]),"expires":time.time()+3600})
+    counters["proposals"]+=1
     log(s,f"PAPER prijedlog: {chain} {addr} na {p.get('dexId')} bot {b+1}; čeka DA")
-  except Exception as e:log(s,"SKIP kandidat: "+str(e)[:90])
+  except Exception as e:
+   counters["errors"]+=1
+   log(s,"SKIP kandidat: "+str(e)[:90])
+ log(s,"DIJAGNOSTIKA: "+", ".join(f"{k}={v}" for k,v in counters.items()))
+ s["diagnostics"]=counters
  s["pending"]=s["pending"][-30:]
 def approve(s,pid,confirmation):
  if confirmation!="DA":log(s,"SKIP: nema izričite potvrde DA");return
