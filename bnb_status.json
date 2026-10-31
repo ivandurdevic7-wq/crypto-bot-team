@@ -1,5 +1,5 @@
 {
-  "cash_eur": 119.19693058400705,
+  "cash_eur": 114.19693058400705,
   "initial_eur": 160.0,
   "positions": {
     "0xe747e54783ba3f77a8e5251a3cba19ebe9c0e197": {
@@ -16,7 +16,7 @@
       "qty": 311.9556397484676,
       "entry_usd": 0.017852672913656973,
       "peak_usd": 0.0180469642920754,
-      "last_usd": 0.0178653290978019,
+      "last_usd": 0.0176454288395356,
       "cost_eur": 5.0,
       "opened": "2026-10-30T16:55:10+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 133.0212823442566,
       "entry_usd": 0.04186730049396836,
       "peak_usd": 0.0425291388795682,
-      "last_usd": 0.0420167034718599,
+      "last_usd": 0.0419709327137781,
       "cost_eur": 5.0,
       "opened": "2026-10-30T19:52:58+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 64.18896838996211,
       "entry_usd": 0.08676322644984148,
       "peak_usd": 0.0891555139830195,
-      "last_usd": 0.084184391536922,
+      "last_usd": 0.0860263016829911,
       "cost_eur": 5.0,
       "opened": "2026-10-31T12:55:44+00:00"
     },
@@ -43,7 +43,7 @@
       "qty": 178.06714225117992,
       "entry_usd": 0.03127607895309555,
       "peak_usd": 0.031901649477652,
-      "last_usd": 0.031901649477652,
+      "last_usd": 0.0309405043168407,
       "cost_eur": 5.0,
       "opened": "2026-10-31T14:44:13+00:00"
     },
@@ -51,10 +51,19 @@
       "token": "DOS",
       "qty": 27.418906166862786,
       "entry_usd": 0.20311685543206412,
-      "peak_usd": 0.20311685543206412,
-      "last_usd": 0.202509327449715,
+      "peak_usd": 0.20686292475416,
+      "last_usd": 0.20686292475416,
       "cost_eur": 5.0,
       "opened": "2026-10-31T15:42:40+00:00"
+    },
+    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
+      "token": "ON",
+      "qty": 28.28853115392829,
+      "entry_usd": 0.1968727881167003,
+      "peak_usd": 0.1968727881167003,
+      "last_usd": 0.196283936307777,
+      "cost_eur": 5.0,
+      "opened": "2026-10-31T16:44:15+00:00"
     }
   },
   "trades": [
@@ -1431,27 +1440,17 @@
       "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-31T16:44:15+00:00",
+      "side": "BUY",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-29T10:55:16+00:00",
-      "token": "Q",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: is_mintable"
-    },
-    {
-      "time": "2026-10-29T10:55:17+00:00",
-      "token": "DNA",
-      "decision": "BUY",
-      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
-    },
-    {
-      "time": "2026-10-29T11:52:36+00:00",
-      "token": "IDOL",
-      "decision": "BUY",
-      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
-    },
     {
       "time": "2026-10-29T11:52:36+00:00",
       "token": "DOS",
@@ -2333,13 +2332,31 @@
       "token": "DOS",
       "decision": "BUY",
       "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-31T16:44:14+00:00",
+      "token": "TAKE",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-10-31T16:44:15+00:00",
+      "token": "GWEI",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-31T16:44:15+00:00",
+      "token": "ON",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
     }
   ],
-  "last_success": "2026-10-31T15:42:40+00:00",
-  "last_attempt": "2026-10-31T15:42:37+00:00",
+  "last_success": "2026-10-31T16:44:15+00:00",
+  "last_attempt": "2026-10-31T16:44:12+00:00",
   "screened_count": 46,
-  "eligible_count": 7,
-  "estimated_eur": 149.42,
+  "eligible_count": 8,
+  "estimated_eur": 149.39,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
