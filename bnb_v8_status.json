@@ -1,22 +1,13 @@
 {
-  "cash_eur": 138.81429087131534,
+  "cash_eur": 143.58750059608954,
   "initial_eur": 160.0,
   "positions": {
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 28.142849707340222,
-      "entry_usd": 0.19789189999999998,
-      "peak_usd": 0.19789189999999998,
-      "last_usd": 0.195553881733701,
-      "cost_eur": 5.0,
-      "opened": "2026-10-31T07:32:23+00:00"
-    },
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 493.12471112417643,
       "entry_usd": 0.011293779999999998,
-      "peak_usd": 0.0116081024548129,
-      "last_usd": 0.0116081024548129,
+      "peak_usd": 0.0117471573463624,
+      "last_usd": 0.0117471573463624,
       "cost_eur": 5.0,
       "opened": "2026-10-31T11:12:08+00:00"
     },
@@ -24,8 +15,8 @@
       "token": "IDOL",
       "qty": 291.16854993488334,
       "entry_usd": 0.01912721,
-      "peak_usd": 0.01912721,
-      "last_usd": 0.01907,
+      "peak_usd": 0.0193219066236336,
+      "last_usd": 0.0193219066236336,
       "cost_eur": 5.0,
       "opened": "2026-10-31T12:10:58+00:00"
     }
@@ -1680,27 +1671,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-10-31T13:26:34+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 4.7732,
+      "pnl_eur": -0.2268,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-28T05:18:29+00:00",
-      "token": "GANG",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-28T05:18:29+00:00",
-      "token": "EVAA",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-10-28T05:18:30+00:00",
-      "token": "LAB",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-10-28T06:16:09+00:00",
       "token": "JCT",
@@ -2762,6 +2745,24 @@
       "token": "BLESS",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-10-31T13:26:35+00:00",
+      "token": "AIN",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-31T13:26:35+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-10-31T13:26:35+00:00",
+      "token": "HANA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -2785,13 +2786,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-10-31T12:10:53+00:00",
+  "last_attempt": "2026-10-31T13:26:30+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "IDOL",
-      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "token": "AIN",
+      "address": "0x9558a9254890b2a8b057a789f413631b9084f4a3",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -2805,13 +2806,31 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
+      "dex_url": "https://dexscreener.com/bsc/0xf4262c4dbf524f53851a5176bdc7d6c1e0fa82d8"
     },
     {
-      "token": "BLESS",
-      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "HANA",
+      "address": "0x6261963ebe9ff014aad10ecc3b0238d4d04e8353",
+      "votes": {
+        "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -2822,13 +2841,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xd21bc2291c1aef340f5265e257b18aa5dafed759"
     }
   ],
-  "screened_count": 42,
+  "screened_count": 43,
   "candidate_count": 4,
-  "estimated_eur": 153.83,
+  "estimated_eur": 153.81,
   "roles": [
     "Trend",
     "Momentum",
@@ -2842,5 +2861,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-10-31T12:10:58+00:00"
+  "last_success": "2026-10-31T13:26:35+00:00"
 }
