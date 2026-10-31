@@ -1,5 +1,5 @@
 {
-  "cash_eur": 119.79356245293286,
+  "cash_eur": 119.19693058400705,
   "initial_eur": 160.0,
   "positions": {
     "0xe747e54783ba3f77a8e5251a3cba19ebe9c0e197": {
@@ -16,7 +16,7 @@
       "qty": 311.9556397484676,
       "entry_usd": 0.017852672913656973,
       "peak_usd": 0.0180469642920754,
-      "last_usd": 0.0176843844306897,
+      "last_usd": 0.0178653290978019,
       "cost_eur": 5.0,
       "opened": "2026-10-30T16:55:10+00:00"
     },
@@ -25,25 +25,16 @@
       "qty": 133.0212823442566,
       "entry_usd": 0.04186730049396836,
       "peak_usd": 0.0425291388795682,
-      "last_usd": 0.0419154686227909,
+      "last_usd": 0.0420167034718599,
       "cost_eur": 5.0,
       "opened": "2026-10-30T19:52:58+00:00"
-    },
-    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
-      "token": "IDOL",
-      "qty": 287.7498064303751,
-      "entry_usd": 0.019354459587959973,
-      "peak_usd": 0.0200162026885169,
-      "last_usd": 0.0200162026885169,
-      "cost_eur": 5.0,
-      "opened": "2026-10-31T11:44:08+00:00"
     },
     "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5": {
       "token": "AIOT",
       "qty": 64.18896838996211,
       "entry_usd": 0.08676322644984148,
       "peak_usd": 0.0891555139830195,
-      "last_usd": 0.0891555139830195,
+      "last_usd": 0.084184391536922,
       "cost_eur": 5.0,
       "opened": "2026-10-31T12:55:44+00:00"
     },
@@ -51,10 +42,19 @@
       "token": "AGT",
       "qty": 178.06714225117992,
       "entry_usd": 0.03127607895309555,
-      "peak_usd": 0.03127607895309555,
-      "last_usd": 0.0311825313590185,
+      "peak_usd": 0.031901649477652,
+      "last_usd": 0.031901649477652,
       "cost_eur": 5.0,
       "opened": "2026-10-31T14:44:13+00:00"
+    },
+    "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37": {
+      "token": "DOS",
+      "qty": 27.418906166862786,
+      "entry_usd": 0.20311685543206412,
+      "peak_usd": 0.20311685543206412,
+      "last_usd": 0.202509327449715,
+      "cost_eur": 5.0,
+      "opened": "2026-10-31T15:42:40+00:00"
     }
   },
   "trades": [
@@ -1414,27 +1414,26 @@
       "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-10-31T15:42:39+00:00",
+      "side": "SELL",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 4.4034,
+      "pnl_eur": -0.5966,
+      "reason": "trailing stop"
+    },
+    {
+      "time": "2026-10-31T15:42:40+00:00",
+      "side": "BUY",
+      "token": "DOS",
+      "address": "0xb0f09ea9ae0515c3551080d4a745c8115aa30e37",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-29T08:59:55+00:00",
-      "token": "GENIUS",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
-    {
-      "time": "2026-10-29T08:59:55+00:00",
-      "token": "UAI",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
-    {
-      "time": "2026-10-29T09:57:39+00:00",
-      "token": "UAI",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
     {
       "time": "2026-10-29T10:55:16+00:00",
       "token": "Q",
@@ -2316,13 +2315,31 @@
       "token": "AGT",
       "decision": "BUY",
       "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-10-31T15:42:39+00:00",
+      "token": "TAKE",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-10-31T15:42:39+00:00",
+      "token": "GWEI",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-31T15:42:40+00:00",
+      "token": "DOS",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
     }
   ],
-  "last_success": "2026-10-31T14:44:13+00:00",
-  "last_attempt": "2026-10-31T14:44:11+00:00",
+  "last_success": "2026-10-31T15:42:40+00:00",
+  "last_attempt": "2026-10-31T15:42:37+00:00",
   "screened_count": 46,
-  "eligible_count": 5,
-  "estimated_eur": 150.31,
+  "eligible_count": 7,
+  "estimated_eur": 149.42,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
