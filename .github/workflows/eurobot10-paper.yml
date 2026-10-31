@@ -1,0 +1,51 @@
+name: EUROBOT 10 PAPER
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "scan ili approve"
+        required: true
+        default: scan
+        type: choice
+        options: [scan, approve]
+      approve_id:
+        description: "ID prijedloga iz eurobot10/state.json"
+        required: false
+        type: string
+      potvrda:
+        description: "Upiši DA za simuliranu kupnju"
+        required: false
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: eurobot10-paper-state
+  cancel-in-progress: false
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Izvrši PAPER ciklus
+        env:
+          MODE: ${{ inputs.mode || 'scan' }}
+          APPROVE_ID: ${{ inputs.approve_id || '' }}
+          APPROVE_DA: ${{ inputs.potvrda || '' }}
+        run: python eurobot10/bot.py
+      - name: Spremi virtualno stanje u repozitorij
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eurobot10/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "PAPER stanje: osvježi"
+            git push
+          fi
