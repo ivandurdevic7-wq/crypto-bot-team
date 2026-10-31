@@ -21,30 +21,29 @@ def cycle():
     s["cash"][p["bot"]]+=value;s["positions"].remove(p)
     note(s,"SHADOW prodaja "+p["symbol"]+" PnL "+str(round(value-p["stake"],2))+" EUR")
   except Exception as e: note(s,"SKIP refresh "+type(e).__name__)
- try:
-  profiles=bot.get("https://api.dexscreener.com/token-profiles/latest/v1")
-  if not isinstance(profiles,list): raise ValueError("Nema popisa")
- except Exception as e: profiles=[];note(s,"SKIP discovery "+type(e).__name__)
- seen=set()
- for token in profiles:
-  chain=token.get("chainId");addr=token.get("tokenAddress","")
-  if chain not in bot.CHAINS or not bot.valid(chain,addr) or (chain,addr) in seen: continue
-  seen.add((chain,addr))
-  if len(seen)>10: break
+ tokens,sources=bot.discover()
+ s["diagnostics"]={"sources":sources,"candidates":len(tokens),"security_pass":0,"market_pass":0,"errors":0}
+ for chain,addr,source in tokens:
   try:
    pools=bot.pairs(chain,addr)
-   if not pools or not bot.risk(chain,addr):continue
+   if not pools:continue
+   reason=bot.security_reason(chain,addr)
+   if reason:continue
+   s["diagnostics"]["security_pass"]+=1
    for b in range(3):
     if s["cash"][b]<1 or any(p["bot"]==b and p["address"]==addr and p["chain"]==chain for p in s["positions"]):continue
-    chosen=next((p for p in pools if bot.market(p,b)),None)
+    chosen=next((p for p in pools if bot.market_reason(p,b) is None),None)
     if not chosen:continue
+    s["diagnostics"]["market_pass"]+=1
     price=float(chosen["priceUsd"])
     amount=min(10,s["cash"][b])
     if price<=0 or amount<1:continue
     s["cash"][b]-=amount
     s["positions"].append({"id":str(uuid.uuid4()),"chain":chain,"address":addr,"bot":b,"symbol":(chosen.get("baseToken") or {}).get("symbol","?"),"dexId":chosen.get("dexId","unknown"),"pair":chosen["pairAddress"],"price":price,"last":price,"stake":amount,"units":amount*0.995*1.10/price})
     note(s,"SHADOW auto kupnja "+chain+" "+str(chosen.get("dexId","unknown"))+" bot "+str(b+1)+" "+str(round(amount,2))+" EUR")
-  except Exception as e:note(s,"SKIP candidate "+type(e).__name__)
+  except Exception as e:
+   s["diagnostics"]["errors"]+=1
+   note(s,"SKIP candidate "+type(e).__name__)
  s["last_scan"]=datetime.datetime.now(datetime.timezone.utc).isoformat()
  PATH.write_text(json.dumps(s,ensure_ascii=False,indent=2)+"\n")
  print("SHADOW",len(s["positions"]),"positions; free",sum(s["cash"]))
