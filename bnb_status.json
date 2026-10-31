@@ -1,5 +1,5 @@
 {
-  "cash_eur": 119.89205443784267,
+  "cash_eur": 125.65792178774046,
   "initial_eur": 160.0,
   "positions": {
     "0xe747e54783ba3f77a8e5251a3cba19ebe9c0e197": {
@@ -16,7 +16,7 @@
       "qty": 311.9556397484676,
       "entry_usd": 0.017852672913656973,
       "peak_usd": 0.0180469642920754,
-      "last_usd": 0.017413985276878,
+      "last_usd": 0.0174500105857499,
       "cost_eur": 5.0,
       "opened": "2026-10-30T16:55:10+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "DNA",
       "qty": 33.89517498383084,
       "entry_usd": 0.16430781085085766,
-      "peak_usd": 0.168979439521458,
-      "last_usd": 0.168979439521458,
+      "peak_usd": 0.169182903234095,
+      "last_usd": 0.169182903234095,
       "cost_eur": 5.0,
       "opened": "2026-10-30T18:54:13+00:00"
     },
@@ -33,26 +33,17 @@
       "token": "ZIG",
       "qty": 133.0212823442566,
       "entry_usd": 0.04186730049396836,
-      "peak_usd": 0.0423766388228889,
-      "last_usd": 0.0422950302358252,
+      "peak_usd": 0.0425291388795682,
+      "last_usd": 0.0425291388795682,
       "cost_eur": 5.0,
       "opened": "2026-10-30T19:52:58+00:00"
-    },
-    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
-      "token": "IDOL",
-      "qty": 271.4198360052568,
-      "entry_usd": 0.020518920363256487,
-      "peak_usd": 0.0246818926480961,
-      "last_usd": 0.0246818926480961,
-      "cost_eur": 5.0,
-      "opened": "2026-10-30T20:49:45+00:00"
     },
     "0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf": {
       "token": "quq",
       "qty": 3491.4249406164627,
       "entry_usd": 0.0015951200712384977,
       "peak_usd": 0.00159792848810603,
-      "last_usd": 0.0015861429431796,
+      "last_usd": 0.00154878760125834,
       "cost_eur": 5.0,
       "opened": "2026-10-30T21:45:53+00:00"
     }
@@ -1261,33 +1252,18 @@
       "eur": 4.6722,
       "pnl_eur": -0.3278,
       "reason": "stop loss"
+    },
+    {
+      "time": "2026-10-31T02:01:42+00:00",
+      "side": "SELL",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 5.7659,
+      "pnl_eur": 0.7659,
+      "reason": "trailing stop"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-28T14:06:18+00:00",
-      "token": "AIN",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
-    {
-      "time": "2026-10-28T15:00:40+00:00",
-      "token": "AGT",
-      "decision": "BUY",
-      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
-    },
-    {
-      "time": "2026-10-28T15:00:41+00:00",
-      "token": "APR",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-10-28T15:58:42+00:00",
-      "token": "Q",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: is_mintable"
-    },
     {
       "time": "2026-10-28T15:58:43+00:00",
       "token": "JCT",
@@ -2163,13 +2139,37 @@
       "token": "ct",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-31T02:01:42+00:00",
+      "token": "TAKE",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-10-31T02:01:43+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-10-31T02:01:43+00:00",
+      "token": "SAFU",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
+    },
+    {
+      "time": "2026-10-31T02:01:44+00:00",
+      "token": "IRYS",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
     }
   ],
-  "last_success": "2026-10-31T01:05:17+00:00",
-  "last_attempt": "2026-10-31T01:05:15+00:00",
+  "last_success": "2026-10-31T02:01:44+00:00",
+  "last_attempt": "2026-10-31T02:01:40+00:00",
   "screened_count": 44,
-  "eligible_count": 5,
-  "estimated_eur": 150.88,
+  "eligible_count": 3,
+  "estimated_eur": 150.57,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
