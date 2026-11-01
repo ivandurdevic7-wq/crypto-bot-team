@@ -1,10 +1,10 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-01T10:06:21.995682+00:00
+- updated_at: 2026-11-01T10:45:06.792521+00:00
 - status: OK
 - cash: 373.8722773636449
-- equity_eur: 497.4622741103034
-- pnl_eur: -2.537725889696617
+- equity_eur: 497.4105383735782
+- pnl_eur: -2.5894616264217802
 - halted: False
 - decisions: ['XBTEUR: HOLD', 'ETHEUR: HOLD', 'SOLEUR: WAIT']
 
@@ -38,9 +38,6 @@
 | 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $20k/day |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
-| 4XRbnGgay2XpqJ1F5jGPQ9pRh1JSX12RPCPJASMJU5JW | solana | SKIP | no matching DEX pool |
-| 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
-| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
 | AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
 | BUajtJrDxA8bYzHiXuoJPGw1ZiU8XgYpwsUbcuX84E2S | solana | SKIP | no matching DEX pool |
 | CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $20k/day |
@@ -54,6 +51,9 @@
 | S7NvEJxgM5ppV6HHKnS5HmCqUYw79ewoDHysojYnRaj | solana | SKIP | volume below $20k/day |
 | SVY1zmfRddD7w8cqSZTPdzKF4Vyd62kUjBjdiWH83Co | solana | SKIP | volume below $20k/day |
 | soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $20k/day |
+| 4XRbnGgay2XpqJ1F5jGPQ9pRh1JSX12RPCPJASMJU5JW | solana | SKIP | no matching DEX pool |
+| 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
+| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
