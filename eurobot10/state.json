@@ -8,6 +8,10 @@
   "pending": [],
   "history": [
     {
+      "time": "2026-11-01T13:35:07.304198+00:00",
+      "message": "DIJAGNOSTIKA: candidates=16, pairs_found=16, security_pass=1, market_pass=0, proposals=0, errors=0"
+    },
+    {
       "time": "2026-11-01T12:48:50.947272+00:00",
       "message": "DIJAGNOSTIKA: candidates=16, pairs_found=15, security_pass=0, market_pass=0, proposals=0, errors=0"
     },
@@ -176,7 +180,7 @@
       "message": "DIJAGNOSTIKA: profiles_total=30, matching_chain=13, valid_address=13, pairs_found=11, security_pass=1, market_pass=0, proposals=0, errors=0"
     }
   ],
-  "last_scan": "2026-11-01T12:48:50.947286+00:00",
+  "last_scan": "2026-11-01T13:35:07.304218+00:00",
   "diagnostics": {
     "sources": {
       "profiles": {
@@ -194,21 +198,75 @@
     },
     "summary": {
       "candidates": 16,
-      "pairs_found": 15,
-      "security_pass": 0,
+      "pairs_found": 16,
+      "security_pass": 1,
       "market_pass": 0,
       "proposals": 0,
       "errors": 0
     },
     "tokens": [
       {
+        "chain": "bsc",
+        "address": "0xe6AcbAe78E9a4BF741ECD08d6D51057d1c718A9d",
+        "source": "profiles",
+        "dexId": "uniswap",
+        "symbol": "BTGold",
+        "status": "SKIP",
+        "reason": "nijedna strategija nije prosla",
+        "strategies": {
+          "1": "trziste: nedostaje cijena/likvidnost/volumen/starost/promjena",
+          "2": "trziste: nedostaje cijena/likvidnost/volumen/starost/promjena",
+          "3": "trziste: nedostaje cijena/likvidnost/volumen/starost/promjena"
+        }
+      },
+      {
+        "chain": "solana",
+        "address": "8eG55WcQc231JshYDqf2dvFBXtUD1YARJcqnvPB6pump",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "SAFU",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "5Tt6muu1DFmVr6V8kEA3CW6qAXdvv7uvj6enzV7fpump",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "$DONK",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "Ae6TX54cU8EgcG6kVX4i5j1oz3FoZf2zRG7xvzmtpump",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "REGRET",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "FjPKUGnF5zBpdEv18gT8FJCtxh3MKrFkoeYekgYr1win",
+        "source": "profiles",
+        "dexId": "meteora",
+        "symbol": "1WIN",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
         "chain": "solana",
         "address": "DwdiS94nXvBzQJSYNSRjdAUMK9BJ7sxeXMXfQxVM95Vg",
         "source": "profiles",
-        "dexId": null,
-        "symbol": null,
+        "dexId": "meteora",
+        "symbol": "GLASS",
         "status": "SKIP",
-        "reason": "DexScreener: nema odgovarajuceg osnovnog para",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
         "strategies": {}
       },
       {
@@ -310,58 +368,8 @@
         "status": "SKIP",
         "reason": "GoPlus Solana: mintable nije potvrdeno 0",
         "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "6StLoZfceCvxoBcrkxNeUcMr5pQqgvRWpFbakgaspump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "MARVIN",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "GVDEq3pVqtYDanikTUmeVsee48KChRnLxSNukHVipump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "Fappy",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
-        "strategies": {}
-      },
-      {
-        "chain": "bsc",
-        "address": "0x0c876f2F7c44cdE660Ab77BD2022537a305E0220",
-        "source": "profiles",
-        "dexId": "pancakeswap",
-        "symbol": "FAGENT",
-        "status": "SKIP",
-        "reason": "GoPlus: is_honeypot nije potvrdeno 0",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "3DEcz7AnmJiGSnDHYvUeX5uPMMHVcDwqrWRSGdHEpump",
-        "source": "profiles",
-        "dexId": "pumpswap",
-        "symbol": "TIPPER",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "FzTxvp2UkrjCmx2dNM8wDMkBPjTcxTE8RYUyX9rhpump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "vibedog",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
-        "strategies": {}
       }
     ],
-    "at": "2026-11-01T12:48:50.947230+00:00"
+    "at": "2026-11-01T13:35:07.304156+00:00"
   }
 }
