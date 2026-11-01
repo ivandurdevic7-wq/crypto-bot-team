@@ -1,5 +1,5 @@
 {
-  "cash_eur": 129.57847397372555,
+  "cash_eur": 134.09578829610422,
   "initial_eur": 160.0,
   "positions": {
     "0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6": {
@@ -7,7 +7,7 @@
       "qty": 6792.151984413732,
       "entry_usd": 0.0008199524999999999,
       "peak_usd": 0.00084,
-      "last_usd": 0.0008219,
+      "last_usd": 0.000833,
       "cost_eur": 5.0,
       "opened": "2026-10-31T21:12:14+00:00"
     },
@@ -16,25 +16,16 @@
       "qty": 602.297889929301,
       "entry_usd": 0.009246656999999998,
       "peak_usd": 0.00932379116593956,
-      "last_usd": 0.00929582385143939,
+      "last_usd": 0.00924699317937379,
       "cost_eur": 5.0,
       "opened": "2026-11-01T15:12:56+00:00"
-    },
-    "0x0c6302401aa5325c2e36f170f52c00b1d220b405": {
-      "token": "GANG",
-      "qty": 1968.3035261461275,
-      "entry_usd": 0.002829463,
-      "peak_usd": 0.00283581137697979,
-      "last_usd": 0.00283581137697979,
-      "cost_eur": 5.0,
-      "opened": "2026-11-01T17:12:15+00:00"
     },
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 615.3811644971989,
       "entry_usd": 0.009050068999999999,
       "peak_usd": 0.009050068999999999,
-      "last_usd": 0.009023,
+      "last_usd": 0.0089960488492872,
       "cost_eur": 5.0,
       "opened": "2026-11-01T18:08:28+00:00"
     }
@@ -2279,15 +2270,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-01T19:20:12+00:00",
+      "side": "SELL",
+      "token": "GANG",
+      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
+      "eur": 4.5173,
+      "pnl_eur": -0.4827,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-29T09:27:46+00:00",
-      "token": "AGT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
     {
       "time": "2026-10-29T10:25:32+00:00",
       "token": "ON",
@@ -3361,6 +3356,12 @@
       "token": "DNA",
       "decision": "SKIP",
       "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-11-01T19:20:13+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -3387,28 +3388,10 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-01T18:08:23+00:00",
+  "last_attempt": "2026-11-01T19:20:08+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
-    {
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x4d3bf29ba30f8bfe4624e7678709afa195689c5d"
-    },
     {
       "token": "Q",
       "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
@@ -3428,9 +3411,9 @@
       "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
     }
   ],
-  "screened_count": 43,
-  "candidate_count": 5,
-  "estimated_eur": 149.55,
+  "screened_count": 41,
+  "candidate_count": 1,
+  "estimated_eur": 149.1,
   "roles": [
     "Trend",
     "Momentum",
@@ -3444,5 +3427,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-01T18:08:29+00:00"
+  "last_success": "2026-11-01T19:20:13+00:00"
 }
