@@ -1,5 +1,5 @@
 {
-  "cash_eur": 103.3007710611666,
+  "cash_eur": 112.67451026983204,
   "initial_eur": 160.0,
   "positions": {
     "0xe747e54783ba3f77a8e5251a3cba19ebe9c0e197": {
@@ -15,8 +15,8 @@
       "token": "DBT",
       "qty": 311.9556397484676,
       "entry_usd": 0.017852672913656973,
-      "peak_usd": 0.0180469642920754,
-      "last_usd": 0.017747083071518,
+      "peak_usd": 0.0181308713729176,
+      "last_usd": 0.0181308713729176,
       "cost_eur": 5.0,
       "opened": "2026-10-30T16:55:10+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 133.0212823442566,
       "entry_usd": 0.04186730049396836,
       "peak_usd": 0.042638603521252,
-      "last_usd": 0.0418221287120466,
+      "last_usd": 0.0418820850641083,
       "cost_eur": 5.0,
       "opened": "2026-10-30T19:52:58+00:00"
     },
@@ -43,7 +43,7 @@
       "qty": 3581.9720655937217,
       "entry_usd": 0.0015547977198077012,
       "peak_usd": 0.0015547977198077012,
-      "last_usd": 0.001546229904284,
+      "last_usd": 0.00154903526713961,
       "cost_eur": 5.0,
       "opened": "2026-10-31T20:44:04+00:00"
     },
@@ -56,32 +56,14 @@
       "cost_eur": 5.0,
       "opened": "2026-11-01T02:56:04+00:00"
     },
-    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
-      "token": "IDOL",
-      "qty": 260.87523018213614,
-      "entry_usd": 0.021348297406816676,
-      "peak_usd": 0.022906419843819,
-      "last_usd": 0.022906419843819,
-      "cost_eur": 5.0,
-      "opened": "2026-11-01T12:56:28+00:00"
-    },
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 601.237750548057,
       "entry_usd": 0.009262961274343418,
       "peak_usd": 0.009262961274343418,
-      "last_usd": 0.00923814845850071,
+      "last_usd": 0.00908205743070951,
       "cost_eur": 5.0,
       "opened": "2026-11-01T13:52:25+00:00"
-    },
-    "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5": {
-      "token": "AIOT",
-      "qty": 61.47042302579466,
-      "entry_usd": 0.09060035259010654,
-      "peak_usd": 0.09060035259010654,
-      "last_usd": 0.0903293644966167,
-      "cost_eur": 5.0,
-      "opened": "2026-11-01T14:46:07+00:00"
     }
   },
   "trades": [
@@ -1669,39 +1651,27 @@
       "address": "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "side": "SELL",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 4.5573,
+      "pnl_eur": -0.4427,
+      "reason": "trailing stop"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "side": "SELL",
+      "token": "AIOT",
+      "address": "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5",
+      "eur": 4.8165,
+      "pnl_eur": -0.1835,
+      "reason": "stop loss"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-30T17:49:48+00:00",
-      "token": "ON",
-      "decision": "BUY",
-      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
-    },
-    {
-      "time": "2026-10-30T17:49:49+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-10-30T18:54:12+00:00",
-      "token": "TAKE",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-10-30T18:54:13+00:00",
-      "token": "DNA",
-      "decision": "BUY",
-      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
-    },
-    {
-      "time": "2026-10-30T18:54:13+00:00",
-      "token": "SAFU",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
     {
       "time": "2026-10-30T18:54:13+00:00",
       "token": "JAGENT",
@@ -2571,13 +2541,43 @@
       "token": "AIOT",
       "decision": "BUY",
       "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "token": "TAKE",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "token": "DOS",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "token": "XPIN",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-01T15:42:28+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-11-01T15:42:29+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: is_mintable"
     }
   ],
-  "last_success": "2026-11-01T14:46:07+00:00",
-  "last_attempt": "2026-11-01T14:46:04+00:00",
+  "last_success": "2026-11-01T15:42:29+00:00",
+  "last_attempt": "2026-11-01T15:42:26+00:00",
   "screened_count": 47,
-  "eligible_count": 9,
-  "estimated_eur": 148.84,
+  "eligible_count": 5,
+  "estimated_eur": 147.94,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
