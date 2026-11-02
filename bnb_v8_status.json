@@ -7,7 +7,7 @@
       "qty": 34.466693030777314,
       "entry_usd": 0.16158329999999999,
       "peak_usd": 0.167880343674392,
-      "last_usd": 0.166345627152954,
+      "last_usd": 0.165853843673906,
       "cost_eur": 5.0,
       "opened": "2026-11-02T12:30:58+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 996.6838265821167,
       "entry_usd": 0.005609779,
       "peak_usd": 0.005609779,
-      "last_usd": 0.0055666415682818,
+      "last_usd": 0.00553707112941049,
       "cost_eur": 5.0,
       "opened": "2026-11-02T16:38:43+00:00"
     }
@@ -2615,24 +2615,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-10-30T05:20:50+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-30T05:20:50+00:00",
-      "token": "AGT",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-30T06:17:56+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
       "time": "2026-10-30T06:17:56+00:00",
       "token": "DNA",
       "decision": "SKIP",
@@ -3693,6 +3675,24 @@
       "token": "DGAI",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-02T19:32:14+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-02T19:32:14+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-02T19:32:14+00:00",
+      "token": "DEBIT",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -3722,7 +3722,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-02T18:29:25+00:00",
+  "last_attempt": "2026-11-02T19:32:08+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -3743,11 +3743,29 @@
       },
       "score": 6,
       "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+    },
+    {
+      "token": "JAGENT",
+      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
-  "screened_count": 38,
-  "candidate_count": 6,
-  "estimated_eur": 147.31,
+  "screened_count": 33,
+  "candidate_count": 3,
+  "estimated_eur": 147.27,
   "roles": [
     "Trend",
     "Momentum",
@@ -3761,5 +3779,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-02T18:29:29+00:00"
+  "last_success": "2026-11-02T19:32:14+00:00"
 }
