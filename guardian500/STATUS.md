@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-02T09:07:31.217478+00:00
+- updated_at: 2026-11-02T10:13:30.898027+00:00
 - status: OK
 - cash: 496.522993110282
 - equity_eur: 496.522993110282
@@ -18,6 +18,12 @@
 | 0x0afdbb0a9f813c8cbe81f0ff4016043e1d3f26d2 | bsc | SKIP | liquidity below $30k |
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | no matching DEX pool |
 | 0x1D9B64a09C52ad1E75E052223Bef52D2adAc8426 | bsc | SKIP | liquidity below $30k |
+| 0xb89df2f57fc549407e76c859dbdcec76f5da014b | bsc | SKIP | no matching DEX pool |
+| 0xcefc9156fee95a46f6611000f233e0baa83a86ea | bsc | SKIP | no matching DEX pool |
+| 0xec3ad29df8b5522bfeb31b6da818404eadf77777 | bsc | SKIP | liquidity below $30k |
+| 0xf5cb7cc90040aa717a16887c8b7d7c10a7c60984 | bsc | SKIP | no matching DEX pool |
+| 0x21a8dd1ae3fc614ce5abffad196d1470ed287777 | bsc | SKIP | no matching DEX pool |
+| 0x331c99a4c23f4d814d3e22aabcb8926a42ea7777 | bsc | SKIP | liquidity below $30k |
 | 0x35eac35731e48d69d7f86f5ecdf95499cc8e0579 | bsc | SKIP | no matching DEX pool |
 | 0x4973aaa8271f044e586b71129791e25b1e807777 | bsc | SKIP | liquidity below $30k |
 | 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
@@ -28,24 +34,10 @@
 | 0x87b20c826da05e0916d1d3b7cd134b232a1b7777 | bsc | SKIP | no matching DEX pool |
 | 0x9fd3c22ca2ee2c1bbb720365d26d0dcd46f69411 | bsc | SKIP | no matching DEX pool |
 | 0xa0c63f2fe6db7de9dc6758a9d021cce9017701e4 | bsc | SKIP | liquidity below $30k |
-| 0xb89df2f57fc549407e76c859dbdcec76f5da014b | bsc | SKIP | no matching DEX pool |
-| 0xcefc9156fee95a46f6611000f233e0baa83a86ea | bsc | SKIP | no matching DEX pool |
-| 0xec3ad29df8b5522bfeb31b6da818404eadf77777 | bsc | SKIP | liquidity below $30k |
-| 0xf5cb7cc90040aa717a16887c8b7d7c10a7c60984 | bsc | SKIP | no matching DEX pool |
-| 0x21a8dd1ae3fc614ce5abffad196d1470ed287777 | bsc | SKIP | no matching DEX pool |
-| 0x331c99a4c23f4d814d3e22aabcb8926a42ea7777 | bsc | SKIP | liquidity below $30k |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $20k/day |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
-| S7NvEJxgM5ppV6HHKnS5HmCqUYw79ewoDHysojYnRaj | solana | SKIP | volume below $20k/day |
-| SVY1zmfRddD7w8cqSZTPdzKF4Vyd62kUjBjdiWH83Co | solana | SKIP | volume below $20k/day |
-| soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $20k/day |
-| 4XRbnGgay2XpqJ1F5jGPQ9pRh1JSX12RPCPJASMJU5JW | solana | SKIP | no matching DEX pool |
-| 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
-| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
-| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
-| BUajtJrDxA8bYzHiXuoJPGw1ZiU8XgYpwsUbcuX84E2S | solana | SKIP | no matching DEX pool |
 | CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $20k/day |
 | Cqnm4mkL5tAfBmKqqSwvg4zT2SQWBUuT3DGxhgg21FmM | solana | SKIP | volume below $20k/day |
 | EPPiSnGoWRcAV8XhPEokxCw4y6CH2LV6nzSo1YsGSEnj | solana | SKIP | volume below $20k/day |
@@ -54,6 +46,14 @@
 | FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6 | solana | SKIP | volume below $20k/day |
 | G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR | solana | SKIP | insufficient recent buys/sells |
 | S3vk9CkeztNnuhKMRPfjHG6939DQvFMXG2x5kvnYQY8 | solana | SKIP | volume below $20k/day |
+| S7NvEJxgM5ppV6HHKnS5HmCqUYw79ewoDHysojYnRaj | solana | SKIP | volume below $20k/day |
+| SVY1zmfRddD7w8cqSZTPdzKF4Vyd62kUjBjdiWH83Co | solana | SKIP | volume below $20k/day |
+| soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | volume below $20k/day |
+| 4XRbnGgay2XpqJ1F5jGPQ9pRh1JSX12RPCPJASMJU5JW | solana | SKIP | no matching DEX pool |
+| 6ueGm9qsdDY1vFf2M6v6whVbYY2qXU6RwrqJ6ZPG9C3q | solana | SKIP | volume below $20k/day |
+| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
+| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
+| BUajtJrDxA8bYzHiXuoJPGw1ZiU8XgYpwsUbcuX84E2S | solana | SKIP | no matching DEX pool |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
