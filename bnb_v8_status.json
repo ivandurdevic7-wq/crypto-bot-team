@@ -1,22 +1,13 @@
 {
-  "cash_eur": 130.61975555812634,
+  "cash_eur": 125.78657013212711,
   "initial_eur": 160.0,
   "positions": {
-    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
-      "token": "ARIA",
-      "qty": 49.11412019448263,
-      "entry_usd": 0.1138405,
-      "peak_usd": 0.120890612430229,
-      "last_usd": 0.120364722331371,
-      "cost_eur": 5.0,
-      "opened": "2026-11-03T04:29:30+00:00"
-    },
     "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
       "token": "IDOL",
       "qty": 325.4204694730753,
       "entry_usd": 0.017181389999999998,
-      "peak_usd": 0.0176472144365609,
-      "last_usd": 0.0176472144365609,
+      "peak_usd": 0.0179707189546473,
+      "last_usd": 0.0179707189546473,
       "cost_eur": 5.0,
       "opened": "2026-11-03T09:28:17+00:00"
     },
@@ -25,9 +16,27 @@
       "qty": 1209.4711742403513,
       "entry_usd": 0.0046228269999999995,
       "peak_usd": 0.0046496161318992,
-      "last_usd": 0.0046496161318992,
+      "last_usd": 0.00461795925517308,
       "cost_eur": 5.0,
       "opened": "2026-11-03T09:28:17+00:00"
+    },
+    "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
+      "token": "ZIG",
+      "qty": 133.6158351407905,
+      "entry_usd": 0.04184515999999999,
+      "peak_usd": 0.04184515999999999,
+      "last_usd": 0.04172,
+      "cost_eur": 5.0,
+      "opened": "2026-11-03T11:28:39+00:00"
+    },
+    "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
+      "token": "AGT",
+      "qty": 148.4936771996212,
+      "entry_usd": 0.03765261999999999,
+      "peak_usd": 0.03765261999999999,
+      "last_usd": 0.03754,
+      "cost_eur": 5.0,
+      "opened": "2026-11-03T11:28:40+00:00"
     }
   },
   "trades": [
@@ -2880,21 +2889,59 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-03T11:28:39+00:00",
+      "side": "SELL",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 5.1668,
+      "pnl_eur": 0.1668,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-03T11:28:39+00:00",
+      "side": "BUY",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
+    },
+    {
+      "time": "2026-11-03T11:28:40+00:00",
+      "side": "BUY",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-30T21:15:25+00:00",
-      "token": "IDOL",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-10-30T21:15:25+00:00",
-      "token": "Q",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
     {
       "time": "2026-10-30T21:15:25+00:00",
       "token": "BLESS",
@@ -3962,6 +4009,18 @@
       "token": "UAI",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-03T11:28:39+00:00",
+      "token": "ZIG",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-03T11:28:40+00:00",
+      "token": "AGT",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -3994,32 +4053,50 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-03T10:31:23+00:00",
+  "last_attempt": "2026-11-03T11:28:35+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "UAI",
-      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
+      "token": "ZIG",
+      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
       "votes": {
-        "Trend": false,
+        "Trend": true,
         "Momentum": true,
-        "Dip recovery": true,
+        "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xae9f316db34368cb248497bf1dd7b56b3a92a94c"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x9fac151b7f1dbbb9d14ccd1ca5b990bc4da5cd1f"
+    },
+    {
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
     }
   ],
-  "screened_count": 42,
-  "candidate_count": 5,
-  "estimated_eur": 146.02,
+  "screened_count": 45,
+  "candidate_count": 8,
+  "estimated_eur": 145.92,
   "roles": [
     "Trend",
     "Momentum",
@@ -4033,5 +4110,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-03T10:31:28+00:00"
+  "last_success": "2026-11-03T11:28:40+00:00"
 }
