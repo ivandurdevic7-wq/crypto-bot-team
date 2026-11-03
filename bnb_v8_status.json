@@ -1,22 +1,13 @@
 {
-  "cash_eur": 130.95472943413102,
+  "cash_eur": 131.05284992910282,
   "initial_eur": 160.0,
   "positions": {
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 34.466693030777314,
-      "entry_usd": 0.16158329999999999,
-      "peak_usd": 0.1701,
-      "last_usd": 0.1701,
-      "cost_eur": 5.0,
-      "opened": "2026-11-02T12:30:58+00:00"
-    },
     "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
       "token": "IDOL",
       "qty": 312.46931850189344,
       "entry_usd": 0.01789352,
       "peak_usd": 0.01789352,
-      "last_usd": 0.0178380878689715,
+      "last_usd": 0.0176386098482066,
       "cost_eur": 5.0,
       "opened": "2026-11-03T04:29:28+00:00"
     },
@@ -25,9 +16,18 @@
       "qty": 49.11412019448263,
       "entry_usd": 0.1138405,
       "peak_usd": 0.113841370096911,
-      "last_usd": 0.113841370096911,
+      "last_usd": 0.111671093856935,
       "cost_eur": 5.0,
       "opened": "2026-11-03T04:29:30+00:00"
+    },
+    "0xdd806e436dda5588bf54061c11590c77ddc87777": {
+      "token": "SAFU",
+      "qty": 2974.627877307246,
+      "entry_usd": 0.0018796219999999998,
+      "peak_usd": 0.0018796219999999998,
+      "last_usd": 0.001874,
+      "cost_eur": 5.0,
+      "opened": "2026-11-03T06:32:17+00:00"
     }
   },
   "trades": [
@@ -2790,27 +2790,39 @@
       "pnl_eur": -0.2314,
       "reason": "STOP",
       "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-03T06:32:16+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 5.0981,
+      "pnl_eur": 0.0981,
+      "reason": "TRAIL",
+      "price_source": "DEX Screener"
+    },
+    {
+      "time": "2026-11-03T06:32:17+00:00",
+      "side": "BUY",
+      "token": "SAFU",
+      "address": "0xdd806e436dda5588bf54061c11590c77ddc87777",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-10-30T17:22:03+00:00",
-      "token": "APR",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-30T17:22:03+00:00",
-      "token": "Beat",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-10-30T18:17:00+00:00",
-      "token": "ON",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-10-30T18:17:00+00:00",
       "token": "JCT",
@@ -3872,6 +3884,24 @@
       "token": "EVAA",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-03T06:32:17+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-03T06:32:17+00:00",
+      "token": "PIEVERSE",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-03T06:32:17+00:00",
+      "token": "SAFU",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -3904,31 +3934,31 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-03T05:29:32+00:00",
+  "last_attempt": "2026-11-03T06:32:12+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "UAI",
-      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
       "votes": {
         "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": false,
+        "Liquidity": true,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": false,
+        "Risk guard": true,
         "Portfolio": true
       },
-      "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0xae9f316db34368cb248497bf1dd7b56b3a92a94c"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
     },
     {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "token": "PIEVERSE",
+      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -3937,16 +3967,16 @@
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": true,
+        "DEX cross-check": false,
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0x6a391a152eeb2952f0c73462dcaab91ad18096d5"
     },
     {
-      "token": "EVAA",
-      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "token": "SAFU",
+      "address": "0xdd806e436dda5588bf54061c11590c77ddc87777",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -3960,12 +3990,12 @@
         "Portfolio": true
       },
       "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+      "dex_url": "https://dexscreener.com/bsc/0x13b86fcf85c9c8f5c36593822d216b8893c25450"
     }
   ],
-  "screened_count": 43,
+  "screened_count": 40,
   "candidate_count": 5,
-  "estimated_eur": 146.14,
+  "estimated_eur": 145.83,
   "roles": [
     "Trend",
     "Momentum",
@@ -3979,5 +4009,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-03T05:29:37+00:00"
+  "last_success": "2026-11-03T06:32:17+00:00"
 }
