@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-03T02:55:33.852369+00:00
+- updated_at: 2026-11-03T03:44:56.469180+00:00
 - status: OK
 - cash: 496.522993110282
 - equity_eur: 496.522993110282
@@ -10,7 +10,7 @@
 
 ## BNB Chain i Solana
 
-{'bsc': 20, 'solana': 20}
+{'bsc': 19, 'solana': 20}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
@@ -18,12 +18,8 @@
 | 0x0afdbb0a9f813c8cbe81f0ff4016043e1d3f26d2 | bsc | SKIP | liquidity below $30k |
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $30k |
 | 0x1d9b64a09c52ad1e75e052223bef52d2adac8426 | bsc | SKIP | no matching DEX pool |
-| 0x21a8dd1ae3fc614ce5abffad196d1470ed287777 | bsc | SKIP | no matching DEX pool |
-| 0x331c99a4c23f4d814d3e22aabcb8926a42ea7777 | bsc | SKIP | liquidity below $30k |
-| 0x35eac35731e48d69d7f86f5ecdf95499cc8e0579 | bsc | SKIP | no matching DEX pool |
-| 茧 | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
-| 0x66cd9c206ea2f46d2a1a2bd322850322ca4a6666 | bsc | SKIP | no matching DEX pool |
+| 0x66cd9c206ea2f46d2a1a2bd322850322ca4a6666 | bsc | SKIP | liquidity below $30k |
 | 0x6c0b008499239ccedd48595763225db54ac9585c | bsc | SKIP | liquidity below $30k |
 | 0x7097fc0a1528dc8b22890c8899b9521080d47777 | bsc | SKIP | no matching DEX pool |
 | 0x7f4c78e58aac6cabb16075f1549090f111077777 | bsc | SKIP | no matching DEX pool |
@@ -34,6 +30,9 @@
 | 0xb89df2f57fc549407e76c859dbdcec76f5da014b | bsc | SKIP | no matching DEX pool |
 | 0xcefc9156fee95a46f6611000f233e0baa83a86ea | bsc | SKIP | no matching DEX pool |
 | 0xf5cb7cc90040aa717a16887c8b7d7c10a7c60984 | bsc | SKIP | no matching DEX pool |
+| 0x21a8dd1ae3fc614ce5abffad196d1470ed287777 | bsc | SKIP | no matching DEX pool |
+| 0x331c99a4c23f4d814d3e22aabcb8926a42ea7777 | bsc | SKIP | liquidity below $30k |
+| 0x35eac35731e48d69d7f86f5ecdf95499cc8e0579 | bsc | SKIP | no matching DEX pool |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3eMs82ZbkAHUH7qAn1iRtdVKW2egWEwpc8CVXztAgjQo | solana | SKIP | volume below $20k/day |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
