@@ -7,7 +7,7 @@
       "qty": 46.30052758391492,
       "entry_usd": 0.12035999999999998,
       "peak_usd": 0.120494177740088,
-      "last_usd": 0.117695843313228,
+      "last_usd": 0.118639900210407,
       "cost_eur": 5.0,
       "opened": "2026-11-03T23:20:08+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 252.7781305764236,
       "entry_usd": 0.022045939999999997,
       "peak_usd": 0.022045939999999997,
-      "last_usd": 0.02198,
+      "last_usd": 0.0216472716082393,
       "cost_eur": 5.0,
       "opened": "2026-11-04T07:57:21+00:00"
     }
@@ -3335,24 +3335,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-10-31T13:26:35+00:00",
-      "token": "HANA",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
-    {
-      "time": "2026-10-31T14:16:14+00:00",
-      "token": "Q",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-10-31T14:16:15+00:00",
-      "token": "AIOT",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-10-31T15:11:58+00:00",
       "token": "Q",
       "decision": "SKIP",
@@ -4413,6 +4395,24 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-04T09:31:46+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-04T09:31:47+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-04T09:31:47+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -4448,7 +4448,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-04T07:57:17+00:00",
+  "last_attempt": "2026-11-04T09:31:41+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -4459,7 +4459,7 @@
         "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
@@ -4467,12 +4467,30 @@
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
+      "score": 4,
       "dex_url": "https://dexscreener.com/bsc/0x5e7983851f66f22ed1c5f146ba47239f56c8653b"
     },
     {
-      "token": "IDOL",
-      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": true,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 8,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+    },
+    {
+      "token": "JAGENT",
+      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -4486,30 +4504,12 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
-    },
-    {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": true,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
-  "screened_count": 44,
-  "candidate_count": 6,
-  "estimated_eur": 144.89,
+  "screened_count": 41,
+  "candidate_count": 3,
+  "estimated_eur": 144.85,
   "roles": [
     "Trend",
     "Momentum",
@@ -4523,5 +4523,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-04T07:57:21+00:00"
+  "last_success": "2026-11-04T09:31:47+00:00"
 }
