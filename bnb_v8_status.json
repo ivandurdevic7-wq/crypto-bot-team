@@ -1,5 +1,5 @@
 {
-  "cash_eur": 128.28230026027327,
+  "cash_eur": 127.98750925214699,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 133.99856663558023,
       "entry_usd": 0.04191536999999999,
       "peak_usd": 0.043125875693245,
-      "last_usd": 0.0427362362025314,
+      "last_usd": 0.042927597144215,
       "cost_eur": 5.0,
       "opened": "2026-11-04T16:30:01+00:00"
     },
@@ -16,18 +16,18 @@
       "qty": 3713.395291578844,
       "entry_usd": 0.001512524,
       "peak_usd": 0.00151326190643118,
-      "last_usd": 0.001503,
+      "last_usd": 0.00149950738862589,
       "cost_eur": 5.0,
       "opened": "2026-11-04T22:26:13+00:00"
     },
-    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
-      "token": "AKE",
-      "qty": 2121.9401666164827,
-      "entry_usd": 0.0026469169999999995,
-      "peak_usd": 0.0026469169999999995,
-      "last_usd": 0.002639,
+    "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
+      "token": "AGT",
+      "qty": 185.36246606093667,
+      "entry_usd": 0.03030063,
+      "peak_usd": 0.03030063,
+      "last_usd": 0.03021,
       "cost_eur": 5.0,
-      "opened": "2026-11-05T05:38:00+00:00"
+      "opened": "2026-11-05T06:42:17+00:00"
     }
   },
   "trades": [
@@ -3660,27 +3660,39 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-05T06:42:16+00:00",
+      "side": "SELL",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 4.7052,
+      "pnl_eur": -0.2948,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-05T06:42:17+00:00",
+      "side": "BUY",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-01T09:21:29+00:00",
-      "token": "DNA",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
-      "time": "2026-11-01T09:21:29+00:00",
-      "token": "UAI",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-01T09:21:30+00:00",
-      "token": "AIOT",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-01T10:17:28+00:00",
       "token": "AIN",
@@ -4742,6 +4754,24 @@
       "token": "AIN",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-05T06:42:16+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-05T06:42:17+00:00",
+      "token": "AGT",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-05T06:42:17+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -4779,54 +4809,34 @@
       "start_eur": 144.0533
     }
   },
-  "status": "OK (partial API coverage) | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-05T05:37:56+00:00",
-  "market_pages_ok": 1,
-  "market_api_errors": [
-    "networks/bsc/trending_pools: HTTP 429 rate limited by provider"
-  ],
+  "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
+  "last_attempt": "2026-11-05T06:42:11+00:00",
+  "market_pages_ok": 3,
+  "market_api_errors": [],
   "reviewed": [
     {
-      "token": "DGAI",
-      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
-    },
-    {
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "votes": {
-        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": true,
         "Volume": true,
-        "Liquidity": true,
+        "Liquidity": false,
         "New pools": false,
         "DEX cross-check": true,
-        "Risk guard": true,
+        "Risk guard": false,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x4d3bf29ba30f8bfe4624e7678709afa195689c5d"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     },
     {
-      "token": "AIN",
-      "address": "0x9558a9254890b2a8b057a789f413631b9084f4a3",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -4837,13 +4847,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xf4262c4dbf524f53851a5176bdc7d6c1e0fa82d8"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
     }
   ],
-  "screened_count": 18,
+  "screened_count": 36,
   "candidate_count": 4,
-  "estimated_eur": 143.29,
+  "estimated_eur": 143.01,
   "roles": [
     "Trend",
     "Momentum",
@@ -4857,5 +4867,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-05T05:38:00+00:00"
+  "last_success": "2026-11-05T06:42:17+00:00"
 }
