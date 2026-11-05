@@ -1,10 +1,10 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-05T04:22:41.524764+00:00
+- updated_at: 2026-11-05T05:26:16.165292+00:00
 - status: OK
 - cash: 372.24773142669255
-- equity_eur: 495.87033812465614
-- pnl_eur: -4.1296618753438565
+- equity_eur: 496.00685523315997
+- pnl_eur: -3.9931447668400324
 - halted: False
 - decisions: ['XBTEUR: HOLD', 'ETHEUR: HOLD', 'SOLEUR: WAIT']
 
@@ -16,14 +16,14 @@
 |---|---|---|---|
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | no matching DEX pool |
 | 0x3c8a098cb87fdd41e82de1dfdb85dabf41888888 | bsc | SKIP | volume below $20k/day |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
 | 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | liquidity below $30k |
 | 0x7b48474d25431dfad4337735a0a2e57b63573abb | bsc | SKIP | insufficient recent buys/sells |
 | 0xb47db73293380088a1d78fb5c51bf9038f217777 | bsc | SKIP | liquidity below $30k |
 | 0xd5e0ba2a6db0afa6f26bde38637ad1ae50f77777 | bsc | SKIP | liquidity below $30k |
-| 0xe01e91b99b7d68a25f8f868f971bded4af9c211e | bsc | SKIP | pool younger than 12h |
+| 0xe01e91b99b7d68a25f8f868f971bded4af9c211e | bsc | SKIP | liquidity below $30k |
 | 0xed642d710e151b65882f96b8e301990446fe5091 | bsc | SKIP | liquidity below $30k |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
-| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
