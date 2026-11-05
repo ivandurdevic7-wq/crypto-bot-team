@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-05T16:54:38.792603+00:00
+- updated_at: 2026-11-05T17:50:28.915745+00:00
 - status: OK
 - cash: 496.253017656795
 - equity_eur: 496.253017656795
@@ -18,17 +18,17 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | no matching DEX pool |
 | 0x35771285a60b2aa5d4f5acb917cc019ee1df7777 | bsc | SKIP | pool younger than 12h |
 | 0x3c8a098cb87fdd41e82de1dfdb85dabf41888888 | bsc | SKIP | volume below $20k/day |
+| CORLA | bsc | SKIP | risk/unknown: external_call |
+| 0xe01e91b99b7d68a25f8f868f971bded4af9c211e | bsc | SKIP | liquidity below $30k |
+| 0xE38F103e108cfB19EC25cBA610c8Ed58E3957777 | bsc | SKIP | pool younger than 12h |
+| 0xed743a395ef1a41300969978db7cb59a1e77776e | bsc | SKIP | pool younger than 12h |
+| 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | liquidity below $30k |
 | 0x8351311fe78e9045a5eebcb11db9d700658c7777 | bsc | SKIP | liquidity below $30k |
 | 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 0x9773b0ab8d915df36f036dbd7ec1dc6e3dfa9999 | bsc | SKIP | volume below $20k/day |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
-| 0xba300df4c929eb137e266d17d1fe6db058837777 | bsc | SKIP | pool younger than 12h |
-| 0xe01e91b99b7d68a25f8f868f971bded4af9c211e | bsc | SKIP | liquidity below $30k |
-| 0xed743a395ef1a41300969978db7cb59a1e77776e | bsc | SKIP | pool younger than 12h |
-| 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
-| 0xE38F103e108cfB19EC25cBA610c8Ed58E3957777 | bsc | SKIP | pool younger than 12h |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
