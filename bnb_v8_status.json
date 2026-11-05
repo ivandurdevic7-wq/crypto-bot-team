@@ -7,7 +7,7 @@
       "qty": 133.99856663558023,
       "entry_usd": 0.04191536999999999,
       "peak_usd": 0.043125875693245,
-      "last_usd": 0.0427715992458705,
+      "last_usd": 0.0429843908893258,
       "cost_eur": 5.0,
       "opened": "2026-11-04T16:30:01+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 261.06294171099756,
       "entry_usd": 0.021514349999999998,
       "peak_usd": 0.0217804798573491,
-      "last_usd": 0.0213208372939424,
+      "last_usd": 0.021233767188177,
       "cost_eur": 5.0,
       "opened": "2026-11-04T22:26:12+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 3713.395291578844,
       "entry_usd": 0.001512524,
       "peak_usd": 0.00151326190643118,
-      "last_usd": 0.00148944680119994,
+      "last_usd": 0.00146948798016925,
       "cost_eur": 5.0,
       "opened": "2026-11-04T22:26:13+00:00"
     }
@@ -3634,24 +3634,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-01T04:28:24+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-01T05:25:25+00:00",
-      "token": "DNA",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
-      "time": "2026-11-01T06:20:28+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
       "time": "2026-11-01T06:20:28+00:00",
       "token": "HANA",
       "decision": "SKIP",
@@ -4712,6 +4694,24 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-05T03:27:28+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-05T03:27:28+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-05T03:27:29+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -4750,10 +4750,28 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-05T01:50:23+00:00",
+  "last_attempt": "2026-11-05T03:27:23+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
+    {
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+    },
     {
       "token": "JCT",
       "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
@@ -4771,11 +4789,29 @@
       },
       "score": 6,
       "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
     }
   ],
-  "screened_count": 47,
-  "candidate_count": 1,
-  "estimated_eur": 143.4,
+  "screened_count": 37,
+  "candidate_count": 4,
+  "estimated_eur": 143.34,
   "roles": [
     "Trend",
     "Momentum",
@@ -4789,5 +4825,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-05T01:50:28+00:00"
+  "last_success": "2026-11-05T03:27:29+00:00"
 }
