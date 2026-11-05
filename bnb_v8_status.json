@@ -1,5 +1,5 @@
 {
-  "cash_eur": 123.89020847200698,
+  "cash_eur": 128.46311503652814,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 133.99856663558023,
       "entry_usd": 0.04191536999999999,
       "peak_usd": 0.043125875693245,
-      "last_usd": 0.043125875693245,
+      "last_usd": 0.0427715992458705,
       "cost_eur": 5.0,
       "opened": "2026-11-04T16:30:01+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 261.06294171099756,
       "entry_usd": 0.021514349999999998,
       "peak_usd": 0.0217804798573491,
-      "last_usd": 0.0217804798573491,
+      "last_usd": 0.0213208372939424,
       "cost_eur": 5.0,
       "opened": "2026-11-04T22:26:12+00:00"
     },
@@ -25,18 +25,9 @@
       "qty": 3713.395291578844,
       "entry_usd": 0.001512524,
       "peak_usd": 0.00151326190643118,
-      "last_usd": 0.00151326190643118,
+      "last_usd": 0.00148944680119994,
       "cost_eur": 5.0,
       "opened": "2026-11-04T22:26:13+00:00"
-    },
-    "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274": {
-      "token": "AGT",
-      "qty": 175.65244980241212,
-      "entry_usd": 0.03197563999999999,
-      "peak_usd": 0.03197563999999999,
-      "last_usd": 0.03188,
-      "cost_eur": 5.0,
-      "opened": "2026-11-05T00:18:35+00:00"
     }
   },
   "trades": [
@@ -3629,15 +3620,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-05T01:50:28+00:00",
+      "side": "SELL",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "eur": 4.5729,
+      "pnl_eur": -0.4271,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-01T04:28:24+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-01T04:28:24+00:00",
       "token": "JCT",
@@ -4711,6 +4706,12 @@
       "token": "DNA",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-05T01:50:28+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -4749,36 +4750,18 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-05T00:18:30+00:00",
+  "last_attempt": "2026-11-05T01:50:23+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "AGT",
-      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
-    },
-    {
-      "token": "DNA",
-      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": false,
+        "Breakout": true,
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
@@ -4786,13 +4769,13 @@
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x5e7983851f66f22ed1c5f146ba47239f56c8653b"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
   "screened_count": 47,
-  "candidate_count": 5,
-  "estimated_eur": 144.02,
+  "candidate_count": 1,
+  "estimated_eur": 143.4,
   "roles": [
     "Trend",
     "Momentum",
@@ -4806,5 +4789,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-05T00:18:35+00:00"
+  "last_success": "2026-11-05T01:50:28+00:00"
 }
