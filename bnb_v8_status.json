@@ -1,13 +1,13 @@
 {
-  "cash_eur": 124.89921677322155,
+  "cash_eur": 119.89921677322155,
   "initial_eur": 160.0,
   "positions": {
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 2470.5175880683905,
       "entry_usd": 0.0022647739999999998,
-      "peak_usd": 0.00429137912554918,
-      "last_usd": 0.00429137912554918,
+      "peak_usd": 0.00511106900689763,
+      "last_usd": 0.00511106900689763,
       "cost_eur": 5.0,
       "opened": "2026-11-05T21:23:45+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 32.376254868592135,
       "entry_usd": 0.1728169,
       "peak_usd": 0.1728169,
-      "last_usd": 0.170018007091441,
+      "last_usd": 0.17090459230325,
       "cost_eur": 5.0,
       "opened": "2026-11-06T04:35:02+00:00"
     },
@@ -24,10 +24,19 @@
       "token": "ARIA",
       "qty": 39.732398246854885,
       "entry_usd": 0.14082119999999998,
-      "peak_usd": 0.14082119999999998,
-      "last_usd": 0.1404,
+      "peak_usd": 0.148236715360758,
+      "last_usd": 0.148236715360758,
       "cost_eur": 5.0,
       "opened": "2026-11-06T05:37:44+00:00"
+    },
+    "0xba300df4c929eb137e266d17d1fe6db058837777": {
+      "token": "CORLA",
+      "qty": 5.771783459760399,
+      "entry_usd": 0.9693995,
+      "peak_usd": 0.9693995,
+      "last_usd": 0.9665,
+      "cost_eur": 5.0,
+      "opened": "2026-11-06T06:42:56+00:00"
     }
   },
   "trades": [
@@ -4050,21 +4059,29 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-06T06:42:56+00:00",
+      "side": "BUY",
+      "token": "CORLA",
+      "address": "0xba300df4c929eb137e266d17d1fe6db058837777",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-02T01:44:34+00:00",
-      "token": "DNA",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
-      "time": "2026-11-02T01:44:35+00:00",
-      "token": "Q",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
     {
       "time": "2026-11-02T03:28:31+00:00",
       "token": "JAGENT",
@@ -5132,6 +5149,18 @@
       "token": "UAI",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-06T06:42:55+00:00",
+      "token": "Q",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-06T06:42:56+00:00",
+      "token": "CORLA",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -5173,15 +5202,33 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-06T05:37:40+00:00",
+  "last_attempt": "2026-11-06T06:42:50+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "token": "Q",
+      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
       "votes": {
-        "Trend": true,
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
+    },
+    {
+      "token": "CORLA",
+      "address": "0xba300df4c929eb137e266d17d1fe6db058837777",
+      "votes": {
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -5192,49 +5239,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xa5dbeaf16fc031eae92175974f8d0a439be4ad17"
-    },
-    {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
-    },
-    {
-      "token": "UAI",
-      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xae9f316db34368cb248497bf1dd7b56b3a92a94c"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xe015a78814ebadeb0f202446e64b970642f9b965"
     }
   ],
-  "screened_count": 39,
-  "candidate_count": 5,
-  "estimated_eur": 144.22,
+  "screened_count": 40,
+  "candidate_count": 4,
+  "estimated_eur": 146.3,
   "roles": [
     "Trend",
     "Momentum",
@@ -5248,5 +5259,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-06T05:37:44+00:00"
+  "last_success": "2026-11-06T06:42:56+00:00"
 }
