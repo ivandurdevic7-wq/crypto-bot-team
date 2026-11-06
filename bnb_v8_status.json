@@ -1,42 +1,24 @@
 {
-  "cash_eur": 119.89921677322155,
+  "cash_eur": 134.78441480448717,
   "initial_eur": 160.0,
   "positions": {
-    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
-      "token": "AKE",
-      "qty": 2470.5175880683905,
-      "entry_usd": 0.0022647739999999998,
-      "peak_usd": 0.00511106900689763,
-      "last_usd": 0.00511106900689763,
-      "cost_eur": 5.0,
-      "opened": "2026-11-05T21:23:45+00:00"
-    },
     "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
       "token": "ON",
       "qty": 32.376254868592135,
       "entry_usd": 0.1728169,
-      "peak_usd": 0.1728169,
-      "last_usd": 0.17090459230325,
+      "peak_usd": 0.175407527559281,
+      "last_usd": 0.175407527559281,
       "cost_eur": 5.0,
       "opened": "2026-11-06T04:35:02+00:00"
     },
-    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
-      "token": "ARIA",
-      "qty": 39.732398246854885,
-      "entry_usd": 0.14082119999999998,
-      "peak_usd": 0.148236715360758,
-      "last_usd": 0.148236715360758,
+    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
+      "token": "IDOL",
+      "qty": 272.11847384675247,
+      "entry_usd": 0.0205615,
+      "peak_usd": 0.0205615,
+      "last_usd": 0.0205,
       "cost_eur": 5.0,
-      "opened": "2026-11-06T05:37:44+00:00"
-    },
-    "0xba300df4c929eb137e266d17d1fe6db058837777": {
-      "token": "CORLA",
-      "qty": 5.771783459760399,
-      "entry_usd": 0.9693995,
-      "peak_usd": 0.9693995,
-      "last_usd": 0.9665,
-      "cost_eur": 5.0,
-      "opened": "2026-11-06T06:42:56+00:00"
+      "opened": "2026-11-06T08:33:42+00:00"
     }
   },
   "trades": [
@@ -4079,21 +4061,59 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-06T08:33:41+00:00",
+      "side": "SELL",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 10.9312,
+      "pnl_eur": 5.9312,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-06T08:33:41+00:00",
+      "side": "SELL",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 5.0598,
+      "pnl_eur": 0.0598,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-06T08:33:41+00:00",
+      "side": "SELL",
+      "token": "CORLA",
+      "address": "0xba300df4c929eb137e266d17d1fe6db058837777",
+      "eur": 3.8942,
+      "pnl_eur": -1.1058,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-06T08:33:42+00:00",
+      "side": "BUY",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-02T03:28:31+00:00",
-      "token": "JAGENT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-11-02T04:36:35+00:00",
-      "token": "JAGENT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
     {
       "time": "2026-11-02T04:36:36+00:00",
       "token": "EVAA",
@@ -5161,6 +5181,18 @@
       "token": "CORLA",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-06T08:33:41+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-06T08:33:42+00:00",
+      "token": "IDOL",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -5202,31 +5234,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-06T06:42:50+00:00",
+  "last_attempt": "2026-11-06T08:33:37+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "Q",
-      "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": true,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f"
-    },
-    {
-      "token": "CORLA",
-      "address": "0xba300df4c929eb137e266d17d1fe6db058837777",
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
       "votes": {
         "Trend": false,
         "Momentum": true,
@@ -5240,12 +5254,30 @@
         "Portfolio": true
       },
       "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xe015a78814ebadeb0f202446e64b970642f9b965"
+      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+    },
+    {
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
     }
   ],
-  "screened_count": 40,
-  "candidate_count": 4,
-  "estimated_eur": 146.3,
+  "screened_count": 34,
+  "candidate_count": 7,
+  "estimated_eur": 144.81,
   "roles": [
     "Trend",
     "Momentum",
@@ -5259,5 +5291,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-06T06:42:56+00:00"
+  "last_success": "2026-11-06T08:33:42+00:00"
 }
