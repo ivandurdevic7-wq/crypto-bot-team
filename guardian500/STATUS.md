@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-06T04:39:44.835697+00:00
+- updated_at: 2026-11-06T05:40:59.186336+00:00
 - status: OK
 - cash: 496.253017656795
 - equity_eur: 496.253017656795
@@ -24,9 +24,9 @@
 | 0x9773b0ab8d915df36f036dbd7ec1dc6e3dfa9999 | bsc | SKIP | volume below $20k/day |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
 | 0xe01e91b99b7d68a25f8f868f971bded4af9c211e | bsc | SKIP | liquidity below $30k |
-| ASI | bsc | SKIP | holder concentration/invalid fractions |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
+| 0x26e9F3670B8f1cF26FDb3c9d2030293AC4197777 | bsc | SKIP | no matching DEX pool |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
