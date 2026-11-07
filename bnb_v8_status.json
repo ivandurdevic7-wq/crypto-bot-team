@@ -7,7 +7,7 @@
       "qty": 139.07531790593137,
       "entry_usd": 0.04001969999999999,
       "peak_usd": 0.0404066034984958,
-      "last_usd": 0.03915962689864,
+      "last_usd": 0.0394092720442534,
       "cost_eur": 5.0,
       "opened": "2026-11-06T15:22:22+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "IDOL",
       "qty": 228.54634202828092,
       "entry_usd": 0.024352839999999997,
-      "peak_usd": 0.0360637478881936,
-      "last_usd": 0.0360637478881936,
+      "peak_usd": 0.0376094815491776,
+      "last_usd": 0.0376094815491776,
       "cost_eur": 5.0,
       "opened": "2026-11-07T06:26:21+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 35.87010461827188,
       "entry_usd": 0.1551641,
       "peak_usd": 0.1622469994092,
-      "last_usd": 0.1622469994092,
+      "last_usd": 0.160654054999264,
       "cost_eur": 5.0,
       "opened": "2026-11-07T16:15:06+00:00"
     }
@@ -4654,18 +4654,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-03T09:28:17+00:00",
-      "token": "IDOL",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-03T09:28:17+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-03T10:31:28+00:00",
       "token": "DNA",
       "decision": "SKIP",
@@ -5732,6 +5720,18 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-07T18:11:02+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-07T18:11:02+00:00",
+      "token": "PIEVERSE",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -5776,13 +5776,50 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-07T17:13:55+00:00",
+  "last_attempt": "2026-11-07T18:10:58+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [],
-  "screened_count": 35,
-  "candidate_count": 2,
-  "estimated_eur": 148.92,
+  "reviewed": [
+    {
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+    },
+    {
+      "token": "PIEVERSE",
+      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": false,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0x6a391a152eeb2952f0c73462dcaab91ad18096d5"
+    }
+  ],
+  "screened_count": 36,
+  "candidate_count": 3,
+  "estimated_eur": 149.22,
   "roles": [
     "Trend",
     "Momentum",
@@ -5796,5 +5833,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-07T17:13:59+00:00"
+  "last_success": "2026-11-07T18:11:02+00:00"
 }
