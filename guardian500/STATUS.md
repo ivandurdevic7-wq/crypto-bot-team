@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-07T19:16:41.384326+00:00
+- updated_at: 2026-11-07T19:59:45.631630+00:00
 - status: OK
 - cash: 496.253017656795
 - equity_eur: 496.253017656795
@@ -10,7 +10,7 @@
 
 ## BNB Chain i Solana
 
-{'bsc': 19, 'solana': 20}
+{'bsc': 18, 'solana': 20}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
@@ -18,25 +18,26 @@
 | 0x0fffdaf8664ef90bc4a979670fc9bfb35c487777 | bsc | SKIP | liquidity below $30k |
 | 0x1178480f09bb4e96c7ef6e407fb82e4308e4dc71 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
+| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
+| 0x3c8a098cb87fdd41e82de1dfdb85dabf41888888 | bsc | SKIP | volume below $20k/day |
+| 0x570a5d26f7765ecb712c0924e4de545b89fd43df | bsc | SKIP | insufficient recent buys/sells |
+| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
+| 0x73B88455730287A2CdE5d94696b06F6F700E6666 | bsc | SKIP | liquidity below $30k |
+| 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
+| 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
+| 0xa6a9a44f4060e2c8d51d5e80a357291772727777 | bsc | SKIP | liquidity below $30k |
 | 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | liquidity below $30k |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | 0x1aba87a31d0fa623b099b40581a724b663107777 | bsc | SKIP | no matching DEX pool |
 | 0x1d628e104a110e02bdd91ea34e124278874f7777 | bsc | SKIP | liquidity below $30k |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
 | 0x28ef2256fe6fbdcb1f0f2dbdee0a082ff7017777 | bsc | SKIP | liquidity below $30k |
-| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
-| 0x3c8a098cb87fdd41e82de1dfdb85dabf41888888 | bsc | SKIP | volume below $20k/day |
-| 0x570a5d26f7765ecb712c0924e4de545b89fd43df | bsc | SKIP | insufficient recent buys/sells |
-| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
-| 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
-| OCTAGON | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
-| 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
-| 0xa6a9a44f4060e2c8d51d5e80a357291772727777 | bsc | SKIP | liquidity below $30k |
-| 0x73B88455730287A2CdE5d94696b06F6F700E6666 | bsc | SKIP | liquidity below $30k |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
 | 5Sqq3NWD98JkcirdDBKRxZFsoZ8f1qqpFp6DSZkoTsHd | solana | SKIP | volume below $20k/day |
+| 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
+| 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
 | 6eJBPjn3Ku3sC21oRiXk7zVzufdcmrBRvScRfbwUjySB | solana | SKIP | no matching DEX pool |
 | 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
 | 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | volume below $20k/day |
@@ -51,8 +52,6 @@
 | FbLaAw9wKLVcvGpfE7eDL1DHmANyNUdn59dfkD4u31zC | solana | SKIP | volume below $20k/day |
 | FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6 | solana | SKIP | volume below $20k/day |
 | G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR | solana | SKIP | insufficient recent buys/sells |
-| 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
-| 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
