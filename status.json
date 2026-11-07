@@ -1,11 +1,18 @@
 {
-  "cash": 150.27667981238983,
+  "cash": 145.27667981238983,
   "positions": {
     "SOXSBUSDT": {
       "qty": 0.1002087801838603,
       "entry": 56.23617999999999,
-      "last": 71.95,
+      "last": 71.96,
       "opened": "2026-11-04T12:58:52+00:00",
+      "cost_eur": 5.0
+    },
+    "ONEUSDT": {
+      "qty": 2881.6532846035952,
+      "entry": 0.0019339319999999998,
+      "last": 0.00193,
+      "opened": "2026-11-07T07:58:15+00:00",
       "cost_eur": 5.0
     }
   },
@@ -382,24 +389,25 @@
         "volume_15m": true,
         "spread": true
       }
+    },
+    {
+      "time": "2026-11-07T07:58:15+00:00",
+      "side": "BUY",
+      "token": "ONEUSDT",
+      "eur": 5.0,
+      "rise_1h": 5.99,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
     }
   ],
   "status": "OK; stvarni podaci, virtualne transakcije",
   "updated": "2026-10-24T21:28:43.938888+00:00",
   "value": 160.0,
   "decisions": [
-    {
-      "time": "2026-10-31T20:33:51+00:00",
-      "token": "AMPUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: volume_15m"
-    },
-    {
-      "time": "2026-10-31T20:33:51+00:00",
-      "token": "牛来USDT",
-      "result": "SKIP",
-      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
-    },
     {
       "time": "2026-10-31T21:35:43+00:00",
       "token": "牛来USDT",
@@ -1287,10 +1295,22 @@
       "token": "币安人生USDT",
       "result": "SKIP",
       "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-29: ordinal not in range(128)"
+    },
+    {
+      "time": "2026-11-07T07:58:15+00:00",
+      "token": "ONEUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-07T07:58:16+00:00",
+      "token": "ACTUSDT",
+      "result": "REJECT",
+      "reason": "Premala dubina knjige naloga"
     }
   ],
-  "last_success": "2026-11-07T06:53:37+00:00",
+  "last_success": "2026-11-07T07:58:31+00:00",
   "screened_market_count": 776,
   "scanned_candidates": 25,
-  "estimated_eur": 156.74
+  "estimated_eur": 156.72
 }
