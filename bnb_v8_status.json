@@ -1,5 +1,5 @@
 {
-  "cash_eur": 133.70976581876107,
+  "cash_eur": 128.70976581876107,
   "initial_eur": 160.0,
   "positions": {
     "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145": {
@@ -7,7 +7,7 @@
       "qty": 139.07531790593137,
       "entry_usd": 0.04001969999999999,
       "peak_usd": 0.0404066034984958,
-      "last_usd": 0.0391131010714755,
+      "last_usd": 0.0390528361735379,
       "cost_eur": 5.0,
       "opened": "2026-11-06T15:22:22+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 218.21097854686045,
       "entry_usd": 0.025506289999999997,
       "peak_usd": 0.025506289999999997,
-      "last_usd": 0.02528,
+      "last_usd": 0.02524,
       "cost_eur": 5.0,
       "opened": "2026-11-07T19:22:27+00:00"
     },
@@ -25,9 +25,18 @@
       "qty": 1021.746489494874,
       "entry_usd": 0.005447293,
       "peak_usd": 0.00568432714776874,
-      "last_usd": 0.00568432714776874,
+      "last_usd": 0.00568027938263335,
       "cost_eur": 5.0,
       "opened": "2026-11-07T21:14:04+00:00"
+    },
+    "0x13920fe6467e9e3c852b8d365a036c995f0f7777": {
+      "token": "GM",
+      "qty": 1168.4786659184379,
+      "entry_usd": 0.004763246999999999,
+      "peak_usd": 0.004763246999999999,
+      "last_usd": 0.004749,
+      "cost_eur": 5.0,
+      "opened": "2026-11-07T23:13:18+00:00"
     }
   },
   "trades": [
@@ -4710,21 +4719,29 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-07T23:13:18+00:00",
+      "side": "BUY",
+      "token": "GM",
+      "address": "0x13920fe6467e9e3c852b8d365a036c995f0f7777",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-03T15:21:48+00:00",
-      "token": "GANG",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-03T16:29:26+00:00",
-      "token": "JAGENT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
     {
       "time": "2026-11-03T17:28:47+00:00",
       "token": "AKE",
@@ -5792,6 +5809,18 @@
       "token": "JAGENT",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-07T23:13:18+00:00",
+      "token": "UAI",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-07T23:13:18+00:00",
+      "token": "GM",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -5836,15 +5865,33 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-07T22:14:03+00:00",
+  "last_attempt": "2026-11-07T23:13:14+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "JAGENT",
-      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "token": "UAI",
+      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
       "votes": {
-        "Trend": true,
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": false,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 3,
+      "dex_url": "https://dexscreener.com/bsc/0xae9f316db34368cb248497bf1dd7b56b3a92a94c"
+    },
+    {
+      "token": "GM",
+      "address": "0x13920fe6467e9e3c852b8d365a036c995f0f7777",
+      "votes": {
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -5855,13 +5902,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xfd55be774ea18067bd06a6aed49fb1cc4ad966e9"
     }
   ],
-  "screened_count": 39,
-  "candidate_count": 2,
-  "estimated_eur": 148.72,
+  "screened_count": 37,
+  "candidate_count": 4,
+  "estimated_eur": 148.68,
   "roles": [
     "Trend",
     "Momentum",
@@ -5875,5 +5922,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-07T22:14:09+00:00"
+  "last_success": "2026-11-07T23:13:18+00:00"
 }
