@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-07T14:22:52.904806+00:00
+- updated_at: 2026-11-07T15:06:04.197871+00:00
 - status: OK
 - cash: 496.253017656795
 - equity_eur: 496.253017656795
@@ -19,12 +19,11 @@
 | 0x1178480f09bb4e96c7ef6e407fb82e4308e4dc71 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x1aba87a31d0fa623b099b40581a724b663107777 | bsc | SKIP | no matching DEX pool |
-| 0x1d628E104a110E02BdD91eA34E124278874F7777 | bsc | SKIP | liquidity below $30k |
+| 0x1d628e104a110e02bdd91ea34e124278874f7777 | bsc | SKIP | liquidity below $30k |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
 | 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
 | 0x3c8a098cb87fdd41e82de1dfdb85dabf41888888 | bsc | SKIP | volume below $20k/day |
 | 0x3ffae6988a1fcfaf00c51fb4950c1cd69812180c | bsc | SKIP | pool younger than 12h |
-| Red | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
 | 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 0x87fe1679e02c6793781256ee2ad13eb18cbd7777 | bsc | SKIP | liquidity below $30k |
@@ -34,6 +33,7 @@
 | 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | liquidity below $30k |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x28EF2256Fe6FbdCb1f0F2Dbdee0a082Ff7017777 | bsc | SKIP | liquidity below $30k |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
