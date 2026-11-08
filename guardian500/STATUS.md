@@ -1,16 +1,16 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-08T08:38:07.353393+00:00
+- updated_at: 2026-11-08T09:27:03.582320+00:00
 - status: OK
 - cash: 434.22139044969566
-- equity_eur: 495.6336479316345
-- pnl_eur: -4.366352068365472
+- equity_eur: 495.6082492163601
+- pnl_eur: -4.391750783639907
 - halted: False
-- decisions: ['XBTEUR: WAIT', 'ETHEUR: BUY', 'SOLEUR: WAIT']
+- decisions: ['XBTEUR: WAIT', 'ETHEUR: HOLD', 'SOLEUR: WAIT']
 
 ## BNB Chain i Solana
 
-{'bsc': 19, 'solana': 20}
+{'bsc': 18, 'solana': 20}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
@@ -18,9 +18,13 @@
 | 0x0fffdaf8664ef90bc4a979670fc9bfb35c487777 | bsc | SKIP | liquidity below $30k |
 | 0x1178480f09bb4e96c7ef6e407fb82e4308e4dc71 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
+| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
+| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
+| 0x73b88455730287a2cde5d94696b06f6f700e6666 | bsc | SKIP | liquidity below $30k |
+| 0x76D563862B5bb6d499ad4e670ba2232e22F2457C | bsc | SKIP | pool younger than 12h |
 | 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
-| 0xa6a9a44f4060e2c8d51d5e80a357291772727777 | bsc | SKIP | liquidity below $30k |
+| RTB | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | liquidity below $30k |
 | 0xBA2479B69387b5B610891296fDa600d7E927D3fb | bsc | SKIP | liquidity below $30k |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
@@ -28,11 +32,6 @@
 | 0x1d628e104a110e02bdd91ea34e124278874f7777 | bsc | SKIP | liquidity below $30k |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
 | 0x28ef2256fe6fbdcb1f0f2dbdee0a082ff7017777 | bsc | SKIP | liquidity below $30k |
-| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
-| WOOF | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
-| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
-| 0x73b88455730287a2cde5d94696b06f6f700e6666 | bsc | SKIP | liquidity below $30k |
-| 0x76D563862B5bb6d499ad4e670ba2232e22F2457C | bsc | SKIP | pool younger than 12h |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
@@ -43,8 +42,8 @@
 | 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
 | 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | no matching DEX pool |
 | 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $20k/day |
-| WBNB | solana | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
+| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
 | CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $20k/day |
 | Cqnm4mkL5tAfBmKqqSwvg4zT2SQWBUuT3DGxhgg21FmM | solana | SKIP | volume below $20k/day |
 | EPPiSnGoWRcAV8XhPEokxCw4y6CH2LV6nzSo1YsGSEnj | solana | SKIP | volume below $20k/day |
@@ -52,7 +51,7 @@
 | FbLaAw9wKLVcvGpfE7eDL1DHmANyNUdn59dfkD4u31zC | solana | SKIP | volume below $20k/day |
 | FwtKA62k47DYe3jHmPNjspjVdc7PhipbqZjxTMfp81m6 | solana | SKIP | volume below $20k/day |
 | G8KhLpeBPRhM6tMroEVC72H4Fv23KtwYzU1LZK6YE4rR | solana | SKIP | insufficient recent buys/sells |
-| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
+| WBNB | solana | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
