@@ -1,10 +1,10 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-08T12:29:19.567369+00:00
+- updated_at: 2026-11-08T13:30:22.716051+00:00
 - status: OK
 - cash: 434.22139044969566
-- equity_eur: 495.6832213277124
-- pnl_eur: -4.316778672287626
+- equity_eur: 495.7431990167943
+- pnl_eur: -4.256800983205721
 - halted: False
 - decisions: ['XBTEUR: WAIT', 'ETHEUR: HOLD', 'SOLEUR: WAIT']
 
@@ -18,12 +18,7 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $30k |
 | 0x0fffdaf8664ef90bc4a979670fc9bfb35c487777 | bsc | SKIP | liquidity below $30k |
 | 0x1178480f09bb4e96c7ef6e407fb82e4308e4dc71 | bsc | SKIP | liquidity below $30k |
-| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
-| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
-| 0x73b88455730287a2cde5d94696b06f6f700e6666 | bsc | SKIP | liquidity below $30k |
-| 0x76d563862b5bb6d499ad4e670ba2232e22f2457c | bsc | SKIP | pool younger than 12h |
-| 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
-| 0x9244708F469199C2e1bC613d31e615E33Bf87777 | bsc | SKIP | liquidity below $30k |
+| 0x9244708f469199c2e1bc613d31e615e33bf87777 | bsc | SKIP | liquidity below $30k |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | liquidity below $30k |
 | 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | liquidity below $30k |
 | 0xba2479b69387b5b610891296fda600d7e927d3fb | bsc | SKIP | liquidity below $30k |
@@ -33,6 +28,11 @@
 | 0x1d628e104a110e02bdd91ea34e124278874f7777 | bsc | SKIP | liquidity below $30k |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
 | 0x28ef2256fe6fbdcb1f0f2dbdee0a082ff7017777 | bsc | SKIP | liquidity below $30k |
+| 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
+| 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
+| 0x73b88455730287a2cde5d94696b06f6f700e6666 | bsc | SKIP | liquidity below $30k |
+| 0x76d563862b5bb6d499ad4e670ba2232e22f2457c | bsc | SKIP | pool younger than 12h |
+| 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | volume below $20k/day |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
