@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-09T13:54:48.107598+00:00
+- updated_at: 2026-11-09T14:48:41.319595+00:00
 - status: OK
 - cash: 495.4760534934858
 - equity_eur: 495.4760534934858
@@ -20,20 +20,20 @@
 | 0x1aba87a31d0fa623b099b40581a724b663107777 | bsc | SKIP | no matching DEX pool |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
 | 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
+| SOL | bsc | SKIP | risk/unknown: is_proxy |
 | 0x5ac9886b8629d38094a6cae7cf9879b40ceb7777 | bsc | SKIP | liquidity below $30k |
-| 0x5e40da4ed939f46776a8b9ba05ba13827d577777 | bsc | SKIP | pool younger than 12h |
+| 0x5e40da4ed939f46776a8b9ba05ba13827d577777 | bsc | SKIP | liquidity below $30k |
 | 0x61c711203524bf122d09c6b9d03c020705a9bbbb | bsc | SKIP | no matching DEX pool |
 | 0x6bdf0406283413f14da6619ada0d23d055727777 | bsc | SKIP | liquidity below $30k |
 | 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 0x938772c76072608b0c5c075cdc2e82c98b97beef | bsc | SKIP | liquidity below $30k |
 | 0x9665f094d862f4d5c221843e019b463d3c607777 | bsc | SKIP | pool younger than 12h |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | no matching DEX pool |
+| 0xa763A7BF4905E7733c726019EBb08C6afcBC095c | bsc | SKIP | volume below $20k/day |
 | 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | liquidity below $30k |
 | 0xba2479b69387b5b610891296fda600d7e927d3fb | bsc | SKIP | liquidity below $30k |
 | 0xf1a91ff1ebff7fbf4219f2706f88fbd164fe7777 | bsc | SKIP | liquidity below $30k |
 | 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
-| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
-| 0xa763A7BF4905E7733c726019EBb08C6afcBC095c | bsc | SKIP | volume below $20k/day |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | liquidity below $30k |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
