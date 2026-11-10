@@ -1,22 +1,13 @@
 {
-  "cash_eur": 133.25561368579602,
+  "cash_eur": 138.07279789349667,
   "initial_eur": 160.0,
   "positions": {
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 33.01496401004701,
-      "entry_usd": 0.1690055,
-      "peak_usd": 0.173846901226894,
-      "last_usd": 0.164275984049315,
-      "cost_eur": 5.0,
-      "opened": "2026-11-09T21:28:23+00:00"
-    },
     "0x0c6302401aa5325c2e36f170f52c00b1d220b405": {
       "token": "GANG",
       "qty": 1419.5002387580819,
       "entry_usd": 0.003930756999999999,
-      "peak_usd": 0.003930756999999999,
-      "last_usd": 0.003919,
+      "peak_usd": 0.0045123201400834,
+      "last_usd": 0.0045123201400834,
       "cost_eur": 5.0,
       "opened": "2026-11-10T01:43:24+00:00"
     }
@@ -6001,15 +5992,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-10T03:25:35+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 4.8172,
+      "pnl_eur": -0.1828,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-05T15:31:05+00:00",
-      "token": "ON",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-05T16:40:21+00:00",
       "token": "AGT",
@@ -7083,6 +7078,12 @@
       "token": "GANG",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-10T03:25:36+00:00",
+      "token": "HANA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -7136,13 +7137,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-10T01:43:19+00:00",
+  "last_attempt": "2026-11-10T03:25:30+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "MERL",
-      "address": "0xa0c56a8c0692bd10b3fa8f8ba79cf5332b7107f9",
+      "token": "HANA",
+      "address": "0x6261963ebe9ff014aad10ecc3b0238d4d04e8353",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -7156,48 +7157,12 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xbdccafb234be6dc2545b0c25b0a5f5d9d1124228"
-    },
-    {
-      "token": "UAI",
-      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0x480c619eda6dfcb8a5faf84042bcd0a84ba645f8"
-    },
-    {
-      "token": "GANG",
-      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x0bd5ded695d61c2db15c703c345d57e039fd0b6d"
+      "dex_url": "https://dexscreener.com/bsc/0xd21bc2291c1aef340f5265e257b18aa5dafed759"
     }
   ],
-  "screened_count": 31,
-  "candidate_count": 3,
-  "estimated_eur": 143.07,
+  "screened_count": 36,
+  "candidate_count": 1,
+  "estimated_eur": 143.8,
   "roles": [
     "Trend",
     "Momentum",
@@ -7211,5 +7176,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-10T01:43:24+00:00"
+  "last_success": "2026-11-10T03:25:36+00:00"
 }
