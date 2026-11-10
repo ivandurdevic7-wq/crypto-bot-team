@@ -6,8 +6,8 @@
       "token": "AIOT",
       "qty": 34.57440295645073,
       "entry_usd": 0.16138269999999996,
-      "peak_usd": 0.162540694455418,
-      "last_usd": 0.162540694455418,
+      "peak_usd": 0.164307421463686,
+      "last_usd": 0.164307421463686,
       "cost_eur": 5.0,
       "opened": "2026-11-10T04:29:35+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 2213.6973480672195,
       "entry_usd": 0.0025205389999999996,
       "peak_usd": 0.0025205389999999996,
-      "last_usd": 0.00245410469748677,
+      "last_usd": 0.00248467302705956,
       "cost_eur": 5.0,
       "opened": "2026-11-10T06:32:15+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "ARIA",
       "qty": 29.141023759522902,
       "entry_usd": 0.19147269999999997,
-      "peak_usd": 0.19469384479764,
-      "last_usd": 0.19469384479764,
+      "peak_usd": 0.205891978065201,
+      "last_usd": 0.205891978065201,
       "cost_eur": 5.0,
       "opened": "2026-11-10T07:50:08+00:00"
     }
@@ -6044,18 +6044,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-06T01:49:22+00:00",
-      "token": "LAB",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-06T01:49:22+00:00",
-      "token": "AGC",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
       "time": "2026-11-06T03:28:01+00:00",
       "token": "DGAI",
       "decision": "SKIP",
@@ -7122,6 +7110,18 @@
       "token": "EDGE",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-10T11:27:20+00:00",
+      "token": "UAI",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-10T11:27:21+00:00",
+      "token": "ARK",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7175,13 +7175,50 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-10T10:32:00+00:00",
+  "last_attempt": "2026-11-10T11:27:15+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [],
-  "screened_count": 35,
-  "candidate_count": 0,
-  "estimated_eur": 143.19,
+  "reviewed": [
+    {
+      "token": "UAI",
+      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": false,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 3,
+      "dex_url": "https://dexscreener.com/bsc/0x480c619eda6dfcb8a5faf84042bcd0a84ba645f8"
+    },
+    {
+      "token": "ARK",
+      "address": "0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xcaaf3c41a40103a23eeaa4bba468af3cf5b0e0d8"
+    }
+  ],
+  "screened_count": 37,
+  "candidate_count": 5,
+  "estimated_eur": 143.59,
   "roles": [
     "Trend",
     "Momentum",
@@ -7195,5 +7232,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-10T10:32:05+00:00"
+  "last_success": "2026-11-10T11:27:21+00:00"
 }
