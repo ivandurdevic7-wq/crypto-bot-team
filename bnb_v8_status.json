@@ -1,5 +1,5 @@
 {
-  "cash_eur": 128.01787151572637,
+  "cash_eur": 123.01787151572637,
   "initial_eur": 160.0,
   "positions": {
     "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5": {
@@ -7,7 +7,7 @@
       "qty": 34.57440295645073,
       "entry_usd": 0.16138269999999996,
       "peak_usd": 0.164307421463686,
-      "last_usd": 0.163865067016857,
+      "last_usd": 0.162541046307644,
       "cost_eur": 5.0,
       "opened": "2026-11-10T04:29:35+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "IDOL",
       "qty": 185.24879905737333,
       "entry_usd": 0.03012009,
-      "peak_usd": 0.03012009,
-      "last_usd": 0.03003,
+      "peak_usd": 0.0319549201993013,
+      "last_usd": 0.0319549201993013,
       "cost_eur": 5.0,
       "opened": "2026-11-10T13:45:24+00:00"
     },
@@ -24,33 +24,22 @@
       "token": "SI",
       "qty": 1114610586.1937332,
       "entry_usd": 5.005972999999999e-09,
-      "peak_usd": 5.005972999999999e-09,
-      "last_usd": 4.991e-09,
+      "peak_usd": 5.90048548904678e-09,
+      "last_usd": 5.90048548904678e-09,
       "cost_eur": 5.0,
       "opened": "2026-11-10T13:45:24+00:00"
+    },
+    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
+      "token": "ON",
+      "qty": 50.031046895220975,
+      "entry_usd": 0.11173419999999999,
+      "peak_usd": 0.11173419999999999,
+      "last_usd": 0.1114,
+      "cost_eur": 5.0,
+      "opened": "2026-11-10T16:28:40+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-10-27T09:18:25+00:00",
-      "side": "BUY",
-      "token": "GANG",
-      "address": "0x0c6302401aa5325c2e36f170f52c00b1d220b405",
-      "eur": 5.0,
-      "reason": "MASTER: Gecko + DEX + GoPlus verified",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      }
-    },
     {
       "time": "2026-10-27T12:13:39+00:00",
       "side": "SELL",
@@ -6040,27 +6029,29 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-10T16:28:40+00:00",
+      "side": "BUY",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-06T04:35:02+00:00",
-      "token": "UAI",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-06T05:37:44+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-06T05:37:44+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-11-06T05:37:44+00:00",
       "token": "UAI",
@@ -7122,6 +7113,24 @@
       "token": "SI",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-10T16:28:40+00:00",
+      "token": "ON",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-10T16:28:40+00:00",
+      "token": "UAI",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-10T16:28:41+00:00",
+      "token": "HANA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -7175,13 +7184,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-10T13:45:18+00:00",
+  "last_attempt": "2026-11-10T16:28:35+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "IDOL",
-      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
       "votes": {
         "Trend": false,
         "Momentum": true,
@@ -7195,16 +7204,34 @@
         "Portfolio": true
       },
       "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xfff4857a955b2b460c27fd431aa5a85fabca5559"
+      "dex_url": "https://dexscreener.com/bsc/0x4620f5c127a6055fbebb1f71327d60ff079c9060"
     },
     {
-      "token": "SI",
-      "address": "0x725ccc7b5ceacb0324b64ccb7da3eca2cd3a6666",
+      "token": "UAI",
+      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0x480c619eda6dfcb8a5faf84042bcd0a84ba645f8"
+    },
+    {
+      "token": "HANA",
+      "address": "0x6261963ebe9ff014aad10ecc3b0238d4d04e8353",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -7212,13 +7239,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0x5a606e1533fb11870f3b6c2f98a7edda699b94bf"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd21bc2291c1aef340f5265e257b18aa5dafed759"
     }
   ],
-  "screened_count": 36,
+  "screened_count": 35,
   "candidate_count": 3,
-  "estimated_eur": 143.02,
+  "estimated_eur": 144.14,
   "roles": [
     "Trend",
     "Momentum",
@@ -7232,5 +7259,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-10T13:45:24+00:00"
+  "last_success": "2026-11-10T16:28:41+00:00"
 }
