@@ -1,5 +1,5 @@
 {
-  "cash_eur": 117.86474532915065,
+  "cash_eur": 122.53455353747766,
   "initial_eur": 160.0,
   "positions": {
     "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5": {
@@ -7,25 +7,16 @@
       "qty": 34.57440295645073,
       "entry_usd": 0.16138269999999996,
       "peak_usd": 0.16138269999999996,
-      "last_usd": 0.160737892810607,
+      "last_usd": 0.160777071291342,
       "cost_eur": 5.0,
       "opened": "2026-11-10T04:29:35+00:00"
-    },
-    "0x0e4f6209ed984b21edea43ace6e09559ed051d48": {
-      "token": "ON",
-      "qty": 32.97582356664447,
-      "entry_usd": 0.16920609999999997,
-      "peak_usd": 0.190701987119645,
-      "last_usd": 0.190701987119645,
-      "cost_eur": 5.0,
-      "opened": "2026-11-10T05:29:56+00:00"
     },
     "0x0c6302401aa5325c2e36f170f52c00b1d220b405": {
       "token": "GANG",
       "qty": 1300.6830572113447,
       "entry_usd": 0.004289831,
-      "peak_usd": 0.00453874699403286,
-      "last_usd": 0.00453874699403286,
+      "peak_usd": 0.00502659584665511,
+      "last_usd": 0.00502659584665511,
       "cost_eur": 5.0,
       "opened": "2026-11-10T05:29:57+00:00"
     },
@@ -34,7 +25,7 @@
       "qty": 2213.6973480672195,
       "entry_usd": 0.0025205389999999996,
       "peak_usd": 0.0025205389999999996,
-      "last_usd": 0.00250130364040805,
+      "last_usd": 0.00248249984637564,
       "cost_eur": 5.0,
       "opened": "2026-11-10T06:32:15+00:00"
     },
@@ -42,23 +33,13 @@
       "token": "ARIA",
       "qty": 29.141023759522902,
       "entry_usd": 0.19147269999999997,
-      "peak_usd": 0.19147269999999997,
-      "last_usd": 0.1909,
+      "peak_usd": 0.194362080261755,
+      "last_usd": 0.194362080261755,
       "cost_eur": 5.0,
       "opened": "2026-11-10T07:50:08+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-10-27T03:12:17+00:00",
-      "side": "SELL",
-      "token": "ZIG",
-      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
-      "eur": 4.8166,
-      "pnl_eur": -0.1834,
-      "reason": "STOP",
-      "price_source": "GeckoTerminal"
-    },
     {
       "time": "2026-10-27T03:12:18+00:00",
       "side": "BUY",
@@ -6068,15 +6049,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-10T09:29:22+00:00",
+      "side": "SELL",
+      "token": "ON",
+      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
+      "eur": 4.6698,
+      "pnl_eur": -0.3302,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-06T00:16:31+00:00",
-      "token": "CAP",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
     {
       "time": "2026-11-06T01:49:22+00:00",
       "token": "LAB",
@@ -7150,6 +7135,12 @@
       "token": "UP",
       "decision": "SKIP",
       "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-10T09:29:22+00:00",
+      "token": "EDGE",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -7203,50 +7194,32 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-10T07:50:02+00:00",
+  "last_attempt": "2026-11-10T09:29:18+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "token": "EDGE",
+      "address": "0x70f2eadf1ca1969ff42b0c78e9da519e8937cbaf",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
-        "Liquidity": true,
+        "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
+        "DEX cross-check": false,
+        "Risk guard": false,
         "Portfolio": true
       },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xa5dbeaf16fc031eae92175974f8d0a439be4ad17"
-    },
-    {
-      "token": "UP",
-      "address": "0x000008d2175f9aeaddb2430c26f8a6f73c5a0000",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x6f8cb5850cb131c9027e68399118e035ba1d2182"
+      "score": 4,
+      "dex_url": "https://dexscreener.com/bsc/0x73e3fd91cc3475a17030eb37879c564bcd680f99"
     }
   ],
-  "screened_count": 34,
-  "candidate_count": 4,
-  "estimated_eur": 143.64,
+  "screened_count": 33,
+  "candidate_count": 3,
+  "estimated_eur": 143.31,
   "roles": [
     "Trend",
     "Momentum",
@@ -7260,5 +7233,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-10T07:50:09+00:00"
+  "last_success": "2026-11-10T09:29:22+00:00"
 }
