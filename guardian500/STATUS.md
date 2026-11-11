@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-11T14:49:29.124986+00:00
+- updated_at: 2026-11-11T15:37:32.268041+00:00
 - status: OK
 - cash: 495.4760534934858
 - equity_eur: 495.4760534934858
@@ -18,11 +18,6 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | no matching DEX pool |
 | 0x1178480f09bb4e96c7ef6e407fb82e4308e4dc71 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
-| 0xac8920de33146ebea9fc13de0c19da8b09b37777 | bsc | SKIP | no matching DEX pool |
-| 0xb201ead1771c07cfe79cade35550c702a70f7777 | bsc | SKIP | no matching DEX pool |
-| 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | no matching DEX pool |
-| 0xba2479b69387b5b610891296fda600d7e927d3fb | bsc | SKIP | liquidity below $30k |
-| 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | 0x19993b3cf15c1055063468eb932f5e335a7526ea | bsc | SKIP | no matching DEX pool |
 | 0x1aba87a31d0fa623b099b40581a724b663107777 | bsc | SKIP | no matching DEX pool |
 | 0x26e9f3670b8f1cf26fdb3c9d2030293ac4197777 | bsc | SKIP | no matching DEX pool |
@@ -33,6 +28,11 @@
 | 0x8614876e509c18d7be305a39a4a8d9e69c5effff | bsc | SKIP | no matching DEX pool |
 | 0x979c8a262329dc2334c823d6103af7544fe96666 | bsc | SKIP | no matching DEX pool |
 | 0xa763a7bf4905e7733c726019ebb08c6afcbc095c | bsc | SKIP | no matching DEX pool |
+| 0xac8920de33146ebea9fc13de0c19da8b09b37777 | bsc | SKIP | no matching DEX pool |
+| 0xb201ead1771c07cfe79cade35550c702a70f7777 | bsc | SKIP | no matching DEX pool |
+| 0xb233aa7a9135f9b74ab8ed2f2a83aae0e276ffff | bsc | SKIP | no matching DEX pool |
+| 0xba2479b69387b5b610891296fda600d7e927d3fb | bsc | SKIP | liquidity below $30k |
+| 0xff6f22902e88d6b85b80f7e86c77633f9dfd930d | bsc | SKIP | liquidity below $30k |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 3zPjPxhp7tGFCmSq4x14ZTwttWUeoJevXESC7Xvrpump | solana | SKIP | liquidity below $30k |
