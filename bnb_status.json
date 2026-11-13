@@ -1,5 +1,5 @@
 {
-  "cash_eur": 103.30060736017921,
+  "cash_eur": 103.10193665055164,
   "initial_eur": 160.0,
   "positions": {
     "0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6": {
@@ -34,7 +34,7 @@
       "qty": 348.39332270265913,
       "entry_usd": 0.016045597420278376,
       "peak_usd": 0.0163895767161066,
-      "last_usd": 0.0159103917856328,
+      "last_usd": 0.0161411987570943,
       "cost_eur": 5.0,
       "opened": "2026-11-11T13:19:12+00:00"
     },
@@ -43,7 +43,7 @@
       "qty": 3303.422433788828,
       "entry_usd": 0.0016721683680232327,
       "peak_usd": 0.0016721683680232327,
-      "last_usd": 0.00166690513991136,
+      "last_usd": 0.00166633747951312,
       "cost_eur": 5.0,
       "opened": "2026-11-12T23:52:05+00:00"
     },
@@ -52,7 +52,7 @@
       "qty": 25.3845434599012,
       "entry_usd": 0.21760795141838254,
       "peak_usd": 0.218747819959975,
-      "last_usd": 0.218747819959975,
+      "last_usd": 0.212442773229796,
       "cost_eur": 5.0,
       "opened": "2026-11-13T04:00:19+00:00"
     },
@@ -61,38 +61,21 @@
       "qty": 63.59637977349205,
       "entry_usd": 0.08685837966994527,
       "peak_usd": 0.0898610616808382,
-      "last_usd": 0.0898610616808382,
+      "last_usd": 0.0885981635358677,
       "cost_eur": 5.0,
       "opened": "2026-11-13T09:06:33+00:00"
     },
-    "0x3d4f0513e8a29669b960f9dbca61861548a9a760": {
-      "token": "$BANANA",
-      "qty": 1188.4342558898793,
-      "entry_usd": 0.004648030358115026,
-      "peak_usd": 0.004648030358115026,
-      "last_usd": 0.00456297174621366,
+    "0xa991f61940095aea0724ef54077223b048c5cf7b": {
+      "token": "DNA",
+      "qty": 32.00444021350373,
+      "entry_usd": 0.1725972541044256,
+      "peak_usd": 0.1725972541044256,
+      "last_usd": 0.172081011071212,
       "cost_eur": 5.0,
-      "opened": "2026-11-13T09:06:33+00:00"
+      "opened": "2026-11-13T11:08:18+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-02T13:16:11+00:00",
-      "side": "BUY",
-      "token": "ON",
-      "address": "0x0e4f6209ed984b21edea43ace6e09559ed051d48",
-      "eur": 5.0,
-      "reason": "MASTER odobrio, osnovni filtri prošli"
-    },
-    {
-      "time": "2026-11-02T16:07:53+00:00",
-      "side": "SELL",
-      "token": "DNA",
-      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
-      "eur": 4.8548,
-      "pnl_eur": -0.1452,
-      "reason": "trailing stop"
-    },
     {
       "time": "2026-11-02T17:11:20+00:00",
       "side": "BUY",
@@ -2625,39 +2608,26 @@
       "address": "0x3d4f0513e8a29669b960f9dbca61861548a9a760",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-11-13T11:08:17+00:00",
+      "side": "SELL",
+      "token": "$BANANA",
+      "address": "0x3d4f0513e8a29669b960f9dbca61861548a9a760",
+      "eur": 4.8013,
+      "pnl_eur": -0.1987,
+      "reason": "stop loss"
+    },
+    {
+      "time": "2026-11-13T11:08:18+00:00",
+      "side": "BUY",
+      "token": "DNA",
+      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
+      "eur": 5.0,
+      "reason": "MASTER odobrio, osnovni filtri prošli"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-11T22:58:42+00:00",
-      "token": "XPIN",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-11-11T22:58:42+00:00",
-      "token": "FIST",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-11-11T22:58:42+00:00",
-      "token": "DOS",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-11-11T22:58:43+00:00",
-      "token": "JAGENT",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: is_mintable"
-    },
-    {
-      "time": "2026-11-11T23:55:22+00:00",
-      "token": "XPIN",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
     {
       "time": "2026-11-11T23:55:22+00:00",
       "token": "FIST",
@@ -3527,13 +3497,43 @@
       "token": "NVDAB",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-11-13T11:08:17+00:00",
+      "token": "XPIN",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-13T11:08:17+00:00",
+      "token": "FIST",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-13T11:08:17+00:00",
+      "token": "DOS",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-13T11:08:18+00:00",
+      "token": "DNA",
+      "decision": "BUY",
+      "reason": "PancakeSwap + likvidnost + volumen + GoPlus"
+    },
+    {
+      "time": "2026-11-13T11:08:18+00:00",
+      "token": "KGEN",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
     }
   ],
-  "last_success": "2026-11-13T10:08:19+00:00",
-  "last_attempt": "2026-11-13T10:08:16+00:00",
-  "screened_count": 47,
-  "eligible_count": 12,
-  "estimated_eur": 143.48,
+  "last_success": "2026-11-13T11:08:18+00:00",
+  "last_attempt": "2026-11-13T11:08:15+00:00",
+  "screened_count": 46,
+  "eligible_count": 8,
+  "estimated_eur": 143.21,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
