@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-13T02:19:26.824868+00:00
+- updated_at: 2026-11-13T03:13:38.082095+00:00
 - status: OK
 - cash: 495.4760534934858
 - equity_eur: 495.4760534934858
@@ -24,8 +24,8 @@
 | 0xb9b13ad28f451b6b3a6cb82b9d7c9154a245ffff | bsc | SKIP | liquidity below $30k |
 | 0xdd298875ccfd919b57c6111619a7c453bd1e7777 | bsc | SKIP | pool younger than 12h |
 | 0xec80ce6ec16b0c8bef97ca0dc9ea3d605977dc0d | bsc | SKIP | no matching DEX pool |
-| 0xf96c66a8730df490037b7cd1cc2ca1a17a544444 | bsc | SKIP | pool younger than 12h |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0xf96c66a8730df490037b7cd1cc2ca1a17a544444 | bsc | SKIP | insufficient recent buys/sells |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
 | 5Sqq3NWD98JkcirdDBKRxZFsoZ8f1qqpFp6DSZkoTsHd | solana | SKIP | volume below $20k/day |
