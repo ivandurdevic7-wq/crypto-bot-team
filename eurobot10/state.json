@@ -5,8 +5,28 @@
     66.66
   ],
   "positions": [],
-  "pending": [],
+  "pending": [
+    {
+      "id": "7bef523f-aa9a-4010-8429-b52b5908aa20",
+      "chain": "bsc",
+      "address": "0xa17Df9706F3BE0AE1bd3c90003f279d124577777",
+      "bot": 0,
+      "symbol": "TeslaSI",
+      "pair": "0xb842d65131F21D86141431df2D406eC05dFDA97a",
+      "dexId": "pancakeswap",
+      "price": 0.003167,
+      "expires": 1794666570.7560043
+    }
+  ],
   "history": [
+    {
+      "time": "2026-11-14T13:29:33.676895+00:00",
+      "message": "DIJAGNOSTIKA: candidates=16, pairs_found=16, security_pass=2, market_pass=1, proposals=1, errors=0"
+    },
+    {
+      "time": "2026-11-14T13:29:30.756014+00:00",
+      "message": "PAPER prijedlog: bsc 0xa17Df9706F3BE0AE1bd3c90003f279d124577777 na pancakeswap bot 1; ceka DA"
+    },
     {
       "time": "2026-11-14T12:24:22.204948+00:00",
       "message": "DIJAGNOSTIKA: candidates=16, pairs_found=16, security_pass=0, market_pass=0, proposals=0, errors=0"
@@ -478,17 +498,9 @@
     {
       "time": "2026-11-09T14:00:03.912873+00:00",
       "message": "DIJAGNOSTIKA: candidates=16, pairs_found=14, security_pass=1, market_pass=0, proposals=0, errors=0"
-    },
-    {
-      "time": "2026-11-09T12:43:44.454491+00:00",
-      "message": "DIJAGNOSTIKA: candidates=16, pairs_found=16, security_pass=1, market_pass=0, proposals=0, errors=0"
-    },
-    {
-      "time": "2026-11-09T11:39:46.241604+00:00",
-      "message": "DIJAGNOSTIKA: candidates=16, pairs_found=15, security_pass=0, market_pass=0, proposals=0, errors=0"
     }
   ],
-  "last_scan": "2026-11-14T12:24:22.204983+00:00",
+  "last_scan": "2026-11-14T13:29:33.676910+00:00",
   "diagnostics": {
     "sources": {
       "profiles": {
@@ -507,12 +519,86 @@
     "summary": {
       "candidates": 16,
       "pairs_found": 16,
-      "security_pass": 0,
-      "market_pass": 0,
-      "proposals": 0,
+      "security_pass": 2,
+      "market_pass": 1,
+      "proposals": 1,
       "errors": 0
     },
     "tokens": [
+      {
+        "chain": "solana",
+        "address": "97o3Kb9R7hMjHW6o9BunWk4jF1dFLhCpydPmh64npump",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "DYC",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "Fyx3XpNX3YSXp7V1LpM4jdrWycZ2M2zSEHrat5bjpump",
+        "source": "profiles",
+        "dexId": "pumpfun",
+        "symbol": "VIVALDI",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "strategies": {}
+      },
+      {
+        "chain": "bsc",
+        "address": "0xa17Df9706F3BE0AE1bd3c90003f279d124577777",
+        "source": "profiles",
+        "dexId": "pancakeswap",
+        "symbol": "TeslaSI",
+        "status": "PASS",
+        "reason": "kandidat predlozen",
+        "strategies": {
+          "1": "PASS",
+          "2": "Trend: 1h promjena izvan [0.2%,6%]",
+          "3": "Momentum: 1h promjena ili broj kupnji ne prolazi"
+        }
+      },
+      {
+        "chain": "solana",
+        "address": "3MwjGmRAXU3m7EyeZuVfsNrWgRZjuXZYNCywFXK432AH",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "SHIT",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "8azHd6ZpAdpyFzGAaNkofyKhr19RWNNquSC8bAGEpump",
+        "source": "profiles",
+        "dexId": "pumpswap",
+        "symbol": "ZAPZEKE",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "5PTRrj21xQKMpbQuGwWFNMUTQTmYKcE5nBuDuhbdpump",
+        "source": "profiles",
+        "dexId": "pumpfun",
+        "symbol": "CLAU",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
+        "strategies": {}
+      },
+      {
+        "chain": "solana",
+        "address": "5R9MnNEGLpsvq6wNmAkh82peNLqwfSTyu5ny9ezPzhot",
+        "source": "profiles",
+        "dexId": "pumpfun",
+        "symbol": "HOT",
+        "status": "SKIP",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
+        "strategies": {}
+      },
       {
         "chain": "solana",
         "address": "CqzqzF4iSsxhfUCTFAQEQfaJ2LNkRxtLfoY1o5oC5Lm1",
@@ -520,7 +606,7 @@
         "dexId": "pumpfun",
         "symbol": "HEDGE",
         "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
         "strategies": {}
       },
       {
@@ -530,8 +616,12 @@
         "dexId": "pancakeswap",
         "symbol": "邪教",
         "status": "SKIP",
-        "reason": "GoPlus: buy_tax nepoznat",
-        "strategies": {}
+        "reason": "nijedna strategija nije prosla",
+        "strategies": {
+          "1": "trziste: likvidnost ispod 50000 USD",
+          "2": "trziste: likvidnost ispod 50000 USD",
+          "3": "trziste: likvidnost ispod 50000 USD"
+        }
       },
       {
         "chain": "solana",
@@ -540,7 +630,7 @@
         "dexId": "pumpfun",
         "symbol": "WAGMI",
         "status": "SKIP",
-        "reason": "GoPlus Solana: mintable nije potvrdeno 0",
+        "reason": "GoPlus Solana: neuspjesan odgovor",
         "strategies": {}
       },
       {
@@ -602,78 +692,8 @@
         "status": "SKIP",
         "reason": "GoPlus Solana: neuspjesan odgovor",
         "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "Eu86dUctNwW5BvobkhBZ5oene9VqUw1DTmu163CXpump",
-        "source": "profiles",
-        "dexId": "pumpswap",
-        "symbol": "SWAMIS",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "9c9ebz8Jsa61MiBXNDVGE29ijdHp4RUnj1jnDzNypump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "LOUPE",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "27oigFPt9uXqDYkMETm1KBwwMrAvrk4XtsbKJgT9pump",
-        "source": "profiles",
-        "dexId": "pumpswap",
-        "symbol": "stickman",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "GPiHbgbvWbZHKQiVf1v8AupAuST3mqSv3zb2SBJULGND",
-        "source": "profiles",
-        "dexId": "raydium",
-        "symbol": "LGND",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "5HZvoq6WxD9W1HZsssjYpm3bdDbHHQUdgcyokN1kpump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "Anne",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "8HdzcabjCJQLQsnnoxEhC7HqEWnbkhmysNXzZbidpump",
-        "source": "profiles",
-        "dexId": "pumpswap",
-        "symbol": "GTA$",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
-      },
-      {
-        "chain": "solana",
-        "address": "8iDQMvwtVnpqxN9SGR1PpVTtt2yJiQEFmxanc6pwpump",
-        "source": "profiles",
-        "dexId": "pumpfun",
-        "symbol": "BUNKER",
-        "status": "SKIP",
-        "reason": "GoPlus Solana: neuspjesan odgovor",
-        "strategies": {}
       }
     ],
-    "at": "2026-11-14T12:24:22.204901+00:00"
+    "at": "2026-11-14T13:29:33.676856+00:00"
   }
 }
