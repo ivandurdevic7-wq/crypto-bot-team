@@ -7,7 +7,7 @@
       "qty": 27.996652245099565,
       "entry_usd": 0.19678859999999998,
       "peak_usd": 0.200324298623834,
-      "last_usd": 0.198459506302459,
+      "last_usd": 0.196468327689986,
       "cost_eur": 5.0,
       "opened": "2026-11-14T16:16:48+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 449.8724955355065,
       "entry_usd": 0.01224663,
       "peak_usd": 0.0126081430549453,
-      "last_usd": 0.0126081430549453,
+      "last_usd": 0.0120512497398997,
       "cost_eur": 5.0,
       "opened": "2026-11-14T19:23:19+00:00"
     }
@@ -6015,24 +6015,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-10T21:21:08+00:00",
-      "token": "SI",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-10T22:19:06+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-10T22:19:06+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-10T22:19:06+00:00",
       "token": "EDGE",
       "decision": "SKIP",
@@ -7093,6 +7075,24 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-14T21:14:55+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-11-14T21:14:55+00:00",
+      "token": "AGT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-14T21:14:55+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7158,18 +7158,36 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-14T20:14:13+00:00",
+  "last_attempt": "2026-11-14T21:14:49+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "UP",
-      "address": "0x000008d2175f9aeaddb2430c26f8a6f73c5a0000",
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
       "votes": {
         "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
+    },
+    {
+      "token": "JAGENT",
+      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -7178,30 +7196,12 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x6f8cb5850cb131c9027e68399118e035ba1d2182"
-    },
-    {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": true,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
   "screened_count": 38,
-  "candidate_count": 5,
-  "estimated_eur": 140.76,
+  "candidate_count": 3,
+  "estimated_eur": 140.48,
   "roles": [
     "Trend",
     "Momentum",
@@ -7215,5 +7215,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-14T20:14:18+00:00"
+  "last_success": "2026-11-14T21:14:55+00:00"
 }
