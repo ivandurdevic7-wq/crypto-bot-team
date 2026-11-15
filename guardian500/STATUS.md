@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-15T06:32:01.362461+00:00
+- updated_at: 2026-11-15T07:46:08.894310+00:00
 - status: OK
 - cash: 495.4760534934858
 - equity_eur: 495.4760534934858
@@ -21,6 +21,7 @@
 | 0x1D9B64a09C52ad1E75E052223Bef52D2adAc8426 | bsc | SKIP | liquidity below $30k |
 | 0x3a129e8b1082ecd654969eef2c80e85292ef4444 | bsc | SKIP | no matching DEX pool |
 | 0x53f416c9b1072f5e128349c40732ba721d4206d0 | bsc | SKIP | liquidity below $30k |
+| 0x757f9fea333a70311b1773807df7b618a8f4e076 | bsc | SKIP | liquidity below $30k |
 | 0x7de556896a69011c04ccc0faf712cd057eecffff | bsc | SKIP | liquidity below $30k |
 | 0x83cf11a9e7e17a9173a6aa213e120cd3632201e5 | bsc | SKIP | liquidity below $30k |
 | 0x8b173b2a340e2d1e66d0cbe20259ed613ef27777 | bsc | SKIP | liquidity below $30k |
@@ -33,7 +34,6 @@
 | 0xec80ce6ec16b0c8bef97ca0dc9ea3d605977dc0d | bsc | SKIP | no matching DEX pool |
 | 0xfb77149621c7d9c76778452c11bb9394f81b923b | bsc | SKIP | no matching DEX pool |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
-| 0x757F9fEa333A70311b1773807Df7B618a8f4e076 | bsc | SKIP | pool younger than 12h |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 4CX9pg8hTJCqAnpY3Xqkvt6i7aQ6UtNPPifE64vMM8r1 | solana | SKIP | volume below $20k/day |
 | 5Sqq3NWD98JkcirdDBKRxZFsoZ8f1qqpFp6DSZkoTsHd | solana | SKIP | volume below $20k/day |
