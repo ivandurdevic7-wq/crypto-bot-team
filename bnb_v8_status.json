@@ -1,5 +1,5 @@
 {
-  "cash_eur": 118.61349951632332,
+  "cash_eur": 113.61349951632332,
   "initial_eur": 160.0,
   "positions": {
     "0x3d4f0513e8a29669b960f9dbca61861548a9a760": {
@@ -7,7 +7,7 @@
       "qty": 1319.1506173123282,
       "entry_usd": 0.0041764919999999995,
       "peak_usd": 0.00462670811549413,
-      "last_usd": 0.00462670811549413,
+      "last_usd": 0.004580093858295,
       "cost_eur": 5.0,
       "opened": "2026-11-14T22:14:30+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "IDOL",
       "qty": 317.1445248549963,
       "entry_usd": 0.017371959999999995,
-      "peak_usd": 0.0185576818290557,
-      "last_usd": 0.0185576818290557,
+      "peak_usd": 0.0192974526416,
+      "last_usd": 0.0192974526416,
       "cost_eur": 5.0,
       "opened": "2026-11-15T03:27:51+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 133.51830749850595,
       "entry_usd": 0.041263419999999995,
       "peak_usd": 0.0422102381345156,
-      "last_usd": 0.0412434843527175,
+      "last_usd": 0.0411943359323005,
       "cost_eur": 5.0,
       "opened": "2026-11-15T04:33:00+00:00"
     },
@@ -33,33 +33,22 @@
       "token": "ARIA",
       "qty": 25.3715619883997,
       "entry_usd": 0.21714949999999997,
-      "peak_usd": 0.236123022208987,
-      "last_usd": 0.236123022208987,
+      "peak_usd": 0.250100629834316,
+      "last_usd": 0.250100629834316,
       "cost_eur": 5.0,
       "opened": "2026-11-15T10:22:54+00:00"
+    },
+    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
+      "token": "AKE",
+      "qty": 526.1439818475608,
+      "entry_usd": 0.01047132,
+      "peak_usd": 0.01047132,
+      "last_usd": 0.01044,
+      "cost_eur": 5.0,
+      "opened": "2026-11-15T13:33:36+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-02T13:47:59+00:00",
-      "side": "BUY",
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
-      "eur": 5.0,
-      "reason": "MASTER: Gecko + DEX + GoPlus verified",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      }
-    },
     {
       "time": "2026-11-02T15:30:30+00:00",
       "side": "SELL",
@@ -6049,21 +6038,29 @@
       "pnl_eur": -0.4877,
       "reason": "STOP",
       "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-15T13:33:36+00:00",
+      "side": "BUY",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-11T12:38:24+00:00",
-      "token": "IDOL",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-11T14:33:26+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-11T14:33:26+00:00",
       "token": "SI",
@@ -7131,6 +7128,18 @@
       "token": "EVAA",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-15T13:33:36+00:00",
+      "token": "AKE",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-15T13:33:37+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -7199,10 +7208,28 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-15T12:16:19+00:00",
+  "last_attempt": "2026-11-15T13:33:31+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
+    {
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x4d3bf29ba30f8bfe4624e7678709afa195689c5d"
+    },
     {
       "token": "DNA",
       "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
@@ -7214,35 +7241,17 @@
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": true,
+        "DEX cross-check": false,
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
+      "score": 4,
       "dex_url": "https://dexscreener.com/bsc/0x5e7983851f66f22ed1c5f146ba47239f56c8653b"
-    },
-    {
-      "token": "EVAA",
-      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
     }
   ],
-  "screened_count": 41,
+  "screened_count": 30,
   "candidate_count": 6,
-  "estimated_eur": 139.86,
+  "estimated_eur": 140.31,
   "roles": [
     "Trend",
     "Momentum",
@@ -7256,5 +7265,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-15T12:16:24+00:00"
+  "last_success": "2026-11-15T13:33:37+00:00"
 }
