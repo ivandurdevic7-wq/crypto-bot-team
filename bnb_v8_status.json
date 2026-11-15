@@ -7,7 +7,7 @@
       "qty": 480.5724558607642,
       "entry_usd": 0.011464289999999999,
       "peak_usd": 0.0116549982651823,
-      "last_usd": 0.0115437284409236,
+      "last_usd": 0.011524741647696,
       "cost_eur": 5.0,
       "opened": "2026-11-15T17:15:53+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "$BANANA",
       "qty": 1156.409088523902,
       "entry_usd": 0.004764249999999999,
-      "peak_usd": 0.004764249999999999,
-      "last_usd": 0.00472441619190605,
+      "peak_usd": 0.00476789026118338,
+      "last_usd": 0.00476789026118338,
       "cost_eur": 5.0,
       "opened": "2026-11-15T19:24:50+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "ZIG",
       "qty": 160.14411575768324,
       "entry_usd": 0.03440289999999999,
-      "peak_usd": 0.03440289999999999,
-      "last_usd": 0.0343,
+      "peak_usd": 0.0345021220813324,
+      "last_usd": 0.0345021220813324,
       "cost_eur": 5.0,
       "opened": "2026-11-15T21:16:34+00:00"
     }
@@ -6034,24 +6034,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-12T00:29:21+00:00",
-      "token": "DNA",
-      "decision": "SKIP",
-      "reason": "DEX Screener pair unavailable"
-    },
-    {
-      "time": "2026-11-12T00:29:21+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-12T01:54:21+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-12T01:54:21+00:00",
       "token": "SPCXB",
       "decision": "SKIP",
@@ -7112,6 +7094,24 @@
       "token": "ASTER",
       "decision": "SKIP",
       "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-15T22:15:35+00:00",
+      "token": "PIEVERSE",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-15T22:15:35+00:00",
+      "token": "AGT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-15T22:15:35+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -7180,18 +7180,36 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-15T21:16:29+00:00",
+  "last_attempt": "2026-11-15T22:15:30+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "ZIG",
-      "address": "0x8c907e0a72c3d55627e853f4ec6a96b0c8771145",
+      "token": "PIEVERSE",
+      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0xfdaa992896101e109e455a86443fd03480fcdc3e"
+    },
+    {
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -7199,12 +7217,12 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0x9fac151b7f1dbbb9d14ccd1ca5b990bc4da5cd1f"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
     },
     {
-      "token": "PIEVERSE",
-      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -7213,35 +7231,17 @@
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": false,
+        "DEX cross-check": true,
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xfdaa992896101e109e455a86443fd03480fcdc3e"
-    },
-    {
-      "token": "ASTER",
-      "address": "0x000ae314e2a2172a039b26378814c252734f556a",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": true,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0xb040ea24a4ef35a3ed400b0ff26d8b6f30deecad"
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
-  "screened_count": 37,
-  "candidate_count": 10,
-  "estimated_eur": 139.65,
+  "screened_count": 32,
+  "candidate_count": 5,
+  "estimated_eur": 139.72,
   "roles": [
     "Trend",
     "Momentum",
@@ -7255,5 +7255,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-15T21:16:34+00:00"
+  "last_success": "2026-11-15T22:15:35+00:00"
 }
