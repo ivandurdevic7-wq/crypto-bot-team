@@ -1,5 +1,5 @@
 {
-  "cash_eur": 119.46527957301579,
+  "cash_eur": 119.10116758329603,
   "initial_eur": 160.0,
   "positions": {
     "0x3d4f0513e8a29669b960f9dbca61861548a9a760": {
@@ -7,7 +7,7 @@
       "qty": 1319.1506173123282,
       "entry_usd": 0.0041764919999999995,
       "peak_usd": 0.00455547400260832,
-      "last_usd": 0.00455547400260832,
+      "last_usd": 0.00453759558509037,
       "cost_eur": 5.0,
       "opened": "2026-11-14T22:14:30+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 317.1445248549963,
       "entry_usd": 0.017371959999999995,
       "peak_usd": 0.0178315498531337,
-      "last_usd": 0.0178315498531337,
+      "last_usd": 0.0173077888697705,
       "cost_eur": 5.0,
       "opened": "2026-11-15T03:27:51+00:00"
     },
@@ -25,51 +25,21 @@
       "qty": 133.51830749850595,
       "entry_usd": 0.041263419999999995,
       "peak_usd": 0.0422102381345156,
-      "last_usd": 0.0404584516535238,
+      "last_usd": 0.0414309674482657,
       "cost_eur": 5.0,
       "opened": "2026-11-15T04:33:00+00:00"
     },
-    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
-      "token": "AKE",
-      "qty": 463.14866530257456,
-      "entry_usd": 0.01189558,
-      "peak_usd": 0.01189558,
-      "last_usd": 0.0118069173330551,
+    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
+      "token": "ARIA",
+      "qty": 25.3715619883997,
+      "entry_usd": 0.21714949999999997,
+      "peak_usd": 0.21714949999999997,
+      "last_usd": 0.2165,
       "cost_eur": 5.0,
-      "opened": "2026-11-15T07:45:14+00:00"
+      "opened": "2026-11-15T10:22:54+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-02T09:38:56+00:00",
-      "side": "BUY",
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "eur": 5.0,
-      "reason": "MASTER: Gecko + DEX + GoPlus verified",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": true,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      }
-    },
-    {
-      "time": "2026-11-02T11:27:57+00:00",
-      "side": "SELL",
-      "token": "IDOL",
-      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
-      "eur": 5.1649,
-      "pnl_eur": 0.1649,
-      "reason": "TRAIL",
-      "price_source": "GeckoTerminal"
-    },
     {
       "time": "2026-11-02T12:30:58+00:00",
       "side": "SELL",
@@ -6049,21 +6019,39 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-15T10:22:53+00:00",
+      "side": "SELL",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 4.6359,
+      "pnl_eur": -0.3641,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-15T10:22:54+00:00",
+      "side": "BUY",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-11T10:36:50+00:00",
-      "token": "JCT",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-11T10:36:50+00:00",
-      "token": "AGT",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-11T11:36:03+00:00",
       "token": "JCT",
@@ -7131,6 +7119,18 @@
       "token": "AGT",
       "decision": "SKIP",
       "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-15T10:22:54+00:00",
+      "token": "ARIA",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-15T10:22:54+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7199,15 +7199,15 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-15T09:23:37+00:00",
+  "last_attempt": "2026-11-15T10:22:49+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "AGT",
-      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
       "votes": {
-        "Trend": false,
+        "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
@@ -7218,13 +7218,31 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xa5dbeaf16fc031eae92175974f8d0a439be4ad17"
+    },
+    {
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
     }
   ],
-  "screened_count": 41,
-  "candidate_count": 17,
-  "estimated_eur": 139.86,
+  "screened_count": 39,
+  "candidate_count": 4,
+  "estimated_eur": 139.46,
   "roles": [
     "Trend",
     "Momentum",
@@ -7238,5 +7256,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-15T09:23:43+00:00"
+  "last_success": "2026-11-15T10:22:54+00:00"
 }
