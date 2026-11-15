@@ -6,8 +6,8 @@
       "token": "ARIA",
       "qty": 27.996652245099565,
       "entry_usd": 0.19678859999999998,
-      "peak_usd": 0.211107683328089,
-      "last_usd": 0.211107683328089,
+      "peak_usd": 0.214941625495313,
+      "last_usd": 0.214941625495313,
       "cost_eur": 5.0,
       "opened": "2026-11-14T16:16:48+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "$BANANA",
       "qty": 1319.1506173123282,
       "entry_usd": 0.0041764919999999995,
-      "peak_usd": 0.00429791733809735,
-      "last_usd": 0.00429791733809735,
+      "peak_usd": 0.0044075831613687,
+      "last_usd": 0.0044075831613687,
       "cost_eur": 5.0,
       "opened": "2026-11-14T22:14:30+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 317.1445248549963,
       "entry_usd": 0.017371959999999995,
       "peak_usd": 0.017371959999999995,
-      "last_usd": 0.0171549799533896,
+      "last_usd": 0.0170708747763844,
       "cost_eur": 5.0,
       "opened": "2026-11-15T03:27:51+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 133.51830749850595,
       "entry_usd": 0.041263419999999995,
       "peak_usd": 0.041263419999999995,
-      "last_usd": 0.04114,
+      "last_usd": 0.0411885828712499,
       "cost_eur": 5.0,
       "opened": "2026-11-15T04:33:00+00:00"
     }
@@ -6043,18 +6043,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-11T04:34:31+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-11T05:35:44+00:00",
-      "token": "ON",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-11T05:35:45+00:00",
       "token": "UP",
       "decision": "SKIP",
@@ -7121,6 +7109,18 @@
       "token": "KAVA",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-15T05:29:48+00:00",
+      "token": "AGT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-15T05:29:48+00:00",
+      "token": "PIEVERSE",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -7189,10 +7189,28 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-15T04:32:55+00:00",
+  "last_attempt": "2026-11-15T05:29:43+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
+    {
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
+    },
     {
       "token": "PIEVERSE",
       "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
@@ -7210,29 +7228,11 @@
       },
       "score": 5,
       "dex_url": "https://dexscreener.com/bsc/0xfdaa992896101e109e455a86443fd03480fcdc3e"
-    },
-    {
-      "token": "KAVA",
-      "address": "0x9bafc8d4b487cebff201721702507a3e2c67ad79",
-      "votes": {
-        "Trend": false,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x99e1a43e738b026a2cd4359409594debab61b48d"
     }
   ],
-  "screened_count": 42,
+  "screened_count": 36,
   "candidate_count": 7,
-  "estimated_eur": 139.58,
+  "estimated_eur": 139.79,
   "roles": [
     "Trend",
     "Momentum",
@@ -7246,5 +7246,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-15T04:33:00+00:00"
+  "last_success": "2026-11-15T05:29:48+00:00"
 }
