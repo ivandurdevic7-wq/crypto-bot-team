@@ -1,13 +1,13 @@
 {
-  "cash_eur": 122.95714170768184,
+  "cash_eur": 127.594446090794,
   "initial_eur": 160.0,
   "positions": {
     "0x3d4f0513e8a29669b960f9dbca61861548a9a760": {
       "token": "$BANANA",
       "qty": 1156.409088523902,
       "entry_usd": 0.004764249999999999,
-      "peak_usd": 0.00485711816739076,
-      "last_usd": 0.00469956147584879,
+      "peak_usd": 0.0049344760209797,
+      "last_usd": 0.0049344760209797,
       "cost_eur": 5.0,
       "opened": "2026-11-15T19:24:50+00:00"
     },
@@ -16,41 +16,12 @@
       "qty": 160.14411575768324,
       "entry_usd": 0.03440289999999999,
       "peak_usd": 0.0345314953618115,
-      "last_usd": 0.0340182917825132,
+      "last_usd": 0.0342064825627854,
       "cost_eur": 5.0,
       "opened": "2026-11-15T21:16:34+00:00"
-    },
-    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
-      "token": "ARIA",
-      "qty": 24.03913860170037,
-      "entry_usd": 0.2291855,
-      "peak_usd": 0.2291855,
-      "last_usd": 0.2285,
-      "cost_eur": 5.0,
-      "opened": "2026-11-16T14:06:28+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-03T11:28:40+00:00",
-      "side": "BUY",
-      "token": "AGT",
-      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
-      "eur": 5.0,
-      "reason": "MASTER: Gecko + DEX + GoPlus verified",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      }
-    },
     {
       "time": "2026-11-03T13:46:43+00:00",
       "side": "SELL",
@@ -6030,27 +6001,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-16T16:23:28+00:00",
+      "side": "SELL",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 4.6373,
+      "pnl_eur": -0.3627,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-12T12:33:46+00:00",
-      "token": "Sue",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-12T13:53:03+00:00",
-      "token": "KGEN",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-12T13:53:04+00:00",
-      "token": "UP",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
     {
       "time": "2026-11-12T13:53:04+00:00",
       "token": "AKE",
@@ -7112,6 +7075,24 @@
       "token": "ARIA",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-16T16:23:28+00:00",
+      "token": "ASTER",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-16T16:23:28+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-16T16:23:28+00:00",
+      "token": "AGT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -7183,7 +7164,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-16T14:06:22+00:00",
+  "last_attempt": "2026-11-16T16:23:23+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -7206,8 +7187,26 @@
       "dex_url": "https://dexscreener.com/bsc/0xb040ea24a4ef35a3ed400b0ff26d8b6f30deecad"
     },
     {
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
+    },
+    {
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
       "votes": {
         "Trend": false,
         "Momentum": true,
@@ -7221,12 +7220,12 @@
         "Portfolio": true
       },
       "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0xa5dbeaf16fc031eae92175974f8d0a439be4ad17"
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
     }
   ],
-  "screened_count": 36,
-  "candidate_count": 6,
-  "estimated_eur": 137.77,
+  "screened_count": 41,
+  "candidate_count": 9,
+  "estimated_eur": 137.75,
   "roles": [
     "Trend",
     "Momentum",
@@ -7240,5 +7239,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-16T14:06:28+00:00"
+  "last_success": "2026-11-16T16:23:28+00:00"
 }
