@@ -7,7 +7,7 @@
       "qty": 480.5724558607642,
       "entry_usd": 0.011464289999999999,
       "peak_usd": 0.0116549982651823,
-      "last_usd": 0.0112972211460824,
+      "last_usd": 0.0115318195153776,
       "cost_eur": 5.0,
       "opened": "2026-11-15T17:15:53+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 1156.409088523902,
       "entry_usd": 0.004764249999999999,
       "peak_usd": 0.00485711816739076,
-      "last_usd": 0.00482651550038409,
+      "last_usd": 0.00482397774119214,
       "cost_eur": 5.0,
       "opened": "2026-11-15T19:24:50+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 160.14411575768324,
       "entry_usd": 0.03440289999999999,
       "peak_usd": 0.0345314953618115,
-      "last_usd": 0.034404541508508,
+      "last_usd": 0.0344885345955063,
       "cost_eur": 5.0,
       "opened": "2026-11-15T21:16:34+00:00"
     },
@@ -34,7 +34,7 @@
       "qty": 283.72640343432516,
       "entry_usd": 0.019418079999999997,
       "peak_usd": 0.019418079999999997,
-      "last_usd": 0.0188444439874397,
+      "last_usd": 0.0188616829098497,
       "cost_eur": 5.0,
       "opened": "2026-11-15T23:18:05+00:00"
     }
@@ -6053,18 +6053,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-12T04:35:35+00:00",
-      "token": "SI",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-12T04:35:35+00:00",
-      "token": "Monkey",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
       "time": "2026-11-12T05:38:57+00:00",
       "token": "AGT",
       "decision": "BUY",
@@ -7131,6 +7119,18 @@
       "token": "JAGENT",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-16T02:03:36+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-16T02:03:36+00:00",
+      "token": "ASTER",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -7202,36 +7202,36 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-16T00:27:37+00:00",
+  "last_attempt": "2026-11-16T02:03:31+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "UAI",
-      "address": "0x3e5d4f8aee0d9b3082d5f6da5d6e225d17ba9ea0",
+      "token": "DNA",
+      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
         "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": true,
+        "DEX cross-check": false,
         "Risk guard": false,
         "Portfolio": true
       },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xae9f316db34368cb248497bf1dd7b56b3a92a94c"
+      "score": 3,
+      "dex_url": "https://dexscreener.com/bsc/0x5e7983851f66f22ed1c5f146ba47239f56c8653b"
     },
     {
-      "token": "JAGENT",
-      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "token": "ASTER",
+      "address": "0x000ae314e2a2172a039b26378814c252734f556a",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
-        "Breakout": true,
+        "Breakout": false,
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
@@ -7239,13 +7239,13 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xb040ea24a4ef35a3ed400b0ff26d8b6f30deecad"
     }
   ],
-  "screened_count": 37,
-  "candidate_count": 2,
-  "estimated_eur": 139.13,
+  "screened_count": 39,
+  "candidate_count": 7,
+  "estimated_eur": 139.25,
   "roles": [
     "Trend",
     "Momentum",
@@ -7259,5 +7259,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-16T00:27:43+00:00"
+  "last_success": "2026-11-16T02:03:36+00:00"
 }
