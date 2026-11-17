@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-17T03:41:54.558378+00:00
+- updated_at: 2026-11-17T04:46:17.609631+00:00
 - status: OK
 - cash: 495.4666744232961
 - equity_eur: 495.4666744232961
@@ -18,9 +18,9 @@
 | 0x14233bA7106D1a3C2db6F9d6f5B216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
 | 0x8EaA5Dd62c64212f1313717Dc83EA23a32068888 | bsc | SKIP | volume below $20k/day |
-| 0xa257d1703c2e42e6801b8cb696da6a588d4a7777 | bsc | SKIP | pool younger than 12h |
+| 牛逼 | bsc | SKIP | holder concentration/invalid fractions |
 | 0xe6245ea2803e0b8128fc741d1b3126ccd0ba7777 | bsc | SKIP | liquidity below $30k |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
