@@ -1,12 +1,12 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-17T13:53:10.569873+00:00
+- updated_at: 2026-11-17T14:49:22.954790+00:00
 - status: OK
-- cash: 433.53334012038414
-- equity_eur: 494.9330747502904
-- pnl_eur: -5.066925249709584
+- cash: 371.6471912034467
+- equity_eur: 494.4733074604693
+- pnl_eur: -5.5266925395307
 - halted: False
-- decisions: ['XBTEUR: WAIT', 'ETHEUR: WAIT', 'SOLEUR: HOLD']
+- decisions: ['XBTEUR: BUY', 'ETHEUR: WAIT', 'SOLEUR: HOLD']
 
 ## BNB Chain i Solana
 
@@ -15,15 +15,15 @@
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | no matching DEX pool |
-| 0x10fEC9539d15C3045073163AC7bA6e27B2027777 | bsc | SKIP | liquidity below $30k |
-| 0x14233bA7106D1a3C2db6F9d6f5B216956a201072 | bsc | SKIP | no matching DEX pool |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x10fec9539d15c3045073163ac7ba6e27b2027777 | bsc | SKIP | liquidity below $30k |
+| 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x6c54ff6e4eebd802fc2e0f17fa4283146aa37777 | bsc | SKIP | liquidity below $30k |
 | 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
-| 0x8eaa5dd62c64212f1313717dc83ea23a32068888 | bsc | SKIP | 'h24' |
 | 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
 | 0xe6245ea2803e0b8128fc741d1b3126ccd0ba7777 | bsc | SKIP | liquidity below $30k |
 | 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
+| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x6Db461da03b8Ad06319fF2aF985E1C8dFcC004e0 | bsc | SKIP | volume below $20k/day |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
