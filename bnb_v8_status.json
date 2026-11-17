@@ -6073,12 +6073,6 @@
   "decisions": [
     {
       "time": "2026-11-13T05:39:52+00:00",
-      "token": "AGT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
-    {
-      "time": "2026-11-13T05:39:52+00:00",
       "token": "ARIA",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
@@ -7150,6 +7144,12 @@
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-17T07:55:58+00:00",
+      "token": "SYSTEM",
+      "decision": "WAIT",
+      "reason": "Missing FX rate; trades skipped, positions preserved"
     }
   ],
   "daily": {
@@ -7223,68 +7223,13 @@
       "start_eur": 137.6286
     }
   },
-  "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-17T05:38:25+00:00",
+  "status": "DEGRADED: EUR/USD unavailable; no trades",
+  "last_attempt": "2026-11-17T07:55:39+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [
-    {
-      "token": "DNA",
-      "address": "0xa991f61940095aea0724ef54077223b048c5cf7b",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x5e7983851f66f22ed1c5f146ba47239f56c8653b"
-    },
-    {
-      "token": "EVAA",
-      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
-    },
-    {
-      "token": "JCT",
-      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
-    }
-  ],
+  "reviewed": [],
   "screened_count": 33,
-  "candidate_count": 3,
+  "candidate_count": 0,
   "estimated_eur": 137.87,
   "roles": [
     "Trend",
