@@ -1,11 +1,18 @@
 {
-  "cash": 146.64688009879526,
+  "cash": 141.64688009879526,
   "positions": {
     "ICPUSDT": {
       "qty": 2.2825980083039887,
       "entry": 2.4104079999999994,
-      "last": 2.451,
+      "last": 2.437,
       "opened": "2026-11-16T15:07:44+00:00",
+      "cost_eur": 5.0
+    },
+    "HUMAUSDT": {
+      "qty": 591.2356997840872,
+      "entry": 0.009309299999999998,
+      "last": 0.00929,
+      "opened": "2026-11-17T05:59:01+00:00",
       "cost_eur": 5.0
     }
   },
@@ -662,30 +669,25 @@
       "token": "MARSCOINUSDT",
       "eur": 4.8366,
       "reason": "Stop-loss 3% na satnoj provjeri"
+    },
+    {
+      "time": "2026-11-17T05:59:01+00:00",
+      "side": "BUY",
+      "token": "HUMAUSDT",
+      "eur": 5.0,
+      "rise_1h": 4.26,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
     }
   ],
   "status": "OK; stvarni podaci, virtualne transakcije",
   "updated": "2026-10-24T21:28:43.938888+00:00",
   "value": 160.0,
   "decisions": [
-    {
-      "time": "2026-11-11T02:00:10+00:00",
-      "token": "牛来USDT",
-      "result": "SKIP",
-      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
-    },
-    {
-      "time": "2026-11-11T02:50:05+00:00",
-      "token": "INITUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: BTC_trend"
-    },
-    {
-      "time": "2026-11-11T02:50:14+00:00",
-      "token": "牛来USDT",
-      "result": "SKIP",
-      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
-    },
     {
       "time": "2026-11-11T03:53:49+00:00",
       "token": "牛来USDT",
@@ -1567,10 +1569,28 @@
       "token": "RAREUSDT",
       "result": "REJECT",
       "reason": "Nema potvrde: volume_15m"
+    },
+    {
+      "time": "2026-11-17T05:59:01+00:00",
+      "token": "HUMAUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-17T05:59:02+00:00",
+      "token": "SOPHUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: trend_15m, volume_15m, spread"
+    },
+    {
+      "time": "2026-11-17T05:59:02+00:00",
+      "token": "GLMRUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: volume_15m"
     }
   ],
-  "last_success": "2026-11-17T04:58:16+00:00",
+  "last_success": "2026-11-17T05:59:15+00:00",
   "screened_market_count": 776,
   "scanned_candidates": 25,
-  "estimated_eur": 151.73
+  "estimated_eur": 151.68
 }
