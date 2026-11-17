@@ -7,7 +7,7 @@
       "qty": 1156.409088523902,
       "entry_usd": 0.004764249999999999,
       "peak_usd": 0.00524840147853155,
-      "last_usd": 0.00520601787836492,
+      "last_usd": 0.00522057963578606,
       "cost_eur": 5.0,
       "opened": "2026-11-15T19:24:50+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 160.14411575768324,
       "entry_usd": 0.03440289999999999,
       "peak_usd": 0.0345314953618115,
-      "last_usd": 0.034011531311338,
+      "last_usd": 0.0340597841898126,
       "cost_eur": 5.0,
       "opened": "2026-11-15T21:16:34+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 107103440.21740298,
       "entry_usd": 5.126332999999999e-08,
       "peak_usd": 5.126332999999999e-08,
-      "last_usd": 5.07097169998309e-08,
+      "last_usd": 5.037e-08,
       "cost_eur": 5.0,
       "opened": "2026-11-16T19:36:34+00:00"
     },
@@ -33,8 +33,8 @@
       "token": "ARIA",
       "qty": 26.154117675640062,
       "entry_usd": 0.2099279,
-      "peak_usd": 0.222849696836869,
-      "last_usd": 0.222708714774896,
+      "peak_usd": 0.230055369011009,
+      "last_usd": 0.230055369011009,
       "cost_eur": 5.0,
       "opened": "2026-11-16T21:27:14+00:00"
     },
@@ -42,8 +42,8 @@
       "token": "AKE",
       "qty": 541.4497358567227,
       "entry_usd": 0.010140329999999998,
-      "peak_usd": 0.0102596683568239,
-      "last_usd": 0.00994760766403609,
+      "peak_usd": 0.0105351164293873,
+      "last_usd": 0.0105351164293873,
       "cost_eur": 5.0,
       "opened": "2026-11-17T00:21:58+00:00"
     }
@@ -6073,12 +6073,6 @@
   "decisions": [
     {
       "time": "2026-11-13T05:39:52+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-13T05:39:52+00:00",
       "token": "JCT",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
@@ -7150,6 +7144,12 @@
       "token": "SYSTEM",
       "decision": "WAIT",
       "reason": "Missing FX rate; trades skipped, positions preserved"
+    },
+    {
+      "time": "2026-11-17T09:38:31+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7223,14 +7223,33 @@
       "start_eur": 137.6286
     }
   },
-  "status": "DEGRADED: EUR/USD unavailable; no trades",
-  "last_attempt": "2026-11-17T07:55:39+00:00",
+  "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
+  "last_attempt": "2026-11-17T09:38:26+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [],
-  "screened_count": 33,
-  "candidate_count": 0,
-  "estimated_eur": 137.87,
+  "reviewed": [
+    {
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+    }
+  ],
+  "screened_count": 39,
+  "candidate_count": 4,
+  "estimated_eur": 138.33,
   "roles": [
     "Trend",
     "Momentum",
@@ -7244,5 +7263,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-17T05:38:31+00:00"
+  "last_success": "2026-11-17T09:38:31+00:00"
 }
