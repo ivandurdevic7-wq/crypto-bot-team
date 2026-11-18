@@ -1,16 +1,16 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-18T12:52:11.922693+00:00
+- updated_at: 2026-11-18T14:08:44.957324+00:00
 - status: OK
-- cash: 430.19282747973347
-- equity_eur: 490.35369730594437
-- pnl_eur: -9.646302694055635
+- cash: 490.37145697231375
+- equity_eur: 490.37145697231375
+- pnl_eur: -9.628543027686248
 - halted: False
-- decisions: ['XBTEUR: WAIT', 'ETHEUR: WAIT', 'SOLEUR: HOLD']
+- decisions: ['XBTEUR: WAIT', 'ETHEUR: WAIT', 'SOLEUR: SELL trend exit']
 
 ## BNB Chain i Solana
 
-{'bsc': 12, 'solana': 20}
+{'bsc': 13, 'solana': 20}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
@@ -18,14 +18,15 @@
 | 0x10fec9539d15c3045073163ac7ba6e27b2027777 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x36afea24bdce80f15be5c433e09d574ea9767777 | bsc | SKIP | no matching DEX pool |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
-| 0x6db461da03b8ad06319ff2af985e1c8dfcc004e0 | bsc | SKIP | volume below $20k/day |
-| 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
-| 0xD0D64F715C5a7D03B57f44b0e6F1E797c93461a8 | bsc | SKIP | liquidity below $30k |
-| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
-| 0xdc846f359aa2e82ce1a07920dbcad9e27877c7fd | bsc | SKIP | pool younger than 12h |
 | 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
 | 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
+| 0x6db461da03b8ad06319ff2af985e1c8dfcc004e0 | bsc | SKIP | volume below $20k/day |
+| 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
+| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
+| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
+| 0xdc846f359aa2e82ce1a07920dbcad9e27877c7fd | bsc | SKIP | pool younger than 12h |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
+| 0x59CF15b5C18570aA2936990F686D791896367777 | bsc | SKIP | no matching DEX pool |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
