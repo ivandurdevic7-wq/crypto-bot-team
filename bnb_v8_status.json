@@ -7,7 +7,7 @@
       "qty": 160.14411575768324,
       "entry_usd": 0.03440289999999999,
       "peak_usd": 0.0345314953618115,
-      "last_usd": 0.0339553098501677,
+      "last_usd": 0.0339886517951281,
       "cost_eur": 5.0,
       "opened": "2026-11-15T21:16:34+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 107103440.21740298,
       "entry_usd": 5.126332999999999e-08,
       "peak_usd": 5.126332999999999e-08,
-      "last_usd": 5.044e-08,
+      "last_usd": 5.021e-08,
       "cost_eur": 5.0,
       "opened": "2026-11-16T19:36:34+00:00"
     },
@@ -24,8 +24,8 @@
       "token": "ARIA",
       "qty": 24.75807617943993,
       "entry_usd": 0.22126179999999995,
-      "peak_usd": 0.228477012667027,
-      "last_usd": 0.228477012667027,
+      "peak_usd": 0.234342507376884,
+      "last_usd": 0.234342507376884,
       "cost_eur": 5.0,
       "opened": "2026-11-17T21:28:46+00:00"
     },
@@ -33,8 +33,8 @@
       "token": "AIOT",
       "qty": 65.77901487636333,
       "entry_usd": 0.08327909,
-      "peak_usd": 0.0833409966006362,
-      "last_usd": 0.0808867808199056,
+      "peak_usd": 0.0842780787261129,
+      "last_usd": 0.0842780787261129,
       "cost_eur": 5.0,
       "opened": "2026-11-17T22:30:04+00:00"
     },
@@ -42,8 +42,8 @@
       "token": "龙虾",
       "qty": 348.98604505970917,
       "entry_usd": 0.015696949999999998,
-      "peak_usd": 0.015696949999999998,
-      "last_usd": 0.01565,
+      "peak_usd": 0.0158238014576798,
+      "last_usd": 0.0158238014576798,
       "cost_eur": 5.0,
       "opened": "2026-11-18T00:28:31+00:00"
     }
@@ -6052,18 +6052,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-13T19:34:40+00:00",
-      "token": "AGT",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-13T19:34:40+00:00",
-      "token": "UP",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
-    {
       "time": "2026-11-13T20:31:21+00:00",
       "token": "UP",
       "decision": "SKIP",
@@ -7130,6 +7118,18 @@
       "token": "SYSTEM",
       "decision": "WAIT",
       "reason": "Market source unavailable; positions unchanged"
+    },
+    {
+      "time": "2026-11-18T03:31:11+00:00",
+      "token": "BTW",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-18T03:31:11+00:00",
+      "token": "AGT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: cannot_sell_all"
     }
   ],
   "daily": {
@@ -7206,16 +7206,51 @@
       "start_eur": 138.7216
     }
   },
-  "status": "DEGRADED: No verifiable market quotes; no new trades",
-  "last_attempt": "2026-11-18T01:55:55+00:00",
-  "market_pages_ok": 0,
-  "market_api_errors": [
-    "networks/bsc/pools: HTTP 429 rate limited by provider"
+  "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
+  "last_attempt": "2026-11-18T03:31:07+00:00",
+  "market_pages_ok": 3,
+  "market_api_errors": [],
+  "reviewed": [
+    {
+      "token": "BTW",
+      "address": "0x444045b0ee1ee319a660a5e3d604ca0ffa35acaa",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": false,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": false,
+        "Portfolio": true
+      },
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0x193b900ce76678edf474feeaa18b496f8a5243d5"
+    },
+    {
+      "token": "AGT",
+      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
+    }
   ],
-  "reviewed": [],
-  "screened_count": 0,
-  "candidate_count": 0,
-  "estimated_eur": 138.69,
+  "screened_count": 39,
+  "candidate_count": 5,
+  "estimated_eur": 139.06,
   "roles": [
     "Trend",
     "Momentum",
@@ -7229,5 +7264,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-18T00:28:31+00:00"
+  "last_success": "2026-11-18T03:31:11+00:00"
 }
