@@ -3,13 +3,13 @@
   "coverage": "sampled first 35 transactions of up to 3 recent blocks",
   "blocks_checked": 3,
   "transactions_checked": 105,
-  "matching_swap_receipts": 12,
+  "matching_swap_receipts": 13,
   "failures": 0,
   "status": "SAMPLE_COMPLETE",
   "observations": [
     {
-      "tx": "0xdef672949dc98a311b990297625f916568d9bc62cd44aa82de37c1e3855ce3cd",
-      "block": 134386818,
+      "tx": "0x086d8bfc26db45b499f698707095ca0e0f4ebbc2f30147f601afdf2fe2173003",
+      "block": 134392862,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
@@ -19,15 +19,57 @@
       ]
     },
     {
-      "tx": "0xf5f89c6b670be05b11bc5f325f125ee1a75a7c5f72d4f31686a184059bdb471e",
-      "block": 134386818,
+      "tx": "0x36075cf62a1c0df38a6a640d41522f284495502be8676df0d0a1952cabdb2ef9",
+      "block": 134392862,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
         {
           "status": "BELOW_THRESHOLD",
-          "min_usd": 38.74,
-          "max_usd": 42.82,
+          "min_usd": 136.0,
+          "max_usd": 150.31,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_BOUGHT_WITH_WBNB",
+          "tx_hash": "0x36075cf62a1c0df38a6a640d41522f284495502be8676df0d0a1952cabdb2ef9"
+        }
+      ]
+    },
+    {
+      "tx": "0x50221b66c9c7ac8f46956ea84c538dd013364764b44f3b7edff83f27f8893724",
+      "block": 134392862,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 0.25,
+          "max_usd": 0.28,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_BOUGHT_WITH_WBNB",
+          "tx_hash": "0x50221b66c9c7ac8f46956ea84c538dd013364764b44f3b7edff83f27f8893724"
+        }
+      ]
+    },
+    {
+      "tx": "0xfd035d6c9352227d51d4b8628b8998cbd3a2fd1616a8def13609e059af0e6b89",
+      "block": 134392861,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 1.24,
+          "max_usd": 1.37,
           "threshold_usd": 10000.0,
           "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
           "quote_type": "CURRENT_INDICATIVE_ONLY",
@@ -35,77 +77,12 @@
           "historical_valuation": "UNAVAILABLE",
           "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
           "side": "TOKEN_SOLD_FOR_WBNB",
-          "tx_hash": "0xf5f89c6b670be05b11bc5f325f125ee1a75a7c5f72d4f31686a184059bdb471e"
-        }
-      ]
-    },
-    {
-      "tx": "0x9897e0dd2832f1cbbc92c11dae1b50074ec7db47dd08781c1dc4a7f000c24153",
-      "block": 134386818,
-      "status": "RESEARCH_ONLY",
-      "alerts": 0,
-      "events": [
-        {
-          "status": "BELOW_THRESHOLD",
-          "min_usd": 659.39,
-          "max_usd": 728.8,
-          "threshold_usd": 10000.0,
-          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
-          "quote_type": "CURRENT_INDICATIVE_ONLY",
-          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
-          "historical_valuation": "UNAVAILABLE",
-          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
-          "side": "TOKEN_BOUGHT_WITH_WBNB",
-          "tx_hash": "0x9897e0dd2832f1cbbc92c11dae1b50074ec7db47dd08781c1dc4a7f000c24153"
-        }
-      ]
-    },
-    {
-      "tx": "0xf266f9078e85778155d6d1fecc9dd8a6878060b2ad65bdf8733b2d232cf85ac3",
-      "block": 134386817,
-      "status": "RESEARCH_ONLY",
-      "alerts": 0,
-      "events": [
-        {
-          "status": "UNVERIFIED_POOL_NO_ALERT"
-        }
-      ]
-    },
-    {
-      "tx": "0xac74243f7f82e35aa58e394fd9e8202e13e87834147e327e3f254ca06ac8ea19",
-      "block": 134386817,
-      "status": "RESEARCH_ONLY",
-      "alerts": 0,
-      "events": [
-        {
-          "status": "UNVERIFIED_POOL_NO_ALERT"
-        }
-      ]
-    },
-    {
-      "tx": "0x612ef6c145b1055699c9a46b71bb0c1101340bd3a6e4c8a83b331e533c71c10c",
-      "block": 134386817,
-      "status": "RESEARCH_ONLY",
-      "alerts": 0,
-      "events": [
-        {
-          "status": "UNVERIFIED_POOL_NO_ALERT"
+          "tx_hash": "0xfd035d6c9352227d51d4b8628b8998cbd3a2fd1616a8def13609e059af0e6b89"
         },
         {
-          "status": "UNVERIFIED_POOL_NO_ALERT"
-        }
-      ]
-    },
-    {
-      "tx": "0x623bdf610a24149b70d6fda902644ead90e03166a3aa62e2844370cfeb49a6f6",
-      "block": 134386817,
-      "status": "RESEARCH_ONLY",
-      "alerts": 0,
-      "events": [
-        {
           "status": "BELOW_THRESHOLD",
-          "min_usd": 181.84,
-          "max_usd": 200.98,
+          "min_usd": 0.52,
+          "max_usd": 0.57,
           "threshold_usd": 10000.0,
           "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
           "quote_type": "CURRENT_INDICATIVE_ONLY",
@@ -113,13 +90,26 @@
           "historical_valuation": "UNAVAILABLE",
           "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
           "side": "TOKEN_BOUGHT_WITH_WBNB",
-          "tx_hash": "0x623bdf610a24149b70d6fda902644ead90e03166a3aa62e2844370cfeb49a6f6"
+          "tx_hash": "0xfd035d6c9352227d51d4b8628b8998cbd3a2fd1616a8def13609e059af0e6b89"
+        },
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 63.62,
+          "max_usd": 70.31,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_SOLD_FOR_WBNB",
+          "tx_hash": "0xfd035d6c9352227d51d4b8628b8998cbd3a2fd1616a8def13609e059af0e6b89"
         }
       ]
     },
     {
-      "tx": "0xd256374bdc6f0fa9c1c55c6f078a73b223197f7bfdd04eef735d4b8ad00f408e",
-      "block": 134386816,
+      "tx": "0xc0350ae2f09e3250befa4630c789624f2ae28f2dee5c9c7b329c3c17c3bd27e0",
+      "block": 134392861,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
@@ -129,8 +119,8 @@
       ]
     },
     {
-      "tx": "0xcaa002729decf44affe582012be5d7790ee98549feb80332a02bd3dbf8ed2840",
-      "block": 134386816,
+      "tx": "0x3b538d3318a265a55fe09112f7b2ae79c163f5037993e7aeee0a33d72012e6d7",
+      "block": 134392861,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
@@ -140,8 +130,29 @@
       ]
     },
     {
-      "tx": "0x7232042765ac99f4a789f46b693a884a18b9b84c298ebc8ac4e74e6e6c629de6",
-      "block": 134386816,
+      "tx": "0xc3c5fc8f2a1c032150e2b9b31941243e8927072cd349cab2a24d679d1287db7f",
+      "block": 134392861,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 18.5,
+          "max_usd": 20.44,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_BOUGHT_WITH_WBNB",
+          "tx_hash": "0xc3c5fc8f2a1c032150e2b9b31941243e8927072cd349cab2a24d679d1287db7f"
+        }
+      ]
+    },
+    {
+      "tx": "0xe079bf0556bdac25b7aa82c096cff545eb450613b95417622f41d2d5ea479ec7",
+      "block": 134392861,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
@@ -151,8 +162,8 @@
       ]
     },
     {
-      "tx": "0x1b9c248e8e2f951b186f78beaf1fdfec016f815adf760237946af30396ff994e",
-      "block": 134386816,
+      "tx": "0x0ec9d47018ad8fba8bdee3aac82890c0647c6ba3850931346ddaa94d1fef6aaa",
+      "block": 134392860,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
@@ -162,19 +173,72 @@
       ]
     },
     {
-      "tx": "0xadcfc562d264c15f2546a6b2a2e903ed460a90a8265c2a6f27a10016e9485ab2",
-      "block": 134386816,
+      "tx": "0x650f2497621e1ba7be1977ad026bd8ecaaa88b36028d2c633a55514e43aae500",
+      "block": 134392860,
       "status": "RESEARCH_ONLY",
       "alerts": 0,
       "events": [
         {
           "status": "UNVERIFIED_POOL_NO_ALERT"
+        }
+      ]
+    },
+    {
+      "tx": "0x273532f2192963aa364dfd975486cc0971a1d9927014980c419c1a84d7ac7d28",
+      "block": 134392860,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "UNVERIFIED_POOL_NO_ALERT"
+        }
+      ]
+    },
+    {
+      "tx": "0x16105db4e8bd975c58d88d568a84efc6c68e5e8227e3c0e8b3b4c79dd920b0e5",
+      "block": 134392860,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 281.69,
+          "max_usd": 311.34,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_SOLD_FOR_WBNB",
+          "tx_hash": "0x16105db4e8bd975c58d88d568a84efc6c68e5e8227e3c0e8b3b4c79dd920b0e5"
+        }
+      ]
+    },
+    {
+      "tx": "0xd8b38b0b6e3b4a9fe4fbe1f0fd49aa4e61bbce58402b82cd6467322928176392",
+      "block": 134392860,
+      "status": "RESEARCH_ONLY",
+      "alerts": 0,
+      "events": [
+        {
+          "status": "BELOW_THRESHOLD",
+          "min_usd": 18.73,
+          "max_usd": 20.7,
+          "threshold_usd": 10000.0,
+          "price_method": "DAILY_LOW_HIGH_BOUNDS_NOT_TRANSACTION_PRICE",
+          "quote_type": "CURRENT_INDICATIVE_ONLY",
+          "quote_pair": "0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE",
+          "historical_valuation": "UNAVAILABLE",
+          "price_buffer": "PLUS_MINUS_5_PERCENT_NOT_STATISTICAL",
+          "side": "TOKEN_SOLD_FOR_WBNB",
+          "tx_hash": "0xd8b38b0b6e3b4a9fe4fbe1f0fd49aa4e61bbce58402b82cd6467322928176392"
         }
       ]
     }
   ],
   "alert_count": 0,
-  "generated_at_utc": "2026-11-18T21:54:20.754756+00:00",
+  "generated_at_utc": "2026-11-18T22:40:10.890712+00:00",
   "orders_enabled": false,
   "warning": "Not comprehensive chain monitoring; USD values indicative and unfit for trade execution."
 }
