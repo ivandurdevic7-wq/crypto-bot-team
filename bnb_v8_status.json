@@ -6052,12 +6052,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-13T19:34:39+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-13T19:34:40+00:00",
       "token": "AGT",
       "decision": "BUY",
@@ -7130,6 +7124,12 @@
       "token": "龙虾",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-18T01:55:56+00:00",
+      "token": "SYSTEM",
+      "decision": "WAIT",
+      "reason": "Market source unavailable; positions unchanged"
     }
   ],
   "daily": {
@@ -7206,68 +7206,15 @@
       "start_eur": 138.7216
     }
   },
-  "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-18T00:28:25+00:00",
-  "market_pages_ok": 3,
-  "market_api_errors": [],
-  "reviewed": [
-    {
-      "token": "PIEVERSE",
-      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0xfdaa992896101e109e455a86443fd03480fcdc3e"
-    },
-    {
-      "token": "AGT",
-      "address": "0x5dbde81fce337ff4bcaaee4ca3466c00aecae274",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xd3cffc6b02a34dfc72f1350339031043a854599f"
-    },
-    {
-      "token": "龙虾",
-      "address": "0xeccbb861c0dda7efd964010085488b69317e4444",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": true,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 8,
-      "dex_url": "https://dexscreener.com/bsc/0x22af7297243c4eef12e2d5a4f888b92e56bf127c"
-    }
+  "status": "DEGRADED: No verifiable market quotes; no new trades",
+  "last_attempt": "2026-11-18T01:55:55+00:00",
+  "market_pages_ok": 0,
+  "market_api_errors": [
+    "networks/bsc/pools: HTTP 429 rate limited by provider"
   ],
-  "screened_count": 39,
-  "candidate_count": 5,
+  "reviewed": [],
+  "screened_count": 0,
+  "candidate_count": 0,
   "estimated_eur": 138.69,
   "roles": [
     "Trend",
