@@ -1,16 +1,16 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-19T10:34:02.637733+00:00
+- updated_at: 2026-11-19T11:33:09.838156+00:00
 - status: OK
 - cash: 429.0750248507745
-- equity_eur: 489.5114751079112
-- pnl_eur: -10.488524892088776
+- equity_eur: 489.8061999281396
+- pnl_eur: -10.19380007186038
 - halted: False
 - decisions: ['XBTEUR: WAIT', 'ETHEUR: WAIT', 'SOLEUR: HOLD']
 
 ## BNB Chain i Solana
 
-{'bsc': 19, 'solana': 20}
+{'bsc': 20, 'solana': 20}
 
 | Token / adresa | Mreža | Odluka | Razlog |
 |---|---|---|---|
@@ -18,21 +18,22 @@
 | 0x10fec9539d15c3045073163ac7ba6e27b2027777 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x14622f12c533cdce4507351f5a58263912827777 | bsc | SKIP | liquidity below $30k |
-| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
-| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
-| 0xd9Ff653A9757EBd86EE343c9eFa8daAD73d67607 | bsc | SKIP | pool younger than 12h |
-| 0xe5881c31162488D335aAb82A20cD4BF156487777 | bsc | SKIP | liquidity below $30k |
-| 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
-| 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
 | 0x36afea24bdce80f15be5c433e09d574ea9767777 | bsc | SKIP | no matching DEX pool |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
 | 0x58951b22f89869e07249d4afb406f368320effff | bsc | SKIP | liquidity below $30k |
 | 0x59cf15b5c18570aa2936990f686d791896367777 | bsc | SKIP | no matching DEX pool |
 | 0x6db461da03b8ad06319ff2af985e1c8dfcc004e0 | bsc | SKIP | volume below $20k/day |
 | 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
 | 0x95c7bd108fd67ae14705577ead2361c3abfb9999 | bsc | SKIP | liquidity below $30k |
+| 0xc5dc1F2aa1D962789F1A06fDb199A25c038D7777 | bsc | SKIP | liquidity below $30k |
+| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
+| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
+| 0xd9ff653a9757ebd86ee343c9efa8daad73d67607 | bsc | SKIP | pool younger than 12h |
+| 0xe5881c31162488D335aAb82A20cD4BF156487777 | bsc | SKIP | liquidity below $30k |
+| 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
+| 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
+| SOL | bsc | SKIP | risk/unknown: is_proxy |
 | Trump | bsc | SKIP | nonzero token tax |
-| 0xc5dc1F2aa1D962789F1A06fDb199A25c038D7777 | bsc | SKIP | pool younger than 12h |
+| 0xec3Cd8b19C2BDdAdBbc22e58dBCffa2fB6957777 | bsc | SKIP | pool younger than 12h |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
