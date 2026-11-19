@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-18T23:15:16.361877+00:00
+- updated_at: 2026-11-19T00:13:15.802510+00:00
 - status: OK
 - cash: 490.37145697231375
 - equity_eur: 490.37145697231375
@@ -18,23 +18,23 @@
 | 0x10fec9539d15c3045073163ac7ba6e27b2027777 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
 | 0x36afea24bdce80f15be5c433e09d574ea9767777 | bsc | SKIP | no matching DEX pool |
-| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
-| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | no matching DEX pool |
-| 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
-| 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
 | 0x58951b22f89869e07249d4afb406f368320effff | bsc | SKIP | liquidity below $30k |
 | 0x59cf15b5c18570aa2936990f686d791896367777 | bsc | SKIP | no matching DEX pool |
 | 0x639c53cfe74c94f0c961b69cc69630d9ebcc7777 | bsc | SKIP | pool younger than 12h |
 | 0x6db461da03b8ad06319ff2af985e1c8dfcc004e0 | bsc | SKIP | volume below $20k/day |
 | 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
 | 0x95C7bd108fd67Ae14705577eaD2361c3aBFB9999 | bsc | SKIP | liquidity below $30k |
+| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
+| 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | no matching DEX pool |
+| 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
+| 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
 | 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
 | 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | no matching DEX pool |
 | 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $20k/day |
-| 9gP2kCy3wA1ctvYWQk75guqXuHfrEomqydHLtcTCqiLa | solana | SKIP | volume below $20k/day |
+| WBNB | solana | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
 | AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
 | AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
 | CAh1AJeFYUMxtZ2WKD1fcuQeGqoL4CePXXdYDdDVfG3d | solana | SKIP | no matching DEX pool |
