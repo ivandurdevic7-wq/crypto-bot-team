@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-19T21:29:12.130077+00:00
+- updated_at: 2026-11-19T22:29:25.101657+00:00
 - status: OK
 - cash: 488.77019752976105
 - equity_eur: 488.77019752976105
@@ -33,7 +33,7 @@
 | 0xec3cd8b19c2bddadbbc22e58dbcffa2fb6957777 | bsc | SKIP | pool younger than 12h |
 | 0xec3ea30cf845d8e47c4536efa35c0a394bb027ba | bsc | SKIP | no matching DEX pool |
 | 0xf9a710fa71e97b7efae4b92c40c57292d8548993 | bsc | SKIP | volume below $20k/day |
-| SOL | bsc | SKIP | risk/unknown: is_proxy |
+| 0x570A5D26f7765Ecb712C0924E4De545B89fD43dF | bsc | SKIP | insufficient recent buys/sells |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
