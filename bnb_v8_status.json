@@ -6,8 +6,8 @@
       "token": "IDOL",
       "qty": 252.48700401805237,
       "entry_usd": 0.02165477,
-      "peak_usd": 0.0219469819148756,
-      "last_usd": 0.0219469819148756,
+      "peak_usd": 0.0220181985121446,
+      "last_usd": 0.0220181985121446,
       "cost_eur": 5.0,
       "opened": "2026-11-19T11:31:19+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 528.8598869413058,
       "entry_usd": 0.010360989999999999,
       "peak_usd": 0.0105576516919008,
-      "last_usd": 0.0104891086473604,
+      "last_usd": 0.0105340363970871,
       "cost_eur": 5.0,
       "opened": "2026-11-19T16:41:53+00:00"
     }
@@ -6015,24 +6015,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-15T15:18:55+00:00",
-      "token": "WTBC",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: hidden_owner"
-    },
-    {
-      "time": "2026-11-15T16:17:16+00:00",
-      "token": "AGT",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
-    {
-      "time": "2026-11-15T16:17:16+00:00",
-      "token": "IDOL",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
       "time": "2026-11-15T17:15:53+00:00",
       "token": "AKE",
       "decision": "BUY",
@@ -7093,6 +7075,24 @@
       "token": "PIEVERSE",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-20T05:42:58+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-20T05:42:59+00:00",
+      "token": "IRYS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-11-20T05:42:59+00:00",
+      "token": "JCT",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
     }
   ],
   "daily": {
@@ -7176,32 +7176,68 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-20T04:37:33+00:00",
+  "last_attempt": "2026-11-20T05:42:54+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "PIEVERSE",
-      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
       "votes": {
         "Trend": true,
         "Momentum": true,
         "Dip recovery": false,
         "Breakout": false,
         "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+    },
+    {
+      "token": "IRYS",
+      "address": "0x91152b4ef635403efbae860edd0f8c321d7c035d",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x73de8b8d37fac1afe156f6533788a0eff197d636"
+    },
+    {
+      "token": "JCT",
+      "address": "0xea37a8de1de2d9d10772eeb569e28bfa5cb17707",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
         "Liquidity": false,
         "New pools": false,
-        "DEX cross-check": false,
+        "DEX cross-check": true,
         "Risk guard": false,
         "Portfolio": true
       },
       "score": 4,
-      "dex_url": "https://dexscreener.com/bsc/0x20260736f45b9e21a4cb2ad916a1a85766ac9d20"
+      "dex_url": "https://dexscreener.com/bsc/0xab2002069dccd69083683468a6ca25f801cca138"
     }
   ],
-  "screened_count": 43,
-  "candidate_count": 2,
-  "estimated_eur": 138.61,
+  "screened_count": 41,
+  "candidate_count": 4,
+  "estimated_eur": 138.65,
   "roles": [
     "Trend",
     "Momentum",
@@ -7215,5 +7251,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-20T04:37:38+00:00"
+  "last_success": "2026-11-20T05:42:59+00:00"
 }
