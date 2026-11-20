@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-20T05:43:11.651366+00:00
+- updated_at: 2026-11-20T06:53:59.413216+00:00
 - status: OK
 - cash: 488.77019752976105
 - equity_eur: 488.77019752976105
@@ -17,7 +17,9 @@
 | 0x0efb5FD2402A0967B92551d6AF54De148504A115 | bsc | SKIP | liquidity below $30k |
 | 0x10fec9539d15c3045073163ac7ba6e27b2027777 | bsc | SKIP | liquidity below $30k |
 | 0x14233ba7106d1a3c2db6f9d6f5b216956a201072 | bsc | SKIP | no matching DEX pool |
-| 0x14622f12c533cdce4507351f5a58263912827777 | bsc | SKIP | liquidity below $30k |
+| YZi | bsc | EARLY_WATCH | research only: 24h volume below $20k PAPER gate |
+| 0xc5dc1f2aa1d962789f1a06fdb199a25c038d7777 | bsc | SKIP | liquidity below $30k |
+| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
 | 0xd27af64926002ceb8eec81ce11f56ab8d781ffff | bsc | SKIP | liquidity below $30k |
 | 0xd9ff653a9757ebd86ee343c9efa8daad73d67607 | bsc | SKIP | volume below $20k/day |
 | 0xe5881c31162488d335aab82a20cd4bf156487777 | bsc | SKIP | liquidity below $30k |
@@ -28,8 +30,6 @@
 | 0x6db461da03b8ad06319ff2af985e1c8dfcc004e0 | bsc | SKIP | volume below $20k/day |
 | 0x8660d7f4a095fbebbf1da516a26cf7bd49c27777 | bsc | SKIP | no matching DEX pool |
 | 0x95c7bd108fd67ae14705577ead2361c3abfb9999 | bsc | SKIP | liquidity below $30k |
-| 0xc5dc1f2aa1d962789f1a06fdb199a25c038d7777 | bsc | SKIP | liquidity below $30k |
-| 0xd0d64f715c5a7d03b57f44b0e6f1e797c93461a8 | bsc | SKIP | liquidity below $30k |
 | SOL | bsc | SKIP | risk/unknown: is_proxy |
 | 2ZbaN9Dkj5HPyYUeij82PcZgHJYZ8747Ca69qdcvCh5C | solana | SKIP | insufficient recent buys/sells |
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
