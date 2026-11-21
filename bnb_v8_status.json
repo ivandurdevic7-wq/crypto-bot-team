@@ -6,8 +6,8 @@
       "token": "IDOL",
       "qty": 229.1161331441916,
       "entry_usd": 0.02391152,
-      "peak_usd": 0.0256428136042565,
-      "last_usd": 0.0256428136042565,
+      "peak_usd": 0.0264371654320902,
+      "last_usd": 0.0264371654320902,
       "cost_eur": 5.0,
       "opened": "2026-11-20T21:26:23+00:00"
     }
@@ -6016,18 +6016,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-16T23:22:59+00:00",
-      "token": "EVAA",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-11-16T23:23:00+00:00",
-      "token": "BLESS",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_honeypot"
-    },
-    {
       "time": "2026-11-16T23:23:00+00:00",
       "token": "BTW",
       "decision": "SKIP",
@@ -7094,6 +7082,18 @@
       "token": "LAB",
       "decision": "SKIP",
       "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-21T12:24:16+00:00",
+      "token": "ETH",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-21T12:24:17+00:00",
+      "token": "DNA",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -7180,13 +7180,32 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-21T11:24:35+00:00",
+  "last_attempt": "2026-11-21T12:24:11+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [],
-  "screened_count": 35,
-  "candidate_count": 1,
-  "estimated_eur": 135.87,
+  "reviewed": [
+    {
+      "token": "ETH",
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0xd0e226f674bbf064f54ab47f42473ff80db98cba"
+    }
+  ],
+  "screened_count": 38,
+  "candidate_count": 10,
+  "estimated_eur": 136.04,
   "roles": [
     "Trend",
     "Momentum",
@@ -7200,5 +7219,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-21T11:24:39+00:00"
+  "last_success": "2026-11-21T12:24:17+00:00"
 }
