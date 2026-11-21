@@ -1,31 +1,22 @@
 {
-  "cash_eur": 116.45592471561066,
+  "cash_eur": 122.58500974100542,
   "initial_eur": 160.0,
   "positions": {
     "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
       "token": "AKE",
       "qty": 1050.4093488764477,
       "entry_usd": 0.005215599999999999,
-      "peak_usd": 0.0052718329885168,
-      "last_usd": 0.0052718329885168,
+      "peak_usd": 0.00535696961976452,
+      "last_usd": 0.00535696961976452,
       "cost_eur": 5.0,
       "opened": "2026-11-21T16:23:59+00:00"
-    },
-    "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
-      "token": "IDOL",
-      "qty": 186.3571686850061,
-      "entry_usd": 0.029397929999999996,
-      "peak_usd": 0.0445134178666433,
-      "last_usd": 0.0445134178666433,
-      "cost_eur": 5.0,
-      "opened": "2026-11-21T16:24:00+00:00"
     },
     "0x92aa03137385f18539301349dcfc9ebc923ffb10": {
       "token": "SKYAI",
       "qty": 147.18751318128614,
       "entry_usd": 0.03722132999999999,
       "peak_usd": 0.0382250875427879,
-      "last_usd": 0.0382250875427879,
+      "last_usd": 0.0379824028505553,
       "cost_eur": 5.0,
       "opened": "2026-11-21T20:20:30+00:00"
     },
@@ -33,23 +24,13 @@
       "token": "ARIA",
       "qty": 23.523379044606067,
       "entry_usd": 0.23289659999999995,
-      "peak_usd": 0.23289659999999995,
-      "last_usd": 0.2318924552472,
+      "peak_usd": 0.238059459358922,
+      "last_usd": 0.238059459358922,
       "cost_eur": 5.0,
       "opened": "2026-11-21T21:18:07+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-06T15:22:21+00:00",
-      "side": "SELL",
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
-      "eur": 4.8103,
-      "pnl_eur": -0.1897,
-      "reason": "STOP",
-      "price_source": "GeckoTerminal"
-    },
     {
       "time": "2026-11-06T15:22:22+00:00",
       "side": "BUY",
@@ -6049,15 +6030,19 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-21T23:17:21+00:00",
+      "side": "SELL",
+      "token": "IDOL",
+      "address": "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07",
+      "eur": 6.1291,
+      "pnl_eur": 1.1291,
+      "reason": "TRAIL",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-17T15:29:27+00:00",
-      "token": "ARIA",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
     {
       "time": "2026-11-17T15:29:28+00:00",
       "token": "CROSS",
@@ -7131,6 +7116,12 @@
       "token": "JAGENT",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-21T23:17:21+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7217,7 +7208,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-21T22:17:03+00:00",
+  "last_attempt": "2026-11-21T23:17:16+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -7238,29 +7229,11 @@
       },
       "score": 7,
       "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
-    },
-    {
-      "token": "JAGENT",
-      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
   "screened_count": 38,
-  "candidate_count": 4,
-  "estimated_eur": 139.13,
+  "candidate_count": 2,
+  "estimated_eur": 137.89,
   "roles": [
     "Trend",
     "Momentum",
@@ -7274,5 +7247,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-21T22:17:08+00:00"
+  "last_success": "2026-11-21T23:17:21+00:00"
 }
