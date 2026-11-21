@@ -6,8 +6,8 @@
       "token": "IDOL",
       "qty": 229.1161331441916,
       "entry_usd": 0.02391152,
-      "peak_usd": 0.0264371654320902,
-      "last_usd": 0.0264371654320902,
+      "peak_usd": 0.0298750895569882,
+      "last_usd": 0.0298750895569882,
       "cost_eur": 5.0,
       "opened": "2026-11-20T21:26:23+00:00"
     }
@@ -6016,24 +6016,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-16T23:23:00+00:00",
-      "token": "BTW",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-17T00:21:58+00:00",
-      "token": "AKE",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-17T00:21:59+00:00",
-      "token": "DGAI",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
       "time": "2026-11-17T01:53:51+00:00",
       "token": "DNA",
       "decision": "SKIP",
@@ -7094,6 +7076,24 @@
       "token": "DNA",
       "decision": "SKIP",
       "reason": "DEX Screener pair unavailable"
+    },
+    {
+      "time": "2026-11-21T13:39:16+00:00",
+      "token": "BTCB",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-21T13:39:16+00:00",
+      "token": "ETH",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-21T13:39:16+00:00",
+      "token": "PIEVERSE",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -7180,17 +7180,17 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-21T12:24:11+00:00",
+  "last_attempt": "2026-11-21T13:39:11+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "ETH",
-      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "token": "BTCB",
+      "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
       "votes": {
         "Trend": false,
         "Momentum": true,
-        "Dip recovery": false,
+        "Dip recovery": true,
         "Breakout": false,
         "Volume": true,
         "Liquidity": true,
@@ -7199,13 +7199,31 @@
         "Risk guard": true,
         "Portfolio": true
       },
-      "score": 6,
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x6bbc40579ad1bbd243895ca0acb086bb6300d636"
+    },
+    {
+      "token": "ETH",
+      "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": true,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
       "dex_url": "https://dexscreener.com/bsc/0xd0e226f674bbf064f54ab47f42473ff80db98cba"
     }
   ],
-  "screened_count": 38,
-  "candidate_count": 10,
-  "estimated_eur": 136.04,
+  "screened_count": 35,
+  "candidate_count": 13,
+  "estimated_eur": 136.75,
   "roles": [
     "Trend",
     "Momentum",
@@ -7219,5 +7237,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-21T12:24:17+00:00"
+  "last_success": "2026-11-21T13:39:16+00:00"
 }
