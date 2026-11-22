@@ -1,6 +1,6 @@
 # Čuvar 500 — PAPER
 
-- updated_at: 2026-11-22T05:24:57.464470+00:00
+- updated_at: 2026-11-22T06:23:36.957574+00:00
 - status: OK
 - cash: 488.77019752976105
 - equity_eur: 488.77019752976105
@@ -38,6 +38,11 @@
 | 5vJmAfBjsS6wEHcgQGNm69P3fbyPmUU1dVfE5j1rraVZ | solana | SKIP | insufficient recent buys/sells |
 | 5vhw96LZoKA4K8kbBkTJXBYvJSN1RWJzJgJbYEorBChv | solana | SKIP | insufficient recent buys/sells |
 | 6xKicXmEgJEZ8YeWUBKyh8iSU1kJ9fMEUbZJjQfF7dd9 | solana | SKIP | volume below $20k/day |
+| 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | no matching DEX pool |
+| 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $20k/day |
+| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
+| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
+| CAh1AJeFYUMxtZ2WKD1fcuQeGqoL4CePXXdYDdDVfG3d | solana | SKIP | no matching DEX pool |
 | CkH8iAKJhdAvLj9EijKdYwpbhrq6wjmFRZLSu5Rgsjrp | solana | SKIP | volume below $20k/day |
 | Cqnm4mkL5tAfBmKqqSwvg4zT2SQWBUuT3DGxhgg21FmM | solana | SKIP | volume below $20k/day |
 | EPPiSnGoWRcAV8XhPEokxCw4y6CH2LV6nzSo1YsGSEnj | solana | SKIP | volume below $20k/day |
@@ -49,11 +54,6 @@
 | SVY1zmfRddD7w8cqSZTPdzKF4Vyd62kUjBjdiWH83Co | solana | SKIP | volume below $20k/day |
 | TaMChY1b7Be9McHbp9uCePp8QDDGhrsCK1tAMLEnx98 | solana | SKIP | no matching DEX pool |
 | soCLGVqNFx63FcSwc89eTLABLXAg2tAoHJhDthz8ExZ | solana | SKIP | liquidity below $30k |
-| 8r5mco9UCh6Ub8dZQSvbPSmRiD6KRTcCR3ofYQeMKfxF | solana | SKIP | no matching DEX pool |
-| 97owM7j5K2ciCKjh1Efi8ix8Et9Tp7sjgnmLM2CHMamN | solana | SKIP | volume below $20k/day |
-| AvU2iYyDk3mwHkqaAqTahRXPniXvuJc5DmpBYRK97688 | solana | SKIP | volume below $20k/day |
-| AyiQP43hqPXRfJNH1kcRVS7jq1AjbCqXK2E4jxmWVP5u | solana | SKIP | insufficient recent buys/sells |
-| CAh1AJeFYUMxtZ2WKD1fcuQeGqoL4CePXXdYDdDVfG3d | solana | SKIP | no matching DEX pool |
 
 DEX: model naknade najmanje 0,4%, slippage 1% i mrežni trošak 0,25 EUR po strani. Nije izvediva swap ponuda. Uzorak tokena, ne cijela mreža. Nedostajući podaci = SKIP.
 
