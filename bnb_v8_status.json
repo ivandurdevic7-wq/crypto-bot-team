@@ -6,8 +6,8 @@
       "token": "SKYAI",
       "qty": 147.18751318128614,
       "entry_usd": 0.03722132999999999,
-      "peak_usd": 0.038650017890024,
-      "last_usd": 0.0386478235594091,
+      "peak_usd": 0.0390940584188661,
+      "last_usd": 0.0390940584188661,
       "cost_eur": 5.0,
       "opened": "2026-11-21T20:20:30+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "ARIA",
       "qty": 23.523379044606067,
       "entry_usd": 0.23289659999999995,
-      "peak_usd": 0.238059459358922,
-      "last_usd": 0.237460080549018,
+      "peak_usd": 0.238141612316544,
+      "last_usd": 0.238141612316544,
       "cost_eur": 5.0,
       "opened": "2026-11-21T21:18:07+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 7262.503143408493,
       "entry_usd": 0.0007543563,
       "peak_usd": 0.0007543563,
-      "last_usd": 0.000739600194054551,
+      "last_usd": 0.000740140590242487,
       "cost_eur": 5.0,
       "opened": "2026-11-22T01:50:29+00:00"
     }
@@ -6034,24 +6034,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-17T19:41:03+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-17T19:41:04+00:00",
-      "token": "EVAA",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
-      "time": "2026-11-17T19:41:05+00:00",
-      "token": "ASTER",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: cannot_sell_all"
-    },
-    {
       "time": "2026-11-17T21:28:46+00:00",
       "token": "ARIA",
       "decision": "BUY",
@@ -7112,6 +7094,24 @@
       "token": "BLESS",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-11-22T04:37:32+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-22T04:37:32+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Signal/DEX verification insufficient"
+    },
+    {
+      "time": "2026-11-22T04:37:32+00:00",
+      "token": "JAGENT",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
     }
   ],
   "daily": {
@@ -7201,7 +7201,7 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-22T03:28:42+00:00",
+  "last_attempt": "2026-11-22T04:37:27+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
@@ -7234,17 +7234,35 @@
         "Volume": true,
         "Liquidity": true,
         "New pools": false,
+        "DEX cross-check": false,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 5,
+      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+    },
+    {
+      "token": "JAGENT",
+      "address": "0x8e6442663a4f8c50b6132c68d42a30e7dfe4ae15",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
         "DEX cross-check": true,
         "Risk guard": true,
         "Portfolio": true
       },
       "score": 6,
-      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+      "dex_url": "https://dexscreener.com/bsc/0xe6efcdef2b720d1eca2b69edb7ef357725680bea"
     }
   ],
-  "screened_count": 31,
-  "candidate_count": 3,
-  "estimated_eur": 137.28,
+  "screened_count": 35,
+  "candidate_count": 6,
+  "estimated_eur": 137.36,
   "roles": [
     "Trend",
     "Momentum",
@@ -7258,5 +7276,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-22T03:28:48+00:00"
+  "last_success": "2026-11-22T04:37:32+00:00"
 }
