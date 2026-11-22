@@ -7,7 +7,7 @@
       "qty": 147.18751318128614,
       "entry_usd": 0.03722132999999999,
       "peak_usd": 0.038650017890024,
-      "last_usd": 0.038650017890024,
+      "last_usd": 0.0386478235594091,
       "cost_eur": 5.0,
       "opened": "2026-11-21T20:20:30+00:00"
     },
@@ -16,7 +16,7 @@
       "qty": 23.523379044606067,
       "entry_usd": 0.23289659999999995,
       "peak_usd": 0.238059459358922,
-      "last_usd": 0.237556008171342,
+      "last_usd": 0.237460080549018,
       "cost_eur": 5.0,
       "opened": "2026-11-21T21:18:07+00:00"
     },
@@ -25,7 +25,7 @@
       "qty": 7262.503143408493,
       "entry_usd": 0.0007543563,
       "peak_usd": 0.0007543563,
-      "last_usd": 0.0007521,
+      "last_usd": 0.000739600194054551,
       "cost_eur": 5.0,
       "opened": "2026-11-22T01:50:29+00:00"
     }
@@ -6034,18 +6034,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-17T18:28:08+00:00",
-      "token": "CROSS",
-      "decision": "BUY",
-      "reason": "Virtual trade; verification passed"
-    },
-    {
-      "time": "2026-11-17T18:28:08+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
       "time": "2026-11-17T19:41:03+00:00",
       "token": "PIEVERSE",
       "decision": "SKIP",
@@ -7112,6 +7100,18 @@
       "token": "TART",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-22T03:28:47+00:00",
+      "token": "DGAI",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-22T03:28:48+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
     }
   ],
   "daily": {
@@ -7201,10 +7201,28 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-22T01:50:24+00:00",
+  "last_attempt": "2026-11-22T03:28:42+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
+    {
+      "token": "DGAI",
+      "address": "0x10d4183389e99233db3cc981c43443ebd28ebd5e",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x0e6e1f47c64f517fc9dc35698718c7dfc708d534"
+    },
     {
       "token": "BLESS",
       "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
@@ -7222,29 +7240,11 @@
       },
       "score": 6,
       "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
-    },
-    {
-      "token": "TART",
-      "address": "0x7ab8d02cbb51ff7223fde700eaaa2a91bf750314",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x30000a407fabebe29439f8e437050512ff6661be"
     }
   ],
-  "screened_count": 34,
-  "candidate_count": 2,
-  "estimated_eur": 137.37,
+  "screened_count": 31,
+  "candidate_count": 3,
+  "estimated_eur": 137.28,
   "roles": [
     "Trend",
     "Momentum",
@@ -7258,5 +7258,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-22T01:50:29+00:00"
+  "last_success": "2026-11-22T03:28:48+00:00"
 }
