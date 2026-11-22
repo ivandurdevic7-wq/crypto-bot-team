@@ -1,5 +1,5 @@
 {
-  "cash_eur": 107.91226154348534,
+  "cash_eur": 113.31003355327829,
   "initial_eur": 160.0,
   "positions": {
     "0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6": {
@@ -25,7 +25,7 @@
       "qty": 3303.422433788828,
       "entry_usd": 0.0016721683680232327,
       "peak_usd": 0.00172516493656719,
-      "last_usd": 0.00171527475821084,
+      "last_usd": 0.00171823649766581,
       "cost_eur": 5.0,
       "opened": "2026-11-12T23:52:05+00:00"
     },
@@ -38,35 +38,17 @@
       "cost_eur": 5.0,
       "opened": "2026-11-15T03:59:16+00:00"
     },
-    "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238": {
-      "token": "ARIA",
-      "qty": 25.11013908018921,
-      "entry_usd": 0.21817939687647153,
-      "peak_usd": 0.241946043245675,
-      "last_usd": 0.241946043245675,
-      "cost_eur": 5.0,
-      "opened": "2026-11-21T14:58:03+00:00"
-    },
     "0x92aa03137385f18539301349dcfc9ebc923ffb10": {
       "token": "SKYAI",
       "qty": 139.60884178149206,
       "entry_usd": 0.039241891345067274,
-      "peak_usd": 0.039241891345067274,
-      "last_usd": 0.0389328083900496,
+      "peak_usd": 0.0392721104667397,
+      "last_usd": 0.0392721104667397,
       "cost_eur": 5.0,
       "opened": "2026-11-22T02:57:57+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-10T16:59:18+00:00",
-      "side": "SELL",
-      "token": "AIOT",
-      "address": "0x55ad16bd573b3365f43a9daeb0cc66a73821b4a5",
-      "eur": 4.7356,
-      "pnl_eur": -0.2644,
-      "reason": "stop loss"
-    },
     {
       "time": "2026-11-10T16:59:18+00:00",
       "side": "BUY",
@@ -2606,45 +2588,18 @@
       "address": "0x92aa03137385f18539301349dcfc9ebc923ffb10",
       "eur": 5.0,
       "reason": "MASTER odobrio, osnovni filtri prošli"
+    },
+    {
+      "time": "2026-11-22T05:06:21+00:00",
+      "side": "SELL",
+      "token": "ARIA",
+      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "eur": 5.3978,
+      "pnl_eur": 0.3978,
+      "reason": "trailing stop"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-20T19:10:13+00:00",
-      "token": "FIST",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-11-20T19:10:13+00:00",
-      "token": "AIA",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
-    {
-      "time": "2026-11-20T19:10:13+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
-    },
-    {
-      "time": "2026-11-20T19:10:13+00:00",
-      "token": "ANTB",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-11-20T19:10:14+00:00",
-      "token": "BLESS",
-      "decision": "SKIP",
-      "reason": "Honeypot nije isključen"
-    },
-    {
-      "time": "2026-11-20T20:09:06+00:00",
-      "token": "XPIN",
-      "decision": "WAIT",
-      "reason": "Nema nove cijene; izlaz nije simuliran"
-    },
     {
       "time": "2026-11-20T20:09:06+00:00",
       "token": "FIST",
@@ -3508,13 +3463,49 @@
       "token": "BLESS",
       "decision": "SKIP",
       "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-11-22T05:06:21+00:00",
+      "token": "XPIN",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-22T05:06:21+00:00",
+      "token": "FIST",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-22T05:06:21+00:00",
+      "token": "AIA",
+      "decision": "WAIT",
+      "reason": "Nema nove cijene; izlaz nije simuliran"
+    },
+    {
+      "time": "2026-11-22T05:06:22+00:00",
+      "token": "CAP",
+      "decision": "SKIP",
+      "reason": "Honeypot nije isključen"
+    },
+    {
+      "time": "2026-11-22T05:06:23+00:00",
+      "token": "ANT",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
+    },
+    {
+      "time": "2026-11-22T05:06:23+00:00",
+      "token": "YB",
+      "decision": "SKIP",
+      "reason": "Rizična ili nepoznata provjera: cannot_sell_all"
     }
   ],
-  "last_success": "2026-11-22T04:01:16+00:00",
-  "last_attempt": "2026-11-22T04:01:13+00:00",
-  "screened_count": 43,
-  "eligible_count": 6,
-  "estimated_eur": 138.74,
+  "last_success": "2026-11-22T05:06:23+00:00",
+  "last_attempt": "2026-11-22T05:06:20+00:00",
+  "screened_count": 40,
+  "eligible_count": 3,
+  "estimated_eur": 138.66,
   "market_source": "GeckoTerminal BSC PancakeSwap pools",
   "security_source": "GoPlus (reject on missing/uncertain)",
   "bot_names": [
