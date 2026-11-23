@@ -1,6 +1,28 @@
 {
-  "cash": 150.26337078488268,
-  "positions": {},
+  "cash": 135.26337078488268,
+  "positions": {
+    "NVDABUSDT": {
+      "qty": 0.0327241240409866,
+      "entry": 166.92675999999997,
+      "last": 166.75,
+      "opened": "2026-11-23T15:01:58+00:00",
+      "cost_eur": 5.0
+    },
+    "LSKUSDT": {
+      "qty": 31.894067358707925,
+      "entry": 0.17127109999999998,
+      "last": 0.1709,
+      "opened": "2026-11-23T15:02:00+00:00",
+      "cost_eur": 5.0
+    },
+    "LISTAUSDT": {
+      "qty": 62.65298421440788,
+      "entry": 0.08718709999999999,
+      "last": 0.0869,
+      "opened": "2026-11-23T15:02:01+00:00",
+      "cost_eur": 5.0
+    }
+  },
   "trades": [
     {
       "time": "2026-10-26T10:39:58+00:00",
@@ -741,60 +763,51 @@
       "token": "MARSCOINUSDT",
       "eur": 4.6858,
       "reason": "Stop-loss 3% na satnoj provjeri"
+    },
+    {
+      "time": "2026-11-23T15:01:58+00:00",
+      "side": "BUY",
+      "token": "NVDABUSDT",
+      "eur": 5.0,
+      "rise_1h": 5.75,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
+    },
+    {
+      "time": "2026-11-23T15:02:00+00:00",
+      "side": "BUY",
+      "token": "LSKUSDT",
+      "eur": 5.0,
+      "rise_1h": 4.93,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
+    },
+    {
+      "time": "2026-11-23T15:02:01+00:00",
+      "side": "BUY",
+      "token": "LISTAUSDT",
+      "eur": 5.0,
+      "rise_1h": 10.93,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
     }
   ],
   "status": "OK; stvarni podaci, virtualne transakcije",
   "updated": "2026-10-24T21:28:43.938888+00:00",
   "value": 160.0,
   "decisions": [
-    {
-      "time": "2026-11-16T20:49:59+00:00",
-      "token": "HUMAUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: BTC_trend"
-    },
-    {
-      "time": "2026-11-16T21:48:37+00:00",
-      "token": "GLMRUSDT",
-      "result": "REJECT",
-      "reason": "Premala dubina knjige naloga"
-    },
-    {
-      "time": "2026-11-17T04:58:03+00:00",
-      "token": "RAREUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: volume_15m"
-    },
-    {
-      "time": "2026-11-17T05:59:01+00:00",
-      "token": "HUMAUSDT",
-      "result": "BUY",
-      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
-    },
-    {
-      "time": "2026-11-17T05:59:02+00:00",
-      "token": "SOPHUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: trend_15m, volume_15m, spread"
-    },
-    {
-      "time": "2026-11-17T05:59:02+00:00",
-      "token": "GLMRUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: volume_15m"
-    },
-    {
-      "time": "2026-11-17T07:15:01+00:00",
-      "token": "牛来USDT",
-      "result": "SKIP",
-      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
-    },
-    {
-      "time": "2026-11-17T08:58:50+00:00",
-      "token": "LUNCUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: BTC_trend"
-    },
     {
       "time": "2026-11-17T10:02:07+00:00",
       "token": "牛来USDT",
@@ -1646,10 +1659,58 @@
       "token": "牛来USDT",
       "result": "SKIP",
       "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
+    },
+    {
+      "time": "2026-11-23T15:01:58+00:00",
+      "token": "NVDABUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-23T15:01:59+00:00",
+      "token": "SNXXBUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: trend_15m"
+    },
+    {
+      "time": "2026-11-23T15:02:00+00:00",
+      "token": "LSKUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-23T15:02:01+00:00",
+      "token": "LISTAUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-23T15:02:03+00:00",
+      "token": "CHIPUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: trend_15m"
+    },
+    {
+      "time": "2026-11-23T15:02:04+00:00",
+      "token": "MRVLBUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: trend_15m"
+    },
+    {
+      "time": "2026-11-23T15:02:04+00:00",
+      "token": "SKHYBUSDT",
+      "result": "REJECT",
+      "reason": "Nema potvrde: trend_15m, volume_15m"
+    },
+    {
+      "time": "2026-11-23T15:02:06+00:00",
+      "token": "牛来USDT",
+      "result": "SKIP",
+      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
     }
   ],
-  "last_success": "2026-11-23T13:16:43+00:00",
+  "last_success": "2026-11-23T15:02:08+00:00",
   "screened_market_count": 784,
   "scanned_candidates": 25,
-  "estimated_eur": 150.26
+  "estimated_eur": 150.22
 }
