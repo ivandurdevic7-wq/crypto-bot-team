@@ -1,22 +1,13 @@
 {
-  "cash_eur": 116.84640678198738,
+  "cash_eur": 121.5989631500233,
   "initial_eur": 160.0,
   "positions": {
-    "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db": {
-      "token": "AKE",
-      "qty": 1946.5889572906372,
-      "entry_usd": 0.0028144179999999995,
-      "peak_usd": 0.00281947810680645,
-      "last_usd": 0.00280245665366108,
-      "cost_eur": 5.0,
-      "opened": "2026-11-22T10:26:45+00:00"
-    },
     "0x92aa03137385f18539301349dcfc9ebc923ffb10": {
       "token": "SKYAI",
       "qty": 147.06862181361143,
       "entry_usd": 0.03725141999999999,
       "peak_usd": 0.0374883075657104,
-      "last_usd": 0.0374883075657104,
+      "last_usd": 0.0371977531865495,
       "cost_eur": 5.0,
       "opened": "2026-11-22T13:38:33+00:00"
     },
@@ -24,8 +15,8 @@
       "token": "IDOL",
       "qty": 379.31448709427275,
       "entry_usd": 0.014443199999999998,
-      "peak_usd": 0.0152142126779033,
-      "last_usd": 0.0151173552930157,
+      "peak_usd": 0.0152664524146002,
+      "last_usd": 0.0152664524146002,
       "cost_eur": 5.0,
       "opened": "2026-11-22T21:23:42+00:00"
     },
@@ -34,32 +25,12 @@
       "qty": 3131954480.594913,
       "entry_usd": 1.7492319999999998e-09,
       "peak_usd": 2.08093827387816e-09,
-      "last_usd": 2.08093827387816e-09,
+      "last_usd": 2.05470003223463e-09,
       "cost_eur": 5.0,
       "opened": "2026-11-22T22:23:36+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-07T03:26:29+00:00",
-      "side": "BUY",
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "eur": 5.0,
-      "reason": "MASTER: Gecko + DEX + GoPlus verified",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      }
-    },
     {
       "time": "2026-11-07T04:28:41+00:00",
       "side": "SELL",
@@ -6049,15 +6020,19 @@
       "pnl_eur": 0.2307,
       "reason": "TRAIL",
       "price_source": "GeckoTerminal"
+    },
+    {
+      "time": "2026-11-23T01:57:31+00:00",
+      "side": "SELL",
+      "token": "AKE",
+      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
+      "eur": 4.7526,
+      "pnl_eur": -0.2474,
+      "reason": "STOP",
+      "price_source": "GeckoTerminal"
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-18T16:40:02+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
     {
       "time": "2026-11-18T16:40:02+00:00",
       "token": "IDOL",
@@ -7131,6 +7106,12 @@
       "token": "SI",
       "decision": "BUY",
       "reason": "Virtual trade; verification passed"
+    },
+    {
+      "time": "2026-11-23T01:57:32+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
     }
   ],
   "daily": {
@@ -7223,13 +7204,32 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-23T00:22:06+00:00",
+  "last_attempt": "2026-11-23T01:57:26+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
-  "reviewed": [],
-  "screened_count": 31,
-  "candidate_count": 0,
-  "estimated_eur": 137.97,
+  "reviewed": [
+    {
+      "token": "BLESS",
+      "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 7,
+      "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
+    }
+  ],
+  "screened_count": 29,
+  "candidate_count": 1,
+  "estimated_eur": 137.7,
   "roles": [
     "Trend",
     "Momentum",
@@ -7243,5 +7243,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-23T00:22:10+00:00"
+  "last_success": "2026-11-23T01:57:32+00:00"
 }
