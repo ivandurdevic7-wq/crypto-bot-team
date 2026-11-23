@@ -1,5 +1,5 @@
 {
-  "cash_eur": 127.6914922423702,
+  "cash_eur": 122.6914922423702,
   "initial_eur": 160.0,
   "positions": {
     "0x3b4de3c7855c03bb9f50ea252cd2c9fa1125ab07": {
@@ -7,7 +7,7 @@
       "qty": 325.3609309712992,
       "entry_usd": 0.016760129999999998,
       "peak_usd": 0.0167833531314363,
-      "last_usd": 0.0167833531314363,
+      "last_usd": 0.0164089310158313,
       "cost_eur": 5.0,
       "opened": "2026-11-23T18:31:13+00:00"
     },
@@ -16,22 +16,21 @@
       "qty": 17.726707390056767,
       "entry_usd": 0.30762009999999995,
       "peak_usd": 0.30762009999999995,
-      "last_usd": 0.3067,
+      "last_usd": 0.301942407240717,
       "cost_eur": 5.0,
       "opened": "2026-11-23T19:40:59+00:00"
+    },
+    "0x92aa03137385f18539301349dcfc9ebc923ffb10": {
+      "token": "SKYAI",
+      "qty": 147.25842785835346,
+      "entry_usd": 0.037030759999999996,
+      "peak_usd": 0.037030759999999996,
+      "last_usd": 0.03692,
+      "cost_eur": 5.0,
+      "opened": "2026-11-23T21:28:45+00:00"
     }
   },
   "trades": [
-    {
-      "time": "2026-11-07T17:13:59+00:00",
-      "side": "SELL",
-      "token": "AKE",
-      "address": "0x2c3a8ee94ddd97244a93bc48298f97d2c412f7db",
-      "eur": 5.8773,
-      "pnl_eur": 0.8773,
-      "reason": "TRAIL",
-      "price_source": "GeckoTerminal"
-    },
     {
       "time": "2026-11-07T19:22:27+00:00",
       "side": "SELL",
@@ -6011,15 +6010,29 @@
         "Risk guard": true,
         "Portfolio": true
       }
+    },
+    {
+      "time": "2026-11-23T21:28:45+00:00",
+      "side": "BUY",
+      "token": "SKYAI",
+      "address": "0x92aa03137385f18539301349dcfc9ebc923ffb10",
+      "eur": 5.0,
+      "reason": "MASTER: Gecko + DEX + GoPlus verified",
+      "votes": {
+        "Trend": true,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      }
     }
   ],
   "decisions": [
-    {
-      "time": "2026-11-19T06:35:09+00:00",
-      "token": "ARK",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
     {
       "time": "2026-11-19T07:57:47+00:00",
       "token": "PIEVERSE",
@@ -7093,6 +7106,12 @@
       "token": "EVAA",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-23T21:28:45+00:00",
+      "token": "SKYAI",
+      "decision": "BUY",
+      "reason": "Virtual trade; verification passed"
     }
   ],
   "daily": {
@@ -7185,31 +7204,13 @@
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-23T19:40:54+00:00",
+  "last_attempt": "2026-11-23T21:28:38+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
-      "token": "PIEVERSE",
-      "address": "0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": false,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": false,
-        "Portfolio": true
-      },
-      "score": 5,
-      "dex_url": "https://dexscreener.com/bsc/0x20260736f45b9e21a4cb2ad916a1a85766ac9d20"
-    },
-    {
-      "token": "ARIA",
-      "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+      "token": "SKYAI",
+      "address": "0x92aa03137385f18539301349dcfc9ebc923ffb10",
       "votes": {
         "Trend": true,
         "Momentum": true,
@@ -7223,30 +7224,12 @@
         "Portfolio": true
       },
       "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0xa5dbeaf16fc031eae92175974f8d0a439be4ad17"
-    },
-    {
-      "token": "EVAA",
-      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
-      "votes": {
-        "Trend": true,
-        "Momentum": true,
-        "Dip recovery": false,
-        "Breakout": false,
-        "Volume": true,
-        "Liquidity": true,
-        "New pools": false,
-        "DEX cross-check": true,
-        "Risk guard": true,
-        "Portfolio": true
-      },
-      "score": 7,
-      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+      "dex_url": "https://dexscreener.com/bsc/0xbc42145d5a574ede9b8860fca2a49eb7b239efa5"
     }
   ],
-  "screened_count": 46,
-  "candidate_count": 4,
-  "estimated_eur": 137.65,
+  "screened_count": 39,
+  "candidate_count": 1,
+  "estimated_eur": 137.44,
   "roles": [
     "Trend",
     "Momentum",
@@ -7260,5 +7243,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-23T19:40:59+00:00"
+  "last_success": "2026-11-23T21:28:45+00:00"
 }
