@@ -1,25 +1,18 @@
 {
-  "cash": 134.6471914620357,
+  "cash": 137.87466985251774,
   "positions": {
     "LISTAUSDT": {
       "qty": 62.65298421440788,
       "entry": 0.08718709999999999,
-      "last": 0.1037,
+      "last": 0.1032,
       "opened": "2026-11-23T15:02:01+00:00",
       "cost_eur": 5.0
     },
-    "MANTRAUSDT": {
-      "qty": 1561.9726427418736,
-      "entry": 0.0035135099999999996,
-      "last": 0.0035,
-      "opened": "2026-11-25T22:23:57+00:00",
-      "cost_eur": 5.0
-    },
-    "ATUSDT": {
-      "qty": 84.34652270806117,
-      "entry": 0.065065,
-      "last": 0.0648,
-      "opened": "2026-11-25T22:24:01+00:00",
+    "BABYUSDT": {
+      "qty": 563.2242757242758,
+      "entry": 0.009729719999999999,
+      "last": 0.0097,
+      "opened": "2026-11-26T04:54:58+00:00",
       "cost_eur": 5.0
     }
   },
@@ -842,24 +835,39 @@
         "volume_15m": true,
         "spread": true
       }
+    },
+    {
+      "time": "2026-11-26T04:54:52+00:00",
+      "side": "SELL",
+      "token": "MANTRAUSDT",
+      "eur": 3.808,
+      "reason": "Stop-loss 3% na satnoj provjeri"
+    },
+    {
+      "time": "2026-11-26T04:54:52+00:00",
+      "side": "SELL",
+      "token": "ATUSDT",
+      "eur": 4.4195,
+      "reason": "Stop-loss 3% na satnoj provjeri"
+    },
+    {
+      "time": "2026-11-26T04:54:58+00:00",
+      "side": "BUY",
+      "token": "BABYUSDT",
+      "eur": 5.0,
+      "rise_1h": 4.87,
+      "confirmations": {
+        "BTC_trend": true,
+        "trend_15m": true,
+        "volume_15m": true,
+        "spread": true
+      }
     }
   ],
   "status": "OK; stvarni podaci, virtualne transakcije",
   "updated": "2026-10-24T21:28:43.938888+00:00",
   "value": 160.0,
   "decisions": [
-    {
-      "time": "2026-11-17T22:54:05+00:00",
-      "token": "SOXLBUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: BTC_trend"
-    },
-    {
-      "time": "2026-11-17T22:54:07+00:00",
-      "token": "SHELLUSDT",
-      "result": "REJECT",
-      "reason": "Nema potvrde: BTC_trend"
-    },
     {
       "time": "2026-11-17T22:54:08+00:00",
       "token": "NBISBUSDT",
@@ -1747,10 +1755,22 @@
       "token": "ATUSDT",
       "result": "BUY",
       "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
+    },
+    {
+      "time": "2026-11-26T04:54:53+00:00",
+      "token": "牛来USDT",
+      "result": "SKIP",
+      "reason": "Podaci nedostupni: 'ascii' codec can't encode characters in position 26-27: ordinal not in range(128)"
+    },
+    {
+      "time": "2026-11-26T04:54:58+00:00",
+      "token": "BABYUSDT",
+      "result": "BUY",
+      "reason": "4/4 potvrde, provjerena dubina, virtualna kupnja"
     }
   ],
-  "last_success": "2026-11-25T22:24:13+00:00",
+  "last_success": "2026-11-26T04:55:06+00:00",
   "screened_market_count": 789,
   "scanned_candidates": 25,
-  "estimated_eur": 150.51
+  "estimated_eur": 148.75
 }
