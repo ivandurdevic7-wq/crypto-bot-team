@@ -7,7 +7,7 @@
       "qty": 17.95291391065683,
       "entry_usd": 0.3044105,
       "peak_usd": 0.336229206656726,
-      "last_usd": 0.333634195622179,
+      "last_usd": 0.332971743922163,
       "cost_eur": 5.0,
       "opened": "2026-11-24T18:16:25+00:00"
     },
@@ -15,8 +15,8 @@
       "token": "AIOT",
       "qty": 54.753104177292826,
       "entry_usd": 0.09955777999999998,
-      "peak_usd": 0.108029109953571,
-      "last_usd": 0.108029109953571,
+      "peak_usd": 0.109570138332493,
+      "last_usd": 0.109570138332493,
       "cost_eur": 5.0,
       "opened": "2026-11-26T05:26:20+00:00"
     }
@@ -6015,24 +6015,6 @@
   ],
   "decisions": [
     {
-      "time": "2026-11-19T21:27:08+00:00",
-      "token": "PIEVERSE",
-      "decision": "SKIP",
-      "reason": "Signal/DEX verification insufficient"
-    },
-    {
-      "time": "2026-11-19T21:27:09+00:00",
-      "token": "IRYS",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_honeypot"
-    },
-    {
-      "time": "2026-11-19T21:27:10+00:00",
-      "token": "EVAA",
-      "decision": "SKIP",
-      "reason": "Security unknown/risk: is_mintable"
-    },
-    {
       "time": "2026-11-19T22:27:49+00:00",
       "token": "IRYS",
       "decision": "SKIP",
@@ -7093,6 +7075,24 @@
       "token": "BLESS",
       "decision": "SKIP",
       "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-11-27T00:47:33+00:00",
+      "token": "EVAA",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_mintable"
+    },
+    {
+      "time": "2026-11-27T00:47:34+00:00",
+      "token": "BLESS",
+      "decision": "SKIP",
+      "reason": "Security unknown/risk: is_honeypot"
+    },
+    {
+      "time": "2026-11-27T00:47:34+00:00",
+      "token": "DEBIT",
+      "decision": "SKIP",
+      "reason": "DEX Screener pair unavailable"
     }
   ],
   "daily": {
@@ -7191,20 +7191,41 @@
     },
     "2026-11-26": {
       "start_eur": 136.2511
+    },
+    "2026-11-27": {
+      "start_eur": 136.644
     }
   },
   "status": "OK | BSC PancakeSwap | real quotes, PAPER ONLY",
-  "last_attempt": "2026-11-26T15:44:46+00:00",
+  "last_attempt": "2026-11-27T00:47:28+00:00",
   "market_pages_ok": 3,
   "market_api_errors": [],
   "reviewed": [
     {
+      "token": "EVAA",
+      "address": "0xaa036928c9c0df07d525b55ea8ee690bb5a628c1",
+      "votes": {
+        "Trend": false,
+        "Momentum": true,
+        "Dip recovery": false,
+        "Breakout": false,
+        "Volume": true,
+        "Liquidity": true,
+        "New pools": false,
+        "DEX cross-check": true,
+        "Risk guard": true,
+        "Portfolio": true
+      },
+      "score": 6,
+      "dex_url": "https://dexscreener.com/bsc/0x26deb24a2623cf54452ab5183e2c34551831d54d"
+    },
+    {
       "token": "BLESS",
       "address": "0x7c8217517ed4711fe2deccdfeffe8d906b9ae11f",
       "votes": {
-        "Trend": true,
+        "Trend": false,
         "Momentum": true,
-        "Dip recovery": false,
+        "Dip recovery": true,
         "Breakout": false,
         "Volume": true,
         "Liquidity": true,
@@ -7217,9 +7238,9 @@
       "dex_url": "https://dexscreener.com/bsc/0x49986efbeedea3ab962ca95caf86919860ecc9db"
     }
   ],
-  "screened_count": 39,
-  "candidate_count": 4,
-  "estimated_eur": 136.58,
+  "screened_count": 32,
+  "candidate_count": 5,
+  "estimated_eur": 136.64,
   "roles": [
     "Trend",
     "Momentum",
@@ -7233,5 +7254,5 @@
     "Portfolio"
   ],
   "daily_halt": false,
-  "last_success": "2026-11-26T15:44:51+00:00"
+  "last_success": "2026-11-27T00:47:34+00:00"
 }
